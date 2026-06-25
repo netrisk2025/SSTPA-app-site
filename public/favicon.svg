@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="SSTPA Tools favicon">
+  <rect width="128" height="128" rx="18" fill="#f5f1e8"/>
+  <rect x="10" y="10" width="108" height="108" rx="13" fill="none" stroke="#081f34" stroke-width="5"/>
+  <rect x="19" y="19" width="90" height="90" rx="9" fill="none" stroke="#b9904a" stroke-width="2"/>
+  <path d="M23 65c18-4 18-31 41-31 12 0 21 6 26 15l-14 8c-3-5-8-9-15-9-9 0-14 6-14 12 0 21 48 8 48 39 0 18-15 29-34 29-15 0-27-6-35-18l15-8c5 8 12 12 21 12 10 0 17-5 17-13 0-20-48-8-48-37Z" fill="#081f34" transform="translate(0 -16)"/>
+  <path d="M31 86c17 12 48 12 66 0" fill="none" stroke="#345f7a" stroke-width="4" stroke-linecap="round"/>
+</svg>
