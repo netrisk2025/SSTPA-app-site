@@ -38,6 +38,14 @@ npm run build
 
 The production output is written to `dist/`. Vite copies the white paper from `public/files/SSTPA-Tools-White-Paper-v2.docx` into the deployed static output.
 
+## User Guide
+
+Static HTML documentation lives in `public/docs/` and is copied into `dist/docs/` on build. Open `/docs/` on the site (nav link **User Guide**).
+
+- Authority: Grok-Bot Workflow V1 + SSTPA Tools TESTING.md (credentials stay local)
+- Screenshots: `public/docs/screenshots/light|dark/*.png` from the live GUI (Light parchment / Dark bluish-grey)
+- Structure notes: `public/docs/README.md`
+
 ## Vercel deployment
 
 This project includes `vercel.json` with:

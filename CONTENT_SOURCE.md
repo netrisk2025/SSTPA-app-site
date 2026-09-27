@@ -42,3 +42,17 @@ Palette sampled from the logo:
 - No pricing section.
 - No contact form backend.
 - No claims that the product is already certified, approved, or deployed.
+
+
+## User Guide (static docs)
+
+Path: `public/docs/` (served at `/docs/` after Vite build; copied into `dist/docs/`).
+
+| Docs area | Source | Notes |
+|---|---|---|
+| Structure & tool order | `/home/netrisk/Projects/SSTPA White Paper/Grok-Bot Workflow V1.md` | 14-step execution workflow; Add-on Tool first-appearance order; revision loop & hierarchical recurse. |
+| GUI walkthrough cues | `/home/netrisk/Projects/SSTPA Tools/docs/TESTING.md` | Local validation guide only — **do not publish credentials** in HTML. |
+| Screenshots | Live SSTPA Tools GUI (browser preview → Backend `https://localhost:8543`) | Paired Light (`default`) / Dark (`nocturne`) captures under `public/docs/screenshots/{light,dark}/`. |
+| Visual style | Existing site palette + SRS §6.2 Technical Art Nouveau Control Room | Ivory/navy/brass in `public/docs/styles.css`. |
+
+Intentional omissions in the User Guide: no passwords, no fabricated metrics, no customer claims.

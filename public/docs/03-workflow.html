@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SSTPA Tools user guide — Workflow" />
+  <title>Workflow — SSTPA Tools User Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="docs-header">
+    <a class="docs-brand" href="index.html">
+      <img src="/sstpa-menu-logo.png" alt="" />
+      <span>SSTPA Tools · User Guide</span>
+    </a>
+    <nav class="docs-nav" aria-label="Docs"><a href="index.html">Home</a>
+<a href="01-gui.html">GUI</a>
+<a href="02-projects.html">Projects</a>
+<a href="03-workflow.html" aria-current="page">Workflow</a>
+<a href="tool-navigator.html">Navigator</a>
+<a href="tool-requirements.html">Requirements</a>
+<a href="tool-connection.html">Connection</a>
+<a href="tool-asset-manager.html">Assets</a>
+<a href="tool-state.html">State</a>
+<a href="tool-context.html">Context</a>
+<a href="tool-reference.html">Reference</a>
+<a href="tool-flow.html">Flow</a>
+<a href="tool-controls.html">Controls</a>
+<a href="tool-trace.html">Trace</a>
+<a href="tool-attack.html">Attack</a>
+<a href="tool-loss.html">Loss</a>
+<a href="tool-goal-keeper.html">Goal Keeper</a>
+<a href="14-decompose.html">Decompose</a>
+<a href="appendix.html">Appendix</a></nav>
+  </header>
+  <main class="docs-shell">
+
+    <p class="eyebrow">Section 3 · Workflow V1</p>
+    <h1>Methodology workflow (14 steps)</h1>
+    <p class="lead">Authoritative execution sequence from <em>Grok-Bot Workflow V1</em>. Do not merge, split, or reorder these steps. Two control structures are part of the methodology: the Step 13 → Step 7 revision loop, and the Step 14 hierarchical recurse.</p>
+
+    <ol class="steps">
+      <li><strong>Tier-1 architecture</strong> — Capability requirements → Tier-1 Systems and Connections. Tools: <a href="tool-requirements.html">Requirements</a>, <a href="tool-connection.html">Connection</a>, <a href="tool-navigator.html">Navigator</a>, GUI.</li>
+      <li><strong>Allocate &amp; join</strong> — Requirements onto Interface / Function / Element; join Interfaces to Connections. Tools: Requirements, Connection, Navigator, <a href="tool-flow.html">Flow</a> (participates).</li>
+      <li><strong>Asset identification</strong> — Assets, Regime, Criticality, Assurance. Tool: <a href="tool-asset-manager.html">Asset Manager</a>.</li>
+      <li><strong>State behavior</strong> — States and transitions; VALID_IN edited in Context. Tools: <a href="tool-state.html">State</a>, <a href="tool-context.html">Context</a>.</li>
+      <li><strong>Environment &amp; threats</strong> — Environments, valid States, reference threat research. Tools: Context, <a href="tool-reference.html">Reference</a>.</li>
+      <li><strong>Hazard analysis</strong> — Hazards from the threat environment. Tools: Context, Reference.</li>
+      <li><strong>Functional Flow / STPA</strong> — Functional Flow and STPA Control Flow; feedback / process-model requirements. Tools: Flow, Requirements. <em>Re-entry point from Step 13.</em></li>
+      <li><strong>Controls</strong> — Tailor Security Controls Baseline; map to SecurityControl; realizing requirements. Tools: <a href="tool-controls.html">Controls</a>, Reference, GUI.</li>
+      <li><strong>Validation criteria</strong> — Satisfaction of Control “must” statements; Verification; Purpose-level Validation. Tools: Controls, Requirements, GUI.</li>
+      <li><strong>State-Trace</strong> — HOLDS / TRANSPORTS / USES matrix per Asset Assurance. Tool: <a href="tool-trace.html">Trace</a>.</li>
+      <li><strong>Attacks</strong> — Actionable Attacks on susceptible entities. Tools: <a href="tool-attack.html">Attack</a>, Reference.</li>
+      <li><strong>Loss / Attack Tree</strong> — Structured Attack Trees per Loss. Tool: <a href="tool-loss.html">Loss</a>.</li>
+      <li><strong>GSN argument</strong> — Goal Keeper assurance case; if not credible, revise and return to Step 7. Tool: <a href="tool-goal-keeper.html">Goal Keeper</a>.</li>
+      <li><strong>Hierarchical decompose</strong> — Element parents a child System; repeat Steps 1–13. See <a href="14-decompose.html">Decompose</a>.</li>
+    </ol>
+
+    <h2>Step × Tool matrix (summary)</h2>
+    <p><span class="p">P</span> = primary · p = participates · G = GUI Main Panel / Data Drawer.</p>
+    <div style="overflow:auto">
+    <table class="matrix" aria-label="Step by tool matrix">
+      <thead>
+        <tr>
+          <th>Step</th><th>Nav</th><th>Req</th><th>Conn</th><th>Asset</th><th>State</th><th>Ctx</th><th>Ref</th><th>Flow</th><th>Ctrl</th><th>Trace</th><th>Atk</th><th>Loss</th><th>GK</th><th>GUI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1 Architecture</td><td class="p">P</td><td class="p">P</td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="p">G</td></tr>
+        <tr><td>2 Allocate / join</td><td>p</td><td class="p">P</td><td class="p">P</td><td></td><td></td><td></td><td></td><td>p</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>3 Asset ID</td><td></td><td></td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>p</td></tr>
+        <tr><td>4 State</td><td></td><td></td><td></td><td></td><td class="p">P</td><td>p</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>5 Environment</td><td></td><td></td><td></td><td></td><td></td><td class="p">P</td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>6 Hazard</td><td></td><td></td><td></td><td></td><td></td><td class="p">P</td><td>p</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>7 Flow / STPA</td><td></td><td>p</td><td></td><td></td><td></td><td></td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>8 Controls</td><td></td><td></td><td></td><td></td><td></td><td></td><td>p</td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td>p</td></tr>
+        <tr><td>9 Validation</td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td class="p">G</td></tr>
+        <tr><td>10 Trace</td><td></td><td></td><td></td><td>p</td><td>p</td><td></td><td></td><td></td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11 Attack</td><td></td><td></td><td></td><td></td><td></td><td></td><td>p</td><td></td><td></td><td>p</td><td class="p">P</td><td></td><td></td><td></td></tr>
+        <tr><td>12 Loss</td><td></td><td></td><td></td><td></td><td>p</td><td>p</td><td></td><td></td><td></td><td>p</td><td>p</td><td class="p">P</td><td></td><td></td></tr>
+        <tr><td>13 GSN</td><td></td><td>p*</td><td></td><td></td><td></td><td></td><td></td><td>p*</td><td></td><td></td><td></td><td>p*</td><td class="p">P</td><td></td></tr>
+        <tr><td>14 Decompose</td><td class="p">P</td><td class="p">P</td><td></td><td class="p">P</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="p">G</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>* Step 13 participation of Loss, Requirements, and Flow applies when the GSN argument is not credible and the inner loop fires.</p>
+
+    <nav class="pager"><a href="02-projects.html">← Projects</a><a href="tool-navigator.html">Navigator →</a></nav>
+
+    <footer class="docs-footer">
+      <p>Instructional guide for SSTPA Tools. Workflow authority: <em>Grok-Bot Workflow V1</em>. Product statements follow the SRS-derived positioning used on the marketing site. Screenshots captured from the live GUI (Light parchment / Dark bluish-grey). © Nicholas Triska.</p>
+    </footer>
+  </main>
+</body>
+</html>

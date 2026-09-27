@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SSTPA Tools user guide — Projects" />
+  <title>Projects — SSTPA Tools User Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="docs-header">
+    <a class="docs-brand" href="index.html">
+      <img src="/sstpa-menu-logo.png" alt="" />
+      <span>SSTPA Tools · User Guide</span>
+    </a>
+    <nav class="docs-nav" aria-label="Docs"><a href="index.html">Home</a>
+<a href="01-gui.html">GUI</a>
+<a href="02-projects.html" aria-current="page">Projects</a>
+<a href="03-workflow.html">Workflow</a>
+<a href="tool-navigator.html">Navigator</a>
+<a href="tool-requirements.html">Requirements</a>
+<a href="tool-connection.html">Connection</a>
+<a href="tool-asset-manager.html">Assets</a>
+<a href="tool-state.html">State</a>
+<a href="tool-context.html">Context</a>
+<a href="tool-reference.html">Reference</a>
+<a href="tool-flow.html">Flow</a>
+<a href="tool-controls.html">Controls</a>
+<a href="tool-trace.html">Trace</a>
+<a href="tool-attack.html">Attack</a>
+<a href="tool-loss.html">Loss</a>
+<a href="tool-goal-keeper.html">Goal Keeper</a>
+<a href="14-decompose.html">Decompose</a>
+<a href="appendix.html">Appendix</a></nav>
+  </header>
+  <main class="docs-shell">
+
+    <p class="eyebrow">Section 2</p>
+    <h1>Start and manage a project</h1>
+    <p class="lead">Projects are Capability-rooted hierarchies of Systems. You analyze one System of Interest at a time.</p>
+
+    <h2>Capability / System hierarchy</h2>
+    <p>A <strong>Capability</strong> (or Project root) owns Tier-1 Systems. Each System can contain Elements that later parent child Systems (Step 14). The Navigator Tool visualizes this tree; the SoI panel lets you walk parent/child without opening Navigator.</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/gui-main-pre-soi.png" alt="Before SoI selection: FireSat Capability with Tier-1 segment chips. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/gui-main-pre-soi.png" alt="Before SoI selection: FireSat Capability with Tier-1 segment chips. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Before SoI selection: FireSat Capability with Tier-1 segment chips.</figcaption>
+</figure>
+
+
+    <h2>Select a System of Interest</h2>
+    <ol>
+      <li>From the empty SoI prompt, click a Tier-1 chip (for example Space Segment), or open <strong>Navigator</strong>.</li>
+      <li>In Navigator SoI mode, select a <span class="mono">:System</span> node, choose <strong>Select as current SoI</strong>, and confirm.</li>
+      <li>Confirm the SoI panel updates; Main Panel sections fill with counts for that SoI.</li>
+    </ol>
+    <div class="callout">
+      <strong>FireSat tip.</strong> For security-analysis screenshots and the Loss / Goal Keeper path, drill to <strong>Fire Detection Payload</strong>. Higher tiers are better for architecture and Connection work.
+    </div>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/tool-navigator.png" alt="Navigator hierarchy with FireSat Systems. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/tool-navigator.png" alt="Navigator hierarchy with FireSat Systems. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Navigator hierarchy with FireSat Systems.</figcaption>
+</figure>
+
+
+    <h2>Create and edit via Main Panel + Data Drawer</h2>
+    <ol>
+      <li>Expand a Main Panel section and click <strong>+ Add</strong> to create a node of that type (staged commit).</li>
+      <li>On an existing card, click <strong>Edit in Data Drawer</strong>.</li>
+      <li>Adjust properties / associations, then <strong>Commit</strong> and confirm. The Backend validates labels, relationships, and SoI membership.</li>
+    </ol>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/data-drawer-edit.png" alt="Editing an Asset from the Main Panel Asset section. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/data-drawer-edit.png" alt="Editing an Asset from the Main Panel Asset section. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Editing an Asset from the Main Panel Asset section.</figcaption>
+</figure>
+
+
+    <h2>What “project management” means here</h2>
+    <p>SSTPA Tools is not a generic project tracker. Managing a project means maintaining the authoritative Core Data Model graph: Systems, Interfaces, Functions, Elements, Assets, States, Environments, Controls, Attacks, Losses, and assurance Goals—under Backend validation and ownership rules.</p>
+
+    <nav class="pager"><a href="01-gui.html">← GUI</a><a href="03-workflow.html">Workflow →</a></nav>
+
+    <footer class="docs-footer">
+      <p>Instructional guide for SSTPA Tools. Workflow authority: <em>Grok-Bot Workflow V1</em>. Product statements follow the SRS-derived positioning used on the marketing site. Screenshots captured from the live GUI (Light parchment / Dark bluish-grey). © Nicholas Triska.</p>
+    </footer>
+  </main>
+</body>
+</html>

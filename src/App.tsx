@@ -163,6 +163,7 @@ function Header() {
         <a href="#interchange">Interchange</a>
         <a href="#white-paper">White paper</a>
         <a href="#deploy">Deploy</a>
+        <a href="/docs/">User Guide</a>
       </nav>
     </header>
   );
@@ -229,6 +230,7 @@ function App() {
               <a className="button primary" href="#model">Inspect the model</a>
               <a className="button secondary" href="#tools">Explore the tool suite</a>
               <a className="button secondary" href="/files/SSTPA-Tools-White-Paper-v2.docx" download>Download draft white paper</a>
+              <a className="button secondary" href="/docs/">Open User Guide</a>
             </div>
           </div>
           <HeroPlate />
