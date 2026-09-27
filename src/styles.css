@@ -130,6 +130,20 @@ code {
   box-shadow: inset 0 0 0 1px rgba(185, 144, 74, 0.22);
 }
 
+.site-nav a.nav-cta {
+  border-color: rgba(8, 31, 52, 0.34);
+  background: rgba(8, 31, 52, 0.94);
+  color: var(--surface);
+  box-shadow: inset 0 0 0 1px rgba(185, 144, 74, 0.45);
+}
+
+.site-nav a.nav-cta:hover,
+.site-nav a.nav-cta:focus-visible {
+  background: var(--navy);
+  border-color: var(--brass);
+  color: var(--surface);
+}
+
 .section-shell {
   width: min(var(--max), calc(100% - 2rem));
   margin: 0 auto;
@@ -146,6 +160,26 @@ code {
 
 .hero-copy {
   position: relative;
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero-seal {
+  width: clamp(3.4rem, 7vw, 4.6rem);
+  height: auto;
+  border-radius: 18%;
+  border: 1px solid rgba(8, 31, 52, 0.28);
+  box-shadow: 0 10px 24px rgba(8, 31, 52, 0.14);
+  background: var(--surface);
+}
+
+.hero-brand .eyebrow {
+  margin: 0;
 }
 
 .hero-copy::before {
@@ -264,6 +298,7 @@ h3 {
 
 .hero-plate,
 .dataset-card,
+.docs-card,
 .proof-panel,
 .chain-diagram,
 .translator-cards article,
@@ -281,6 +316,7 @@ h3 {
 
 .hero-plate::before,
 .dataset-card::before,
+.docs-card::before,
 .proof-panel::before,
 .chain-diagram::before,
 .translator-cards article::before,
@@ -722,6 +758,109 @@ h3 {
   padding-bottom: 6rem;
 }
 
+
+.documentation {
+  padding-bottom: 4rem;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.docs-card {
+  padding: 1.35rem 1.25rem 1.2rem;
+  background:
+    linear-gradient(160deg, rgba(255, 250, 240, 0.96), rgba(235, 226, 207, 0.82)),
+    linear-gradient(90deg, rgba(8, 31, 52, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(8, 31, 52, 0.045) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px;
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.docs-card-seal {
+  width: min(118px, 42%);
+  height: auto;
+  margin-bottom: 0.35rem;
+  filter: drop-shadow(0 8px 14px rgba(8, 31, 52, 0.12));
+}
+
+.docs-card h3 {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1;
+  max-width: 16ch;
+}
+
+.docs-card p {
+  margin: 0;
+  color: rgba(4, 14, 31, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.docs-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.paper-panel-logo {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  margin-bottom: 0.85rem;
+  filter: brightness(0) invert(1) opacity(0.92);
+}
+
+.paper-download-panel .button.secondary,
+.paper-secondary-link {
+  margin-top: 0.65rem;
+  width: 100%;
+  color: var(--surface);
+  background: rgba(255, 250, 240, 0.08);
+  border-color: rgba(255, 250, 240, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(185, 144, 74, 0.35);
+}
+
+.paper-archive-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 250, 240, 0.62) !important;
+}
+
+.paper-archive-note a {
+  color: rgba(255, 250, 240, 0.88);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.deployment-note-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-self: center;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.footer-seal {
+  width: 64px !important;
+  height: auto;
+  border-radius: 16%;
+  border: 1px solid rgba(8, 31, 52, 0.22);
+}
+
 .white-paper {
   padding-bottom: 6rem;
 }
@@ -929,7 +1068,8 @@ h3 {
   .twin-panel,
   .proof-section,
   .interchange,
-  .white-paper-card {
+  .white-paper-card,
+  .docs-grid {
     grid-template-columns: 1fr;
   }
 
@@ -949,6 +1089,10 @@ h3 {
   .segment-grid,
   .paper-points {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .docs-grid {
+    grid-template-columns: 1fr;
   }
 
   .node-ledger {
@@ -987,7 +1131,8 @@ h3 {
   .dataset-grid,
   .segment-grid,
   .node-ledger,
-  .paper-points {
+  .paper-points,
+  .docs-grid {
     grid-template-columns: 1fr;
   }
 

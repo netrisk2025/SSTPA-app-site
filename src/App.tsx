@@ -161,9 +161,10 @@ function Header() {
         <a href="#model">Model</a>
         <a href="#tools">Tools</a>
         <a href="#interchange">Interchange</a>
+        <a href="#documentation">Docs</a>
         <a href="#white-paper">White paper</a>
         <a href="#deploy">Deploy</a>
-        <a href="/docs/">User Guide</a>
+        <a className="nav-cta" href="/docs/">User Guide</a>
       </nav>
     </header>
   );
@@ -218,7 +219,10 @@ function App() {
       <main id="top">
         <section className="hero section-shell">
           <div className="hero-copy">
-            <p className="eyebrow">Systems Security-Theoretic Process Analysis</p>
+            <div className="hero-brand">
+              <img className="hero-seal" src="/sstpa-logo-large.png" alt="SSTPA seal" />
+              <p className="eyebrow">Systems Security-Theoretic Process Analysis</p>
+            </div>
             <h1>Asset‑centric assurance engineering for complex systems.</h1>
             <p className="lede">
               SSTPA Tools is a system security architecture workbench for experts who must turn assets, hazards, controls, countermeasures, requirements, verification, validation, and evidence into a disciplined engineering model.
@@ -227,10 +231,11 @@ function App() {
               Derived from the SSTPA Tool SRS, this product narrative emphasizes what the application is designed to do: scale the SSTPA methodology across large hierarchical systems while preserving analytical clarity, ownership, traceability, and certification support.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#model">Inspect the model</a>
+              <a className="button primary" href="/docs/">Open User Guide</a>
+              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download methodology white paper</a>
+              <a className="button secondary" href="#documentation">Documentation</a>
+              <a className="button secondary" href="#model">Inspect the model</a>
               <a className="button secondary" href="#tools">Explore the tool suite</a>
-              <a className="button secondary" href="/files/SSTPA-Tools-White-Paper-v2.docx" download>Download draft white paper</a>
-              <a className="button secondary" href="/docs/">Open User Guide</a>
             </div>
           </div>
           <HeroPlate />
@@ -359,25 +364,63 @@ function App() {
           </div>
         </section>
 
+        <section className="section-shell documentation" id="documentation">
+          <div className="section-heading center-heading">
+            <p className="eyebrow">Documentation</p>
+            <h2>Read the methodology and operate the workbench.</h2>
+            <OrnamentalRule />
+            <p>
+              Two primary documents support the product story: the SSTPA methodology white paper for theory and assurance framing, and the interactive User Guide for the Tools GUI, Add-on Tools, and Light/Dark parchment themes.
+            </p>
+          </div>
+          <div className="docs-grid">
+            <article className="docs-card">
+              <img className="docs-card-seal" src="/sstpa-logo-large.png" alt="" aria-hidden="true" />
+              <p className="eyebrow">Methodology</p>
+              <h3>SSTPA Methodology White Paper</h3>
+              <p>
+                Technical white paper on Systems Security-Theoretic Process Analysis: asset-centered loss, security requirements, residual-vulnerability disposition, and GSN assurance arguments for complex hierarchical systems.
+              </p>
+              <div className="docs-card-actions">
+                <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download white paper</a>
+                <a className="button secondary" href="#white-paper">Paper details</a>
+              </div>
+            </article>
+            <article className="docs-card">
+              <img className="docs-card-seal" src="/sstpa-menu-logo.png" alt="" aria-hidden="true" />
+              <p className="eyebrow">Product docs</p>
+              <h3>SSTPA Tools User Guide</h3>
+              <p>
+                Static HTML guide covering the GUI, Systems of Interest workflow, Add-on Tools, and paired Light parchment / Dark bluish screenshots from the live application.
+              </p>
+              <div className="docs-card-actions">
+                <a className="button primary" href="/docs/">Open User Guide</a>
+                <a className="button secondary" href="/docs/01-gui.html">Start with the GUI</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section className="section-shell white-paper" id="white-paper">
           <div className="white-paper-card">
             <div>
-              <p className="eyebrow">Draft White Paper</p>
-              <h2>Read the unfinished SSTPA Tools white paper.</h2>
+              <p className="eyebrow">Methodology White Paper</p>
+              <h2>Read the SSTPA methodology technical white paper.</h2>
               <p>
-                The hosted draft introduces Systems Security-Theoretic Process Analysis Tools as a way to engineer, model, analyze, and document system security across large hierarchical systems and certification regimes.
+                The hosted paper introduces Systems Security-Theoretic Process Analysis as a human- and asset-centered systems security engineering methodology for specifying complex engineered systems that must support certification and authorization decisions.
               </p>
               <ul className="paper-points" aria-label="White paper themes">
-                <li><strong>Asset-centric analysis</strong><span>security reasoning framed around assurance on assets.</span></li>
-                <li><strong>Data-centric configuration control</strong><span>authoritative graph data structures under ACID-compliant backend control.</span></li>
-                <li><strong>MBSE interchange</strong><span>SysML 2.0 and KerML 1.0 compliant system views.</span></li>
-                <li><strong>SSTPA context</strong><span>assurances analyzed in system context, at rest and in motion.</span></li>
+                <li><strong>Asset-centric loss</strong><span>Loss defined as compromise of a security attribute on an asset.</span></li>
+                <li><strong>Verifiable requirements</strong><span>Analysis disciplined into security requirements and residual-vulnerability disposition.</span></li>
+                <li><strong>GSN assurance</strong><span>Goal Structuring Notation arguments tied to evidence from V&amp;V.</span></li>
+                <li><strong>MBSE tooling</strong><span>SSTPA Tools implement the methodology on an authoritative graph model.</span></li>
               </ul>
             </div>
-            <aside className="paper-download-panel" aria-label="White paper download">
-              <span className="mono-tag">Version 0.5.7 · April 2026</span>
-              <h3>SSTPA Tools White Paper</h3>
-              <p>Draft DOCX hosted with the static site. Content is subject to revision.</p>
+            <aside className="paper-download-panel" aria-label="Methodology white paper download">
+              <img className="paper-panel-logo" src="/sstpa-menu-logo.png" alt="SSTPA Tools" />
+              <span className="mono-tag">File v14 · September 2026</span>
+              <h3>SSTPA Methodology White Paper</h3>
+              <p>Latest publishable DOCX from the SSTPA White Paper project. Cover revision labeling may lag the file name.</p>
               <dl className="paper-filing">
                 <div>
                   <dt>Format</dt>
@@ -385,14 +428,16 @@ function App() {
                 </div>
                 <div>
                   <dt>Size</dt>
-                  <dd>3.5 MB</dd>
+                  <dd>1.4 MB</dd>
                 </div>
                 <div>
                   <dt>Source</dt>
-                  <dd>SSTPA_White_Paper v2.docx</dd>
+                  <dd>SSTPA_Methodology_White_Paper_v14.docx</dd>
                 </div>
               </dl>
-              <a className="button primary" href="/files/SSTPA-Tools-White-Paper-v2.docx" download>Download DOCX</a>
+              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download DOCX</a>
+              <a className="button secondary paper-secondary-link" href="/docs/">Open User Guide</a>
+              <p className="paper-archive-note">Earlier tools draft still available: <a href="/files/SSTPA-Tools-White-Paper-v2.docx" download>SSTPA-Tools-White-Paper-v2.docx</a></p>
             </aside>
           </div>
         </section>
@@ -416,16 +461,22 @@ function App() {
           <div className="deployment-note">
             <div>
               <strong>Website handoff</strong>
-              <p>This promotional site is a Vite + React static build. Vercel output is <code>dist/</code> after <code>npm run build</code>. The draft white paper is served from <code>public/files/</code>.</p>
+              <p>This promotional site is a Vite + React static build. Vercel output is <code>dist/</code> after <code>npm run build</code>. Logos come from SSTPA Tools <code>Assets/</code>. The methodology white paper and User Guide live under <code>public/files/</code> and <code>public/docs/</code>.</p>
             </div>
-            <a className="button primary" href="/sstpa-menu-logo.png">View source logo asset</a>
+            <div className="deployment-note-actions">
+              <a className="button primary" href="/docs/">Open User Guide</a>
+              <a className="button secondary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download white paper</a>
+            </div>
           </div>
         </section>
       </main>
       <footer className="site-footer">
-        <img src="/sstpa-menu-logo.png" alt="SSTPA Tools" />
+        <div className="footer-brand">
+          <img src="/sstpa-menu-logo.png" alt="SSTPA Tools" />
+          <img className="footer-seal" src="/sstpa-logo-large.png" alt="" aria-hidden="true" />
+        </div>
         <p>
-          Content derived from <strong>SSTPA Tool SRS V62</strong> (SRS version 0.5.9.1, May 15, 2026). Visual system follows the SRS-described <strong>Technical Art Nouveau Control Room</strong>: warm ivory canvas, deep desaturated navy typography, steel-blue linework, and restrained brass accents.
+          Content derived from <strong>SSTPA Tool SRS V62</strong> and the <strong>SSTPA Methodology White Paper</strong>. Visual system follows the SRS-described <strong>Technical Art Nouveau Control Room</strong>: warm ivory canvas, deep desaturated navy typography, steel-blue linework, and restrained brass accents. Logos from official <code>Assets/</code>.
         </p>
         <p className="copyright">© 2025 Nicholas Triska. All rights reserved.</p>
       </footer>

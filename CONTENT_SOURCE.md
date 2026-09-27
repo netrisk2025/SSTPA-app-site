@@ -16,15 +16,20 @@ The website avoids invented customer claims, fake testimonials, and fabricated m
 | SysML/KerML interchange | §3.7 SysML 2.0 / KerML 1.0 Interchange Data Model | Used G2M/M2G and “graph remains authoritative; model text is a projection.” |
 | Frontend and add-on tools | §6 Frontend, §6.4 Add-on Tool Extension Architecture, §6.5 Add-on Tools | Used manifest-based add-on tool architecture and named tools. |
 | Visual style | §6.2.1 GUI Style, §6.2.2 Default_Style.css, §6.3.1 Branding Panel | Used Technical Art Nouveau Control Room, warm ivory canvas, deep navy text, steel-blue linework, restrained brass accents, Source Sans 3 / Cormorant SC / JetBrains Mono. |
-| Draft white paper | `/home/netrisk/Projects/sstpa-tool/SSTPA_White_Paper v2.docx` | Hosted as `public/files/SSTPA-Tools-White-Paper-v2.docx`; page copy is limited to draft metadata and extracted executive-summary themes. |
+| Methodology white paper | `/home/netrisk/Projects/SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx` | Latest publishable methodology paper; hosted as `public/files/SSTPA-Methodology-White-Paper-v14.docx`. Featured in hero CTAs, Documentation section, and White paper section. |
+| Earlier tools draft (archive link) | `/home/netrisk/Projects/sstpa-tool/SSTPA_White_Paper v2.docx` (historical) | Still available at `public/files/SSTPA-Tools-White-Paper-v2.docx` as a secondary archive download only. |
+| Documentation controls | `public/docs/` + nav / hero / `#documentation` | User Guide linked from header CTA, hero primary button, Documentation cards, white-paper panel, and deploy note. |
 | Copyright | §2.2 Component Copyright | Footer uses © 2025 Nicholas Triska. All rights reserved. |
 
 ## Logo-derived visual treatment
 
-Logo assets copied into `public/`:
+Official logo graphics sourced from `/home/netrisk/Projects/SSTPA Tools/Assets/` and copied into `public/`:
 
-- `public/sstpa-menu-logo.png`
-- `public/sstpa-logo-large.png`
+- `public/sstpa-menu-logo.png` ← `Assets/SSTPA Tool Menu Logo.png` (header, footer, docs card)
+- `public/sstpa-logo-large.png` ← `Assets/SSTPA Logo Large.png` (hero seal, docs card, OG image, footer seal)
+- `public/sstpa-app-icon-1024.png` ← `Assets/sstpa-app-icon-1024.png` (favicon / PWA icons)
+
+Derived favicons: `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`.
 
 Palette sampled from the logo:
 
@@ -56,3 +61,15 @@ Path: `public/docs/` (served at `/docs/` after Vite build; copied into `dist/doc
 | Visual style | Existing site palette + SRS §6.2 Technical Art Nouveau Control Room | Ivory/navy/brass in `public/docs/styles.css`. |
 
 Intentional omissions in the User Guide: no passwords, no fabricated metrics, no customer claims.
+
+## Documentation access on the marketing site
+
+| Control | Location | Target |
+|---|---|---|
+| Nav CTA **User Guide** | Sticky header | `/docs/` |
+| Nav **Docs** | Sticky header | `#documentation` |
+| Hero primary buttons | Hero | `/docs/` and methodology DOCX download |
+| Documentation section | `#documentation` | Cards for white paper + User Guide |
+| White paper panel | `#white-paper` | Methodology DOCX + User Guide secondary |
+| Deploy note | `#deploy` | User Guide + white paper download |
+
