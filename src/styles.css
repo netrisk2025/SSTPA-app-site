@@ -136,14 +136,69 @@ a:hover {
   margin: 0 auto;
 }
 
-.eyebrow {
-  margin: 0 0 0.55rem;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-alt);
+.mini-section {
+  padding: clamp(2.25rem, 5vw, 3.75rem) 0;
+}
+
+/* Dual titles: simple (larger, full width) + action (with body) */
+.dual-title {
+  margin: 0 0 1rem;
+}
+
+.dual-title-full {
+  width: 100%;
+}
+
+.simple-title {
+  font-family: 'Cormorant SC', Georgia, serif;
+  color: var(--ink-strong);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.15rem, 4.4vw, 3.55rem);
+  max-width: none;
+  width: 100%;
+}
+
+h1.simple-title {
+  font-size: clamp(2.45rem, 5vw, 4rem);
+}
+
+.action-title {
+  margin: 0.85rem 0 0;
+  font-family: 'Cormorant SC', Georgia, serif;
+  color: var(--ink-strong);
   font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  max-width: 28ch;
+}
+
+.section-body {
+  max-width: 58ch;
+}
+
+.section-body > p,
+.feature-copy > p {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.58;
+}
+
+.section-abstract,
+.section-lede {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.58;
+}
+
+.section-body .action-title,
+.feature-copy .action-title {
+  color: var(--ink-strong);
 }
 
 h1,
@@ -153,26 +208,6 @@ p {
   text-wrap: pretty;
 }
 
-h1,
-h2 {
-  font-family: 'Cormorant SC', Georgia, serif;
-  color: var(--ink-strong);
-  font-weight: 700;
-  line-height: 0.98;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: clamp(2.8rem, 5.5vw, 4.6rem);
-  max-width: 14ch;
-}
-
-h2 {
-  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
-  max-width: 22ch;
-}
-
 h3 {
   margin: 0;
   color: var(--ink-strong);
@@ -180,76 +215,44 @@ h3 {
   line-height: 1.2;
 }
 
-/* ---------- Hero ---------- */
-.hero {
+/* ---------- Methodology (section 1) ---------- */
+.methodology {
+  padding-top: clamp(2.75rem, 6vw, 4.5rem);
+}
+
+.methodology-title-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(240px, 0.7fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: center;
-  padding: clamp(3rem, 7vw, 5.5rem) 0 3.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: start;
+  margin-bottom: 1.35rem;
 }
 
-.hero-copy .lede {
-  margin: 1.15rem 0 0;
-  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
-  line-height: 1.58;
-  color: var(--ink);
-  max-width: 54ch;
+.methodology-title-row .simple-title {
+  grid-column: 1 / -1;
 }
 
-.hero-bullets {
-  list-style: none;
-  margin: 1.35rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.55rem;
-  max-width: 54ch;
-}
-
-.hero-bullets li {
-  position: relative;
-  padding: 0.55rem 0.75rem 0.55rem 1.65rem;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  color: var(--ink);
-  line-height: 1.4;
-  font-size: 0.98rem;
-}
-
-.hero-bullets li::before {
-  content: '';
-  position: absolute;
-  left: 0.7rem;
-  top: 0.95rem;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.6rem;
-}
-
-.hero-logo {
+.methodology-logo {
+  grid-column: 2;
+  justify-self: end;
   display: grid;
   place-items: center;
-  padding: 1.25rem;
+  padding: 0.85rem;
   background: color-mix(in srgb, var(--surface) 90%, transparent);
   border: 1px solid var(--hairline-strong);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-.hero-logo img {
+.methodology-logo img {
   display: block;
-  width: min(100%, 340px);
+  width: min(200px, 38vw);
   height: auto;
-  filter: drop-shadow(0 10px 22px rgba(44, 36, 22, 0.14));
+  filter: drop-shadow(0 8px 18px rgba(44, 36, 22, 0.12));
+}
+
+.methodology-body {
+  max-width: 62ch;
 }
 
 /* ---------- Buttons ---------- */
@@ -299,17 +302,16 @@ h3 {
   color: var(--ink-strong);
 }
 
-/* ---------- Feature rows (System model / GUI) ---------- */
+/* ---------- Feature rows ---------- */
 .feature-row {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(1.25rem, 3vw, 2.5rem);
-  align-items: center;
-  padding: 2.5rem 0;
+  align-items: start;
 }
 
 .feature-row-reverse {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
 }
 
 .feature-row-reverse .feature-copy {
@@ -320,12 +322,13 @@ h3 {
   order: 1;
 }
 
-.feature-copy p {
-  margin: 0.9rem 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.58;
-  max-width: 42ch;
+.feature-copy {
+  max-width: none;
+}
+
+.feature-copy .section-body,
+.feature-copy {
+  max-width: 48ch;
 }
 
 .feature-shot {
@@ -356,48 +359,96 @@ h3 {
   text-align: center;
 }
 
-/* ---------- Tools ---------- */
-.tools-section {
-  padding: 3rem 0 2rem;
+/* ---------- Code block (Cypher) ---------- */
+.code-block {
+  margin: 1.15rem 0 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  background: var(--inset);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.section-heading {
-  max-width: 720px;
-}
-
-.center-heading {
-  text-align: center;
-  margin: 0 auto 1.75rem;
-}
-
-.center-heading h2 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.center-heading p {
-  margin: 0.85rem auto 0;
-  color: var(--muted);
-  font-size: 1.05rem;
+.code-block code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
   line-height: 1.55;
-  max-width: 58ch;
+  color: var(--ink-strong);
+  white-space: pre;
+}
+
+.code-caption {
+  margin: 0.55rem 0 0 !important;
+  font-size: 0.88rem !important;
+  color: var(--muted);
+  max-width: 48ch;
+}
+
+/* ---------- Tools ---------- */
+.tools-section .section-body {
+  max-width: none;
+}
+
+.tools-section .action-title {
+  max-width: 36ch;
+}
+
+.tools-section .section-lede {
+  margin-top: 0.85rem;
+  max-width: 68ch;
+  color: var(--muted);
 }
 
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
+  margin-top: 1.5rem;
+  align-items: start;
 }
 
 .tool-card {
-  padding: 0.95rem 1rem;
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.tool-card.is-open {
+  aspect-ratio: auto;
+  min-height: 100%;
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.tool-card-trigger {
+  appearance: none;
   display: grid;
+  grid-template-rows: auto auto 1fr auto;
   gap: 0.35rem;
   align-content: start;
-  min-height: 118px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.95rem 1rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.tool-card-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .tool-index {
@@ -413,16 +464,42 @@ h3 {
   line-height: 1.05;
 }
 
-.tool-card p {
+.tool-blurb {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.4;
 }
 
+.tool-expand-hint {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.tool-card-detail {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.tool-card-detail[hidden] {
+  display: none;
+}
+
+.tool-card-detail p {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
 /* ---------- Conclude ---------- */
 .conclude {
-  padding: 2.5rem 0 4rem;
+  padding-bottom: 4rem;
 }
 
 .conclude-card {
@@ -437,11 +514,15 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.conclude-card h2 {
-  max-width: 18ch;
+.conclude-card .simple-title {
+  font-size: clamp(1.9rem, 3.5vw, 2.85rem);
 }
 
-.conclude-card p {
+.conclude-card .action-title {
+  max-width: 22ch;
+}
+
+.conclude-card > div > p {
   margin: 0.75rem 0 0;
   color: var(--muted);
   font-size: 1.05rem;
@@ -500,7 +581,15 @@ h3 {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .hero,
+  .methodology-title-row {
+    grid-template-columns: 1fr;
+  }
+
+  .methodology-logo {
+    grid-column: 1;
+    justify-self: start;
+  }
+
   .feature-row,
   .feature-row-reverse,
   .conclude-card {
@@ -545,12 +634,13 @@ h3 {
     width: min(280px, 78vw);
   }
 
-  h1 {
-    font-size: clamp(2.4rem, 12vw, 3.6rem);
-  }
-
   .tool-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    aspect-ratio: auto;
+    min-height: 140px;
   }
 
   .conclude-actions {
