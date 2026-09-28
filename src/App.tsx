@@ -1,154 +1,31 @@
-type Dataset = {
-  name: string;
-  purpose: string;
-  treatment: string;
-};
-
 type Tool = {
   name: string;
-  role: string;
-  output: string;
+  blurb: string;
 };
 
-const srsConstants = [
-  { value: '4', label: 'independently operable product segments' },
-  { value: '6', label: 'backend data sets governed by the model' },
-  { value: '2', label: 'standard text translators: G2M and M2G' },
-  { value: '1', label: 'authoritative Core Data Model graph' },
+const capabilityBullets = [
+  'Asset-centric Loss — compromise of a security attribute on an asset',
+  'Add-on Tools that decompose and analyze each System of Interest',
+  'Evidence-backed Goal Structuring Notation (GSN) assurance arguments',
 ];
 
-const datasets: Dataset[] = [
-  {
-    name: 'Core System Data',
-    purpose: 'The authoritative project graph rooted in Capability and System-of-Interest subgraphs.',
-    treatment: 'Neo4j-backed validation of labels, relationships, SoI membership, cardinality, and bounded traversals.',
-  },
-  {
-    name: 'Reference Data',
-    purpose: 'Packaged cybersecurity and assurance frameworks such as NIST SP 800-53, MITRE ATT&CK / ATLAS, EMB3D, and survivability attributes.',
-    treatment: 'Read-only source material that can be reviewed, searched, referenced, and cloned into user-owned core nodes.',
-  },
-  {
-    name: 'User Data',
-    purpose: 'Users, admins, mailboxes, ownership, creator identity, and notifications.',
-    treatment: 'Supports large engineering teams and ownership-aware change notification through Message Center.',
-  },
-  {
-    name: 'Product, Help, Example Data',
-    purpose: 'Versioning, licensing, hover help, tutorial exemplars, and resettable example projects.',
-    treatment: 'Kept distinct from engineering data so the authoritative model remains traceable and auditable.',
-  },
+const addonTools: Tool[] = [
+  { name: 'Navigator', blurb: 'Select a System of Interest, traverse hierarchy, clone, and associate.' },
+  { name: 'Requirements', blurb: 'Allocate, parent, and verify security and capability requirements.' },
+  { name: 'Connection', blurb: 'Model Connections and Interface participants across systems.' },
+  { name: 'Asset Manager', blurb: 'Define Assets, Regime, Criticality, and security Assurances.' },
+  { name: 'State', blurb: 'Capture security state-transition behavior for the SoI.' },
+  { name: 'Context', blurb: 'Place Environments, hazards, and validity relationships around the SoI.' },
+  { name: 'Reference', blurb: 'Research and assign framework material such as ATT&CK, NIST, and EMB3D.' },
+  { name: 'Flow', blurb: 'Analyze Functional Flow and STPA-style Control Flow.' },
+  { name: 'Controls', blurb: 'Build the Security Controls baseline and validation criteria.' },
+  { name: 'Trace', blurb: 'Follow state-scoped Asset traces through the model.' },
+  { name: 'Attack', blurb: 'Project actionable Attacks onto susceptible entities.' },
+  { name: 'Loss', blurb: 'Build Structured Attack Trees and residual-vulnerability findings.' },
+  { name: 'Goal Keeper', blurb: 'Assemble GSN assurance arguments tied to V&V evidence.' },
+  { name: 'Use-Case', blurb: 'Describe boundary behavior and operational use contexts.' },
+  { name: 'Reports', blurb: 'Produce figures and evidence packages for review and sustainment.' },
 ];
-
-const nodeGroups = [
-  {
-    group: 'Project / hierarchy',
-    labels: ['Capability', 'Sandbox', 'System'],
-  },
-  {
-    group: 'Structure & behavior',
-    labels: ['Environment', 'Connection', 'Interface', 'Function', 'Element', 'State'],
-  },
-  {
-    group: 'Intent & specification',
-    labels: ['Purpose', 'Use Case', 'Constraint', 'Requirement', 'Validation', 'Verification'],
-  },
-  {
-    group: 'Security analysis',
-    labels: ['Asset', 'Regime', 'Hazard', 'Loss', 'Attack', 'Countermeasure', 'Control'],
-  },
-  {
-    group: 'Assurance case',
-    labels: ['Goal', 'Strategy', 'Context', 'Assumption', 'Justification', 'Solution'],
-  },
-];
-
-const toolSuite: Tool[] = [
-  {
-    name: 'Navigator',
-    role: 'Select a System of Interest, traverse hierarchy, locate HIDs / UUIDs / names, and support controlled cross-SoI association.',
-    output: 'Hierarchy views, clone selections, connection participant displays, exportable captures.',
-  },
-  {
-    name: 'Requirements',
-    role: 'Manage requirement hierarchy and allocation across Capability, Purpose, Interface, Function, Element, Countermeasure, and related nodes.',
-    output: 'SysML-compliant requirement visualization and traceable requirement structure.',
-  },
-  {
-    name: 'Reference',
-    role: 'Search, review, and associate NIST / MITRE / EMB3D / user-created reference framework content.',
-    output: 'Controlled reference lookup and clone workflows without mutating authoritative reference data.',
-  },
-  {
-    name: 'State',
-    role: 'Work with State nodes, transition relationships, hazards, countermeasures, requirements, and environment validity.',
-    output: 'State diagrams, relationship criteria views, PNG / SVG exports, SysML model text panels.',
-  },
-  {
-    name: 'Loss',
-    role: 'Analyze asset loss as a structured attack tree with validation snapshots, layout persistence, and status findings.',
-    output: 'Attack-tree evidence, invalidation findings, reporting figures, and certification-support artifacts.',
-  },
-  {
-    name: 'Goal Keeper',
-    role: 'Organize assurance argumentation using Goal Structured Notation concepts tied to evidence-bearing nodes.',
-    output: 'Certification package support and assurance case structure across assets, loss, verification, and validation.',
-  },
-  {
-    name: 'Use-Case / Connection / Attack / Controls',
-    role: 'Specialized tools for boundary behavior, cross-system interfaces, attack projection, and control-countermeasure reasoning.',
-    output: 'Focused analytical views that preserve Core Data Model relationship rules.',
-  },
-  {
-    name: 'Message Center & Admin',
-    role: 'Enforce ownership-aware collaboration, notifications, user enrollment, and administrative lifecycle control.',
-    output: 'Internal messaging, account control, and accountable change management.',
-  },
-];
-
-const workflow = [
-  'Capture capability, customer constraints, and criticality regimes.',
-  'Model the tier architecture as Systems of Interest, Elements, Functions, Interfaces, Assets, States, and Environments.',
-  'Allocate capability requirements through Purpose and derive system-security requirements for each SoI.',
-  'Identify Connections, Hazards, Loss conditions, Security Controls, and Countermeasures.',
-  'Generate and verify Requirements that realize the Countermeasures and preserve Asset assurance.',
-  'Decompose child Systems from Elements and repeat the analysis through the system tree.',
-  'Verify implementation and validate each realized System against its Purpose and Environment.',
-  'Assemble the evidence body needed for external certification, approval, and sustainment.',
-];
-
-const architectureSegments = [
-  {
-    segment: 'Startup Software',
-    description: 'Authenticates the user and starts the Backend and Frontend for the MVP single-machine workflow.',
-  },
-  {
-    segment: 'Backend',
-    description: 'Hosts the authoritative graph, validates mutations, assigns HID / UUID identity, enforces SoI boundaries, and controls ACID transactions.',
-  },
-  {
-    segment: 'Frontend',
-    description: 'A desktop GUI and dynamic Add-on Tool shell for inspecting, editing, staging, validating, and committing graph changes.',
-  },
-  {
-    segment: 'Installer',
-    description: 'Packages Startup Software, Frontend, and Backend for customer delivery across supported operating environments.',
-  },
-];
-
-function OrnamentalRule() {
-  return (
-    <div className="ornamental-rule" aria-hidden="true">
-      <span />
-      <svg viewBox="0 0 220 28" role="presentation">
-        <path d="M4 14 C34 14 30 2 55 2 C82 2 74 26 108 26 C142 26 138 2 165 2 C190 2 186 14 216 14" />
-        <path d="M73 14 C88 4 101 4 110 14 C119 24 132 24 147 14" />
-        <circle cx="110" cy="14" r="3.5" />
-      </svg>
-      <span />
-    </div>
-  );
-}
 
 function Header() {
   return (
@@ -157,58 +34,12 @@ function Header() {
         <img src="/sstpa-menu-logo.png" alt="SSTPA Tools logo" />
       </a>
       <nav className="site-nav" aria-label="Primary navigation">
-        <a href="#method">Method</a>
-        <a href="#model">Model</a>
-        <a href="#tools">Tools</a>
-        <a href="#interchange">Interchange</a>
-        <a href="#documentation">Docs</a>
-        <a href="#white-paper">White paper</a>
-        <a href="#deploy">Deploy</a>
-        <a className="nav-cta" href="/docs/">User Guide</a>
+        <a href="/docs/">User Guide</a>
+        <a className="nav-cta" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>
+          White paper
+        </a>
       </nav>
     </header>
-  );
-}
-
-function HeroPlate() {
-  const rows = [
-    { node: 'Asset', relationship: 'is protected through' },
-    { node: 'Hazard', relationship: '<-[:MITIGATES]-' },
-    { node: 'SecurityControl', relationship: '<-[:SATISFIES]-' },
-    { node: 'Countermeasure', relationship: '-[:HAS_REQUIREMENT]->' },
-    { node: 'Requirement', relationship: '-[:VERIFIED_BY]->' },
-    { node: 'Verification', relationship: 'produces evidence for assurance' },
-  ];
-
-  return (
-    <aside className="hero-plate" aria-label="SSTPA assurance chain diagram">
-      <div className="plate-title-row">
-        <span className="mono-tag">CURRENT SOI</span>
-        <span className="status-pill">Backend validation before commit</span>
-      </div>
-      <div className="assurance-chain">
-        {rows.map((row) => (
-          <div className="chain-row" key={row.node}>
-            <span className="node-token">(:{row.node})</span>
-            <span className="relationship-token">{row.relationship}</span>
-          </div>
-        ))}
-      </div>
-      <dl className="plate-register">
-        <div>
-          <dt>Identity</dt>
-          <dd>HID · uuid · Owner · Creator · VersionID</dd>
-        </div>
-        <div>
-          <dt>Boundary</dt>
-          <dd>System of Interest membership by HID index</dd>
-        </div>
-        <div>
-          <dt>Discipline</dt>
-          <dd>Directed relationships · no unbounded recursive traversals</dd>
-        </div>
-      </dl>
-    </aside>
   );
 }
 
@@ -219,253 +50,115 @@ function App() {
       <main id="top">
         <section className="hero section-shell">
           <div className="hero-copy">
-            <div className="hero-brand">
-              <img className="hero-seal" src="/sstpa-logo-large.png" alt="SSTPA seal" />
-              <p className="eyebrow">Systems Security-Theoretic Process Analysis</p>
-            </div>
-            <h1>Asset‑centric assurance engineering for complex systems.</h1>
+            <p className="eyebrow">Systems Security-Theoretic Process Analysis</p>
+            <h1>SSTPA Methodology</h1>
             <p className="lede">
-              SSTPA Tools is a system security architecture workbench for experts who must turn assets, hazards, controls, countermeasures, requirements, verification, validation, and evidence into a disciplined engineering model.
+              System Security-Theoretic Process Analysis (SSTPA) is a human- and asset-centered systems
+              security engineering methodology for developing secure complex hierarchical engineered
+              systems so they can support certification and authorization decisions. Loss is defined as
+              the compromise of a security attribute on an asset; analysis is disciplined into verifiable
+              security requirements, residual-vulnerability disposition, and Goal Structuring Notation
+              (GSN) assurance arguments. SSTPA Tools implement the methodology as an MBSE environment on
+              a graph database.
             </p>
-            <p>
-              Derived from the SSTPA Tool SRS, this product narrative emphasizes what the application is designed to do: scale the SSTPA methodology across large hierarchical systems while preserving analytical clarity, ownership, traceability, and certification support.
-            </p>
+            <ul className="hero-bullets" aria-label="Core capabilities">
+              {capabilityBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <div className="hero-actions">
-              <a className="button primary" href="/docs/">Open User Guide</a>
-              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download methodology white paper</a>
-              <a className="button secondary" href="#documentation">Documentation</a>
-              <a className="button secondary" href="#model">Inspect the model</a>
-              <a className="button secondary" href="#tools">Explore the tool suite</a>
+              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>
+                Download white paper
+              </a>
+              <a className="button secondary" href="/docs/">
+                Open User Guide
+              </a>
             </div>
           </div>
-          <HeroPlate />
+          <aside className="hero-logo" aria-label="SSTPA logo">
+            <img src="/sstpa-logo-large.png" alt="SSTPA Tools logo" />
+          </aside>
         </section>
 
-        <section className="stat-band" aria-label="SRS-derived system constants">
-          {srsConstants.map((item) => (
-            <div className="stat-cell" key={item.label}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </section>
-
-        <section className="section-shell twin-panel" id="method">
-          <div className="section-heading sticky-heading">
-            <p className="eyebrow">Methodology</p>
-            <h2>Built around the way security architects actually decompose and certify systems.</h2>
-            <OrnamentalRule />
+        <section className="section-shell feature-row" id="system-model">
+          <div className="feature-copy">
+            <p className="eyebrow">System model</p>
+            <h2>One authoritative graph for each System of Interest.</h2>
             <p>
-              SSTPA extends STPA for system security by making the analysis asset-centric and criticality-aware. The work proceeds top-down through decomposition and bottom-up through realization, verification, validation, and evidence assembly.
+              SSTPA Tools keep architecture, assets, hazards, controls, requirements, and evidence in a
+              single validated model. Navigate the hierarchy, select an SoI, and keep every analytical view
+              aligned to the same underlying data.
             </p>
           </div>
-          <ol className="workflow-list">
-            {workflow.map((step, index) => (
-              <li key={step}>
-                <span className="step-index">{String(index + 1).padStart(2, '0')}</span>
-                <p>{step}</p>
-              </li>
-            ))}
-          </ol>
+          <figure className="feature-shot">
+            <img
+              src="/docs/screenshots/light/tool-navigator.png"
+              alt="SSTPA Tools Navigator showing System of Interest hierarchy"
+              loading="lazy"
+            />
+            <figcaption>Navigator — Systems of Interest and hierarchy</figcaption>
+          </figure>
         </section>
 
-        <section className="section-shell" id="model">
+        <section className="section-shell feature-row feature-row-reverse" id="gui">
+          <div className="feature-copy">
+            <p className="eyebrow">GUI</p>
+            <h2>A parchment workbench for staged editing and commit.</h2>
+            <p>
+              The desktop GUI presents Branding, Control Panel, SoI context, Main Panel cards, and a Data
+              Drawer for inspect-and-edit. Changes stage locally, then commit after backend validation —
+              so the graph remains the source of truth.
+            </p>
+          </div>
+          <figure className="feature-shot">
+            <img
+              src="/docs/screenshots/light/data-drawer-edit.png"
+              alt="SSTPA Tools Data Drawer edit view in Light parchment theme"
+              loading="lazy"
+            />
+            <figcaption>Data Drawer — inspect and edit model properties</figcaption>
+          </figure>
+        </section>
+
+        <section className="section-shell tools-section" id="tools">
           <div className="section-heading center-heading">
-            <p className="eyebrow">Authoritative Graph Model</p>
-            <h2>One core model for backend validation, frontend editing, add-on tools, reports, and interchange.</h2>
+            <p className="eyebrow">Add-on tools</p>
+            <h2>Specialized instruments in a typical order of use.</h2>
             <p>
-              The SRS specifies the Core Data Model as the authoritative graph. Model text, diagrams, report figures, and tool views are projections over validated data rather than disconnected documents.
+              Add-on Tools follow the SSTPA methodology workflow. The sequence below implies a useful
+              path through analysis — it does not mandate a rigid procedure. Details live in the User
+              Guide and white paper.
             </p>
           </div>
-          <div className="dataset-grid">
-            {datasets.map((dataset) => (
-              <article className="dataset-card" key={dataset.name}>
-                <h3>{dataset.name}</h3>
-                <p>{dataset.purpose}</p>
-                <small>{dataset.treatment}</small>
+          <div className="tool-grid">
+            {addonTools.map((tool, index) => (
+              <article className="tool-card" key={tool.name}>
+                <span className="tool-index">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{tool.name}</h3>
+                <p>{tool.blurb}</p>
               </article>
             ))}
           </div>
-          <div className="node-ledger" aria-label="Core model node groups">
-            {nodeGroups.map((group) => (
-              <div className="ledger-group" key={group.group}>
-                <h3>{group.group}</h3>
-                <div className="token-cloud">
-                  {group.labels.map((label) => (
-                    <span key={label}>:{label.replaceAll(' ', '')}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
         </section>
 
-        <section className="section-shell proof-section">
-          <div className="proof-panel">
-            <p className="eyebrow">Security Assurance Chain</p>
-            <h2>Trace protection from value to evidence without losing the engineering thread.</h2>
-            <p>
-              The SRS describes a security assurance relationship chain that begins with the Asset and proceeds through Hazard, Security Control, Countermeasure, Requirement, and Verification. SSTPA Tools makes that chain navigable, stageable, validated, and reportable.
-            </p>
-          </div>
-          <div className="chain-diagram" aria-label="Asset to verification chain">
-            {['Asset', 'Hazard', 'Security Control', 'Countermeasure', 'Requirement', 'Verification'].map((item, index) => (
-              <div className="chain-node" key={item}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{item}</strong>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-shell" id="tools">
-          <div className="section-heading center-heading">
-            <p className="eyebrow">Manifest-based Add-on Tools</p>
-            <h2>Specialized analytical instruments, not a generic dashboard.</h2>
-            <p>
-              Add-on Tools are specified as manifest-registered extensions that consume the active GUI theme, receive launch context, use backend capabilities, and follow the same staged-edit and Commit confirmation model.
-            </p>
-          </div>
-          <div className="tool-table" role="table" aria-label="SSTPA add-on tools">
-            <div className="table-header" role="row">
-              <span role="columnheader">Tool</span>
-              <span role="columnheader">Analytical role</span>
-              <span role="columnheader">Produced artifact</span>
-            </div>
-            {toolSuite.map((tool) => (
-              <div className="table-row" role="row" key={tool.name}>
-                <strong role="cell">{tool.name}</strong>
-                <span role="cell">{tool.role}</span>
-                <span role="cell">{tool.output}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-shell interchange" id="interchange">
-          <div>
-            <p className="eyebrow">SysML 2.0 / KerML 1.0 Interchange</p>
-            <h2>The graph remains authoritative; model text is a controlled projection.</h2>
-            <p>
-              SSTPA Tools is specified to maintain standard textual projection into SysML 2.0 and KerML 1.0. G2M exports the Core Data Model into standard model text, while M2G imports model text as staged Core Data Model mutations that only become authoritative after backend validation and Commit.
-            </p>
-          </div>
-          <div className="translator-cards">
-            <article>
-              <span className="mono-tag">G2M</span>
-              <h3>Graph to Model</h3>
-              <p>Exports Core System Data and Example Data into standard SysML / KerML textual notation using the SSTPA Profile Library.</p>
-            </article>
-            <article>
-              <span className="mono-tag">M2G</span>
-              <h3>Model to Graph</h3>
-              <p>Turns authored model text into staged graph mutations, preserving backend validation as the final authority.</p>
-            </article>
-          </div>
-        </section>
-
-        <section className="section-shell documentation" id="documentation">
-          <div className="section-heading center-heading">
-            <p className="eyebrow">Documentation</p>
-            <h2>Read the methodology and operate the workbench.</h2>
-            <OrnamentalRule />
-            <p>
-              Two primary documents support the product story: the SSTPA methodology white paper for theory and assurance framing, and the interactive User Guide for the Tools GUI, Add-on Tools, and Light/Dark parchment themes.
-            </p>
-          </div>
-          <div className="docs-grid">
-            <article className="docs-card">
-              <img className="docs-card-seal" src="/sstpa-logo-large.png" alt="" aria-hidden="true" />
-              <p className="eyebrow">Methodology</p>
-              <h3>SSTPA Methodology White Paper</h3>
-              <p>
-                Technical white paper on Systems Security-Theoretic Process Analysis: asset-centered loss, security requirements, residual-vulnerability disposition, and GSN assurance arguments for complex hierarchical systems.
-              </p>
-              <div className="docs-card-actions">
-                <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download white paper</a>
-                <a className="button secondary" href="#white-paper">Paper details</a>
-              </div>
-            </article>
-            <article className="docs-card">
-              <img className="docs-card-seal" src="/sstpa-menu-logo.png" alt="" aria-hidden="true" />
-              <p className="eyebrow">Product docs</p>
-              <h3>SSTPA Tools User Guide</h3>
-              <p>
-                Static HTML guide covering the GUI, Systems of Interest workflow, Add-on Tools, and paired Light parchment / Dark bluish screenshots from the live application.
-              </p>
-              <div className="docs-card-actions">
-                <a className="button primary" href="/docs/">Open User Guide</a>
-                <a className="button secondary" href="/docs/01-gui.html">Start with the GUI</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section className="section-shell white-paper" id="white-paper">
-          <div className="white-paper-card">
+        <section className="section-shell conclude" id="documentation">
+          <div className="conclude-card">
             <div>
-              <p className="eyebrow">Methodology White Paper</p>
-              <h2>Read the SSTPA methodology technical white paper.</h2>
+              <p className="eyebrow">Documentation</p>
+              <h2>Read the methodology. Operate the workbench.</h2>
               <p>
-                The hosted paper introduces Systems Security-Theoretic Process Analysis as a human- and asset-centered systems security engineering methodology for specifying complex engineered systems that must support certification and authorization decisions.
+                Download the SSTPA Methodology White Paper for theory and assurance framing. Open the
+                User Guide for the GUI, Add-on Tools, Light/Dark parchment themes, and step-by-step
+                workflow guidance.
               </p>
-              <ul className="paper-points" aria-label="White paper themes">
-                <li><strong>Asset-centric loss</strong><span>Loss defined as compromise of a security attribute on an asset.</span></li>
-                <li><strong>Verifiable requirements</strong><span>Analysis disciplined into security requirements and residual-vulnerability disposition.</span></li>
-                <li><strong>GSN assurance</strong><span>Goal Structuring Notation arguments tied to evidence from V&amp;V.</span></li>
-                <li><strong>MBSE tooling</strong><span>SSTPA Tools implement the methodology on an authoritative graph model.</span></li>
-              </ul>
             </div>
-            <aside className="paper-download-panel" aria-label="Methodology white paper download">
-              <img className="paper-panel-logo" src="/sstpa-menu-logo.png" alt="SSTPA Tools" />
-              <span className="mono-tag">File v14 · September 2026</span>
-              <h3>SSTPA Methodology White Paper</h3>
-              <p>Latest publishable DOCX from the SSTPA White Paper project. Cover revision labeling may lag the file name.</p>
-              <dl className="paper-filing">
-                <div>
-                  <dt>Format</dt>
-                  <dd>Microsoft Word document</dd>
-                </div>
-                <div>
-                  <dt>Size</dt>
-                  <dd>1.4 MB</dd>
-                </div>
-                <div>
-                  <dt>Source</dt>
-                  <dd>SSTPA_Methodology_White_Paper_v14.docx</dd>
-                </div>
-              </dl>
-              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download DOCX</a>
-              <a className="button secondary paper-secondary-link" href="/docs/">Open User Guide</a>
-              <p className="paper-archive-note">Earlier tools draft still available: <a href="/files/SSTPA-Tools-White-Paper-v2.docx" download>SSTPA-Tools-White-Paper-v2.docx</a></p>
-            </aside>
-          </div>
-        </section>
-
-        <section className="section-shell architecture" id="deploy">
-          <div className="section-heading center-heading">
-            <p className="eyebrow">Product Architecture</p>
-            <h2>Designed for air-gapped expert work now, with a path to larger enterprise deployments.</h2>
-            <p>
-              The MVP places Backend and Frontend on a single physical system while supporting multiple users and administrators operating through separate Frontend instances connected to one Backend server.
-            </p>
-          </div>
-          <div className="segment-grid">
-            {architectureSegments.map((segment) => (
-              <article className="segment-card" key={segment.segment}>
-                <h3>{segment.segment}</h3>
-                <p>{segment.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="deployment-note">
-            <div>
-              <strong>Website handoff</strong>
-              <p>This promotional site is a Vite + React static build. Vercel output is <code>dist/</code> after <code>npm run build</code>. Logos come from SSTPA Tools <code>Assets/</code>. The methodology white paper and User Guide live under <code>public/files/</code> and <code>public/docs/</code>.</p>
-            </div>
-            <div className="deployment-note-actions">
-              <a className="button primary" href="/docs/">Open User Guide</a>
-              <a className="button secondary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>Download white paper</a>
+            <div className="conclude-actions">
+              <a className="button primary" href="/files/SSTPA-Methodology-White-Paper-v14.docx" download>
+                Download white paper
+              </a>
+              <a className="button secondary" href="/docs/">
+                Open User Guide
+              </a>
             </div>
           </div>
         </section>
@@ -473,10 +166,10 @@ function App() {
       <footer className="site-footer">
         <div className="footer-brand">
           <img src="/sstpa-menu-logo.png" alt="SSTPA Tools" />
-          <img className="footer-seal" src="/sstpa-logo-large.png" alt="" aria-hidden="true" />
         </div>
         <p>
-          Content derived from <strong>SSTPA Tool SRS V62</strong> and the <strong>SSTPA Methodology White Paper</strong>. Visual system follows the SRS-described <strong>Technical Art Nouveau Control Room</strong>: warm ivory canvas, deep desaturated navy typography, steel-blue linework, and restrained brass accents. Logos from official <code>Assets/</code>.
+          SSTPA Tools implement the SSTPA methodology as an MBSE workbench. Methodology detail is in the
+          white paper; product operation is in the <a href="/docs/">User Guide</a>.
         </p>
         <p className="copyright">© 2025 Nicholas Triska. All rights reserved.</p>
       </footer>
