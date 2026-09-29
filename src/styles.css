@@ -220,21 +220,28 @@ h3 {
   padding-top: clamp(2.75rem, 6vw, 4.5rem);
 }
 
-.methodology-title-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem 1.5rem;
-  align-items: start;
-  margin-bottom: 1.35rem;
+.methodology > .dual-title {
+  margin-bottom: 0.55rem;
 }
 
-.methodology-title-row .simple-title {
-  grid-column: 1 / -1;
+.methodology-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem 1.75rem;
+  align-items: start;
+}
+
+.methodology-body {
+  max-width: none;
+}
+
+.methodology-body > .section-abstract {
+  margin-top: 0;
 }
 
 .methodology-logo {
-  grid-column: 2;
-  justify-self: end;
+  justify-self: stretch;
+  align-self: start;
   display: grid;
   place-items: center;
   padding: 0.85rem;
@@ -242,17 +249,14 @@ h3 {
   border: 1px solid var(--hairline-strong);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  min-height: 100%;
 }
 
 .methodology-logo img {
   display: block;
-  width: min(200px, 38vw);
+  width: min(280px, 100%);
   height: auto;
   filter: drop-shadow(0 8px 18px rgba(44, 36, 22, 0.12));
-}
-
-.methodology-body {
-  max-width: 62ch;
 }
 
 /* ---------- Buttons ---------- */
@@ -359,6 +363,32 @@ h3 {
   text-align: center;
 }
 
+.feature-media {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.video-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  padding: 0.65rem;
+  background: color-mix(in srgb, var(--inset) 85%, var(--surface));
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.video-placeholder-label {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ---------- Code block (Cypher) ---------- */
 .code-block {
   margin: 1.15rem 0 0;
@@ -386,16 +416,25 @@ h3 {
 }
 
 /* ---------- Tools ---------- */
+.tools-section .dual-title {
+  text-align: center;
+}
+
 .tools-section .section-body {
   max-width: none;
+  text-align: center;
 }
 
 .tools-section .action-title {
   max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tools-section .section-lede {
   margin-top: 0.85rem;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 68ch;
   color: var(--muted);
 }
@@ -581,13 +620,17 @@ h3 {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .methodology-title-row {
+  .methodology-split {
     grid-template-columns: 1fr;
   }
 
   .methodology-logo {
-    grid-column: 1;
-    justify-self: start;
+    justify-self: stretch;
+    min-height: 0;
+  }
+
+  .methodology-logo img {
+    width: min(220px, 70vw);
   }
 
   .feature-row,

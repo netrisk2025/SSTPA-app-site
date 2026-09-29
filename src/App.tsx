@@ -200,29 +200,31 @@ function App() {
       <main id="top">
         {/* 1. Methodology */}
         <section className="section-shell mini-section methodology" id="methodology">
-          <header className="dual-title dual-title-full methodology-title-row">
+          <header className="dual-title dual-title-full">
             <h1 className="simple-title">Systems Security-Theoretic Process Analysis</h1>
+          </header>
+          <div className="methodology-split">
+            <div className="section-body methodology-body">
+              <p className="section-abstract">
+                System Security-Theoretic Process Analysis (SSTPA) is a human- and asset-centered systems
+                security engineering methodology for developing secure complex hierarchical engineered
+                systems so they can support certification and authorization decisions. Loss is defined as
+                the compromise of a security attribute on an asset; analysis is disciplined into verifiable
+                security requirements, residual-vulnerability disposition, and Goal Structuring Notation
+                (GSN) assurance arguments.
+              </p>
+              <p className="action-title">
+                Implement the methodology as an MBSE workbench on a living graph model.
+              </p>
+              <p>
+                SSTPA Tools carry the methodology into practice: architecture, assets, hazards, controls,
+                requirements, and evidence stay aligned to one authoritative system model so
+                assurance arguments remain traceable as the hierarchy deepens.
+              </p>
+            </div>
             <aside className="methodology-logo" aria-label="SSTPA logo">
               <img src="/sstpa-logo-large.png" alt="SSTPA Tools logo" />
             </aside>
-          </header>
-          <div className="section-body methodology-body">
-            <p className="section-abstract">
-              System Security-Theoretic Process Analysis (SSTPA) is a human- and asset-centered systems
-              security engineering methodology for developing secure complex hierarchical engineered
-              systems so they can support certification and authorization decisions. Loss is defined as
-              the compromise of a security attribute on an asset; analysis is disciplined into verifiable
-              security requirements, residual-vulnerability disposition, and Goal Structuring Notation
-              (GSN) assurance arguments.
-            </p>
-            <p className="action-title">
-              Implement the methodology as an MBSE workbench on a living graph model.
-            </p>
-            <p>
-              SSTPA Tools carry the methodology into practice: architecture, assets, hazards, controls,
-              requirements, and evidence stay aligned to one authoritative System of Interest model so
-              assurance arguments remain traceable as the hierarchy deepens.
-            </p>
           </div>
         </section>
 
@@ -262,14 +264,23 @@ ORDER BY tier, system`}</code>
                 Interest with tier and purpose properties.
               </p>
             </div>
-            <figure className="feature-shot">
-              <img
-                src="/docs/screenshots/light/data-drawer-edit.png"
-                alt="SSTPA Tools Data Drawer editing model properties in the Light parchment theme"
-                loading="lazy"
-              />
-              <figcaption>Data Drawer — inspect and edit model properties</figcaption>
-            </figure>
+            <div className="feature-media">
+              <figure className="feature-shot">
+                <img
+                  src="/docs/screenshots/light/data-drawer-edit.png"
+                  alt="SSTPA Tools Data Drawer editing model properties in the Light parchment theme"
+                  loading="lazy"
+                />
+                <figcaption>Data Drawer — inspect and edit model properties</figcaption>
+              </figure>
+              <div
+                className="video-placeholder"
+                role="img"
+                aria-label="Video coming soon"
+              >
+                <span className="video-placeholder-label">Video coming soon</span>
+              </div>
+            </div>
           </div>
         </section>
 
