@@ -65,3 +65,7 @@ The supplied FireSat model deliberately omits Assets, trace relationships, Use C
 `public/audio/scripts.json` contains 22 source-grounded scripts and identical accessible transcripts: home, tools, methodology, installation-admin, workspace, and all 17 add-ons. Each script has 195–208 words (approximately 90–96 seconds at 130 words per minute), source references, and an estimated duration. Actual audio must be checked after rendering.
 
 The requested production voice is the **Systems** voice in WhiteKnight Studio. Scripts are original adaptations of the user's local source material. Playback is user initiated; video demonstrations remain silent. Script presence is not evidence that an audio render has completed. Register playable audio only after its file and measured duration are verified.
+
+## Runtime verification note
+
+The recorded current Admin interface marks Sandbox Management as under construction. Admin page copy and its unrendered narration explicitly state that limitation. The installation narration describes the available administrative views without promising completed sandbox operations. Empty Reference, Flow, Use-Case, or Controls views depend on the loaded reference and tutorial data and are not presented as populated shipped records.

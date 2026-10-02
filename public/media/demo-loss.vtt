@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Loss — FireSat screen walkthrough. Silent, read-only navigation.
+
+00:00:03.000 --> 00:00:10.000
+Trace Coverage connects the selected loss to the asset, environment, and operating states.
+
+00:00:10.000 --> 00:00:17.000
+Inspect the existing loss-specific attack tree without rebuilding it.
+
+00:00:17.000 --> 00:00:24.000
+Path Analysis separates the blocked injection path from the allowed residual jamming path.
+
+00:00:24.000 --> 00:00:31.000
+Inspect metrics alongside the same loss, asset, and environment context.

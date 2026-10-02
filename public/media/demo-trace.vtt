@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Trace — FireSat screen walkthrough. Silent, read-only navigation.
+
+00:00:03.000 --> 00:00:10.000
+Select Fire Detection Data to inspect its state-scoped trace.
+
+00:00:10.000 --> 00:00:17.000
+Validation identifies the three entities without traces for this asset.
+
+00:00:17.000 --> 00:00:24.000
+Review how traced assets contribute criticality and assurance to system entities.

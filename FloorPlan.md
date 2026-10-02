@@ -8,6 +8,7 @@
 - `public/Audio/` — Preserved original Systems voice recording.
 - `public/audio/` — Source-grounded narration scripts and completed White Knight audio, registered only after verification.
 - `public/media/` — Verified silent FireSat screen walkthroughs, captions, posters, and `demos.json`; existing introduction film remains preserved.
+- `scripts/` — Release validation for narration coverage, FireSat walkthrough assets, captions, and preserved downloads.
 - `dist/` — Generated production site, recreated by `npm run build`.
 - `node_modules/` — Installed build dependencies.
 

@@ -384,7 +384,7 @@
       "capabilities": [
         "Inspect and filter the account roster",
         "Manage account lifecycle and administrator authorization",
-        "Review ownership transfer and sandbox management",
+        "Inspect ownership transfer and the current sandbox view",
         "Inspect backend status and product information"
       ],
       "exampleSteps": [
@@ -398,7 +398,8 @@
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
       "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
-      "narrationSlug": "admin"
+      "narrationSlug": "admin",
+      "runtimeNote": "Sandbox Management is present as a view; further management functions are under construction in the current application."
     },
     {
       "slug": "attack",

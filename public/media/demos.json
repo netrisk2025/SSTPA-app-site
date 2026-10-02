@@ -1,0 +1,369 @@
+{
+  "navigator": {
+    "src": "/media/demo-navigator.mp4",
+    "poster": "/media/demo-navigator-poster.jpg",
+    "captions": "/media/demo-navigator.vtt",
+    "title": "Navigator \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Locate Fire Detection Payload within the FireSat hierarchy.",
+      "Reveal the current system contents and switch the diagram to name labels.",
+      "Use Locate mode to inspect model entities without changing the model."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "workspace": {
+    "src": "/media/demo-workspace.mp4",
+    "poster": "/media/demo-workspace-poster.jpg",
+    "captions": "/media/demo-workspace.vtt",
+    "title": "The engineering workspace \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Work within FireSat: Fire Detection Payload is the current System of Interest.",
+      "Expand the Function section to review payload behavior.",
+      "Inspect a function in the Data Drawer: properties, relationships, and tool access."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "requirements": {
+    "src": "/media/demo-requirements.mp4",
+    "poster": "/media/demo-requirements-poster.jpg",
+    "captions": "/media/demo-requirements.vtt",
+    "title": "Requirements \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Review FireSat requirement statements, allocation targets, and completeness flags.",
+      "Follow an individual requirement into its hierarchy.",
+      "Return to Allocation View to compare requirement statements and allocated entities."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "state": {
+    "src": "/media/demo-state.mp4",
+    "poster": "/media/demo-state-poster.jpg",
+    "captions": "/media/demo-state.vtt",
+    "title": "State \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "View the payload states and their transition in Diagram.",
+      "Inspect the environment assigned to each operating state.",
+      "Review transition criteria and state relationships."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "flow": {
+    "src": "/media/demo-flow.mp4",
+    "poster": "/media/demo-flow-poster.jpg",
+    "captions": "/media/demo-flow.vtt",
+    "title": "Flow \u2014 FireSat",
+    "duration": "0:17",
+    "durationSeconds": 17,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Functional Flow organizes behavior; this FireSat scope has no saved flow container yet.",
+      "Switch to STPA Control Flow to inspect the control-structure workspace."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "No Functional Flow or Control Structure container is saved in this FireSat scope. The film shows both modes without creating data."
+  },
+  "assets": {
+    "src": "/media/demo-assets.mp4",
+    "poster": "/media/demo-assets-poster.jpg",
+    "captions": "/media/demo-assets.vtt",
+    "title": "Asset Manager \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Review Fire Detection Data, its criticality, assurances, and connected analysis.",
+      "Expand the asset to inspect linked losses, goals, and trace coverage.",
+      "Check asset consistency with the Validation view."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "context": {
+    "src": "/media/demo-context.mp4",
+    "poster": "/media/demo-context-poster.jpg",
+    "captions": "/media/demo-context.vtt",
+    "title": "Context \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Inspect Payload Operating Environment, its states, and the contested RF hazard.",
+      "Review how Standby and Imaging map to the operating environment.",
+      "Check the environment assigned to each Fire Detection Data loss."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "trace": {
+    "src": "/media/demo-trace.mp4",
+    "poster": "/media/demo-trace-poster.jpg",
+    "captions": "/media/demo-trace.vtt",
+    "title": "Trace \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Select Fire Detection Data to inspect its state-scoped trace.",
+      "Validation identifies the three entities without traces for this asset.",
+      "Review how traced assets contribute criticality and assurance to system entities."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "loss": {
+    "src": "/media/demo-loss.mp4",
+    "poster": "/media/demo-loss-poster.jpg",
+    "captions": "/media/demo-loss.vtt",
+    "title": "Loss \u2014 FireSat",
+    "duration": "0:31",
+    "durationSeconds": 31,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Trace Coverage connects the selected loss to the asset, environment, and operating states.",
+      "Inspect the existing loss-specific attack tree without rebuilding it.",
+      "Path Analysis separates the blocked injection path from the allowed residual jamming path.",
+      "Inspect metrics alongside the same loss, asset, and environment context."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "goalkeeper": {
+    "src": "/media/demo-goalkeeper.mp4",
+    "poster": "/media/demo-goalkeeper-poster.jpg",
+    "captions": "/media/demo-goalkeeper.vtt",
+    "title": "Goal Keeper \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Follow the Fire Detection Data authenticity argument through goals, strategy, and solutions.",
+      "Evidence view reveals solution nodes whose evidence links are still incomplete.",
+      "Review argument validation findings before relying on an assurance claim."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "The existing FireSat example argument contains solution nodes without linked evidence. Validation warnings remain visible."
+  },
+  "usecase": {
+    "src": "/media/demo-usecase.mp4",
+    "poster": "/media/demo-usecase-poster.jpg",
+    "captions": "/media/demo-usecase.vtt",
+    "title": "Use-Case \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Use-Case opens within FireSat; this payload has no saved use cases yet.",
+      "Validation is scoped to the selected system and available use-case records.",
+      "A new use case begins with a name, statement, and the selected payload purpose."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "No Use Case is saved in this FireSat scope. The film shows navigation and the unsubmitted creation form."
+  },
+  "connection": {
+    "src": "/media/demo-connection.mp4",
+    "poster": "/media/demo-connection-poster.jpg",
+    "captions": "/media/demo-connection.vtt",
+    "title": "Connection \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Inspect Sensor Video Link and its current interface and validation findings.",
+      "Filter connections by engineering attributes while retaining the FireSat context.",
+      "Display the selected connection and its participating interface."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "The existing Sensor Video Link has one participating interface and validation findings. The film retains these findings."
+  },
+  "attack": {
+    "src": "/media/demo-attack.mp4",
+    "poster": "/media/demo-attack-poster.jpg",
+    "captions": "/media/demo-attack.vtt",
+    "title": "Attack \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Select the payload downlink interface to inspect attacks mapped through EXPLOITS.",
+      "Navigate attack hierarchy independently of a loss-specific attack tree.",
+      "Review the FireSat attack catalog and each attack association."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "controls": {
+    "src": "/media/demo-controls.mp4",
+    "poster": "/media/demo-controls-poster.jpg",
+    "captions": "/media/demo-controls.vtt",
+    "title": "Controls \u2014 FireSat",
+    "duration": "0:17",
+    "durationSeconds": 17,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Controls organizes categorization, tailoring, mapping, and validation around a baseline.",
+      "This FireSat payload has no baseline; creation begins with a named baseline."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "No Controls Baseline is saved in this FireSat scope. The film shows the baseline entry point without saving."
+  },
+  "reports": {
+    "src": "/media/demo-reports.mp4",
+    "poster": "/media/demo-reports-poster.jpg",
+    "captions": "/media/demo-reports.vtt",
+    "title": "Reports \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Choose a report for Fire Detection Payload and its model context.",
+      "Generate the System Description from the current FireSat model.",
+      "Switch to System Specification and review the available export formats."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model."
+  },
+  "reference": {
+    "src": "/media/demo-reference.mp4",
+    "poster": "/media/demo-reference-poster.jpg",
+    "captions": "/media/demo-reference.vtt",
+    "title": "Reference \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Research Mode searches the reference catalog while keeping FireSat as the engineering context.",
+      "Search by concept; this installation currently returns no matching reference items.",
+      "Use an exact external identifier and the framework filters for targeted research."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "The connected reference catalog returns no matching items. Search controls are demonstrated without loading or changing reference data."
+  },
+  "admin": {
+    "src": "/media/demo-admin.mp4",
+    "poster": "/media/demo-admin-poster.jpg",
+    "captions": "/media/demo-admin.vtt",
+    "title": "Admin \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Admin provides account, message, ownership, sandbox, and backend functions.",
+      "Inspect the connected backend and its operational status without changing configuration.",
+      "The current build identifies Sandbox Management as under construction."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "Admin is a global utility. FireSat remains the current system. Account details are excluded; Sandbox Management is visibly under construction in this build."
+  },
+  "messagecenter": {
+    "src": "/media/demo-messagecenter.mp4",
+    "poster": "/media/demo-messagecenter-poster.jpg",
+    "captions": "/media/demo-messagecenter.vtt",
+    "title": "Message Center \u2014 FireSat",
+    "duration": "0:24",
+    "durationSeconds": 24,
+    "kind": "screen-walkthrough",
+    "project": "FireSat",
+    "soi": "SYS_1.1.2_0",
+    "width": 1280,
+    "height": 820,
+    "silent": true,
+    "steps": [
+      "Message Center separates received messages and notifications in the Inbox.",
+      "Switch to Outbox to review sent correspondence.",
+      "Compose a message with a recipient, subject, and body; this walkthrough leaves it unsent."
+    ],
+    "description": "A silent, captioned walkthrough assembled from genuine SSTPA Tools application screens. Read-only navigation through the existing FireSat model.",
+    "note": "Message Center is a global utility. FireSat remains the current system. No messages were sent or opened; an empty draft was discarded."
+  }
+}
