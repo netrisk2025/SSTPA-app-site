@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Admin — FireSat screen walkthrough. Silent, read-only navigation.
+
+00:00:03.000 --> 00:00:10.000
+Admin provides account, message, ownership, sandbox, and backend functions.
+
+00:00:10.000 --> 00:00:17.000
+Inspect the connected backend and its operational status without changing configuration.
+
+00:00:17.000 --> 00:00:24.000
+The current build identifies Sandbox Management as under construction.

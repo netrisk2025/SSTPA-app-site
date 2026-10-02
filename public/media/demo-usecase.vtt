@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Use-Case — FireSat screen walkthrough. Silent, read-only navigation.
+
+00:00:03.000 --> 00:00:10.000
+Use-Case opens within FireSat; this payload has no saved use cases yet.
+
+00:00:10.000 --> 00:00:17.000
+Validation is scoped to the selected system and available use-case records.
+
+00:00:17.000 --> 00:00:24.000
+A new use case begins with a name, statement, and the selected payload purpose.

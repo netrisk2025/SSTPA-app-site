@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SSTPA Tools user guide — Using the GUI" />
+  <title>Using the GUI — SSTPA Tools User Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="docs-header">
+    <a class="docs-brand" href="index.html">
+      <img src="/sstpa-menu-logo.png" alt="" />
+      <span>SSTPA Tools · User Guide</span>
+    </a>
+    <nav class="docs-nav" aria-label="Docs"><a href="index.html">Home</a>
+<a href="01-gui.html" aria-current="page">GUI</a>
+<a href="02-projects.html">Projects</a>
+<a href="03-workflow.html">Workflow</a>
+<a href="tool-navigator.html">Navigator</a>
+<a href="tool-requirements.html">Requirements</a>
+<a href="tool-connection.html">Connection</a>
+<a href="tool-asset-manager.html">Assets</a>
+<a href="tool-state.html">State</a>
+<a href="tool-context.html">Context</a>
+<a href="tool-reference.html">Reference</a>
+<a href="tool-flow.html">Flow</a>
+<a href="tool-controls.html">Controls</a>
+<a href="tool-trace.html">Trace</a>
+<a href="tool-attack.html">Attack</a>
+<a href="tool-loss.html">Loss</a>
+<a href="tool-goal-keeper.html">Goal Keeper</a>
+<a href="14-decompose.html">Decompose</a>
+<a href="appendix.html">Appendix</a></nav>
+  </header>
+  <main class="docs-shell">
+
+    <p class="eyebrow">Section 1</p>
+    <h1>Using the SSTPA Tools GUI</h1>
+    <p class="lead">The desktop is the home surface for architecture edits and for launching Add-on Tools. Learn the chrome before diving into methodology steps.</p>
+
+    <h2>Sign in and connected state</h2>
+    <p>Open the GUI, enter your user name and password, and choose <strong>Sign in</strong>. When the Backend is reachable, the branding bar shows a green status with the backend host. A disconnected status means the GUI cannot call the API (often a TLS trust or URL issue).</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/login.png" alt="Login screen before authentication. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/login.png" alt="Login screen before authentication. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Login screen before authentication.</figcaption>
+</figure>
+
+    <div class="callout warn">
+      <strong>Credentials.</strong> Use the account your administrator provided. Do not embed passwords in documentation, scripts you publish, or project notes that leave your machine.
+    </div>
+
+    <h2>Branding bar</h2>
+    <p>Top left: product mark, <strong>SSTPA Tools</strong> title, and version. Top right: connection status, signed-in user, Message Center shortcut, gear menu, theme affordance, and (on the Control Panel far right) Shutdown.</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/gui-main.png" alt="Main GUI after selecting Fire Detection Payload as the System of Interest. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/gui-main.png" alt="Main GUI after selecting Fire Detection Payload as the System of Interest. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Main GUI after selecting Fire Detection Payload as the System of Interest.</figcaption>
+</figure>
+
+
+    <h2>Control Panel</h2>
+    <p>The horizontal tool ribbon lists Add-on Tools left-to-right. Click a tool to open its window over the Main Panel. The red <strong>Shutdown</strong> control is separated at the far right. Admin-only tools are hidden from non-admin users.</p>
+
+    <h2>System of Interest (SoI) panel</h2>
+    <p>Shows the current SoI HID, name, short description, parent navigation, and child System chips. With no SoI selected, the panel prompts you to choose one (Capability children appear as chips). Every SoI-scoped Add-on Tool assumes a current SoI.</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/soi-panel.png" alt="SoI panel for Fire Detection Payload with child System chips. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/soi-panel.png" alt="SoI panel for Fire Detection Payload with child System chips. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>SoI panel for Fire Detection Payload with child System chips.</figcaption>
+</figure>
+
+
+    <h2>Main Panel sections</h2>
+    <p>Progressive disclosure of SoI node types: Environment, Connection, Interface, Function, Element, Purpose, State, Views, Asset, Security, plus Analysis for remaining types. Expand a section to see entity cards; expand a card for relationship groups; use <strong>+ Add</strong> to create; use <strong>Edit in Data Drawer</strong> to stage property changes.</p>
+
+    <h2>Data Drawer</h2>
+    <p>Slides in from the right without covering Branding or Control Panel. Fixed identity fields stay read-only; editable properties and associations are staged until you <strong>Commit</strong> (with confirmation). Cancel discards the staged edit.</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/data-drawer-edit.png" alt="Data Drawer editing Asset Fire Detection Data. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/data-drawer-edit.png" alt="Data Drawer editing Asset Fire Detection Data. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Data Drawer editing Asset Fire Detection Data.</figcaption>
+</figure>
+
+
+    <h2>Gear menu and Light / Dark</h2>
+    <p>Open the gear for product/license information, Hover help &amp; definitions, and the <strong>Style</strong> selector:</p>
+    <ul>
+      <li><strong>Light</strong> — default parchment / ivory Technical Art Nouveau Control Room look.</li>
+      <li><strong>Dark</strong> — bluish-grey nocturne slate for low-light work.</li>
+    </ul>
+    <p>The choice persists per machine. Add-on Tools inherit the active theme.</p>
+    
+<figure class="figure">
+  <div class="pair">
+    <div class="shot"><div class="label">Light (parchment)</div><img src="screenshots/light/gear-theme.png" alt="Settings menu showing Style = Light or Dark. — Light theme" loading="lazy" /></div>
+    <div class="shot"><div class="label dark">Dark (bluish-grey)</div><img src="screenshots/dark/gear-theme.png" alt="Settings menu showing Style = Light or Dark. — Dark theme" loading="lazy" /></div>
+  </div>
+  <figcaption>Settings menu showing Style = Light or Dark.</figcaption>
+</figure>
+
+
+    <nav class="pager"><a href="index.html">← Home</a><a href="02-projects.html">Projects →</a></nav>
+
+    <footer class="docs-footer">
+      <p>Instructional guide for SSTPA Tools. Workflow authority: <em>Grok-Bot Workflow V1</em>. Product statements follow the SRS-derived positioning used on the marketing site. Screenshots captured from the live GUI (Light parchment / Dark bluish-grey). © Nicholas Triska.</p>
+    </footer>
+  </main>
+</body>
+</html>

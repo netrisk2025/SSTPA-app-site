@@ -1,0 +1,857 @@
+{
+  "tools": [
+    {
+      "slug": "workspace",
+      "name": "Main Workspace",
+      "subtitle": "One connected system security model.",
+      "category": "Workspace",
+      "overview": "Enter an administrator-established project, select a System of Interest, and navigate its connected engineering model. The Main Panel, Data Drawer, and Control Panel bring architecture and specialized analysis into one workspace.",
+      "capabilities": [
+        "Navigate an established project and its system architecture",
+        "Inspect and edit model properties in the Data Drawer",
+        "Work within an explicit System of Interest",
+        "Launch 17 specialized add-on tools against shared data"
+      ],
+      "exampleSteps": [
+        "Work within FireSat: Fire Detection Payload is the current System of Interest.",
+        "Expand the Function section to review payload behavior.",
+        "Inspect a function in the Data Drawer: properties, relationships, and tool access."
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "workspace"
+    },
+    {
+      "slug": "navigator",
+      "name": "Navigator Tool",
+      "subtitle": "Find your system. Keep its context.",
+      "category": "Architecture",
+      "overview": "Explore the project hierarchy, select a System of Interest, and move between levels of the architecture. Search, association, and cloning modes keep model work connected to the right system.",
+      "capabilities": [
+        "Navigate projects and nested systems",
+        "Select the active System of Interest",
+        "Search for model entities and inspect relationships",
+        "Clone nodes and save diagram layouts"
+      ],
+      "exampleSteps": [
+        "Locate Fire Detection Payload within the FireSat hierarchy.",
+        "Reveal the current system contents and switch the diagram to name labels.",
+        "Use Locate mode to inspect model entities without changing the model."
+      ],
+      "guidePath": "/docs/tool-navigator.html",
+      "posterPath": "/docs/screenshots/dark/tool-navigator.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "navigator"
+    },
+    {
+      "slug": "requirements",
+      "name": "Requirements Tool",
+      "subtitle": "Give every security requirement a place.",
+      "category": "Architecture",
+      "overview": "Create and allocate security requirements, follow their derivation, and define how they will be verified. The hierarchy view exposes parentage and the architecture responsible for satisfying each requirement.",
+      "capabilities": [
+        "Create security requirements and parent-child derivations",
+        "Allocate requirements to architecture and security elements",
+        "Record verification methods and statements",
+        "Inspect lineage and orphan or barren requirements"
+      ],
+      "exampleSteps": [
+        "Review FireSat requirement statements, allocation targets, and completeness flags.",
+        "Follow an individual requirement into its hierarchy.",
+        "Return to Allocation View to compare requirement statements and allocated entities."
+      ],
+      "guidePath": "/docs/tool-requirements.html",
+      "posterPath": "/docs/screenshots/dark/tool-requirements.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "requirements"
+    },
+    {
+      "slug": "reports",
+      "name": "Reports Tool",
+      "subtitle": "Turn the model into reviewable evidence.",
+      "category": "Evidence",
+      "overview": "Generate system descriptions, specifications, controls lists, and requirement-traceability gap analyses from the current System of Interest. Export review material directly from the engineering model.",
+      "capabilities": [
+        "Generate System Description and System Specification reports",
+        "Assess requirement-traceability gaps",
+        "Produce a Controls List and CSV export",
+        "Export text, Markdown, or HTML and print to PDF"
+      ],
+      "exampleSteps": [
+        "Choose a report for Fire Detection Payload and its model context.",
+        "Generate the System Description from the current FireSat model.",
+        "Switch to System Specification and review the available export formats."
+      ],
+      "guidePath": "/docs/",
+      "posterPath": "/docs/screenshots/dark/tool-reports.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "reports"
+    },
+    {
+      "slug": "reference",
+      "name": "Reference Tool",
+      "subtitle": "Bring established knowledge into context.",
+      "category": "Analysis",
+      "overview": "Research loaded security catalogs and their relationships, then assign eligible reference content to model records. Catalog sources remain separate from the project’s editable engineering data.",
+      "capabilities": [
+        "Search loaded frameworks and versions",
+        "Browse catalog hierarchy and related items",
+        "Research ATT&CK, ATLAS, EMB3D, and NIST control content",
+        "Assign eligible references to Core model records"
+      ],
+      "exampleSteps": [
+        "Research Mode searches the reference catalog while keeping FireSat as the engineering context.",
+        "Search by concept; this installation currently returns no matching reference items.",
+        "Use an exact external identifier and the framework filters for targeted research."
+      ],
+      "guidePath": "/docs/tool-reference.html",
+      "posterPath": "/docs/screenshots/dark/tool-reference.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "reference",
+      "runtimeNote": "The connected reference catalog returns no matching items. Search controls are demonstrated without loading or changing reference data."
+    },
+    {
+      "slug": "state",
+      "name": "State Tool",
+      "subtitle": "Model when protection changes.",
+      "category": "Architecture",
+      "overview": "Describe system security states and the transitions between them. Connect states to hazards, countermeasures, requirements, and valid operating environments so exposure can be analyzed over time.",
+      "capabilities": [
+        "Create and arrange security state diagrams",
+        "Define transitions and their criteria",
+        "Associate hazards, countermeasures, and requirements",
+        "Save layouts and export diagram views"
+      ],
+      "exampleSteps": [
+        "View the payload states and their transition in Diagram.",
+        "Inspect the environment assigned to each operating state.",
+        "Review transition criteria and state relationships."
+      ],
+      "guidePath": "/docs/tool-state.html",
+      "posterPath": "/docs/screenshots/dark/tool-state.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "state"
+    },
+    {
+      "slug": "flow",
+      "name": "Flow Tool",
+      "subtitle": "Connect behavior to security reasoning.",
+      "category": "Architecture",
+      "overview": "Explore functional flows and STPA control structures within the System of Interest. Model control actions, feedback, and process knowledge, then capture the security requirements and countermeasures the analysis reveals.",
+      "capabilities": [
+        "Create functional-flow and STPA control views",
+        "Model control actions, feedback, and process roles",
+        "Inspect flow properties and interface relationships",
+        "Create related requirements and countermeasures"
+      ],
+      "exampleSteps": [
+        "Functional Flow organizes behavior; this FireSat scope has no saved flow container yet.",
+        "Switch to STPA Control Flow to inspect the control-structure workspace."
+      ],
+      "guidePath": "/docs/tool-flow.html",
+      "posterPath": "/docs/screenshots/dark/tool-flow.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "flow",
+      "runtimeNote": "No Functional Flow or Control Structure container is saved in this FireSat scope. The film shows both modes without creating data."
+    },
+    {
+      "slug": "assets",
+      "name": "Asset Manager Tool",
+      "subtitle": "Start with what must be protected.",
+      "category": "Analysis",
+      "overview": "Record the assets whose compromise could harm stakeholders. Organize their origin, criticality, protection objectives, regimes, and relationships to the system architecture.",
+      "capabilities": [
+        "Create and organize Organic, Horizontal, and Derived assets",
+        "Record criticality and protection objectives",
+        "Associate governing regimes and environments",
+        "Inspect asset parentage and architecture allocation"
+      ],
+      "exampleSteps": [
+        "Review Fire Detection Data, its criticality, assurances, and connected analysis.",
+        "Expand the asset to inspect linked losses, goals, and trace coverage.",
+        "Check asset consistency with the Validation view."
+      ],
+      "guidePath": "/docs/tool-asset-manager.html",
+      "posterPath": "/docs/screenshots/dark/tool-asset-manager.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "assets"
+    },
+    {
+      "slug": "context",
+      "name": "Context Tool",
+      "subtitle": "Put every loss in an environment.",
+      "category": "Analysis",
+      "overview": "Define the environments in which a system operates, the states valid in each, and the hazards that threaten assets. Allocate losses to an explicit operating context before attack-tree analysis.",
+      "capabilities": [
+        "Create and inspect operating environments",
+        "Relate valid security states to environments",
+        "Create hazards and associate threatened assets",
+        "Allocate losses to their asset and environment context"
+      ],
+      "exampleSteps": [
+        "Inspect Payload Operating Environment, its states, and the contested RF hazard.",
+        "Review how Standby and Imaging map to the operating environment.",
+        "Check the environment assigned to each Fire Detection Data loss."
+      ],
+      "guidePath": "/docs/tool-context.html",
+      "posterPath": "/docs/screenshots/dark/tool-context.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "context"
+    },
+    {
+      "slug": "trace",
+      "name": "Trace Tool",
+      "subtitle": "Follow the asset through every state.",
+      "category": "Analysis",
+      "overview": "Build a state-scoped matrix showing where each asset is held, transported, or used by components, functions, and interfaces. Committed traces drive inherited protection obligations and support loss analysis.",
+      "capabilities": [
+        "Map assets against architecture and security states",
+        "Assign HOLDS, TRANSPORTS, or USES relationships",
+        "Review staged changes before committing",
+        "Derive inherited criticality and protection requirements"
+      ],
+      "exampleSteps": [
+        "Select Fire Detection Data to inspect its state-scoped trace.",
+        "Validation identifies the three entities without traces for this asset.",
+        "Review how traced assets contribute criticality and assurance to system entities."
+      ],
+      "guidePath": "/docs/tool-trace.html",
+      "posterPath": "/docs/screenshots/dark/tool-trace.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "trace"
+    },
+    {
+      "slug": "loss",
+      "name": "Loss Tool",
+      "subtitle": "Make the path to loss inspectable.",
+      "category": "Analysis",
+      "overview": "Construct structured attack trees for a specific asset protection objective in a specific environment. Review trace coverage, analyze attack paths, and connect countermeasures to residual-vulnerability reasoning.",
+      "capabilities": [
+        "Review upstream trace and attack coverage",
+        "Build and tailor a structured attack tree",
+        "Inspect attack paths and associated metrics",
+        "Add countermeasures and export residual-vulnerability analysis"
+      ],
+      "exampleSteps": [
+        "Trace Coverage connects the selected loss to the asset, environment, and operating states.",
+        "Inspect the existing loss-specific attack tree without rebuilding it.",
+        "Path Analysis separates the blocked injection path from the allowed residual jamming path.",
+        "Inspect metrics alongside the same loss, asset, and environment context."
+      ],
+      "guidePath": "/docs/tool-loss.html",
+      "posterPath": "/docs/screenshots/dark/tool-loss.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "loss"
+    },
+    {
+      "slug": "goalkeeper",
+      "name": "Goal Keeper Tool",
+      "subtitle": "Build an argument people can examine.",
+      "category": "Evidence",
+      "overview": "Construct GSN assurance arguments around asset protection objectives. Connect claims and reasoning to verification, validation, and loss evidence, and check the structure before review.",
+      "capabilities": [
+        "Build GSN goals, strategies, contexts, and solutions",
+        "Link solutions to validation, verification, and loss evidence",
+        "Inspect structural validation findings",
+        "Arrange, save, and export the assurance argument"
+      ],
+      "exampleSteps": [
+        "Follow the Fire Detection Data authenticity argument through goals, strategy, and solutions.",
+        "Evidence view reveals solution nodes whose evidence links are still incomplete.",
+        "Review argument validation findings before relying on an assurance claim."
+      ],
+      "guidePath": "/docs/tool-goal-keeper.html",
+      "posterPath": "/docs/screenshots/dark/tool-goal-keeper.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "goalkeeper",
+      "runtimeNote": "The existing FireSat example argument contains solution nodes without linked evidence. Validation warnings remain visible."
+    },
+    {
+      "slug": "usecase",
+      "name": "Use-Case Tool",
+      "subtitle": "Connect the mission to its participants.",
+      "category": "Architecture",
+      "overview": "Capture use cases under a system’s Purpose and connect actors, interfaces, and functions. Use the diagram to make mission participation and requirement allocation easier to inspect.",
+      "capabilities": [
+        "Create use cases under the selected Purpose",
+        "Add actors and participating interfaces or functions",
+        "Model include and extend relationships",
+        "Inspect participant requirements and diagram validation"
+      ],
+      "exampleSteps": [
+        "Use-Case opens within FireSat; this payload has no saved use cases yet.",
+        "Validation is scoped to the selected system and available use-case records.",
+        "A new use case begins with a name, statement, and the selected payload purpose."
+      ],
+      "guidePath": "/docs/",
+      "posterPath": "/docs/screenshots/dark/tool-usecase.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "usecase",
+      "runtimeNote": "No Use Case is saved in this FireSat scope. The film shows navigation and the unsubmitted creation form."
+    },
+    {
+      "slug": "connection",
+      "name": "Connection Tool",
+      "subtitle": "Describe the security of the links.",
+      "category": "Architecture",
+      "overview": "Model connections between systems through their participating interfaces. Make ownership, interaction properties, and connection-level requirements explicit across the architecture.",
+      "capabilities": [
+        "Create connections with an owning system",
+        "Associate participating interfaces across systems",
+        "Inspect directionality, layers, and interaction properties",
+        "Allocate security requirements to a connection"
+      ],
+      "exampleSteps": [
+        "Inspect Sensor Video Link and its current interface and validation findings.",
+        "Filter connections by engineering attributes while retaining the FireSat context.",
+        "Display the selected connection and its participating interface."
+      ],
+      "guidePath": "/docs/tool-connection.html",
+      "posterPath": "/docs/screenshots/dark/tool-connection.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "connection",
+      "runtimeNote": "The existing Sensor Video Link has one participating interface and validation findings. The film retains these findings."
+    },
+    {
+      "slug": "messagecenter",
+      "name": "Message Center",
+      "subtitle": "Keep model stewardship visible.",
+      "category": "Stewardship",
+      "overview": "Use the internal mailbox to review system notices, ownership-related messages, and model references. Inbox and outbox views keep stewardship activity close to the engineering workspace.",
+      "capabilities": [
+        "Review inbox and outbox messages",
+        "Sort messages and open their details",
+        "Follow model references included in messages",
+        "Compose internal messages and manage mailbox entries"
+      ],
+      "exampleSteps": [
+        "Message Center separates received messages and notifications in the Inbox.",
+        "Switch to Outbox to review sent correspondence.",
+        "Compose a message with a recipient, subject, and body; this walkthrough leaves it unsent."
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "messagecenter",
+      "runtimeNote": "Message Center is a global utility. FireSat remains the current system. No messages were sent or opened; an empty draft was discarded."
+    },
+    {
+      "slug": "admin",
+      "name": "Admin Tool",
+      "subtitle": "Manage the environment behind the model.",
+      "category": "Stewardship",
+      "overview": "Give authorized administrators a dedicated view of accounts, ownership, messages, sandboxes, and backend status. Role restrictions keep administration separate from ordinary analysis work.",
+      "capabilities": [
+        "Inspect and filter the account roster",
+        "Manage account lifecycle and administrator authorization",
+        "Inspect ownership transfer and the current sandbox view",
+        "Inspect backend status and product information"
+      ],
+      "exampleSteps": [
+        "Admin provides account, message, ownership, sandbox, and backend functions.",
+        "Inspect the connected backend and its operational status without changing configuration.",
+        "The current build identifies Sandbox Management as under construction."
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "admin",
+      "runtimeNote": "Admin is a global utility. FireSat remains the current system. Account details are excluded; Sandbox Management is visibly under construction in this build."
+    },
+    {
+      "slug": "attack",
+      "name": "Attack Tool",
+      "subtitle": "Turn threat knowledge into actionable scenarios.",
+      "category": "Analysis",
+      "overview": "Develop attacks that act on the actual components, functions, and interfaces exposed by asset tracing. Organize attack hierarchies, reference sources, metrics, and loss scope before building attack trees.",
+      "capabilities": [
+        "Create project-specific attacks or clone eligible references",
+        "Associate attacks with exposed architecture entities",
+        "Organize strategy, tactic, and procedure hierarchies",
+        "Record metrics and optional loss scope"
+      ],
+      "exampleSteps": [
+        "Select the payload downlink interface to inspect attacks mapped through EXPLOITS.",
+        "Navigate attack hierarchy independently of a loss-specific attack tree.",
+        "Review the FireSat attack catalog and each attack association."
+      ],
+      "guidePath": "/docs/tool-attack.html",
+      "posterPath": "/docs/screenshots/dark/tool-attack.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "attack"
+    },
+    {
+      "slug": "controls",
+      "name": "Controls Tool",
+      "subtitle": "Carry controls into the engineered design.",
+      "category": "Analysis",
+      "overview": "Categorize the system, select and tailor a security controls baseline, then connect controls to requirements and countermeasures. Initial automatic selection depends on the allocation data in the loaded reference bundle.",
+      "capabilities": [
+        "Categorize confidentiality, integrity, and availability impact",
+        "Select and tailor a baseline from loaded NIST references",
+        "Record overlays, resilience, and survivability considerations",
+        "Map controls to requirements and countermeasures"
+      ],
+      "exampleSteps": [
+        "Controls organizes categorization, tailoring, mapping, and validation around a baseline.",
+        "This FireSat payload has no baseline; creation begins with a named baseline."
+      ],
+      "guidePath": "/docs/tool-controls.html",
+      "posterPath": "/docs/screenshots/dark/tool-controls.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "controls",
+      "runtimeNote": "No Controls Baseline is saved in this FireSat scope. The film shows the baseline entry point without saving."
+    }
+  ],
+  "methodology": {
+    "title": "Security reasoning connected to the system.",
+    "eyebrow": "The SSTPA methodology",
+    "subtitle": "From protected assets to verifiable requirements and assurance evidence.",
+    "introduction": [
+      "System Security-Theoretic Process Analysis is a human- and asset-centered approach to engineering secure complex systems. It connects the architecture and operating context to the assets that matter, the ways their protection could fail, and the evidence needed to judge the security solution.",
+      "SSTPA Tools implements this approach as a shared graph model. Specialized tools operate on a selected System of Interest, so architecture, states, exposure, attacks, requirements, and assurance arguments remain related as the design develops."
+    ],
+    "differentiator": {
+      "title": "A specific protection objective anchors the analysis.",
+      "body": "SSTPA defines a loss as the compromise of a security attribute on an asset. Loss analysis is scoped to an operating environment and the applicable regime. This combination of asset, property, environment, and authority gives security reasoning a concrete subject and makes its assumptions available for review."
+    },
+    "principles": [
+      {
+        "title": "Assets establish the protection objective",
+        "body": "Begin with items of value whose compromise could harm stakeholders. Keep the asset distinct from the component that hosts it, and record the security attributes and regimes that govern its protection."
+      },
+      {
+        "title": "Interactions and states expose the problem",
+        "body": "Analyze behavior, control, feedback, and asset exposure across architecture and operating states. A component-level view alone cannot describe every interaction that matters."
+      },
+      {
+        "title": "Requirements make the response implementable",
+        "body": "Translate controls and countermeasures into system security requirements. Allocate them to the design and define how their implementation will be verified."
+      },
+      {
+        "title": "Evidence supports human judgment",
+        "body": "Use loss analysis and GSN arguments to show what supports the security claim, which assumptions apply, and what remains unresolved. The responsible authority decides whether residual risk is acceptable."
+      }
+    ],
+    "protectionAttributes": [
+      {
+        "name": "Confidentiality",
+        "description": "Access is restricted to authorized parties."
+      },
+      {
+        "name": "Integrity",
+        "description": "The asset is protected against unauthorized modification or destruction."
+      },
+      {
+        "name": "Availability",
+        "description": "Authorized users can obtain the asset or service when needed."
+      },
+      {
+        "name": "Authenticity",
+        "description": "The asset or claimed identity is genuine and can be verified."
+      },
+      {
+        "name": "Non-Repudiation",
+        "description": "Evidence of origin or occurrence can be established under stated assumptions."
+      },
+      {
+        "name": "Privacy",
+        "description": "Risks to individuals are managed against applicable privacy objectives."
+      },
+      {
+        "name": "Trustworthiness",
+        "description": "There is justified confidence in the required behavior."
+      },
+      {
+        "name": "Certifiability",
+        "description": "SSTPA’s protection objective for achieving and maintaining certification within a regime."
+      }
+    ],
+    "workflow": [
+      {
+        "number": 1,
+        "title": "Establish the Tier-1 architecture",
+        "description": "Capture the capability requirements, Tier-1 systems, and connections from the program’s functional architecture.",
+        "output": "Allocated capability requirements and an explicit architecture.",
+        "tools": [
+          "workspace",
+          "requirements",
+          "connection",
+          "navigator"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Allocate requirements and join interfaces",
+        "description": "Decompose security requirements onto interfaces, functions, and components; connect the interfaces that participate in each system connection.",
+        "output": "Architecture elements with requirements and interface participation.",
+        "tools": [
+          "requirements",
+          "connection",
+          "navigator"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Record assets and protection obligations",
+        "description": "Bring expert asset-identification results into the model. Define asset parentage, criticality, required security attributes, and governing regimes.",
+        "output": "A defined asset set with protection objectives.",
+        "tools": [
+          "assets"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Define system security states",
+        "description": "Describe states with a consistent protection posture and the criteria for transitions, aligned with the program’s functional state model.",
+        "output": "Security states, transitions, and environment validity.",
+        "tools": [
+          "state",
+          "context"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Define environments and research threats",
+        "description": "Describe relevant operating environments and the threats that could act within them. Research applicable reference knowledge.",
+        "output": "An explicit operating context and relevant threat knowledge.",
+        "tools": [
+          "context",
+          "reference"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Analyze hazardous conditions",
+        "description": "Connect hazards to their environments, states, threatened assets, and constraints.",
+        "output": "Hazards grounded in the system’s actual operating conditions.",
+        "tools": [
+          "context",
+          "reference"
+        ]
+      },
+      {
+        "number": 7,
+        "title": "Analyze functional and control behavior",
+        "description": "Use functional flows and STPA control structures to identify requirements for control actions, feedback, and process knowledge.",
+        "output": "Security requirements and countermeasures derived from behavior.",
+        "tools": [
+          "flow",
+          "requirements"
+        ]
+      },
+      {
+        "number": 8,
+        "title": "Develop controls to mitigate hazards",
+        "description": "Categorize the system, select and tailor a controls baseline, and connect controls to hazards and implementing requirements.",
+        "output": "A tailored baseline with traceable model controls.",
+        "tools": [
+          "controls",
+          "reference"
+        ]
+      },
+      {
+        "number": 9,
+        "title": "Define validation and verification criteria",
+        "description": "Record how the security solution will satisfy its purpose and controls, and how implementing requirements will be verified.",
+        "output": "Purpose-level validation and requirement-level verification criteria.",
+        "tools": [
+          "controls",
+          "requirements",
+          "workspace"
+        ]
+      },
+      {
+        "number": 10,
+        "title": "Trace asset exposure through states",
+        "description": "For each asset, record the components, functions, and interfaces that hold, transport, or use it in each security state.",
+        "output": "State-scoped exposure and inherited protection obligations.",
+        "tools": [
+          "trace",
+          "state",
+          "assets"
+        ]
+      },
+      {
+        "number": 11,
+        "title": "Develop actionable attacks",
+        "description": "Connect applicable attacks to exposed architecture elements. Add hierarchy, metrics, reference sources, and loss scope as needed.",
+        "output": "Attacks ready to participate in loss analysis.",
+        "tools": [
+          "attack",
+          "reference"
+        ]
+      },
+      {
+        "number": 12,
+        "title": "Analyze losses and remaining vulnerability",
+        "description": "Build and tailor an attack tree for an asset protection objective in one environment. Examine paths, countermeasures, and residual vulnerabilities.",
+        "output": "Loss analysis with documented scenario dispositions and rationale.",
+        "tools": [
+          "loss",
+          "context"
+        ]
+      },
+      {
+        "number": 13,
+        "title": "Construct and review the assurance argument",
+        "description": "Build a GSN argument supported by validation, verification, and loss evidence. Record the responsible authority’s disposition and any conditions.",
+        "output": "An evidence-backed argument for review, or a defined design revision.",
+        "tools": [
+          "goalkeeper",
+          "loss",
+          "requirements",
+          "flow"
+        ]
+      },
+      {
+        "number": 14,
+        "title": "Decompose and integrate child systems",
+        "description": "Refine components into child Systems of Interest and repeat the analysis at each tier. Gather verification and validation evidence during integration.",
+        "output": "Connected security reasoning and evidence across the hierarchy.",
+        "tools": [
+          "workspace",
+          "navigator",
+          "requirements",
+          "assets"
+        ]
+      }
+    ],
+    "loops": [
+      {
+        "title": "Revise the design when the argument needs it",
+        "fromStep": 13,
+        "toStep": 7,
+        "body": "If evidence is insufficient or the residual risk is unacceptable, return to functional and STPA analysis. Strengthen the countermeasures and requirements, then refresh controls, validation, traces, attacks, and losses before rebuilding the argument."
+      },
+      {
+        "title": "Repeat the discipline at every system tier",
+        "fromStep": 14,
+        "toStep": 1,
+        "body": "A component can become a child System of Interest. Requirements and asset parentage remain connected to the upper tiers, while asset traces are established again in the child. Verification and validation evidence accumulates as the systems are integrated."
+      }
+    ],
+    "workflowNote": "The fourteen steps follow the current white paper. Tools support the work without enforcing its order. Use-Case supports early architecture capture, Reference research is cross-cutting, and Reports packages results throughout.",
+    "ecosystem": {
+      "title": "Fits into the engineering program",
+      "body": "The program’s existing requirements, functional modeling, and analytical tools retain their respective roles. SSTPA is the working model for the System Security Solution, using architecture faithfully captured from those sources.",
+      "roles": [
+        {
+          "concern": "Requirements configuration management",
+          "source": "DOORS or equivalent",
+          "sstpa": "Align security requirement derivation and allocation with the program baseline."
+        },
+        {
+          "concern": "Functional architecture",
+          "source": "Cameo or equivalent SysML environment",
+          "sstpa": "Capture the functions, interfaces, components, and context needed for security analysis."
+        },
+        {
+          "concern": "Parametric and algorithmic models",
+          "source": "MATLAB or equivalent",
+          "sstpa": "Use relevant results to inform functional and control analysis."
+        },
+        {
+          "concern": "System Security Solution",
+          "source": "SSTPA Tools",
+          "sstpa": "Connect assets, loss analysis, security controls, requirements, and assurance evidence."
+        }
+      ]
+    },
+    "assurance": {
+      "title": "Review the claim, the evidence, and the conditions.",
+      "body": "A GSN argument structures the reasoning; it does not itself constitute acceptance. Closure is assessed within the approved asset scope, architecture baseline, environments, threat assumptions, and coverage criteria. Scenarios with unacceptable risk or insufficient evidence remain open.",
+      "dispositions": [
+        "Eliminated",
+        "Blocked under stated assumptions",
+        "Accepted with documented conditions",
+        "Deferred pending evidence",
+        "Unresolved"
+      ],
+      "arv": "Allowed Residual Vulnerability is SSTPA’s term for an accepted residual vulnerability under documented conditions. The acceptance record identifies the deciding authority, configuration, regime, conditions, and review triggers."
+    },
+    "glossary": [
+      {
+        "term": "System of Interest",
+        "definition": "The selected system and its subgraph on which most tools operate."
+      },
+      {
+        "term": "Asset",
+        "definition": "An item of value requiring protection, distinct from the architecture that holds, transports, or uses it."
+      },
+      {
+        "term": "Security attribute",
+        "definition": "The property to protect. Assurance is the justified confidence that the required property holds."
+      },
+      {
+        "term": "Regime",
+        "definition": "The authority, rules, obligations, and practices under which the security solution and residual risk are judged."
+      },
+      {
+        "term": "Verification",
+        "definition": "Evidence that a specified requirement was implemented."
+      },
+      {
+        "term": "Validation",
+        "definition": "Evidence that the realized system fulfills its intended purpose in its intended environment."
+      }
+    ]
+  },
+  "example": {
+    "name": "FireSat",
+    "title": "One mission. A connected system of systems.",
+    "description": "A forest-fire detection and response capability spanning space, command, aviation, and ground systems. Follow the Fire Detection Payload from infrared sensing to detection reports, then build its security analysis in tutorial exercises.",
+    "segments": [
+      "Space",
+      "Command",
+      "Aviation",
+      "Ground"
+    ],
+    "system": "Fire Detection Payload",
+    "scopeNote": "FireSat is an educational architecture, not a validated operational design. The supplied package defines systems, states, functions, interfaces, connections, and requirements. The recorded workspace also contains prepared security tutorial data. Each film preserves the current records, empty workspaces, and validation findings.",
+    "facts": [
+      {
+        "value": "4",
+        "label": "mission segments"
+      },
+      {
+        "value": "33",
+        "label": "connected systems"
+      },
+      {
+        "value": "8",
+        "label": "system tiers"
+      }
+    ]
+  },
+  "installationAdmin": {
+    "eyebrow": "Installation & administration",
+    "title": "Give the engineering model a dependable home.",
+    "subtitle": "Prepare the environment. Establish its people and projects. Open a connected workspace.",
+    "introduction": "SSTPA Tools separates the installer, startup software, desktop interface, and backend into four independently operable segments. Administrators establish the environment and stewardship that let engineers work from a shared model.",
+    "narrationSlug": "installation-admin",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Install the release package",
+        "body": "Use the platform-specific install helper for Linux, macOS, or Windows. The installer checks Docker and Compose, stages the packaged components, and generates credentials for that installation."
+      },
+      {
+        "number": 2,
+        "title": "Establish a trusted connection",
+        "body": "The packaged trust helper installs the local Caddy certificate authority for the desktop interface. The installer attempts this setup when Docker is reachable; the guide covers checking and completing it."
+      },
+      {
+        "number": 3,
+        "title": "Start and establish RootAdmin",
+        "body": "Launch the Startup Software. It starts the backend, guides first-run RootAdmin creation, authenticates the session, and opens the desktop workspace."
+      },
+      {
+        "number": 4,
+        "title": "Load knowledge and the example",
+        "body": "Load the validated Reference Data package after the backend is healthy. FireSat is a separate example package with checksum verification and a guard against colliding with existing model identities."
+      },
+      {
+        "number": 5,
+        "title": "Establish project stewardship",
+        "body": "Use the authorized administrative workflows for accounts, ownership, and sandboxes. Establish the project context that engineers will use and confirm that the intended users can sign in."
+      },
+      {
+        "number": 6,
+        "title": "Enter the engineering workspace",
+        "body": "Open Navigator, choose the project, and select a System of Interest. For the FireSat walkthrough, follow Space Segment → FireSat Satellite → Fire Detection Payload."
+      }
+    ],
+    "backend": {
+      "title": "The services behind the workspace",
+      "description": "The desktop interface operates on a shared graph through the backend. Model changes are validated and committed transactionally.",
+      "services": [
+        {
+          "name": "Desktop GUI & Startup",
+          "role": "Launch the environment, authenticate, and work with the system model."
+        },
+        {
+          "name": "Caddy",
+          "role": "Provide the encrypted connection to backend services."
+        },
+        {
+          "name": "Go backend",
+          "role": "Apply access rules, validate model changes, and expose the application API."
+        },
+        {
+          "name": "Neo4j",
+          "role": "Store systems, engineering records, and their connected relationships."
+        },
+        {
+          "name": "Operational observability",
+          "role": "OpenTelemetry, Tempo, Prometheus, and Grafana support service inspection."
+        }
+      ],
+      "partitions": [
+        {
+          "name": "Core",
+          "description": "The editable system security model under projects and sandboxes."
+        },
+        {
+          "name": "Reference",
+          "description": "Imported catalogs used for research and authorized application to Core records."
+        },
+        {
+          "name": "User",
+          "description": "People, mailboxes, and stewardship information."
+        }
+      ]
+    },
+    "admin": {
+      "title": "Steward the environment",
+      "description": "The Admin Tool provides account lifecycle, messaging, ownership transfer, sandbox management, and backend status views. Its availability and protected operations depend on the signed-in user’s authority.",
+      "capabilities": [
+        "Inspect and filter the account roster",
+        "Manage suspension, reinstatement, and administrator authorization",
+        "Transfer ownership and manage account departure with data continuity",
+        "Inspect sandboxes, internal messages, and backend status"
+      ],
+      "toolSlug": "admin"
+    },
+    "guidePath": "/docs/01-gui.html",
+    "guideLabel": "Open the workspace guide",
+    "sourceNote": "Based on the current installer README, service topology, startup segment, Admin Tool, and FireSat package instructions."
+  }
+}

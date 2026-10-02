@@ -1,0 +1,10 @@
+{
+  "introduction": {
+    "src": "/media/introduction.mp4",
+    "poster": "/media/introduction-poster.jpg",
+    "captions": "/media/introduction.vtt",
+    "transcript": "Security decisions need context. What must be protected? Where is it exposed? And what evidence supports the protection? SSTPA Tools brings those questions into one connected engineering model. Begin with the system and its assets. Trace them through operating states, analyze paths to loss, and connect controls to verifiable requirements. Build assurance arguments that reviewers can examine, with the assumptions and remaining vulnerabilities in view. From the first architecture to integration and sustainment, SSTPA Tools keeps the security solution connected to the system it is meant to protect.",
+    "duration": "0:42",
+    "title": "SSTPA Tools — Engineering security in context"
+  }
+}

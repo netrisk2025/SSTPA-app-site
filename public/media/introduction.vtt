@@ -1,0 +1,61 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:02.980
+Security decisions need context.
+
+2
+00:00:03.560 --> 00:00:04.560
+What must be protected?
+
+3
+00:00:05.260 --> 00:00:06.240
+Where is it exposed?
+
+4
+00:00:06.720 --> 00:00:08.940
+And what evidence supports the protection?
+
+5
+00:00:09.740 --> 00:00:13.440
+SSTPA Tools brings those questions into
+one connected
+
+6
+00:00:13.440 --> 00:00:17.100
+engineering model. Begin with the system
+and its assets.
+
+7
+00:00:17.640 --> 00:00:21.740
+Trace them through operating states,
+analyze paths to loss, and
+
+8
+00:00:21.740 --> 00:00:24.240
+connect controls to verifiable
+requirements.
+
+9
+00:00:25.080 --> 00:00:28.740
+Build assurance arguments that reviewers
+can examine, with the assumptions
+
+10
+00:00:28.740 --> 00:00:30.920
+and remaining vulnerabilities in view.
+
+11
+00:00:31.500 --> 00:00:34.980
+From the first architecture to integration
+and sustainment,
+
+12
+00:00:35.220 --> 00:00:39.420
+SSTPA Tools keeps the security solution
+connected to the system it
+
+13
+00:00:39.420 --> 00:00:40.380
+is meant to protect.
+
