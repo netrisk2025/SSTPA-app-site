@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "voiceReference": "Systems",
+  "language": "en",
+  "delivery": "Calm, precise, confident. Allow the engineering ideas room to breathe.",
+  "playback": "User initiated only. No autoplay.",
+  "durationNote": "Estimates use 130 words per minute. Confirm actual duration after rendering.",
+  "pages": [
+    {
+      "slug": "home",
+      "title": "SSTPA Tools",
+      "script": "Every system carries a promise. A satellite sees a fire. A command center understands the signal. An aircraft responds. People depend on the whole chain working as intended.\n\nSSTPA Tools brings security reasoning into that connected picture. It helps systems engineers describe what matters, where it is exposed, how protection could fail, and what evidence supports the proposed solution.\n\nAt its center is a shared system model. Architecture, assets, operating states, hazards, attacks, requirements, and assurance arguments remain connected. Seventeen specialized tools let you examine that model from different perspectives, while keeping the same System of Interest in view.\n\nOur example is FireSat, a forest fire detection and response capability spanning space, command, aviation, and ground systems. Follow the Fire Detection Payload from infrared sensing to detection reports, then explore how a tutorial adds security analysis around that architecture.\n\nSSTPA builds on systems theory, security engineering, and structured assurance. The methodology guides the reasoning. The application records the relationships and evidence. Engineers and the responsible authorities make the decisions.\n\nExplore the workspace, follow a tool demonstration, or read the methodology white paper. Start with a system. Understand what must be protected. Make the reasoning visible.",
+      "transcript": "Every system carries a promise. A satellite sees a fire. A command center understands the signal. An aircraft responds. People depend on the whole chain working as intended.\n\nSSTPA Tools brings security reasoning into that connected picture. It helps systems engineers describe what matters, where it is exposed, how protection could fail, and what evidence supports the proposed solution.\n\nAt its center is a shared system model. Architecture, assets, operating states, hazards, attacks, requirements, and assurance arguments remain connected. Seventeen specialized tools let you examine that model from different perspectives, while keeping the same System of Interest in view.\n\nOur example is FireSat, a forest fire detection and response capability spanning space, command, aviation, and ground systems. Follow the Fire Detection Payload from infrared sensing to detection reports, then explore how a tutorial adds security analysis around that architecture.\n\nSSTPA builds on systems theory, security engineering, and structured assurance. The methodology guides the reasoning. The application records the relationships and evidence. Engineers and the responsible authorities make the decisions.\n\nExplore the workspace, follow a tool demonstration, or read the methodology white paper. Start with a system. Understand what must be protected. Make the reasoning visible.",
+      "wordCount": 195,
+      "estimatedDurationSeconds": 90,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§2–5, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "tools",
+      "title": "The tool collection",
+      "script": "A complex security problem rarely fits inside one diagram. SSTPA Tools provides seventeen add-on tools, each looking at a different part of one connected engineering model.\n\nBegin with Navigator to choose the System of Interest. Use Requirements, Connection, State, Use-Case, and Flow to capture the architecture and behavior that security analysis depends on. These views connect the mission to the elements that implement it.\n\nAsset Manager records what needs protection. Context connects operating environments, hazards, and losses. Reference brings loaded security catalogs into the analysis. Controls supports baseline selection and tailoring, while Trace records where an asset is held, transported, or used in each state.\n\nAttack develops scenarios against exposed architecture. Loss organizes the paths to a particular protection failure. Goal Keeper connects claims to evidence, and Reports turns model content into material reviewers can examine. Admin and Message Center support the people and ownership behind the work.\n\nThe demonstrations use FireSat throughout, so the same payload, functions, and interfaces remain recognizable from page to page. Some security records are tutorial additions to its supplied architecture.\n\nThe tools do not force a sequence. Choose the perspective you need, return to the methodology when the reasoning needs direction, and keep every analysis connected to its system.",
+      "transcript": "A complex security problem rarely fits inside one diagram. SSTPA Tools provides seventeen add-on tools, each looking at a different part of one connected engineering model.\n\nBegin with Navigator to choose the System of Interest. Use Requirements, Connection, State, Use-Case, and Flow to capture the architecture and behavior that security analysis depends on. These views connect the mission to the elements that implement it.\n\nAsset Manager records what needs protection. Context connects operating environments, hazards, and losses. Reference brings loaded security catalogs into the analysis. Controls supports baseline selection and tailoring, while Trace records where an asset is held, transported, or used in each state.\n\nAttack develops scenarios against exposed architecture. Loss organizes the paths to a particular protection failure. Goal Keeper connects claims to evidence, and Reports turns model content into material reviewers can examine. Admin and Message Center support the people and ownership behind the work.\n\nThe demonstrations use FireSat throughout, so the same payload, functions, and interfaces remain recognizable from page to page. Some security records are tutorial additions to its supplied architecture.\n\nThe tools do not force a sequence. Choose the perspective you need, return to the methodology when the reasoning needs direction, and keep every analysis connected to its system.",
+      "wordCount": 205,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.7, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "methodology",
+      "title": "The SSTPA methodology",
+      "script": "System Security-Theoretic Process Analysis begins with an asset and the protection it requires. That asset might be data, a credential, intellectual property, or a mission-critical function. The component that hosts it is part of the architecture; the asset is the value being protected.\n\nSSTPA asks how interactions, operating conditions, and control decisions can compromise that protection. A loss analysis has a precise subject: one asset, one security attribute, and one environment. Regimes establish the obligations and the authorities responsible for judging the result.\n\nThe workflow connects architecture and requirements with assets, states, environments, hazards, and functional or control analysis. Controls and countermeasures become implementable requirements. State-scoped traces reveal exposure. Attacks and loss analysis make the remaining scenarios inspectable.\n\nAn assurance argument then brings the claims, assumptions, and evidence together. Verification addresses whether requirements were implemented. Validation addresses whether the system fulfills its intended purpose. Neither a diagram nor a completed argument alone establishes acceptance; that decision belongs to the responsible authority.\n\nThe discipline repeats as systems are decomposed into smaller systems and later integrated. SSTPA Tools supports this connected security solution alongside the program's existing engineering tools. The white paper explains the fourteen-step workflow, its vocabulary, and the reasoning behind each relationship.",
+      "transcript": "System Security-Theoretic Process Analysis begins with an asset and the protection it requires. That asset might be data, a credential, intellectual property, or a mission-critical function. The component that hosts it is part of the architecture; the asset is the value being protected.\n\nSSTPA asks how interactions, operating conditions, and control decisions can compromise that protection. A loss analysis has a precise subject: one asset, one security attribute, and one environment. Regimes establish the obligations and the authorities responsible for judging the result.\n\nThe workflow connects architecture and requirements with assets, states, environments, hazards, and functional or control analysis. Controls and countermeasures become implementable requirements. State-scoped traces reveal exposure. Attacks and loss analysis make the remaining scenarios inspectable.\n\nAn assurance argument then brings the claims, assumptions, and evidence together. Verification addresses whether requirements were implemented. Validation addresses whether the system fulfills its intended purpose. Neither a diagram nor a completed argument alone establishes acceptance; that decision belongs to the responsible authority.\n\nThe discipline repeats as systems are decomposed into smaller systems and later integrated. SSTPA Tools supports this connected security solution alongside the program's existing engineering tools. The white paper explains the fourteen-step workflow, its vocabulary, and the reasoning behind each relationship.",
+      "wordCount": 202,
+      "estimatedDurationSeconds": 93,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.2–3.7, 8–9"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "installation-admin",
+      "title": "Installation & administration",
+      "script": "A shared engineering model needs a dependable home. SSTPA Tools is organized into four independently operable segments: the installer, startup software, desktop interface, and backend.\n\nThe release package brings the required parts together. Installation checks for Docker and Compose, stages the application, and creates credentials for that installation. The startup software is the normal entry point. On first launch, it starts the backend and guides creation of the RootAdmin account before opening the workspace.\n\nBehind that workspace, a Go service manages model access and a Neo4j graph stores the connected data. Caddy provides the encrypted connection. Supporting services collect operational metrics and traces. Core engineering data, imported reference catalogs, and user information have distinct roles in this environment.\n\nAn administrator establishes accounts and project stewardship. The Admin Tool provides account, ownership, sandbox, messaging, and backend views according to the signed-in user's authority. Reference data is loaded as a validated package. FireSat is a separate example package, prepared for tutorials and loaded with checks against existing model identities.\n\nOnce the environment is ready, ordinary engineering work begins by signing in, choosing the administrator-established project, and selecting a System of Interest. This page connects installation and administration to that first usable workspace, with the full guide available for operational detail.",
+      "transcript": "A shared engineering model needs a dependable home. SSTPA Tools is organized into four independently operable segments: the installer, startup software, desktop interface, and backend.\n\nThe release package brings the required parts together. Installation checks for Docker and Compose, stages the application, and creates credentials for that installation. The startup software is the normal entry point. On first launch, it starts the backend and guides creation of the RootAdmin account before opening the workspace.\n\nBehind that workspace, a Go service manages model access and a Neo4j graph stores the connected data. Caddy provides the encrypted connection. Supporting services collect operational metrics and traces. Core engineering data, imported reference catalogs, and user information have distinct roles in this environment.\n\nAn administrator establishes accounts and project stewardship. The Admin Tool provides account, ownership, sandbox, messaging, and backend views according to the signed-in user's authority. Reference data is loaded as a validated package. FireSat is a separate example package, prepared for tutorials and loaded with checks against existing model identities.\n\nOnce the environment is ready, ordinary engineering work begins by signing in, choosing the administrator-established project, and selecting a System of Interest. This page connects installation and administration to that first usable workspace, with the full guide available for operational detail.",
+      "wordCount": 208,
+      "estimatedDurationSeconds": 96,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4, 4.22"
+        },
+        {
+          "path": "SSTPA Tools/installer/README.md",
+          "section": "Install from a package"
+        },
+        {
+          "path": "SSTPA Tools/deploy/docker-compose.yml",
+          "section": "Service topology"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "workspace",
+      "title": "Main Workspace",
+      "script": "The main workspace is your point of entry to the system security model. Sign in to the environment prepared by your administrator, then use Navigator to select a project and a System of Interest.\n\nIn FireSat, expand the Space Segment, then FireSat Satellite, and select Fire Detection Payload. The workspace now shows that system's purpose, environment, states, functions, interfaces, and components. Its purpose is fire sensing and reporting: turning infrared radiance into geolocated fire reports.\n\nThe Main Panel makes those records visible together. Select an item to open the Data Drawer, the general surface for inspecting properties and staging edits. Relationships connect each record to the architecture and its security analysis. The System of Interest panel keeps your current scope visible as you move between records.\n\nThe Control Panel launches the add-on tools. A tool opened from an appropriate record can use that context, so an analysis starts with a meaningful subject. The same underlying records are available across the specialized views.\n\nThe supplied FireSat architecture is the foundation for the tutorials. Security assets, traces, losses, and assurance arguments are added as the exercises develop. Begin by understanding the system already on screen, then follow its relationships into the analysis you need.",
+      "transcript": "The main workspace is your point of entry to the system security model. Sign in to the environment prepared by your administrator, then use Navigator to select a project and a System of Interest.\n\nIn FireSat, expand the Space Segment, then FireSat Satellite, and select Fire Detection Payload. The workspace now shows that system's purpose, environment, states, functions, interfaces, and components. Its purpose is fire sensing and reporting: turning infrared radiance into geolocated fire reports.\n\nThe Main Panel makes those records visible together. Select an item to open the Data Drawer, the general surface for inspecting properties and staging edits. Relationships connect each record to the architecture and its security analysis. The System of Interest panel keeps your current scope visible as you move between records.\n\nThe Control Panel launches the add-on tools. A tool opened from an appropriate record can use that context, so an analysis starts with a meaningful subject. The same underlying records are available across the specialized views.\n\nThe supplied FireSat architecture is the foundation for the tutorials. Security assets, traces, losses, and assurance arguments are added as the exercises develop. Begin by understanding the system already on screen, then follow its relationships into the analysis you need.",
+      "wordCount": 202,
+      "estimatedDurationSeconds": 93,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.1–4.3, 6"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/components/",
+          "section": "MainPanel, DataDrawer, ControlPanel, SoIPanel"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "navigator",
+      "title": "Navigator Tool",
+      "script": "Navigator answers two questions before analysis begins: where am I in the architecture, and which system am I working on?\n\nIts hierarchy view connects the project to its systems and their decomposition. FireSat starts with four segments: Space, Command, Aviation, and Ground. Follow the Space Segment into FireSat Satellite and then Fire Detection Payload. Selecting that payload establishes the System of Interest used by most of the other tools.\n\nThe hierarchy can continue into the infrared sensor assembly and deeper equipment. Each selected system has its own local model, while the parent relationships preserve its place in the capability. This is how a large engineering problem can be examined at a practical scale without losing its context.\n\nNavigator also provides search and locate, relationship association, and cloning modes. These support finding records, connecting eligible model entities, and reusing model content where the schema and permissions allow it. Saved layouts help preserve a useful view for the next visit.\n\nIn the demonstration, watch the hierarchy expand, choose the payload, and locate one of its functions. The goal is orientation: make the scope explicit before opening requirements, traces, or loss analysis. Every later decision becomes easier to interpret when its system boundary is clear.",
+      "transcript": "Navigator answers two questions before analysis begins: where am I in the architecture, and which system am I working on?\n\nIts hierarchy view connects the project to its systems and their decomposition. FireSat starts with four segments: Space, Command, Aviation, and Ground. Follow the Space Segment into FireSat Satellite and then Fire Detection Payload. Selecting that payload establishes the System of Interest used by most of the other tools.\n\nThe hierarchy can continue into the infrared sensor assembly and deeper equipment. Each selected system has its own local model, while the parent relationships preserve its place in the capability. This is how a large engineering problem can be examined at a practical scale without losing its context.\n\nNavigator also provides search and locate, relationship association, and cloning modes. These support finding records, connecting eligible model entities, and reusing model content where the schema and permissions allow it. Saved layouts help preserve a useful view for the next visit.\n\nIn the demonstration, watch the hierarchy expand, choose the payload, and locate one of its functions. The goal is orientation: make the scope explicit before opening requirements, traces, or loss analysis. Every later decision becomes easier to interpret when its system boundary is clear.",
+      "wordCount": 202,
+      "estimatedDurationSeconds": 93,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.1–4.3, 6–7"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/navigator/NavigatorTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-navigator.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "requirements",
+      "title": "Requirements Tool",
+      "script": "A security requirement connects an intended protection to something the design must deliver. The Requirements Tool makes that connection visible through derivation, allocation, and verification.\n\nStart with the Fire Detection Payload in FireSat. The supplied architecture includes a Payload Detection Chain requirement and a Payload Geolocation requirement, linked to their parent in the satellite. These provide a concrete way to inspect how a requirement belongs to the broader capability.\n\nFor security work, add a tutorial requirement that protects detection-report integrity and allocate it to the relevant function or interface. Record the verification method and criteria so reviewers can see how the requirement will be checked. A requirement should describe an implementable obligation, with a clear place in the architecture and a reason for being there.\n\nThe hierarchy view helps you follow parents and children. Orphan and barren indicators support review of gaps in derivation and flow-down; the Reports Tool performs the associated gap assessment. Related controls and countermeasures can also give rise to requirements, keeping the security solution connected to its realization.\n\nThe demonstration moves between a requirement, its parentage, and its allocated record. As the design changes, these relationships make it possible to ask what changed, why it matters, and what evidence must be revisited.",
+      "transcript": "A security requirement connects an intended protection to something the design must deliver. The Requirements Tool makes that connection visible through derivation, allocation, and verification.\n\nStart with the Fire Detection Payload in FireSat. The supplied architecture includes a Payload Detection Chain requirement and a Payload Geolocation requirement, linked to their parent in the satellite. These provide a concrete way to inspect how a requirement belongs to the broader capability.\n\nFor security work, add a tutorial requirement that protects detection-report integrity and allocate it to the relevant function or interface. Record the verification method and criteria so reviewers can see how the requirement will be checked. A requirement should describe an implementable obligation, with a clear place in the architecture and a reason for being there.\n\nThe hierarchy view helps you follow parents and children. Orphan and barren indicators support review of gaps in derivation and flow-down; the Reports Tool performs the associated gap assessment. Related controls and countermeasures can also give rise to requirements, keeping the security solution connected to its realization.\n\nThe demonstration moves between a requirement, its parentage, and its allocated record. As the design changes, these relationships make it possible to ask what changed, why it matters, and what evidence must be revisited.",
+      "wordCount": 206,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.8, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/requirements/RequirementsTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-requirements.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "reports",
+      "title": "Reports Tool",
+      "script": "A model becomes more useful when another person can review what it says. The Reports Tool assembles engineering information from the selected System of Interest into readable outputs.\n\nUsing FireSat's Fire Detection Payload, begin with a System Description. The report brings together the architecture already captured in the model. A System Specification provides another view of the requirements that define the system. A Controls List packages selected security controls, with CSV available for tabular use.\n\nRequirement-traceability gap analysis asks a different question: where does the requirement structure need attention? It considers parentage and flow-down, including relationships across Systems of Interest, and records orphan or barren findings for review. These findings guide engineering follow-up; they are not a substitute for judging the quality of a requirement.\n\nThe tool supports text, Markdown, and HTML outputs, and a print workflow for PDF. Where applicable, model text can accompany the report so the human-readable view remains connected to the structured model.\n\nIn the demonstration, generate a description, inspect its sections, then switch to gap analysis. As tutorial security data is added to FireSat, regenerate the report to reflect it. Reporting is useful throughout the work: it gives reviews a current, inspectable expression of the system security model.",
+      "transcript": "A model becomes more useful when another person can review what it says. The Reports Tool assembles engineering information from the selected System of Interest into readable outputs.\n\nUsing FireSat's Fire Detection Payload, begin with a System Description. The report brings together the architecture already captured in the model. A System Specification provides another view of the requirements that define the system. A Controls List packages selected security controls, with CSV available for tabular use.\n\nRequirement-traceability gap analysis asks a different question: where does the requirement structure need attention? It considers parentage and flow-down, including relationships across Systems of Interest, and records orphan or barren findings for review. These findings guide engineering follow-up; they are not a substitute for judging the quality of a requirement.\n\nThe tool supports text, Markdown, and HTML outputs, and a print workflow for PDF. Where applicable, model text can accompany the report so the human-readable view remains connected to the structured model.\n\nIn the demonstration, generate a description, inspect its sections, then switch to gap analysis. As tutorial security data is added to FireSat, regenerate the report to reflect it. Reporting is useful throughout the work: it gives reviews a current, inspectable expression of the system security model.",
+      "wordCount": 203,
+      "estimatedDurationSeconds": 94,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§7, 9"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/reports/ReportsTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-reports.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "reference",
+      "title": "Reference Tool",
+      "script": "Security analysis benefits from established knowledge, but a catalog entry only becomes useful when its relevance to the system is understood. The Reference Tool supports that investigation.\n\nIt browses the reference data loaded into your deployment, including supported ATT&CK, ATLAS, EMB3D, and NIST control content. Framework and version filters narrow the search. The hierarchy and related-item views reveal how a technique, control, or other reference fits into its source catalog.\n\nBegin in research mode while examining FireSat's payload and its communication path. Search for material relevant to the question at hand, then read the selected item and its relationships. The tool exposes the loaded catalogs; the engineer decides whether the content applies to this architecture, environment, and protection objective.\n\nFor an eligible record opened in the Data Drawer, assignment mode can associate reference material with the Core model. Authorized cloning workflows create project-specific content while retaining its source connection. The imported reference partition stays separate from the editable engineering model.\n\nThe demonstration shows filtering, searching, and inspecting a result. The useful outcome is traceable reasoning: a reviewer can see which source informed the analysis, while the project's own attacks, controls, and requirements remain tailored to the system being engineered.",
+      "transcript": "Security analysis benefits from established knowledge, but a catalog entry only becomes useful when its relevance to the system is understood. The Reference Tool supports that investigation.\n\nIt browses the reference data loaded into your deployment, including supported ATT&CK, ATLAS, EMB3D, and NIST control content. Framework and version filters narrow the search. The hierarchy and related-item views reveal how a technique, control, or other reference fits into its source catalog.\n\nBegin in research mode while examining FireSat's payload and its communication path. Search for material relevant to the question at hand, then read the selected item and its relationships. The tool exposes the loaded catalogs; the engineer decides whether the content applies to this architecture, environment, and protection objective.\n\nFor an eligible record opened in the Data Drawer, assignment mode can associate reference material with the Core model. Authorized cloning workflows create project-specific content while retaining its source connection. The imported reference partition stays separate from the editable engineering model.\n\nThe demonstration shows filtering, searching, and inspecting a result. The useful outcome is traceable reasoning: a reviewer can see which source informed the analysis, while the project's own attacks, controls, and requirements remain tailored to the system being engineered.",
+      "wordCount": 200,
+      "estimatedDurationSeconds": 92,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.21, 7"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/reference/ReferenceTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-reference.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "state",
+      "title": "State Tool",
+      "script": "Protection changes as a system operates. The State Tool makes those changes explicit, so analysis can ask what is exposed under a particular set of conditions.\n\nA system security state represents a period with a consistent protection posture. Transitions describe the criteria for moving from one state to another. The state model should align with the program's functional behavior, while making the security distinctions meaningful.\n\nFireSat's Fire Detection Payload supplies a simple starting point: Standby and Imaging. The transition into Imaging is associated with payload enable over a lit ground track. The diagram lets you inspect that state structure and its transition criteria before adding tutorial security relationships.\n\nFrom the State Tool, hazards, countermeasures, and requirements can be associated with states. Context views relate the states to operating environments. These connections explain both when a protection applies and which conditions need further analysis. Diagram layouts can be arranged, saved, and exported for review.\n\nThe demonstration begins with the supplied states, selects a transition, and inspects the available context. Later, asset traces use the same states to record where an asset is held, transported, or used. A clear state model turns a static architecture into a description of security that changes with operation.",
+      "transcript": "Protection changes as a system operates. The State Tool makes those changes explicit, so analysis can ask what is exposed under a particular set of conditions.\n\nA system security state represents a period with a consistent protection posture. Transitions describe the criteria for moving from one state to another. The state model should align with the program's functional behavior, while making the security distinctions meaningful.\n\nFireSat's Fire Detection Payload supplies a simple starting point: Standby and Imaging. The transition into Imaging is associated with payload enable over a lit ground track. The diagram lets you inspect that state structure and its transition criteria before adding tutorial security relationships.\n\nFrom the State Tool, hazards, countermeasures, and requirements can be associated with states. Context views relate the states to operating environments. These connections explain both when a protection applies and which conditions need further analysis. Diagram layouts can be arranged, saved, and exported for review.\n\nThe demonstration begins with the supplied states, selects a transition, and inspects the available context. Later, asset traces use the same states to record where an asset is held, transported, or used. A clear state model turns a static architecture into a description of security that changes with operation.",
+      "wordCount": 202,
+      "estimatedDurationSeconds": 93,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.9, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/state/StateTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-state.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "flow",
+      "title": "Flow Tool",
+      "script": "Security depends on behavior: what information moves, which decisions are made, and how feedback changes the next action. The Flow Tool brings those relationships into view.\n\nIts functional-flow perspective describes the activity that fulfills the system's purpose. In FireSat's payload, the supplied functions collect infrared radiance, classify fire detections, and format and queue detection reports. The payload's interfaces connect that behavior to sensing and downlink equipment. A tutorial flow assembles those existing records into a useful analytical view.\n\nThe control-structure perspective supports System-Theoretic Process Analysis. Control algorithms, control actions, controlled processes, feedback, and process models describe a control loop. Their relationships help the engineer examine missing, mistimed, or inappropriate control and the hazards that could follow.\n\nThe tool can associate requirements and countermeasures with the analysis. This connects a behavioral concern to the feature or obligation intended to address it. The underlying records stay part of the same System of Interest, rather than becoming disconnected drawing content.\n\nThe demonstration moves from a functional path to the available control-analysis view. FireSat supplies the architecture; control structures are tutorial additions. Use the view to make the behavior understandable, then capture the security requirements revealed by examining how that behavior can go wrong.",
+      "transcript": "Security depends on behavior: what information moves, which decisions are made, and how feedback changes the next action. The Flow Tool brings those relationships into view.\n\nIts functional-flow perspective describes the activity that fulfills the system's purpose. In FireSat's payload, the supplied functions collect infrared radiance, classify fire detections, and format and queue detection reports. The payload's interfaces connect that behavior to sensing and downlink equipment. A tutorial flow assembles those existing records into a useful analytical view.\n\nThe control-structure perspective supports System-Theoretic Process Analysis. Control algorithms, control actions, controlled processes, feedback, and process models describe a control loop. Their relationships help the engineer examine missing, mistimed, or inappropriate control and the hazards that could follow.\n\nThe tool can associate requirements and countermeasures with the analysis. This connects a behavioral concern to the feature or obligation intended to address it. The underlying records stay part of the same System of Interest, rather than becoming disconnected drawing content.\n\nThe demonstration moves from a functional path to the available control-analysis view. FireSat supplies the architecture; control structures are tutorial additions. Use the view to make the behavior understandable, then capture the security requirements revealed by examining how that behavior can go wrong.",
+      "wordCount": 200,
+      "estimatedDurationSeconds": 92,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.17–4.19, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/flow/FlowTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-flow.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "assets",
+      "title": "Asset Manager Tool",
+      "script": "An asset is the value that needs protection. It may be a piece of information, an enabling technology, a credential, or a function on which the mission depends. It is distinct from the component that holds it.\n\nAsset Manager records that value and the obligations attached to it. It supports organic, horizontal, and derived assets, along with their hierarchy, criticality, required protection attributes, and governing regimes. Environments and architecture relationships place those obligations in the system's context.\n\nIn the FireSat tutorial, detection reports provide a concrete subject for discussing integrity. The supplied example contains the sensing and reporting architecture; the protected asset is added during the exercise. Record why the reports matter and which protection objective the analysis will examine, rather than assuming that all data carries the same obligation.\n\nDerived assets preserve their relationship to a primary asset. The model uses that relationship to carry inherited criticality and protection expectations where applicable. Trace analysis later identifies the functions, interfaces, and components that hold, transport, or use the asset in particular states.\n\nThe demonstration starts with the asset record and follows its protection and regime context. Expert identification comes first. Asset Manager makes the resulting decisions explicit, connected, and available to every later step of security analysis.",
+      "transcript": "An asset is the value that needs protection. It may be a piece of information, an enabling technology, a credential, or a function on which the mission depends. It is distinct from the component that holds it.\n\nAsset Manager records that value and the obligations attached to it. It supports organic, horizontal, and derived assets, along with their hierarchy, criticality, required protection attributes, and governing regimes. Environments and architecture relationships place those obligations in the system's context.\n\nIn the FireSat tutorial, detection reports provide a concrete subject for discussing integrity. The supplied example contains the sensing and reporting architecture; the protected asset is added during the exercise. Record why the reports matter and which protection objective the analysis will examine, rather than assuming that all data carries the same obligation.\n\nDerived assets preserve their relationship to a primary asset. The model uses that relationship to carry inherited criticality and protection expectations where applicable. Trace analysis later identifies the functions, interfaces, and components that hold, transport, or use the asset in particular states.\n\nThe demonstration starts with the asset record and follows its protection and regime context. Expert identification comes first. Asset Manager makes the resulting decisions explicit, connected, and available to every later step of security analysis.",
+      "wordCount": 207,
+      "estimatedDurationSeconds": 96,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.6, 4.10, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/assets/AssetManagerTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-assets.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "context",
+      "title": "Context Tool",
+      "script": "The same system can face different hazards in different environments. The Context Tool makes the setting of an analysis explicit before the engineer draws conclusions about loss.\n\nBegin with an operating environment. Relate the states that are valid there, identify hazardous conditions, and connect those hazards to the assets they threaten. The environment summary brings these relationships together so the scope can be inspected as a whole.\n\nFor FireSat's Fire Detection Payload, the supplied Payload Operating Environment describes cryogenic sensor operation on a thermally stable platform. Standby and Imaging provide the initial state vocabulary. A tutorial then adds an asset and a hazard to show how that existing architecture supports security reasoning.\n\nLoss allocation gives the analysis a precise subject. In SSTPA, a loss concerns a protection objective on an asset in one environment. That boundary matters: conclusions drawn under one set of conditions should not silently stand in for every other operating condition.\n\nThe tool supports environment and hazard management, loss allocation, and a report of the context. Selected reference material can inform hazard development. In the demonstration, move from the environment to its states and then to the tutorial loss. The result is a clear statement of where the analysis applies and why those conditions matter.",
+      "transcript": "The same system can face different hazards in different environments. The Context Tool makes the setting of an analysis explicit before the engineer draws conclusions about loss.\n\nBegin with an operating environment. Relate the states that are valid there, identify hazardous conditions, and connect those hazards to the assets they threaten. The environment summary brings these relationships together so the scope can be inspected as a whole.\n\nFor FireSat's Fire Detection Payload, the supplied Payload Operating Environment describes cryogenic sensor operation on a thermally stable platform. Standby and Imaging provide the initial state vocabulary. A tutorial then adds an asset and a hazard to show how that existing architecture supports security reasoning.\n\nLoss allocation gives the analysis a precise subject. In SSTPA, a loss concerns a protection objective on an asset in one environment. That boundary matters: conclusions drawn under one set of conditions should not silently stand in for every other operating condition.\n\nThe tool supports environment and hazard management, loss allocation, and a report of the context. Selected reference material can inform hazard development. In the demonstration, move from the environment to its states and then to the tutorial loss. The result is a clear statement of where the analysis applies and why those conditions matter.",
+      "wordCount": 208,
+      "estimatedDurationSeconds": 96,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.9–4.12, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/context/ContextTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-context.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "trace",
+      "title": "Trace Tool",
+      "script": "Where is an asset exposed as the system operates? The Trace Tool answers that question with a matrix connecting assets, architecture, and security states.\n\nEach relationship records whether a component, function, or interface holds, transports, or uses an asset in a particular state. These are engineering statements about actual exposure. A complete architecture does not imply a complete trace; the relationships must be examined and recorded.\n\nIn the FireSat tutorial, follow a detection-report asset through the Fire Detection Payload during Imaging. Consider the report-formatting function and the Payload Downlink Feed Interface. The exercise records the applicable relationships using architecture that already exists in the supplied example.\n\nChanges are staged so the pre-commit summary can be reviewed. When traces are committed, the backend derives inherited criticality and protection requirements from the recorded asset exposure. Earlier traces are superseded rather than simply removed, preserving the analytical history.\n\nThe matrix shows cell states and coverage indicators, and its contents can be exported for review. The demonstration focuses on one asset, one state, and a small set of entities before widening the analysis.\n\nTrace is the bridge between what matters and where it can be affected. Its quality directly influences the attacks and loss paths that can be analyzed next.",
+      "transcript": "Where is an asset exposed as the system operates? The Trace Tool answers that question with a matrix connecting assets, architecture, and security states.\n\nEach relationship records whether a component, function, or interface holds, transports, or uses an asset in a particular state. These are engineering statements about actual exposure. A complete architecture does not imply a complete trace; the relationships must be examined and recorded.\n\nIn the FireSat tutorial, follow a detection-report asset through the Fire Detection Payload during Imaging. Consider the report-formatting function and the Payload Downlink Feed Interface. The exercise records the applicable relationships using architecture that already exists in the supplied example.\n\nChanges are staged so the pre-commit summary can be reviewed. When traces are committed, the backend derives inherited criticality and protection requirements from the recorded asset exposure. Earlier traces are superseded rather than simply removed, preserving the analytical history.\n\nThe matrix shows cell states and coverage indicators, and its contents can be exported for review. The demonstration focuses on one asset, one state, and a small set of entities before widening the analysis.\n\nTrace is the bridge between what matters and where it can be affected. Its quality directly influences the attacks and loss paths that can be analyzed next.",
+      "wordCount": 206,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.9–4.10, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/trace/TraceTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-trace.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "loss",
+      "title": "Loss Tool",
+      "script": "Loss analysis asks how a particular protection objective could fail. The Loss Tool organizes that question into a structured attack tree tied to one asset and one environment.\n\nThe starting point is the model already built: the asset, valid security states, traced exposure, and attacks associated with the relevant architecture. Coverage views help reveal whether that foundation is ready for analysis. Missing relationships should be resolved before the tree is treated as persuasive evidence.\n\nIn the FireSat tutorial, a detection-report integrity loss gives the tree a specific purpose. Follow a path from the loss through its operating context and exposed entities to an applicable attack. Countermeasures then show where protection acts and where further attack or residual-vulnerability reasoning is needed.\n\nThe tool supports building and tailoring the tree, examining paths and metrics, and exporting residual-vulnerability analysis. It owns the attack-tree relationships, while Attack develops the underlying attack records. This keeps the scenario structure connected to its sources.\n\nThe demonstration inspects coverage, the tiered tree, and a path report. FireSat's shipped model supplies the architecture; the security scenario is added for the tutorial. A modeled path is an analytical result, not a decision to accept risk. Its assumptions and evidence must remain available to the responsible reviewer.",
+      "transcript": "Loss analysis asks how a particular protection objective could fail. The Loss Tool organizes that question into a structured attack tree tied to one asset and one environment.\n\nThe starting point is the model already built: the asset, valid security states, traced exposure, and attacks associated with the relevant architecture. Coverage views help reveal whether that foundation is ready for analysis. Missing relationships should be resolved before the tree is treated as persuasive evidence.\n\nIn the FireSat tutorial, a detection-report integrity loss gives the tree a specific purpose. Follow a path from the loss through its operating context and exposed entities to an applicable attack. Countermeasures then show where protection acts and where further attack or residual-vulnerability reasoning is needed.\n\nThe tool supports building and tailoring the tree, examining paths and metrics, and exporting residual-vulnerability analysis. It owns the attack-tree relationships, while Attack develops the underlying attack records. This keeps the scenario structure connected to its sources.\n\nThe demonstration inspects coverage, the tiered tree, and a path report. FireSat's shipped model supplies the architecture; the security scenario is added for the tutorial. A modeled path is an analytical result, not a decision to accept risk. Its assumptions and evidence must remain available to the responsible reviewer.",
+      "wordCount": 206,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.2, 4.12–4.15, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/loss/LossTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-loss.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "goalkeeper",
+      "title": "Goal Keeper Tool",
+      "script": "An assurance case should make its reasoning open to examination. Goal Keeper uses Goal Structuring Notation to connect a claim about protection with the strategy, context, and evidence that support it.\n\nStart with the asset and protection objective. A root goal states the claim. Supporting goals and strategies explain how it is argued. Contexts, assumptions, and justifications make the scope of that reasoning visible, while solutions point to evidence.\n\nIn SSTPA Tools, that evidence can include verification, validation, and loss analysis from the shared model. Verification concerns the implementation of requirements. Validation concerns fulfillment of the system's purpose. Loss evidence describes the modeled scenarios and their remaining vulnerabilities.\n\nFor the FireSat tutorial, the argument concerns the integrity of detection reports. The example architecture is the foundation; the argument and supporting security records are created during the exercise. Follow a goal to a supporting solution, then inspect the evidence it cites.\n\nGoal Keeper provides a diagram, evidence views, structural validation, and export. Structural checks help identify broken argument relationships, but they do not determine whether a claim is convincing. That remains a human judgment. The demonstration shows how to make the argument navigable, so reviewers can examine its support and the conditions under which it applies.",
+      "transcript": "An assurance case should make its reasoning open to examination. Goal Keeper uses Goal Structuring Notation to connect a claim about protection with the strategy, context, and evidence that support it.\n\nStart with the asset and protection objective. A root goal states the claim. Supporting goals and strategies explain how it is argued. Contexts, assumptions, and justifications make the scope of that reasoning visible, while solutions point to evidence.\n\nIn SSTPA Tools, that evidence can include verification, validation, and loss analysis from the shared model. Verification concerns the implementation of requirements. Validation concerns fulfillment of the system's purpose. Loss evidence describes the modeled scenarios and their remaining vulnerabilities.\n\nFor the FireSat tutorial, the argument concerns the integrity of detection reports. The example architecture is the foundation; the argument and supporting security records are created during the exercise. Follow a goal to a supporting solution, then inspect the evidence it cites.\n\nGoal Keeper provides a diagram, evidence views, structural validation, and export. Structural checks help identify broken argument relationships, but they do not determine whether a claim is convincing. That remains a human judgment. The demonstration shows how to make the argument navigable, so reviewers can examine its support and the conditions under which it applies.",
+      "wordCount": 205,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.6, 4.16, 7–9"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/goalkeeper/GoalKeeperTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-goalkeeper.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "usecase",
+      "title": "Use-Case Tool",
+      "script": "A use case describes how a system participates in its mission. The Use-Case Tool helps capture that participation before detailed security analysis depends on it.\n\nUse cases belong under the selected system's Purpose. Actors identify participants, while interfaces and functions connect the narrative to the architecture. Include and extend relationships describe how use cases relate to one another. The diagram offers a readable view of those connections.\n\nFor FireSat's Fire Detection Payload, the supplied purpose is Fire Sensing And Reporting. A tutorial use case can describe delivering a detection report, using the existing reporting function and Payload Downlink Feed Interface. The shipped example deliberately leaves use cases for the tutorial, so the exercise shows how one is constructed from the established model.\n\nRequirements belong to the participating functions and interfaces. Keeping that allocation explicit means the mission narrative leads to the design entities responsible for implementing an obligation. A use-case diagram alone does not establish that the obligation has been met.\n\nThe demonstration creates or selects the tutorial use case, inspects its actors and participants, and follows the related requirement context. Arrange and save the diagram for review. The useful result is a mission view that stays connected to the same architecture used by the other engineering tools.",
+      "transcript": "A use case describes how a system participates in its mission. The Use-Case Tool helps capture that participation before detailed security analysis depends on it.\n\nUse cases belong under the selected system's Purpose. Actors identify participants, while interfaces and functions connect the narrative to the architecture. Include and extend relationships describe how use cases relate to one another. The diagram offers a readable view of those connections.\n\nFor FireSat's Fire Detection Payload, the supplied purpose is Fire Sensing And Reporting. A tutorial use case can describe delivering a detection report, using the existing reporting function and Payload Downlink Feed Interface. The shipped example deliberately leaves use cases for the tutorial, so the exercise shows how one is constructed from the established model.\n\nRequirements belong to the participating functions and interfaces. Keeping that allocation explicit means the mission narrative leads to the design entities responsible for implementing an obligation. A use-case diagram alone does not establish that the obligation has been met.\n\nThe demonstration creates or selects the tutorial use case, inspects its actors and participants, and follows the related requirement context. Arrange and save the diagram for review. The useful result is a mission view that stays connected to the same architecture used by the other engineering tools.",
+      "wordCount": 208,
+      "estimatedDurationSeconds": 96,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.7, 4.20, 7"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/usecase/UseCaseTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-usecase.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "connection",
+      "title": "Connection Tool",
+      "script": "Interfaces describe how a system meets its surroundings. Connections describe how those interfaces participate in an interaction. The Connection Tool makes both the relationship and its engineering properties inspectable.\n\nA connection has an owning system and participating interfaces, which may come from different Systems of Interest. It can carry properties such as protocol, directionality, timing, and payload description. Connection requirements express obligations on the interaction itself, alongside requirements on the individual interfaces.\n\nFireSat provides a useful example in the Detection Downlink. The Space Segment owns the connection. Payload-side and ground-side interfaces participate across the architecture, including the Payload Communications Unit and the Satellite Receiver. The supplied model describes the downlink's communication context and associated requirements.\n\nThe tool provides selection, filtering, display, and export views. Filters help isolate the owning system, tier, participant, or communication characteristic of interest. Inspecting the participants exposes how a link crosses system boundaries without losing ownership.\n\nIn the demonstration, select the FireSat connection, review its participating interfaces, and inspect its requirements. This is where a security concern about information crossing a boundary becomes a concrete engineering subject. The link, its endpoints, and their obligations can then inform asset tracing, control selection, and loss analysis.",
+      "transcript": "Interfaces describe how a system meets its surroundings. Connections describe how those interfaces participate in an interaction. The Connection Tool makes both the relationship and its engineering properties inspectable.\n\nA connection has an owning system and participating interfaces, which may come from different Systems of Interest. It can carry properties such as protocol, directionality, timing, and payload description. Connection requirements express obligations on the interaction itself, alongside requirements on the individual interfaces.\n\nFireSat provides a useful example in the Detection Downlink. The Space Segment owns the connection. Payload-side and ground-side interfaces participate across the architecture, including the Payload Communications Unit and the Satellite Receiver. The supplied model describes the downlink's communication context and associated requirements.\n\nThe tool provides selection, filtering, display, and export views. Filters help isolate the owning system, tier, participant, or communication characteristic of interest. Inspecting the participants exposes how a link crosses system boundaries without losing ownership.\n\nIn the demonstration, select the FireSat connection, review its participating interfaces, and inspect its requirements. This is where a security concern about information crossing a boundary becomes a concrete engineering subject. The link, its endpoints, and their obligations can then inform asset tracing, control selection, and loss analysis.",
+      "wordCount": 198,
+      "estimatedDurationSeconds": 91,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.6, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/connection/ConnectionTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-connection.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "messagecenter",
+      "title": "Message Center",
+      "script": "Systems engineering is collaborative work, and the model needs a visible record of its stewardship. Message Center keeps internal notices and conversations close to the engineering workspace.\n\nThe inbox and outbox present messages with sortable details. Open a message to inspect its content, follow a related model reference where one is supplied, and manage the entries in your own mailbox. The tool also supports composing and replying to internal messages.\n\nSome notices are generated by model operations, including ownership and cloning activity. These give people context about changes that affect the data they work with. They belong to the user and collaboration side of the application, alongside the engineering model's ownership information.\n\nIn the FireSat demonstration, use a tutorial account to inspect the mailbox and its available views. If a prepared example notice is present, follow its model reference back to the relevant record. The supplied FireSat architecture does not require invented messages to explain the interface.\n\nMessage Center supports coordination; the technical security argument remains in the model's requirements, traces, losses, and evidence. That distinction helps reviewers understand what a message documents and where an engineering decision is recorded. Use the mailbox to maintain awareness, then return to the connected records that carry the analysis itself.",
+      "transcript": "Systems engineering is collaborative work, and the model needs a visible record of its stewardship. Message Center keeps internal notices and conversations close to the engineering workspace.\n\nThe inbox and outbox present messages with sortable details. Open a message to inspect its content, follow a related model reference where one is supplied, and manage the entries in your own mailbox. The tool also supports composing and replying to internal messages.\n\nSome notices are generated by model operations, including ownership and cloning activity. These give people context about changes that affect the data they work with. They belong to the user and collaboration side of the application, alongside the engineering model's ownership information.\n\nIn the FireSat demonstration, use a tutorial account to inspect the mailbox and its available views. If a prepared example notice is present, follow its model reference back to the relevant record. The supplied FireSat architecture does not require invented messages to explain the interface.\n\nMessage Center supports coordination; the technical security argument remains in the model's requirements, traces, losses, and evidence. That distinction helps reviewers understand what a message documents and where an engineering decision is recorded. Use the mailbox to maintain awareness, then return to the connected records that carry the analysis itself.",
+      "wordCount": 207,
+      "estimatedDurationSeconds": 96,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.7, 4.22"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/messagecenter/MessageCenterTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-messagecenter.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "admin",
+      "title": "Admin Tool",
+      "script": "The Admin Tool supports the people and services behind a shared SSTPA environment. It is available to authorized administrators and presents dedicated views for account stewardship and backend operation.\n\nThe account roster shows the users in the environment and their status. Administrative workflows include suspension and reinstatement, administrator authorization, and disenrollment with attention to the data an account owns. Ownership-transfer and sandbox views support continuity as people and responsibilities change.\n\nAdditional modes expose internal messaging and backend status. These help the administrator inspect the environment without turning ordinary engineering pages into account-management surfaces. The backend enforces authority as well as the visible interface, so a user's role remains part of each protected operation.\n\nFor the FireSat walkthrough, begin with an authorized tutorial account. Inspect the available modes, open backend status, and observe how account and ownership information is organized. A demonstration can show the top-level workflow without making account changes or displaying private user details.\n\nAdministration establishes the conditions for productive analysis: a reachable backend, appropriate accounts, loaded reference data, and clear project stewardship. Once those are in place, engineers work in the main interface and its analysis tools. The installation guide explains how the packaged services, first-run RootAdmin setup, and administrative workspace fit together.",
+      "transcript": "The Admin Tool supports the people and services behind a shared SSTPA environment. It is available to authorized administrators and presents dedicated views for account stewardship and backend operation.\n\nThe account roster shows the users in the environment and their status. Administrative workflows include suspension and reinstatement, administrator authorization, and disenrollment with attention to the data an account owns. Ownership-transfer and sandbox views support continuity as people and responsibilities change.\n\nAdditional modes expose internal messaging and backend status. These help the administrator inspect the environment without turning ordinary engineering pages into account-management surfaces. The backend enforces authority as well as the visible interface, so a user's role remains part of each protected operation.\n\nFor the FireSat walkthrough, begin with an authorized tutorial account. Inspect the available modes, open backend status, and observe how account and ownership information is organized. A demonstration can show the top-level workflow without making account changes or displaying private user details.\n\nAdministration establishes the conditions for productive analysis: a reachable backend, appropriate accounts, loaded reference data, and clear project stewardship. Once those are in place, engineers work in the main interface and its analysis tools. The installation guide explains how the packaged services, first-run RootAdmin setup, and administrative workspace fit together.",
+      "wordCount": 205,
+      "estimatedDurationSeconds": 95,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§3.7, 4.22"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/admin/AdminTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-admin.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/installer/README.md",
+          "section": "Install from a package"
+        },
+        {
+          "path": "SSTPA Tools/deploy/docker-compose.yml",
+          "section": "Service topology"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "attack",
+      "title": "Attack Tool",
+      "script": "An attack becomes analytically useful when it is connected to something the system actually exposes. The Attack Tool develops those connections before the Loss Tool assembles a scenario tree.\n\nBegin with the functions, interfaces, and components identified by current asset traces. Create a project-specific attack, or clone eligible content from the loaded reference catalogs. Associate the attack with the architecture it exploits. Without that association, it cannot meaningfully participate in the attack-tree structure.\n\nThe tool supports an entity view, hierarchy, and catalog. Strategy, tactic, and procedure relationships organize attacks at different levels of detail. Metrics and optional loss scope add information needed for a particular analysis. Reference provenance helps explain where a scenario originated while allowing the project record to be tailored.\n\nFor the FireSat tutorial, examine a detection-report integrity concern at the payload's reporting function or downlink feed interface. The architecture comes from the supplied example; the attack is a tutorial addition whose assumptions need to be stated.\n\nThe demonstration follows an attack from its record to the entity it exploits, then inspects hierarchy and scope. Attack manages these underlying records. Loss manages the tree built from them. Together they connect threat knowledge to a specific protection objective in the system being engineered.",
+      "transcript": "An attack becomes analytically useful when it is connected to something the system actually exposes. The Attack Tool develops those connections before the Loss Tool assembles a scenario tree.\n\nBegin with the functions, interfaces, and components identified by current asset traces. Create a project-specific attack, or clone eligible content from the loaded reference catalogs. Associate the attack with the architecture it exploits. Without that association, it cannot meaningfully participate in the attack-tree structure.\n\nThe tool supports an entity view, hierarchy, and catalog. Strategy, tactic, and procedure relationships organize attacks at different levels of detail. Metrics and optional loss scope add information needed for a particular analysis. Reference provenance helps explain where a scenario originated while allowing the project record to be tailored.\n\nFor the FireSat tutorial, examine a detection-report integrity concern at the payload's reporting function or downlink feed interface. The architecture comes from the supplied example; the attack is a tutorial addition whose assumptions need to be stated.\n\nThe demonstration follows an attack from its record to the entity it exploits, then inspects hierarchy and scope. Attack manages these underlying records. Loss manages the tree built from them. Together they connect threat knowledge to a specific protection objective in the system being engineered.",
+      "wordCount": 204,
+      "estimatedDurationSeconds": 94,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.13, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/attack/AttackTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-attack.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    },
+    {
+      "slug": "controls",
+      "title": "Controls Tool",
+      "script": "A control baseline is a starting point for engineering decisions. The Controls Tool keeps categorization, selection, tailoring, and implementation relationships together within the selected System of Interest.\n\nBegin by recording confidentiality, integrity, and availability impact. The tool can generate an initial baseline from compatible, loaded NIST reference data, then supports additions, overlays, and tailoring with reasons. Automatic selection depends on the allocation information present in that reference bundle; the engineer reviews the resulting coverage.\n\nDedicated views address cyber resilience and survivability. Mapping connects selected baseline entries to model Security Controls, requirements, and countermeasures. This is the transition from a catalog statement to a feature or obligation in the actual design. Validation findings help identify missing information before advancing the baseline's status.\n\nIn the FireSat tutorial, create a payload baseline and inspect a control relevant to detection-report integrity. Record why it applies, what tailoring is justified, and which requirement or countermeasure realizes it. The tutorial baseline extends the supplied architecture rather than claiming to be a pre-approved mission baseline.\n\nThe demonstration moves through categorization, the baseline, mapping, and validation. A selected control is not evidence of effectiveness by itself. Its implementation, verification, and contribution to the wider assurance argument give it engineering meaning.",
+      "transcript": "A control baseline is a starting point for engineering decisions. The Controls Tool keeps categorization, selection, tailoring, and implementation relationships together within the selected System of Interest.\n\nBegin by recording confidentiality, integrity, and availability impact. The tool can generate an initial baseline from compatible, loaded NIST reference data, then supports additions, overlays, and tailoring with reasons. Automatic selection depends on the allocation information present in that reference bundle; the engineer reviews the resulting coverage.\n\nDedicated views address cyber resilience and survivability. Mapping connects selected baseline entries to model Security Controls, requirements, and countermeasures. This is the transition from a catalog statement to a feature or obligation in the actual design. Validation findings help identify missing information before advancing the baseline's status.\n\nIn the FireSat tutorial, create a payload baseline and inspect a control relevant to detection-report integrity. Record why it applies, what tailoring is justified, and which requirement or countermeasure realizes it. The tutorial baseline extends the supplied architecture rather than claiming to be a pre-approved mission baseline.\n\nThe demonstration moves through categorization, the baseline, mapping, and validation. A selected control is not evidence of effectiveness by itself. Its implementation, verification, and contribution to the wider assurance argument give it engineering meaning.",
+      "wordCount": 202,
+      "estimatedDurationSeconds": 93,
+      "sources": [
+        {
+          "path": "SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx",
+          "section": "§§4.14–4.15, 7–8"
+        },
+        {
+          "path": "SSTPA Tools/frontend/src/tools/controls/ControlsTool.tsx",
+          "section": "Current implementation"
+        },
+        {
+          "path": "SSTPA_Dev_WIKI/wiki/entities/tool-controls.md",
+          "section": "Summary, checked against source"
+        },
+        {
+          "path": "SSTPA Tools/Example_Data/FireSat/FireSat-Hierarchy.md",
+          "section": "Hierarchy, communications, tutorial omissions"
+        }
+      ]
+    }
+  ]
+}

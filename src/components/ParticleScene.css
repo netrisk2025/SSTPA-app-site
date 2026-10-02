@@ -1,0 +1,59 @@
+.particle-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  isolation: isolate;
+  overflow: hidden;
+  color: #e7e9df;
+}
+.particle-scene__canvas { display: block; width: 100%; height: 100%; }
+.particle-scene__caption {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(231, 233, 223, .65);
+  font-family: var(--font-body, "DM Sans Variable", sans-serif);
+  font-size: 9px;
+  letter-spacing: .17em;
+  line-height: 1.5;
+}
+.particle-scene__index { color: rgba(231, 233, 223, .92); font-variant-numeric: tabular-nums; letter-spacing: .05em; white-space: nowrap; }
+.particle-scene__index > span { color: rgba(231, 233, 223, .38); }
+.particle-scene__toggle, .particle-scene__still {
+  position: absolute;
+  right: 24px;
+  bottom: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 80px;
+  min-height: 44px;
+  padding: 8px 10px;
+  color: rgba(231, 233, 223, .65);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-family: var(--font-body, "DM Sans Variable", sans-serif);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.particle-scene__toggle:hover { color: #fff; border-color: rgba(231, 233, 223, .22); }
+.particle-scene__toggle:focus-visible { outline: 2px solid #c8caa6; outline-offset: 3px; }
+.particle-scene__toggle-icon { display: block; width: 8px; height: 9px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; box-sizing: border-box; }
+.particle-scene__toggle-icon.is-paused { width: 0; height: 0; border: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid currentColor; }
+.particle-scene__still { cursor: default; }
+@media (max-width: 700px) {
+  .particle-scene__caption { left: 16px; bottom: 23px; gap: 10px; font-size: 8px; letter-spacing: .10em; }
+  .particle-scene__toggle, .particle-scene__still { right: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .particle-scene__toggle { transition: none; }
+}

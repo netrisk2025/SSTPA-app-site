@@ -5,21 +5,25 @@
       "name": "Main Workspace",
       "subtitle": "One connected system security model.",
       "category": "Workspace",
-      "overview": "Create the architecture, inspect model records, and launch every analysis tool from a shared System of Interest. The Main Panel and Data Drawer keep the security solution connected as the design grows.",
+      "overview": "Enter an administrator-established project, select a System of Interest, and navigate its connected engineering model. The Main Panel, Data Drawer, and Control Panel bring architecture and specialized analysis into one workspace.",
       "capabilities": [
-        "Create systems, components, functions, and interfaces",
+        "Navigate an established project and its system architecture",
         "Inspect and edit model properties in the Data Drawer",
         "Work within an explicit System of Interest",
         "Launch 17 specialized add-on tools against shared data"
       ],
       "exampleSteps": [
-        "Launch SSTPA Tools and sign in to the demonstration environment",
-        "Create Sentinel Mission as a new project",
-        "Add Environmental Monitoring System as a Tier-1 system",
-        "Select it, inspect the Main Panel, and open an example record in the Data Drawer"
+        "Sign in to the environment established by your administrator",
+        "Open FireSat in Navigator and expand Space Segment → FireSat Satellite",
+        "Select Fire Detection Payload as the System of Interest",
+        "Inspect its purpose and open Classify Fire Detections in the Data Drawer"
       ],
       "guidePath": "/docs/01-gui.html",
-      "posterPath": "/docs/screenshots/dark/gui-main.png"
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "workspace"
     },
     {
       "slug": "navigator",
@@ -34,13 +38,17 @@
         "Clone nodes and save diagram layouts"
       ],
       "exampleSteps": [
-        "Launch Navigator from the Control Panel",
-        "Locate Sentinel Mission and expand its system hierarchy",
-        "Select Environmental Monitoring System as the current System of Interest",
-        "Search for Alert data and return to its system context"
+        "Open FireSat in the hierarchy view",
+        "Expand Space Segment → FireSat Satellite → Fire Detection Payload",
+        "Select the payload as the current System of Interest",
+        "Search for Classify Fire Detections and inspect its architecture context"
       ],
       "guidePath": "/docs/tool-navigator.html",
-      "posterPath": "/docs/screenshots/dark/tool-navigator.png"
+      "posterPath": "/docs/screenshots/dark/tool-navigator.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "navigator"
     },
     {
       "slug": "requirements",
@@ -55,13 +63,17 @@
         "Inspect lineage and orphan or barren requirements"
       ],
       "exampleSteps": [
-        "Launch Requirements for Environmental Monitoring System",
-        "Create an integrity requirement for Alert data",
-        "Allocate it to the relevant function or interface",
-        "Open the hierarchy and inspect its parent and verification criteria"
+        "Select Fire Detection Payload and open Requirements",
+        "Inspect Payload Detection Chain and its parent requirement",
+        "Review the supplied statement and verification criteria",
+        "In a tutorial exercise, allocate a detection-report integrity requirement to the reporting function"
       ],
       "guidePath": "/docs/tool-requirements.html",
-      "posterPath": "/docs/screenshots/dark/tool-requirements.png"
+      "posterPath": "/docs/screenshots/dark/tool-requirements.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "requirements"
     },
     {
       "slug": "reports",
@@ -76,20 +88,24 @@
         "Export text, Markdown, or HTML and print to PDF"
       ],
       "exampleSteps": [
-        "Launch Reports for Environmental Monitoring System",
-        "Choose System Description and Generate",
-        "Review the generated architecture sections",
-        "Generate Requirement-Traceability Gap Analysis and inspect findings"
+        "Select Fire Detection Payload and open Reports",
+        "Generate System Description and inspect its architecture sections",
+        "Switch to System Specification to inspect the requirement view",
+        "Generate Requirement-Traceability Gap Analysis and examine the findings"
       ],
       "guidePath": "/docs/",
-      "posterPath": "/docs/screenshots/dark/tool-reports.png"
+      "posterPath": "/docs/screenshots/dark/tool-reports.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "reports"
     },
     {
       "slug": "reference",
       "name": "Reference Tool",
       "subtitle": "Bring established knowledge into context.",
       "category": "Analysis",
-      "overview": "Research loaded security catalogs and their relationships, then assign eligible reference content to model records. Catalog sources remain separate from the project\u2019s editable engineering data.",
+      "overview": "Research loaded security catalogs and their relationships, then assign eligible reference content to model records. Catalog sources remain separate from the project’s editable engineering data.",
       "capabilities": [
         "Search loaded frameworks and versions",
         "Browse catalog hierarchy and related items",
@@ -97,13 +113,17 @@
         "Assign eligible references to Core model records"
       ],
       "exampleSteps": [
-        "Launch Reference in research mode",
-        "Search a loaded framework for a relevant technique or control",
-        "Open a result and inspect related items",
-        "Show framework and version filters"
+        "Keep Fire Detection Payload selected and open Reference in research mode",
+        "Filter the loaded reference catalog by framework and version",
+        "Search for material relevant to the payload communication path",
+        "Open a result, inspect its related items, and review its applicability"
       ],
       "guidePath": "/docs/tool-reference.html",
-      "posterPath": "/docs/screenshots/dark/tool-reference.png"
+      "posterPath": "/docs/screenshots/dark/tool-reference.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "reference"
     },
     {
       "slug": "state",
@@ -118,13 +138,17 @@
         "Save layouts and export diagram views"
       ],
       "exampleSteps": [
-        "Launch State for Environmental Monitoring System",
-        "Inspect Observe and Transmit states",
-        "Select a transition and review its criteria",
-        "Create a demonstration state or refine its description and save"
+        "Open State for Fire Detection Payload",
+        "Inspect the supplied Standby and Imaging states",
+        "Select the transition and review the payload-enable criterion",
+        "Switch between the diagram, context, and criteria views"
       ],
       "guidePath": "/docs/tool-state.html",
-      "posterPath": "/docs/screenshots/dark/tool-state.png"
+      "posterPath": "/docs/screenshots/dark/tool-state.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "state"
     },
     {
       "slug": "flow",
@@ -139,13 +163,17 @@
         "Create related requirements and countermeasures"
       ],
       "exampleSteps": [
-        "Launch Flow and choose the alert-processing functional flow",
-        "Inspect the path from observation to transmission",
-        "Select a function or flow edge and inspect its properties",
-        "Switch to the STPA control view to show feedback and control context"
+        "Select Fire Detection Payload and open Flow",
+        "Create or select a tutorial flow using the supplied payload functions",
+        "Follow Collect Infrared Radiance → Classify Fire Detections → Format And Queue Detection Reports",
+        "Inspect the control-structure view and the available requirement or countermeasure actions"
       ],
       "guidePath": "/docs/tool-flow.html",
-      "posterPath": "/docs/screenshots/dark/tool-flow.png"
+      "posterPath": "/docs/screenshots/dark/tool-flow.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "flow"
     },
     {
       "slug": "assets",
@@ -160,13 +188,17 @@
         "Inspect asset parentage and architecture allocation"
       ],
       "exampleSteps": [
-        "Launch Asset Manager for Environmental Monitoring System",
-        "Create or select Alert data",
-        "Review its integrity objective and mission criticality",
-        "Inspect its regime and architecture relationships"
+        "Select Fire Detection Payload and open Asset Manager",
+        "Create or select the tutorial Detection reports asset",
+        "Record its integrity objective and the mission value it protects",
+        "Inspect the asset hierarchy, regime, and environment relationships"
       ],
       "guidePath": "/docs/tool-asset-manager.html",
-      "posterPath": "/docs/screenshots/dark/tool-asset-manager.png"
+      "posterPath": "/docs/screenshots/dark/tool-asset-manager.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "assets"
     },
     {
       "slug": "context",
@@ -181,13 +213,17 @@
         "Allocate losses to their asset and environment context"
       ],
       "exampleSteps": [
-        "Launch Context for Environmental Monitoring System",
-        "Select Field deployment environment",
-        "Inspect its valid states and associated hazards",
-        "Review the Alert data integrity loss and its environment allocation"
+        "Select Fire Detection Payload and open Context",
+        "Inspect Payload Operating Environment and its applicable states",
+        "Create or select the tutorial hazard associated with detection-report integrity",
+        "Inspect the tutorial loss allocated to its asset and operating environment"
       ],
       "guidePath": "/docs/tool-context.html",
-      "posterPath": "/docs/screenshots/dark/tool-context.png"
+      "posterPath": "/docs/screenshots/dark/tool-context.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "context"
     },
     {
       "slug": "trace",
@@ -202,13 +238,17 @@
         "Derive inherited criticality and protection requirements"
       ],
       "exampleSteps": [
-        "Launch Trace and select Alert data",
-        "Locate Transmit state and the telemetry interface",
-        "Set the applicable transport relationship",
-        "Review the pre-commit summary, commit, and inspect coverage"
+        "Open Trace for Fire Detection Payload and select the tutorial Detection reports asset",
+        "Choose Imaging and locate Format And Queue Detection Reports and Payload Downlink Feed Interface",
+        "Stage the applicable use or transport relationship and inspect the pre-commit summary",
+        "Review the committed trace coverage and resulting protection obligations"
       ],
       "guidePath": "/docs/tool-trace.html",
-      "posterPath": "/docs/screenshots/dark/tool-trace.png"
+      "posterPath": "/docs/screenshots/dark/tool-trace.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "trace"
     },
     {
       "slug": "loss",
@@ -223,13 +263,17 @@
         "Add countermeasures and export residual-vulnerability analysis"
       ],
       "exampleSteps": [
-        "Launch Loss and select the Alert data integrity loss",
-        "Inspect Coverage before building the tree",
-        "Build or open the tree and follow one attack path",
-        "Inspect the path\u2019s countermeasure and residual-vulnerability report"
+        "Select the tutorial detection-report integrity loss for Fire Detection Payload",
+        "Inspect Coverage for gaps in current asset traces and attack associations",
+        "Open or build the tutorial tree and follow one path",
+        "Inspect countermeasure context and the residual-vulnerability report"
       ],
       "guidePath": "/docs/tool-loss.html",
-      "posterPath": "/docs/screenshots/dark/tool-loss.png"
+      "posterPath": "/docs/screenshots/dark/tool-loss.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "loss"
     },
     {
       "slug": "goalkeeper",
@@ -244,20 +288,24 @@
         "Arrange, save, and export the assurance argument"
       ],
       "exampleSteps": [
-        "Launch Goal Keeper and select the Alert data integrity root goal",
-        "Inspect its supporting strategy and solution",
-        "Open Evidence and review a linked loss or verification",
-        "Open Validation to inspect structural findings"
+        "Open Goal Keeper for Fire Detection Payload",
+        "Create or select the tutorial detection-report integrity argument",
+        "Follow a goal through its strategy to an evidence-bearing solution",
+        "Inspect the Evidence and Validation views for the selected structure"
       ],
       "guidePath": "/docs/tool-goal-keeper.html",
-      "posterPath": "/docs/screenshots/dark/tool-goal-keeper.png"
+      "posterPath": "/docs/screenshots/dark/tool-goal-keeper.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "goalkeeper"
     },
     {
       "slug": "usecase",
       "name": "Use-Case Tool",
       "subtitle": "Connect the mission to its participants.",
       "category": "Architecture",
-      "overview": "Capture use cases under a system\u2019s Purpose and connect actors, interfaces, and functions. Use the diagram to make mission participation and requirement allocation easier to inspect.",
+      "overview": "Capture use cases under a system’s Purpose and connect actors, interfaces, and functions. Use the diagram to make mission participation and requirement allocation easier to inspect.",
       "capabilities": [
         "Create use cases under the selected Purpose",
         "Add actors and participating interfaces or functions",
@@ -265,13 +313,17 @@
         "Inspect participant requirements and diagram validation"
       ],
       "exampleSteps": [
-        "Launch Use-Case for Environmental Monitoring System",
-        "Choose New Use Case and create Deliver trusted alert",
-        "Add an Operator actor and the telemetry interface",
-        "Inspect the diagram and its participating function"
+        "Open Use-Case for the payload purpose, Fire Sensing And Reporting",
+        "Create or select the tutorial Deliver detection report use case",
+        "Inspect its actor, Format And Queue Detection Reports function, and Payload Downlink Feed Interface",
+        "Review participant requirements and the saved diagram"
       ],
       "guidePath": "/docs/",
-      "posterPath": "/docs/screenshots/dark/tool-usecase.png"
+      "posterPath": "/docs/screenshots/dark/tool-usecase.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "usecase"
     },
     {
       "slug": "connection",
@@ -286,13 +338,17 @@
         "Allocate security requirements to a connection"
       ],
       "exampleSteps": [
-        "Launch Connection for Environmental Monitoring System",
-        "Select the telemetry connection",
-        "Inspect the gateway and operator-side interface participants",
-        "Review directionality and the connection\u2019s integrity requirement"
+        "Select the FireSat Space Segment and open Connection",
+        "Choose Detection Downlink",
+        "Inspect the participating payload and ground-receiver interfaces",
+        "Review communication properties and the connection requirement"
       ],
       "guidePath": "/docs/tool-connection.html",
-      "posterPath": "/docs/screenshots/dark/tool-connection.png"
+      "posterPath": "/docs/screenshots/dark/tool-connection.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Space Segment",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "connection"
     },
     {
       "slug": "messagecenter",
@@ -307,13 +363,17 @@
         "Compose internal messages and manage mailbox entries"
       ],
       "exampleSteps": [
-        "Launch Message Center from the Control Panel",
-        "Refresh the example account\u2019s mailbox",
-        "Inspect a non-sensitive example-project notice if present",
-        "Switch to Outbox, then return to Inbox"
+        "Open Message Center from the FireSat workspace",
+        "Inspect the tutorial account inbox and available sorting controls",
+        "Open a prepared example-project notice if one is available",
+        "Switch to Outbox and inspect the compose interface without sending a message"
       ],
       "guidePath": "/docs/01-gui.html",
-      "posterPath": "/docs/screenshots/dark/gui-main.png"
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "messagecenter"
     },
     {
       "slug": "admin",
@@ -328,13 +388,17 @@
         "Inspect backend status and product information"
       ],
       "exampleSteps": [
-        "Launch Admin with an authorized example account",
-        "Review the account roster with sensitive fields excluded from the recording",
-        "Open Backend Status",
-        "Inspect service and product information without changing accounts"
+        "Open Admin with an authorized tutorial account",
+        "Review the available administration modes",
+        "Inspect Ownership Transfer and Sandbox Management without changing data",
+        "Open Backend Status and review the environment information"
       ],
       "guidePath": "/docs/01-gui.html",
-      "posterPath": "/docs/screenshots/dark/gui-main.png"
+      "posterPath": "/docs/screenshots/dark/gui-main.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "narrationSlug": "admin"
     },
     {
       "slug": "attack",
@@ -349,34 +413,42 @@
         "Record metrics and optional loss scope"
       ],
       "exampleSteps": [
-        "Launch Attack for Environmental Monitoring System",
-        "Select an example alert-tampering attack",
-        "Inspect the interface or function it exploits",
-        "Review the attack hierarchy, metrics, and target loss"
+        "Select Fire Detection Payload and open Attack",
+        "Create or select a tutorial attack on detection-report integrity",
+        "Inspect its association with the reporting function or downlink feed interface",
+        "Review the hierarchy, reference provenance, metrics, and loss scope"
       ],
       "guidePath": "/docs/tool-attack.html",
-      "posterPath": "/docs/screenshots/dark/tool-attack.png"
+      "posterPath": "/docs/screenshots/dark/tool-attack.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "attack"
     },
     {
       "slug": "controls",
       "name": "Controls Tool",
       "subtitle": "Carry controls into the engineered design.",
       "category": "Analysis",
-      "overview": "Build and tailor a security controls baseline, then map selected entries to model controls, requirements, and countermeasures. Keep categorization, tailoring rationale, and implementation relationships together.",
+      "overview": "Categorize the system, select and tailor a security controls baseline, then connect controls to requirements and countermeasures. Initial automatic selection depends on the allocation data in the loaded reference bundle.",
       "capabilities": [
         "Categorize confidentiality, integrity, and availability impact",
-        "Generate and tailor a baseline from loaded NIST references",
+        "Select and tailor a baseline from loaded NIST references",
         "Record overlays, resilience, and survivability considerations",
         "Map controls to requirements and countermeasures"
       ],
       "exampleSteps": [
-        "Launch Controls for Environmental Monitoring System",
-        "Select or create the Sentinel Mission baseline",
-        "Inspect integrity categorization and a selected control",
-        "Show the tailoring rationale and mapping to an implementing requirement"
+        "Select Fire Detection Payload and open Controls",
+        "Create or select the tutorial FireSat payload baseline",
+        "Inspect categorization, the selected control, and its tailoring rationale",
+        "Review requirement or countermeasure mapping and the Validation view"
       ],
       "guidePath": "/docs/tool-controls.html",
-      "posterPath": "/docs/screenshots/dark/tool-controls.png"
+      "posterPath": "/docs/screenshots/dark/tool-controls.png",
+      "exampleProject": "FireSat",
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "narrationSlug": "controls"
     }
   ],
   "methodology": {
@@ -440,107 +512,157 @@
       },
       {
         "name": "Certifiability",
-        "description": "SSTPA\u2019s protection objective for achieving and maintaining certification within a regime."
+        "description": "SSTPA’s protection objective for achieving and maintaining certification within a regime."
       }
     ],
     "workflow": [
       {
         "number": 1,
         "title": "Establish the Tier-1 architecture",
-        "description": "Capture the capability requirements, Tier-1 systems, and connections from the program\u2019s functional architecture.",
+        "description": "Capture the capability requirements, Tier-1 systems, and connections from the program’s functional architecture.",
         "output": "Allocated capability requirements and an explicit architecture.",
-        "tools": ["workspace", "requirements", "connection", "navigator"]
+        "tools": [
+          "workspace",
+          "requirements",
+          "connection",
+          "navigator"
+        ]
       },
       {
         "number": 2,
         "title": "Allocate requirements and join interfaces",
         "description": "Decompose security requirements onto interfaces, functions, and components; connect the interfaces that participate in each system connection.",
         "output": "Architecture elements with requirements and interface participation.",
-        "tools": ["requirements", "connection", "navigator"]
+        "tools": [
+          "requirements",
+          "connection",
+          "navigator"
+        ]
       },
       {
         "number": 3,
         "title": "Record assets and protection obligations",
         "description": "Bring expert asset-identification results into the model. Define asset parentage, criticality, required security attributes, and governing regimes.",
         "output": "A defined asset set with protection objectives.",
-        "tools": ["assets"]
+        "tools": [
+          "assets"
+        ]
       },
       {
         "number": 4,
         "title": "Define system security states",
-        "description": "Describe states with a consistent protection posture and the criteria for transitions, aligned with the program\u2019s functional state model.",
+        "description": "Describe states with a consistent protection posture and the criteria for transitions, aligned with the program’s functional state model.",
         "output": "Security states, transitions, and environment validity.",
-        "tools": ["state", "context"]
+        "tools": [
+          "state",
+          "context"
+        ]
       },
       {
         "number": 5,
         "title": "Define environments and research threats",
         "description": "Describe relevant operating environments and the threats that could act within them. Research applicable reference knowledge.",
         "output": "An explicit operating context and relevant threat knowledge.",
-        "tools": ["context", "reference"]
+        "tools": [
+          "context",
+          "reference"
+        ]
       },
       {
         "number": 6,
         "title": "Analyze hazardous conditions",
         "description": "Connect hazards to their environments, states, threatened assets, and constraints.",
-        "output": "Hazards grounded in the system\u2019s actual operating conditions.",
-        "tools": ["context", "reference"]
+        "output": "Hazards grounded in the system’s actual operating conditions.",
+        "tools": [
+          "context",
+          "reference"
+        ]
       },
       {
         "number": 7,
         "title": "Analyze functional and control behavior",
         "description": "Use functional flows and STPA control structures to identify requirements for control actions, feedback, and process knowledge.",
         "output": "Security requirements and countermeasures derived from behavior.",
-        "tools": ["flow", "requirements"]
+        "tools": [
+          "flow",
+          "requirements"
+        ]
       },
       {
         "number": 8,
         "title": "Develop controls to mitigate hazards",
         "description": "Categorize the system, select and tailor a controls baseline, and connect controls to hazards and implementing requirements.",
         "output": "A tailored baseline with traceable model controls.",
-        "tools": ["controls", "reference"]
+        "tools": [
+          "controls",
+          "reference"
+        ]
       },
       {
         "number": 9,
         "title": "Define validation and verification criteria",
         "description": "Record how the security solution will satisfy its purpose and controls, and how implementing requirements will be verified.",
         "output": "Purpose-level validation and requirement-level verification criteria.",
-        "tools": ["controls", "requirements", "workspace"]
+        "tools": [
+          "controls",
+          "requirements",
+          "workspace"
+        ]
       },
       {
         "number": 10,
         "title": "Trace asset exposure through states",
         "description": "For each asset, record the components, functions, and interfaces that hold, transport, or use it in each security state.",
         "output": "State-scoped exposure and inherited protection obligations.",
-        "tools": ["trace", "state", "assets"]
+        "tools": [
+          "trace",
+          "state",
+          "assets"
+        ]
       },
       {
         "number": 11,
         "title": "Develop actionable attacks",
         "description": "Connect applicable attacks to exposed architecture elements. Add hierarchy, metrics, reference sources, and loss scope as needed.",
         "output": "Attacks ready to participate in loss analysis.",
-        "tools": ["attack", "reference"]
+        "tools": [
+          "attack",
+          "reference"
+        ]
       },
       {
         "number": 12,
         "title": "Analyze losses and remaining vulnerability",
         "description": "Build and tailor an attack tree for an asset protection objective in one environment. Examine paths, countermeasures, and residual vulnerabilities.",
         "output": "Loss analysis with documented scenario dispositions and rationale.",
-        "tools": ["loss", "context"]
+        "tools": [
+          "loss",
+          "context"
+        ]
       },
       {
         "number": 13,
         "title": "Construct and review the assurance argument",
-        "description": "Build a GSN argument supported by validation, verification, and loss evidence. Record the responsible authority\u2019s disposition and any conditions.",
+        "description": "Build a GSN argument supported by validation, verification, and loss evidence. Record the responsible authority’s disposition and any conditions.",
         "output": "An evidence-backed argument for review, or a defined design revision.",
-        "tools": ["goalkeeper", "loss", "requirements", "flow"]
+        "tools": [
+          "goalkeeper",
+          "loss",
+          "requirements",
+          "flow"
+        ]
       },
       {
         "number": 14,
         "title": "Decompose and integrate child systems",
         "description": "Refine components into child Systems of Interest and repeat the analysis at each tier. Gather verification and validation evidence during integration.",
         "output": "Connected security reasoning and evidence across the hierarchy.",
-        "tools": ["workspace", "navigator", "requirements", "assets"]
+        "tools": [
+          "workspace",
+          "navigator",
+          "requirements",
+          "assets"
+        ]
       }
     ],
     "loops": [
@@ -560,7 +682,7 @@
     "workflowNote": "The fourteen steps follow the current white paper. Tools support the work without enforcing its order. Use-Case supports early architecture capture, Reference research is cross-cutting, and Reports packages results throughout.",
     "ecosystem": {
       "title": "Fits into the engineering program",
-      "body": "The program\u2019s existing requirements, functional modeling, and analytical tools retain their respective roles. SSTPA is the working model for the System Security Solution, using architecture faithfully captured from those sources.",
+      "body": "The program’s existing requirements, functional modeling, and analytical tools retain their respective roles. SSTPA is the working model for the System Security Solution, using architecture faithfully captured from those sources.",
       "roles": [
         {
           "concern": "Requirements configuration management",
@@ -594,7 +716,7 @@
         "Deferred pending evidence",
         "Unresolved"
       ],
-      "arv": "Allowed Residual Vulnerability is SSTPA\u2019s term for an accepted residual vulnerability under documented conditions. The acceptance record identifies the deciding authority, configuration, regime, conditions, and review triggers."
+      "arv": "Allowed Residual Vulnerability is SSTPA’s term for an accepted residual vulnerability under documented conditions. The acceptance record identifies the deciding authority, configuration, regime, conditions, and review triggers."
     },
     "glossary": [
       {
@@ -622,5 +744,125 @@
         "definition": "Evidence that the realized system fulfills its intended purpose in its intended environment."
       }
     ]
+  },
+  "example": {
+    "name": "FireSat",
+    "title": "One mission. A connected system of systems.",
+    "description": "A forest-fire detection and response capability spanning space, command, aviation, and ground systems. Follow the Fire Detection Payload from infrared sensing to detection reports, then build its security analysis in tutorial exercises.",
+    "segments": [
+      "Space",
+      "Command",
+      "Aviation",
+      "Ground"
+    ],
+    "system": "Fire Detection Payload",
+    "scopeNote": "FireSat is an educational architecture, not a validated operational design. Its supplied structure includes systems, states, functions, interfaces, connections, and requirements. Assets, traces, use cases, control structures, losses, countermeasures, and assurance arguments are developed in the tutorials.",
+    "facts": [
+      {
+        "value": "4",
+        "label": "mission segments"
+      },
+      {
+        "value": "33",
+        "label": "connected systems"
+      },
+      {
+        "value": "8",
+        "label": "system tiers"
+      }
+    ]
+  },
+  "installationAdmin": {
+    "eyebrow": "Installation & administration",
+    "title": "Give the engineering model a dependable home.",
+    "subtitle": "Prepare the environment. Establish its people and projects. Open a connected workspace.",
+    "introduction": "SSTPA Tools separates the installer, startup software, desktop interface, and backend into four independently operable segments. Administrators establish the environment and stewardship that let engineers work from a shared model.",
+    "narrationSlug": "installation-admin",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Install the release package",
+        "body": "Use the platform-specific install helper for Linux, macOS, or Windows. The installer checks Docker and Compose, stages the packaged components, and generates credentials for that installation."
+      },
+      {
+        "number": 2,
+        "title": "Establish a trusted connection",
+        "body": "The packaged trust helper installs the local Caddy certificate authority for the desktop interface. The installer attempts this setup when Docker is reachable; the guide covers checking and completing it."
+      },
+      {
+        "number": 3,
+        "title": "Start and establish RootAdmin",
+        "body": "Launch the Startup Software. It starts the backend, guides first-run RootAdmin creation, authenticates the session, and opens the desktop workspace."
+      },
+      {
+        "number": 4,
+        "title": "Load knowledge and the example",
+        "body": "Load the validated Reference Data package after the backend is healthy. FireSat is a separate example package with checksum verification and a guard against colliding with existing model identities."
+      },
+      {
+        "number": 5,
+        "title": "Establish project stewardship",
+        "body": "Use the authorized administrative workflows for accounts, ownership, and sandboxes. Establish the project context that engineers will use and confirm that the intended users can sign in."
+      },
+      {
+        "number": 6,
+        "title": "Enter the engineering workspace",
+        "body": "Open Navigator, choose the project, and select a System of Interest. For the FireSat walkthrough, follow Space Segment → FireSat Satellite → Fire Detection Payload."
+      }
+    ],
+    "backend": {
+      "title": "The services behind the workspace",
+      "description": "The desktop interface operates on a shared graph through the backend. Model changes are validated and committed transactionally.",
+      "services": [
+        {
+          "name": "Desktop GUI & Startup",
+          "role": "Launch the environment, authenticate, and work with the system model."
+        },
+        {
+          "name": "Caddy",
+          "role": "Provide the encrypted connection to backend services."
+        },
+        {
+          "name": "Go backend",
+          "role": "Apply access rules, validate model changes, and expose the application API."
+        },
+        {
+          "name": "Neo4j",
+          "role": "Store systems, engineering records, and their connected relationships."
+        },
+        {
+          "name": "Operational observability",
+          "role": "OpenTelemetry, Tempo, Prometheus, and Grafana support service inspection."
+        }
+      ],
+      "partitions": [
+        {
+          "name": "Core",
+          "description": "The editable system security model under projects and sandboxes."
+        },
+        {
+          "name": "Reference",
+          "description": "Imported catalogs used for research and authorized application to Core records."
+        },
+        {
+          "name": "User",
+          "description": "People, mailboxes, and stewardship information."
+        }
+      ]
+    },
+    "admin": {
+      "title": "Steward the environment",
+      "description": "The Admin Tool provides account lifecycle, messaging, ownership transfer, sandbox management, and backend status views. Its availability and protected operations depend on the signed-in user’s authority.",
+      "capabilities": [
+        "Inspect and filter the account roster",
+        "Manage suspension, reinstatement, and administrator authorization",
+        "Transfer ownership and manage account departure with data continuity",
+        "Inspect sandboxes, internal messages, and backend status"
+      ],
+      "toolSlug": "admin"
+    },
+    "guidePath": "/docs/01-gui.html",
+    "guideLabel": "Open the workspace guide",
+    "sourceNote": "Based on the current installer README, service topology, startup segment, Admin Tool, and FireSat package instructions."
   }
 }

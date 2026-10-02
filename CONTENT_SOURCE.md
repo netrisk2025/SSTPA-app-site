@@ -1,75 +1,67 @@
-# SSTPA Tools Website — Content Source Map
+# Website content sources
 
-Primary source: `/home/netrisk/Projects/sstpa-tool/docs/srs/SSTPA Tool SRS V62.md`.
+Reviewed 2026-10-02. Website copy and narration describe the existing application; this work makes no changes to SSTPA Tools.
 
-The website avoids invented customer claims, fake testimonials, and fabricated metrics. Product statements are written as specification-derived positioning.
+## Authority and scope
 
-## Major source areas used
+- `../SSTPA Tools/frontend/src/tools/manifest.ts` registers **17 add-on tools**. Main Workspace is a separate website tour, not an eighteenth add-on.
+- `../SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx` supplies the methodology, vocabulary, fourteen-step workflow, model relationships, and evidence/acceptance distinctions. Sections 3–4 ground the concepts; sections 7–9 ground the workflow and tool purposes.
+- Current components in `../SSTPA Tools/frontend/src/tools/<slug>/` establish actual tool behavior. `../SSTPA_Dev_WIKI/wiki/entities/tool-<slug>.md` provides the navigation map and supporting descriptions; current code takes precedence.
+- `../SSTPA Tools/installer/README.md`, startup source, and `deploy/docker-compose.yml` establish the installation and service architecture. Local deployment secrets are neither read for content nor copied into this site.
 
-| Website area | Source sections / files inspected | Notes |
-|---|---|---|
-| Product positioning | §1.2.1 Overview of SSTPA Tools, §1.2.2 Theory of Execution, §1.2.3 Systems Engineering Space | Used to frame SSTPA Tools as an expert workbench for scaling SSTPA to complex hierarchical systems. |
-| Methodology workflow | §1.2.2.1 SSTPA Tools Work Flow | Condensed into an eight-step promotional workflow without reproducing the full numbered procedure verbatim. |
-| Architecture | §2 SSTPA Tools Architecture, §2.1 Constraints | Used four independently operable segments: Startup Software, Backend, Frontend, Installer; MVP single-machine + future distributed path. |
-| Data model | §3 Data Models, §3.3 Core System Data Model, §3.3.3 Canonical Node Labels | Used data sets, SoI boundary model, canonical node groups, and authoritative graph positioning. |
-| Security assurance chain | §3.3.1.3 Purpose, Assets, and Security Assurance; §3.3.1.6 Control, Countermeasure, Requirement, Verification | Used the Asset → Hazard → Security Control → Countermeasure → Requirement → Verification trace concept. |
-| SysML/KerML interchange | §3.7 SysML 2.0 / KerML 1.0 Interchange Data Model | Used G2M/M2G and “graph remains authoritative; model text is a projection.” |
-| Frontend and add-on tools | §6 Frontend, §6.4 Add-on Tool Extension Architecture, §6.5 Add-on Tools | Used manifest-based add-on tool architecture and named tools. |
-| Visual style | §6.2.1 GUI Style, §6.2.2 Default_Style.css, §6.3.1 Branding Panel | Used Technical Art Nouveau Control Room, warm ivory canvas, deep navy text, steel-blue linework, restrained brass accents, Source Sans 3 / Cormorant SC / JetBrains Mono. |
-| Methodology white paper | `/home/netrisk/Projects/SSTPA White Paper/SSTPA_Methodology_White_Paper_v14.docx` | Latest publishable methodology paper; hosted as `public/files/SSTPA-Methodology-White-Paper-v14.docx`. Featured in hero CTAs, Documentation section, and White paper section. |
-| Earlier tools draft (archive link) | `/home/netrisk/Projects/sstpa-tool/SSTPA_White_Paper v2.docx` (historical) | Still available at `public/files/SSTPA-Tools-White-Paper-v2.docx` as a secondary archive download only. |
-| Documentation controls | `public/docs/` + nav / hero / `#documentation` | User Guide linked from header CTA, hero primary button, Documentation cards, white-paper panel, and deploy note. |
-| Copyright | §2.2 Component Copyright | Footer uses © 2025 Nicholas Triska. All rights reserved. |
+## FireSat continuity
 
-## Logo-derived visual treatment
+The website uses **FireSat**, whose source model is `../SSTPA Tools/Example_Data/FireSat/model/`. The hierarchy guide and Example_Data README describe its educational scope: four Tier-1 segments, 33 Systems, 467 nodes, 842 relationships, and system decomposition through Tier 8. FireSat is structurally comprehensive and intentionally not a validated operational design.
 
-Official logo graphics sourced from `/home/netrisk/Projects/SSTPA Tools/Assets/` and copied into `public/`:
+The primary walkthrough System of Interest is **Fire Detection Payload**, `SYS_1.1.2_0`. Its supplied model contains:
 
-- `public/sstpa-menu-logo.png` ← `Assets/SSTPA Tool Menu Logo.png` (header, footer, docs card)
-- `public/sstpa-logo-large.png` ← `Assets/SSTPA Logo Large.png` (hero seal, docs card, OG image, footer seal)
-- `public/sstpa-app-icon-1024.png` ← `Assets/sstpa-app-icon-1024.png` (favicon / PWA icons)
+- Purpose: **Fire Sensing And Reporting**.
+- Environment: **Payload Operating Environment**.
+- States: **Standby** and **Imaging**.
+- Functions: **Collect Infrared Radiance**, **Classify Fire Detections**, **Format And Queue Detection Reports**.
+- Interfaces: **Sensor Video Input Interface**, **Payload Downlink Feed Interface**.
+- Requirements: **Payload Detection Chain**, **Payload Geolocation**.
 
-Derived favicons: `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`.
+Connection demonstrations use the supplied **Detection Downlink**, owned by the Space Segment, with payload and ground-receiver participants. The old website's Sentinel Mission, Environmental Monitoring System, Alert data, Observe/Transmit, and Field deployment examples have been removed from `src/content.json`.
 
-Palette sampled from the logo:
+The supplied FireSat model deliberately omits Assets, trace relationships, Use Cases, Losses, Attack Trees, Control Structures, Countermeasures, and Verification nodes. Website walkthroughs and scripts identify their security analysis as **tutorial additions**. A proposed detection-report integrity scenario is a teaching example, not a claim that those records ship in the default package or that this educational mission is certified. Prepared recordings should match the tutorial records actually loaded into their isolated demonstration environment.
 
-- warm ivory / cream canvas: `#f5f1e8`, `#fffaf0`
-- deep navy ink: `#040e1f`, `#081f34`
-- desaturated steel blue linework: `#345f7a`, `#8fb1bf`
-- restrained brass accent: `#b9904a`
-- muted oxblood for destructive-state vocabulary if needed later: `#742c36`
+## Tool coverage and source checks
 
-## Intentional omissions
+| Website slug | Registered tool | Current source component | White paper focus |
+|---|---|---|---|
+| navigator | Navigator Tool | navigator/NavigatorTool.tsx | Hierarchy, recursion, System of Interest |
+| requirements | Requirements Tool | requirements/RequirementsTool.tsx | Derivation, allocation, verification |
+| reports | Reports Tool | reports/ReportsTool.tsx | Review outputs and traceability gaps |
+| reference | Reference Tool | reference/ReferenceTool.tsx | Catalog research and application |
+| state | State Tool | state/StateTool.tsx | States, transitions, environments |
+| flow | Flow Tool | flow/FlowTool.tsx | Functional flow and STPA control structures |
+| assets | Asset Manager Tool | assets/AssetManagerTool.tsx | Asset value, criticality, attributes, regimes |
+| context | Context Tool | context/ContextTool.tsx | Environment, hazard, loss allocation |
+| trace | Trace Tool | trace/TraceTool.tsx | State-scoped hold, transport, use |
+| loss | Loss Tool | loss/LossTool.tsx | Attack trees, paths, residual vulnerabilities |
+| goalkeeper | Goal Keeper Tool | goalkeeper/GoalKeeperTool.tsx | GSN structure, evidence, validation |
+| usecase | Use-Case Tool | usecase/UseCaseTool.tsx | Purpose, actors, participating architecture |
+| connection | Connection Tool | connection/ConnectionTool.tsx | Cross-system interface participation |
+| messagecenter | Message Center | messagecenter/MessageCenterTool.tsx | User data and stewardship |
+| admin | Admin Tool | admin/AdminTool.tsx | Account and environment stewardship |
+| attack | Attack Tool | attack/AttackTool.tsx | Exploitation, hierarchy, loss scope |
+| controls | Controls Tool | controls/ControlsTool.tsx | Baselines, tailoring, implementation mapping |
 
-- No testimonials.
-- No customer counts.
-- No speculative performance numbers.
-- No pricing section.
-- No contact form backend.
-- No claims that the product is already certified, approved, or deployed.
+## Wording decisions that preserve accuracy
 
+- Requirements/architecture tools do not replace the enterprise's functional engineering environment. The site describes SSTPA as the connected System Security Solution.
+- A security **attribute** is the required property; **assurance** is justified confidence that it holds. Legacy field names may differ.
+- Loss analysis is scoped to one asset, one security attribute, and one environment. Risk acceptance remains with the responsible authority under the applicable regime.
+- GSN structural validation does not establish that an argument is convincing or accepted.
+- Controls automatic baseline generation depends on compatible NIST allocation metadata in the loaded reference bundle. The current code notes the absence of CNSSI 1253 allocation tables; website copy does not claim a complete automated CNSSI baseline.
+- Reports PDF output uses the print workflow. The site does not promise a separate direct PDF rendering service.
+- Message Center supports compose and reply in current code; the older wiki's brief summary does not enumerate all those controls.
+- FireSat package management is external to the app. There is no claim of an in-app Reset FireSat command.
+- Current manifest export lists and actual tool views differ in a few details; page copy lists only supported, relevant functions, without promising every manifest format.
 
-## User Guide (static docs)
+## Narration delivery
 
-Path: `public/docs/` (served at `/docs/` after Vite build; copied into `dist/docs/`).
+`public/audio/scripts.json` contains 22 source-grounded scripts and identical accessible transcripts: home, tools, methodology, installation-admin, workspace, and all 17 add-ons. Each script has 195–208 words (approximately 90–96 seconds at 130 words per minute), source references, and an estimated duration. Actual audio must be checked after rendering.
 
-| Docs area | Source | Notes |
-|---|---|---|
-| Structure & tool order | `/home/netrisk/Projects/SSTPA White Paper/Grok-Bot Workflow V1.md` | 14-step execution workflow; Add-on Tool first-appearance order; revision loop & hierarchical recurse. |
-| GUI walkthrough cues | `/home/netrisk/Projects/SSTPA Tools/docs/TESTING.md` | Local validation guide only — **do not publish credentials** in HTML. |
-| Screenshots | Live SSTPA Tools GUI (browser preview → Backend `https://localhost:8543`) | Paired Light (`default`) / Dark (`nocturne`) captures under `public/docs/screenshots/{light,dark}/`. |
-| Visual style | Existing site palette + SRS §6.2 Technical Art Nouveau Control Room | Ivory/navy/brass in `public/docs/styles.css`. |
-
-Intentional omissions in the User Guide: no passwords, no fabricated metrics, no customer claims.
-
-## Documentation access on the marketing site
-
-| Control | Location | Target |
-|---|---|---|
-| Nav CTA **User Guide** | Sticky header | `/docs/` |
-| Nav **Docs** | Sticky header | `#documentation` |
-| Hero primary buttons | Hero | `/docs/` and methodology DOCX download |
-| Documentation section | `#documentation` | Cards for white paper + User Guide |
-| White paper panel | `#white-paper` | Methodology DOCX + User Guide secondary |
-| Deploy note | `#deploy` | User Guide + white paper download |
-
+The requested production voice is the **Systems** voice in WhiteKnight Studio. Scripts are original adaptations of the user's local source material. Playback is user initiated; video demonstrations remain silent. Script presence is not evidence that an audio render has completed. Register playable audio only after its file and measured duration are verified.
