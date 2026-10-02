@@ -77,3 +77,9 @@ The live FireSat workspace contains prepared security records beyond the shipped
 ## White-paper edition labeling
 
 The latest supplied filename is `SSTPA_Methodology_White_Paper_v14.docx`, while the document's internal cover still reads Version 13. The site labels the download **Current edition**, preserving the author's source document unchanged. The hosted download is refreshed from the current source at the existing URL; filename numbering is not presented as verified cover metadata.
+
+## Completed audio production
+
+All 22 narrations were rendered in WhiteKnight Studio on 2026-10-02 using the existing **Systems** project's exact narrator. Website chapters were appended; final backup comparison confirms the original Chapter 1 and the entire cast remain unchanged. The two superseded Reports/Reference drafts remain recoverable; the website uses their revised, video-aligned renders.
+
+Each export used **One scene** with **Include sounds** off. Published MP3s are 79–97 seconds long, contain one audio stream each, and have distinct hashes. The 22 final Studio chapter texts match the public transcripts exactly. `public/audio/manifest.json` contains only verified completed audio. Source WAVs, before/after Studio backups, and chapter-level rendering provenance are retained outside the repository in the task's `work/audio-sources/` directory.
