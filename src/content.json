@@ -1,0 +1,626 @@
+{
+  "tools": [
+    {
+      "slug": "workspace",
+      "name": "Main Workspace",
+      "subtitle": "One connected system security model.",
+      "category": "Workspace",
+      "overview": "Create the architecture, inspect model records, and launch every analysis tool from a shared System of Interest. The Main Panel and Data Drawer keep the security solution connected as the design grows.",
+      "capabilities": [
+        "Create systems, components, functions, and interfaces",
+        "Inspect and edit model properties in the Data Drawer",
+        "Work within an explicit System of Interest",
+        "Launch 17 specialized add-on tools against shared data"
+      ],
+      "exampleSteps": [
+        "Launch SSTPA Tools and sign in to the demonstration environment",
+        "Create Sentinel Mission as a new project",
+        "Add Environmental Monitoring System as a Tier-1 system",
+        "Select it, inspect the Main Panel, and open an example record in the Data Drawer"
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png"
+    },
+    {
+      "slug": "navigator",
+      "name": "Navigator Tool",
+      "subtitle": "Find your system. Keep its context.",
+      "category": "Architecture",
+      "overview": "Explore the project hierarchy, select a System of Interest, and move between levels of the architecture. Search, association, and cloning modes keep model work connected to the right system.",
+      "capabilities": [
+        "Navigate projects and nested systems",
+        "Select the active System of Interest",
+        "Search for model entities and inspect relationships",
+        "Clone nodes and save diagram layouts"
+      ],
+      "exampleSteps": [
+        "Launch Navigator from the Control Panel",
+        "Locate Sentinel Mission and expand its system hierarchy",
+        "Select Environmental Monitoring System as the current System of Interest",
+        "Search for Alert data and return to its system context"
+      ],
+      "guidePath": "/docs/tool-navigator.html",
+      "posterPath": "/docs/screenshots/dark/tool-navigator.png"
+    },
+    {
+      "slug": "requirements",
+      "name": "Requirements Tool",
+      "subtitle": "Give every security requirement a place.",
+      "category": "Architecture",
+      "overview": "Create and allocate security requirements, follow their derivation, and define how they will be verified. The hierarchy view exposes parentage and the architecture responsible for satisfying each requirement.",
+      "capabilities": [
+        "Create security requirements and parent-child derivations",
+        "Allocate requirements to architecture and security elements",
+        "Record verification methods and statements",
+        "Inspect lineage and orphan or barren requirements"
+      ],
+      "exampleSteps": [
+        "Launch Requirements for Environmental Monitoring System",
+        "Create an integrity requirement for Alert data",
+        "Allocate it to the relevant function or interface",
+        "Open the hierarchy and inspect its parent and verification criteria"
+      ],
+      "guidePath": "/docs/tool-requirements.html",
+      "posterPath": "/docs/screenshots/dark/tool-requirements.png"
+    },
+    {
+      "slug": "reports",
+      "name": "Reports Tool",
+      "subtitle": "Turn the model into reviewable evidence.",
+      "category": "Evidence",
+      "overview": "Generate system descriptions, specifications, controls lists, and requirement-traceability gap analyses from the current System of Interest. Export review material directly from the engineering model.",
+      "capabilities": [
+        "Generate System Description and System Specification reports",
+        "Assess requirement-traceability gaps",
+        "Produce a Controls List and CSV export",
+        "Export text, Markdown, or HTML and print to PDF"
+      ],
+      "exampleSteps": [
+        "Launch Reports for Environmental Monitoring System",
+        "Choose System Description and Generate",
+        "Review the generated architecture sections",
+        "Generate Requirement-Traceability Gap Analysis and inspect findings"
+      ],
+      "guidePath": "/docs/",
+      "posterPath": "/docs/screenshots/dark/tool-reports.png"
+    },
+    {
+      "slug": "reference",
+      "name": "Reference Tool",
+      "subtitle": "Bring established knowledge into context.",
+      "category": "Analysis",
+      "overview": "Research loaded security catalogs and their relationships, then assign eligible reference content to model records. Catalog sources remain separate from the project\u2019s editable engineering data.",
+      "capabilities": [
+        "Search loaded frameworks and versions",
+        "Browse catalog hierarchy and related items",
+        "Research ATT&CK, ATLAS, EMB3D, and NIST control content",
+        "Assign eligible references to Core model records"
+      ],
+      "exampleSteps": [
+        "Launch Reference in research mode",
+        "Search a loaded framework for a relevant technique or control",
+        "Open a result and inspect related items",
+        "Show framework and version filters"
+      ],
+      "guidePath": "/docs/tool-reference.html",
+      "posterPath": "/docs/screenshots/dark/tool-reference.png"
+    },
+    {
+      "slug": "state",
+      "name": "State Tool",
+      "subtitle": "Model when protection changes.",
+      "category": "Architecture",
+      "overview": "Describe system security states and the transitions between them. Connect states to hazards, countermeasures, requirements, and valid operating environments so exposure can be analyzed over time.",
+      "capabilities": [
+        "Create and arrange security state diagrams",
+        "Define transitions and their criteria",
+        "Associate hazards, countermeasures, and requirements",
+        "Save layouts and export diagram views"
+      ],
+      "exampleSteps": [
+        "Launch State for Environmental Monitoring System",
+        "Inspect Observe and Transmit states",
+        "Select a transition and review its criteria",
+        "Create a demonstration state or refine its description and save"
+      ],
+      "guidePath": "/docs/tool-state.html",
+      "posterPath": "/docs/screenshots/dark/tool-state.png"
+    },
+    {
+      "slug": "flow",
+      "name": "Flow Tool",
+      "subtitle": "Connect behavior to security reasoning.",
+      "category": "Architecture",
+      "overview": "Explore functional flows and STPA control structures within the System of Interest. Model control actions, feedback, and process knowledge, then capture the security requirements and countermeasures the analysis reveals.",
+      "capabilities": [
+        "Create functional-flow and STPA control views",
+        "Model control actions, feedback, and process roles",
+        "Inspect flow properties and interface relationships",
+        "Create related requirements and countermeasures"
+      ],
+      "exampleSteps": [
+        "Launch Flow and choose the alert-processing functional flow",
+        "Inspect the path from observation to transmission",
+        "Select a function or flow edge and inspect its properties",
+        "Switch to the STPA control view to show feedback and control context"
+      ],
+      "guidePath": "/docs/tool-flow.html",
+      "posterPath": "/docs/screenshots/dark/tool-flow.png"
+    },
+    {
+      "slug": "assets",
+      "name": "Asset Manager Tool",
+      "subtitle": "Start with what must be protected.",
+      "category": "Analysis",
+      "overview": "Record the assets whose compromise could harm stakeholders. Organize their origin, criticality, protection objectives, regimes, and relationships to the system architecture.",
+      "capabilities": [
+        "Create and organize Organic, Horizontal, and Derived assets",
+        "Record criticality and protection objectives",
+        "Associate governing regimes and environments",
+        "Inspect asset parentage and architecture allocation"
+      ],
+      "exampleSteps": [
+        "Launch Asset Manager for Environmental Monitoring System",
+        "Create or select Alert data",
+        "Review its integrity objective and mission criticality",
+        "Inspect its regime and architecture relationships"
+      ],
+      "guidePath": "/docs/tool-asset-manager.html",
+      "posterPath": "/docs/screenshots/dark/tool-asset-manager.png"
+    },
+    {
+      "slug": "context",
+      "name": "Context Tool",
+      "subtitle": "Put every loss in an environment.",
+      "category": "Analysis",
+      "overview": "Define the environments in which a system operates, the states valid in each, and the hazards that threaten assets. Allocate losses to an explicit operating context before attack-tree analysis.",
+      "capabilities": [
+        "Create and inspect operating environments",
+        "Relate valid security states to environments",
+        "Create hazards and associate threatened assets",
+        "Allocate losses to their asset and environment context"
+      ],
+      "exampleSteps": [
+        "Launch Context for Environmental Monitoring System",
+        "Select Field deployment environment",
+        "Inspect its valid states and associated hazards",
+        "Review the Alert data integrity loss and its environment allocation"
+      ],
+      "guidePath": "/docs/tool-context.html",
+      "posterPath": "/docs/screenshots/dark/tool-context.png"
+    },
+    {
+      "slug": "trace",
+      "name": "Trace Tool",
+      "subtitle": "Follow the asset through every state.",
+      "category": "Analysis",
+      "overview": "Build a state-scoped matrix showing where each asset is held, transported, or used by components, functions, and interfaces. Committed traces drive inherited protection obligations and support loss analysis.",
+      "capabilities": [
+        "Map assets against architecture and security states",
+        "Assign HOLDS, TRANSPORTS, or USES relationships",
+        "Review staged changes before committing",
+        "Derive inherited criticality and protection requirements"
+      ],
+      "exampleSteps": [
+        "Launch Trace and select Alert data",
+        "Locate Transmit state and the telemetry interface",
+        "Set the applicable transport relationship",
+        "Review the pre-commit summary, commit, and inspect coverage"
+      ],
+      "guidePath": "/docs/tool-trace.html",
+      "posterPath": "/docs/screenshots/dark/tool-trace.png"
+    },
+    {
+      "slug": "loss",
+      "name": "Loss Tool",
+      "subtitle": "Make the path to loss inspectable.",
+      "category": "Analysis",
+      "overview": "Construct structured attack trees for a specific asset protection objective in a specific environment. Review trace coverage, analyze attack paths, and connect countermeasures to residual-vulnerability reasoning.",
+      "capabilities": [
+        "Review upstream trace and attack coverage",
+        "Build and tailor a structured attack tree",
+        "Inspect attack paths and associated metrics",
+        "Add countermeasures and export residual-vulnerability analysis"
+      ],
+      "exampleSteps": [
+        "Launch Loss and select the Alert data integrity loss",
+        "Inspect Coverage before building the tree",
+        "Build or open the tree and follow one attack path",
+        "Inspect the path\u2019s countermeasure and residual-vulnerability report"
+      ],
+      "guidePath": "/docs/tool-loss.html",
+      "posterPath": "/docs/screenshots/dark/tool-loss.png"
+    },
+    {
+      "slug": "goalkeeper",
+      "name": "Goal Keeper Tool",
+      "subtitle": "Build an argument people can examine.",
+      "category": "Evidence",
+      "overview": "Construct GSN assurance arguments around asset protection objectives. Connect claims and reasoning to verification, validation, and loss evidence, and check the structure before review.",
+      "capabilities": [
+        "Build GSN goals, strategies, contexts, and solutions",
+        "Link solutions to validation, verification, and loss evidence",
+        "Inspect structural validation findings",
+        "Arrange, save, and export the assurance argument"
+      ],
+      "exampleSteps": [
+        "Launch Goal Keeper and select the Alert data integrity root goal",
+        "Inspect its supporting strategy and solution",
+        "Open Evidence and review a linked loss or verification",
+        "Open Validation to inspect structural findings"
+      ],
+      "guidePath": "/docs/tool-goal-keeper.html",
+      "posterPath": "/docs/screenshots/dark/tool-goal-keeper.png"
+    },
+    {
+      "slug": "usecase",
+      "name": "Use-Case Tool",
+      "subtitle": "Connect the mission to its participants.",
+      "category": "Architecture",
+      "overview": "Capture use cases under a system\u2019s Purpose and connect actors, interfaces, and functions. Use the diagram to make mission participation and requirement allocation easier to inspect.",
+      "capabilities": [
+        "Create use cases under the selected Purpose",
+        "Add actors and participating interfaces or functions",
+        "Model include and extend relationships",
+        "Inspect participant requirements and diagram validation"
+      ],
+      "exampleSteps": [
+        "Launch Use-Case for Environmental Monitoring System",
+        "Choose New Use Case and create Deliver trusted alert",
+        "Add an Operator actor and the telemetry interface",
+        "Inspect the diagram and its participating function"
+      ],
+      "guidePath": "/docs/",
+      "posterPath": "/docs/screenshots/dark/tool-usecase.png"
+    },
+    {
+      "slug": "connection",
+      "name": "Connection Tool",
+      "subtitle": "Describe the security of the links.",
+      "category": "Architecture",
+      "overview": "Model connections between systems through their participating interfaces. Make ownership, interaction properties, and connection-level requirements explicit across the architecture.",
+      "capabilities": [
+        "Create connections with an owning system",
+        "Associate participating interfaces across systems",
+        "Inspect directionality, layers, and interaction properties",
+        "Allocate security requirements to a connection"
+      ],
+      "exampleSteps": [
+        "Launch Connection for Environmental Monitoring System",
+        "Select the telemetry connection",
+        "Inspect the gateway and operator-side interface participants",
+        "Review directionality and the connection\u2019s integrity requirement"
+      ],
+      "guidePath": "/docs/tool-connection.html",
+      "posterPath": "/docs/screenshots/dark/tool-connection.png"
+    },
+    {
+      "slug": "messagecenter",
+      "name": "Message Center",
+      "subtitle": "Keep model stewardship visible.",
+      "category": "Stewardship",
+      "overview": "Use the internal mailbox to review system notices, ownership-related messages, and model references. Inbox and outbox views keep stewardship activity close to the engineering workspace.",
+      "capabilities": [
+        "Review inbox and outbox messages",
+        "Sort messages and open their details",
+        "Follow model references included in messages",
+        "Compose internal messages and manage mailbox entries"
+      ],
+      "exampleSteps": [
+        "Launch Message Center from the Control Panel",
+        "Refresh the example account\u2019s mailbox",
+        "Inspect a non-sensitive example-project notice if present",
+        "Switch to Outbox, then return to Inbox"
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png"
+    },
+    {
+      "slug": "admin",
+      "name": "Admin Tool",
+      "subtitle": "Manage the environment behind the model.",
+      "category": "Stewardship",
+      "overview": "Give authorized administrators a dedicated view of accounts, ownership, messages, sandboxes, and backend status. Role restrictions keep administration separate from ordinary analysis work.",
+      "capabilities": [
+        "Inspect and filter the account roster",
+        "Manage account lifecycle and administrator authorization",
+        "Review ownership transfer and sandbox management",
+        "Inspect backend status and product information"
+      ],
+      "exampleSteps": [
+        "Launch Admin with an authorized example account",
+        "Review the account roster with sensitive fields excluded from the recording",
+        "Open Backend Status",
+        "Inspect service and product information without changing accounts"
+      ],
+      "guidePath": "/docs/01-gui.html",
+      "posterPath": "/docs/screenshots/dark/gui-main.png"
+    },
+    {
+      "slug": "attack",
+      "name": "Attack Tool",
+      "subtitle": "Turn threat knowledge into actionable scenarios.",
+      "category": "Analysis",
+      "overview": "Develop attacks that act on the actual components, functions, and interfaces exposed by asset tracing. Organize attack hierarchies, reference sources, metrics, and loss scope before building attack trees.",
+      "capabilities": [
+        "Create project-specific attacks or clone eligible references",
+        "Associate attacks with exposed architecture entities",
+        "Organize strategy, tactic, and procedure hierarchies",
+        "Record metrics and optional loss scope"
+      ],
+      "exampleSteps": [
+        "Launch Attack for Environmental Monitoring System",
+        "Select an example alert-tampering attack",
+        "Inspect the interface or function it exploits",
+        "Review the attack hierarchy, metrics, and target loss"
+      ],
+      "guidePath": "/docs/tool-attack.html",
+      "posterPath": "/docs/screenshots/dark/tool-attack.png"
+    },
+    {
+      "slug": "controls",
+      "name": "Controls Tool",
+      "subtitle": "Carry controls into the engineered design.",
+      "category": "Analysis",
+      "overview": "Build and tailor a security controls baseline, then map selected entries to model controls, requirements, and countermeasures. Keep categorization, tailoring rationale, and implementation relationships together.",
+      "capabilities": [
+        "Categorize confidentiality, integrity, and availability impact",
+        "Generate and tailor a baseline from loaded NIST references",
+        "Record overlays, resilience, and survivability considerations",
+        "Map controls to requirements and countermeasures"
+      ],
+      "exampleSteps": [
+        "Launch Controls for Environmental Monitoring System",
+        "Select or create the Sentinel Mission baseline",
+        "Inspect integrity categorization and a selected control",
+        "Show the tailoring rationale and mapping to an implementing requirement"
+      ],
+      "guidePath": "/docs/tool-controls.html",
+      "posterPath": "/docs/screenshots/dark/tool-controls.png"
+    }
+  ],
+  "methodology": {
+    "title": "Security reasoning connected to the system.",
+    "eyebrow": "The SSTPA methodology",
+    "subtitle": "From protected assets to verifiable requirements and assurance evidence.",
+    "introduction": [
+      "System Security-Theoretic Process Analysis is a human- and asset-centered approach to engineering secure complex systems. It connects the architecture and operating context to the assets that matter, the ways their protection could fail, and the evidence needed to judge the security solution.",
+      "SSTPA Tools implements this approach as a shared graph model. Specialized tools operate on a selected System of Interest, so architecture, states, exposure, attacks, requirements, and assurance arguments remain related as the design develops."
+    ],
+    "differentiator": {
+      "title": "A specific protection objective anchors the analysis.",
+      "body": "SSTPA defines a loss as the compromise of a security attribute on an asset. Loss analysis is scoped to an operating environment and the applicable regime. This combination of asset, property, environment, and authority gives security reasoning a concrete subject and makes its assumptions available for review."
+    },
+    "principles": [
+      {
+        "title": "Assets establish the protection objective",
+        "body": "Begin with items of value whose compromise could harm stakeholders. Keep the asset distinct from the component that hosts it, and record the security attributes and regimes that govern its protection."
+      },
+      {
+        "title": "Interactions and states expose the problem",
+        "body": "Analyze behavior, control, feedback, and asset exposure across architecture and operating states. A component-level view alone cannot describe every interaction that matters."
+      },
+      {
+        "title": "Requirements make the response implementable",
+        "body": "Translate controls and countermeasures into system security requirements. Allocate them to the design and define how their implementation will be verified."
+      },
+      {
+        "title": "Evidence supports human judgment",
+        "body": "Use loss analysis and GSN arguments to show what supports the security claim, which assumptions apply, and what remains unresolved. The responsible authority decides whether residual risk is acceptable."
+      }
+    ],
+    "protectionAttributes": [
+      {
+        "name": "Confidentiality",
+        "description": "Access is restricted to authorized parties."
+      },
+      {
+        "name": "Integrity",
+        "description": "The asset is protected against unauthorized modification or destruction."
+      },
+      {
+        "name": "Availability",
+        "description": "Authorized users can obtain the asset or service when needed."
+      },
+      {
+        "name": "Authenticity",
+        "description": "The asset or claimed identity is genuine and can be verified."
+      },
+      {
+        "name": "Non-Repudiation",
+        "description": "Evidence of origin or occurrence can be established under stated assumptions."
+      },
+      {
+        "name": "Privacy",
+        "description": "Risks to individuals are managed against applicable privacy objectives."
+      },
+      {
+        "name": "Trustworthiness",
+        "description": "There is justified confidence in the required behavior."
+      },
+      {
+        "name": "Certifiability",
+        "description": "SSTPA\u2019s protection objective for achieving and maintaining certification within a regime."
+      }
+    ],
+    "workflow": [
+      {
+        "number": 1,
+        "title": "Establish the Tier-1 architecture",
+        "description": "Capture the capability requirements, Tier-1 systems, and connections from the program\u2019s functional architecture.",
+        "output": "Allocated capability requirements and an explicit architecture.",
+        "tools": ["workspace", "requirements", "connection", "navigator"]
+      },
+      {
+        "number": 2,
+        "title": "Allocate requirements and join interfaces",
+        "description": "Decompose security requirements onto interfaces, functions, and components; connect the interfaces that participate in each system connection.",
+        "output": "Architecture elements with requirements and interface participation.",
+        "tools": ["requirements", "connection", "navigator"]
+      },
+      {
+        "number": 3,
+        "title": "Record assets and protection obligations",
+        "description": "Bring expert asset-identification results into the model. Define asset parentage, criticality, required security attributes, and governing regimes.",
+        "output": "A defined asset set with protection objectives.",
+        "tools": ["assets"]
+      },
+      {
+        "number": 4,
+        "title": "Define system security states",
+        "description": "Describe states with a consistent protection posture and the criteria for transitions, aligned with the program\u2019s functional state model.",
+        "output": "Security states, transitions, and environment validity.",
+        "tools": ["state", "context"]
+      },
+      {
+        "number": 5,
+        "title": "Define environments and research threats",
+        "description": "Describe relevant operating environments and the threats that could act within them. Research applicable reference knowledge.",
+        "output": "An explicit operating context and relevant threat knowledge.",
+        "tools": ["context", "reference"]
+      },
+      {
+        "number": 6,
+        "title": "Analyze hazardous conditions",
+        "description": "Connect hazards to their environments, states, threatened assets, and constraints.",
+        "output": "Hazards grounded in the system\u2019s actual operating conditions.",
+        "tools": ["context", "reference"]
+      },
+      {
+        "number": 7,
+        "title": "Analyze functional and control behavior",
+        "description": "Use functional flows and STPA control structures to identify requirements for control actions, feedback, and process knowledge.",
+        "output": "Security requirements and countermeasures derived from behavior.",
+        "tools": ["flow", "requirements"]
+      },
+      {
+        "number": 8,
+        "title": "Develop controls to mitigate hazards",
+        "description": "Categorize the system, select and tailor a controls baseline, and connect controls to hazards and implementing requirements.",
+        "output": "A tailored baseline with traceable model controls.",
+        "tools": ["controls", "reference"]
+      },
+      {
+        "number": 9,
+        "title": "Define validation and verification criteria",
+        "description": "Record how the security solution will satisfy its purpose and controls, and how implementing requirements will be verified.",
+        "output": "Purpose-level validation and requirement-level verification criteria.",
+        "tools": ["controls", "requirements", "workspace"]
+      },
+      {
+        "number": 10,
+        "title": "Trace asset exposure through states",
+        "description": "For each asset, record the components, functions, and interfaces that hold, transport, or use it in each security state.",
+        "output": "State-scoped exposure and inherited protection obligations.",
+        "tools": ["trace", "state", "assets"]
+      },
+      {
+        "number": 11,
+        "title": "Develop actionable attacks",
+        "description": "Connect applicable attacks to exposed architecture elements. Add hierarchy, metrics, reference sources, and loss scope as needed.",
+        "output": "Attacks ready to participate in loss analysis.",
+        "tools": ["attack", "reference"]
+      },
+      {
+        "number": 12,
+        "title": "Analyze losses and remaining vulnerability",
+        "description": "Build and tailor an attack tree for an asset protection objective in one environment. Examine paths, countermeasures, and residual vulnerabilities.",
+        "output": "Loss analysis with documented scenario dispositions and rationale.",
+        "tools": ["loss", "context"]
+      },
+      {
+        "number": 13,
+        "title": "Construct and review the assurance argument",
+        "description": "Build a GSN argument supported by validation, verification, and loss evidence. Record the responsible authority\u2019s disposition and any conditions.",
+        "output": "An evidence-backed argument for review, or a defined design revision.",
+        "tools": ["goalkeeper", "loss", "requirements", "flow"]
+      },
+      {
+        "number": 14,
+        "title": "Decompose and integrate child systems",
+        "description": "Refine components into child Systems of Interest and repeat the analysis at each tier. Gather verification and validation evidence during integration.",
+        "output": "Connected security reasoning and evidence across the hierarchy.",
+        "tools": ["workspace", "navigator", "requirements", "assets"]
+      }
+    ],
+    "loops": [
+      {
+        "title": "Revise the design when the argument needs it",
+        "fromStep": 13,
+        "toStep": 7,
+        "body": "If evidence is insufficient or the residual risk is unacceptable, return to functional and STPA analysis. Strengthen the countermeasures and requirements, then refresh controls, validation, traces, attacks, and losses before rebuilding the argument."
+      },
+      {
+        "title": "Repeat the discipline at every system tier",
+        "fromStep": 14,
+        "toStep": 1,
+        "body": "A component can become a child System of Interest. Requirements and asset parentage remain connected to the upper tiers, while asset traces are established again in the child. Verification and validation evidence accumulates as the systems are integrated."
+      }
+    ],
+    "workflowNote": "The fourteen steps follow the current white paper. Tools support the work without enforcing its order. Use-Case supports early architecture capture, Reference research is cross-cutting, and Reports packages results throughout.",
+    "ecosystem": {
+      "title": "Fits into the engineering program",
+      "body": "The program\u2019s existing requirements, functional modeling, and analytical tools retain their respective roles. SSTPA is the working model for the System Security Solution, using architecture faithfully captured from those sources.",
+      "roles": [
+        {
+          "concern": "Requirements configuration management",
+          "source": "DOORS or equivalent",
+          "sstpa": "Align security requirement derivation and allocation with the program baseline."
+        },
+        {
+          "concern": "Functional architecture",
+          "source": "Cameo or equivalent SysML environment",
+          "sstpa": "Capture the functions, interfaces, components, and context needed for security analysis."
+        },
+        {
+          "concern": "Parametric and algorithmic models",
+          "source": "MATLAB or equivalent",
+          "sstpa": "Use relevant results to inform functional and control analysis."
+        },
+        {
+          "concern": "System Security Solution",
+          "source": "SSTPA Tools",
+          "sstpa": "Connect assets, loss analysis, security controls, requirements, and assurance evidence."
+        }
+      ]
+    },
+    "assurance": {
+      "title": "Review the claim, the evidence, and the conditions.",
+      "body": "A GSN argument structures the reasoning; it does not itself constitute acceptance. Closure is assessed within the approved asset scope, architecture baseline, environments, threat assumptions, and coverage criteria. Scenarios with unacceptable risk or insufficient evidence remain open.",
+      "dispositions": [
+        "Eliminated",
+        "Blocked under stated assumptions",
+        "Accepted with documented conditions",
+        "Deferred pending evidence",
+        "Unresolved"
+      ],
+      "arv": "Allowed Residual Vulnerability is SSTPA\u2019s term for an accepted residual vulnerability under documented conditions. The acceptance record identifies the deciding authority, configuration, regime, conditions, and review triggers."
+    },
+    "glossary": [
+      {
+        "term": "System of Interest",
+        "definition": "The selected system and its subgraph on which most tools operate."
+      },
+      {
+        "term": "Asset",
+        "definition": "An item of value requiring protection, distinct from the architecture that holds, transports, or uses it."
+      },
+      {
+        "term": "Security attribute",
+        "definition": "The property to protect. Assurance is the justified confidence that the required property holds."
+      },
+      {
+        "term": "Regime",
+        "definition": "The authority, rules, obligations, and practices under which the security solution and residual risk are judged."
+      },
+      {
+        "term": "Verification",
+        "definition": "Evidence that a specified requirement was implemented."
+      },
+      {
+        "term": "Validation",
+        "definition": "Evidence that the realized system fulfills its intended purpose in its intended environment."
+      }
+    ]
+  }
+}
