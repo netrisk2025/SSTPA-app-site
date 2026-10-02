@@ -67,9 +67,10 @@ for (const tool of content.tools) {
     `Invalid walkthrough captions: ${tool.slug}`,
   );
   assert.ok(
-    tool.exampleSteps.length >= 3,
+    tool.exampleSteps.length >= 2,
     `Missing written walkthrough: ${tool.slug}`,
   );
+  assert.deepEqual(tool.exampleSteps, demo.steps, `Written steps differ from the recorded tour: ${tool.slug}`);
 }
 for (const step of content.methodology.workflow) {
   for (const slug of step.tools)
