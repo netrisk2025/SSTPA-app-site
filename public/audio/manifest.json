@@ -40,5 +40,95 @@
     "duration": "1:23",
     "durationSeconds": 83.04,
     "voice": "Systems · WhiteKnight Studio"
+  },
+  "state": {
+    "src": "/audio/state.mp3",
+    "duration": "1:22",
+    "durationSeconds": 81.68,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "flow": {
+    "src": "/audio/flow.mp3",
+    "duration": "1:26",
+    "durationSeconds": 85.92,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "assets": {
+    "src": "/audio/assets.mp3",
+    "duration": "1:32",
+    "durationSeconds": 92.48,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "context": {
+    "src": "/audio/context.mp3",
+    "duration": "1:28",
+    "durationSeconds": 87.76,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "trace": {
+    "src": "/audio/trace.mp3",
+    "duration": "1:23",
+    "durationSeconds": 83.28,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "loss": {
+    "src": "/audio/loss.mp3",
+    "duration": "1:27",
+    "durationSeconds": 86.64,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "goalkeeper": {
+    "src": "/audio/goalkeeper.mp3",
+    "duration": "1:23",
+    "durationSeconds": 83.36,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "usecase": {
+    "src": "/audio/usecase.mp3",
+    "duration": "1:19",
+    "durationSeconds": 78.72,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "connection": {
+    "src": "/audio/connection.mp3",
+    "duration": "1:28",
+    "durationSeconds": 88.4,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "messagecenter": {
+    "src": "/audio/messagecenter.mp3",
+    "duration": "1:21",
+    "durationSeconds": 81.12,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "admin": {
+    "src": "/audio/admin.mp3",
+    "duration": "1:33",
+    "durationSeconds": 93.36,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "attack": {
+    "src": "/audio/attack.mp3",
+    "duration": "1:24",
+    "durationSeconds": 83.92,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "controls": {
+    "src": "/audio/controls.mp3",
+    "duration": "1:28",
+    "durationSeconds": 88.24,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "reports": {
+    "src": "/audio/reports.mp3",
+    "duration": "1:27",
+    "durationSeconds": 86.56,
+    "voice": "Systems · WhiteKnight Studio"
+  },
+  "reference": {
+    "src": "/audio/reference.mp3",
+    "duration": "1:30",
+    "durationSeconds": 89.92,
+    "voice": "Systems · WhiteKnight Studio"
   }
 }

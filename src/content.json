@@ -13,16 +13,15 @@
         "Launch 17 specialized add-on tools against shared data"
       ],
       "exampleSteps": [
-        "Sign in to the environment established by your administrator",
-        "Open FireSat in Navigator and expand Space Segment → FireSat Satellite",
-        "Select Fire Detection Payload as the System of Interest",
-        "Inspect its purpose and open Classify Fire Detections in the Data Drawer"
+        "Work within FireSat: Fire Detection Payload is the current System of Interest.",
+        "Expand the Function section to review payload behavior.",
+        "Inspect a function in the Data Drawer: properties, relationships, and tool access."
       ],
       "guidePath": "/docs/01-gui.html",
       "posterPath": "/docs/screenshots/dark/gui-main.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "workspace"
     },
     {
@@ -38,16 +37,15 @@
         "Clone nodes and save diagram layouts"
       ],
       "exampleSteps": [
-        "Open FireSat in the hierarchy view",
-        "Expand Space Segment → FireSat Satellite → Fire Detection Payload",
-        "Select the payload as the current System of Interest",
-        "Search for Classify Fire Detections and inspect its architecture context"
+        "Locate Fire Detection Payload within the FireSat hierarchy.",
+        "Reveal the current system contents and switch the diagram to name labels.",
+        "Use Locate mode to inspect model entities without changing the model."
       ],
       "guidePath": "/docs/tool-navigator.html",
       "posterPath": "/docs/screenshots/dark/tool-navigator.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "navigator"
     },
     {
@@ -63,16 +61,15 @@
         "Inspect lineage and orphan or barren requirements"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Requirements",
-        "Inspect Payload Detection Chain and its parent requirement",
-        "Review the supplied statement and verification criteria",
-        "In a tutorial exercise, allocate a detection-report integrity requirement to the reporting function"
+        "Review FireSat requirement statements, allocation targets, and completeness flags.",
+        "Follow an individual requirement into its hierarchy.",
+        "Return to Allocation View to compare requirement statements and allocated entities."
       ],
       "guidePath": "/docs/tool-requirements.html",
       "posterPath": "/docs/screenshots/dark/tool-requirements.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "requirements"
     },
     {
@@ -88,16 +85,15 @@
         "Export text, Markdown, or HTML and print to PDF"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Reports",
-        "Generate System Description and inspect its architecture sections",
-        "Switch to System Specification to inspect the requirement view",
-        "Generate Requirement-Traceability Gap Analysis and examine the findings"
+        "Choose a report for Fire Detection Payload and its model context.",
+        "Generate the System Description from the current FireSat model.",
+        "Switch to System Specification and review the available export formats."
       ],
       "guidePath": "/docs/",
       "posterPath": "/docs/screenshots/dark/tool-reports.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "reports"
     },
     {
@@ -113,17 +109,17 @@
         "Assign eligible references to Core model records"
       ],
       "exampleSteps": [
-        "Keep Fire Detection Payload selected and open Reference in research mode",
-        "Filter the loaded reference catalog by framework and version",
-        "Search for material relevant to the payload communication path",
-        "Open a result, inspect its related items, and review its applicability"
+        "Research Mode searches the reference catalog while keeping FireSat as the engineering context.",
+        "Search by concept; this installation currently returns no matching reference items.",
+        "Use an exact external identifier and the framework filters for targeted research."
       ],
       "guidePath": "/docs/tool-reference.html",
       "posterPath": "/docs/screenshots/dark/tool-reference.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
-      "narrationSlug": "reference"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "reference",
+      "runtimeNote": "The connected reference catalog returns no matching items. Search controls are demonstrated without loading or changing reference data."
     },
     {
       "slug": "state",
@@ -138,16 +134,15 @@
         "Save layouts and export diagram views"
       ],
       "exampleSteps": [
-        "Open State for Fire Detection Payload",
-        "Inspect the supplied Standby and Imaging states",
-        "Select the transition and review the payload-enable criterion",
-        "Switch between the diagram, context, and criteria views"
+        "View the payload states and their transition in Diagram.",
+        "Inspect the environment assigned to each operating state.",
+        "Review transition criteria and state relationships."
       ],
       "guidePath": "/docs/tool-state.html",
       "posterPath": "/docs/screenshots/dark/tool-state.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "state"
     },
     {
@@ -163,17 +158,16 @@
         "Create related requirements and countermeasures"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Flow",
-        "Create or select a tutorial flow using the supplied payload functions",
-        "Follow Collect Infrared Radiance → Classify Fire Detections → Format And Queue Detection Reports",
-        "Inspect the control-structure view and the available requirement or countermeasure actions"
+        "Functional Flow organizes behavior; this FireSat scope has no saved flow container yet.",
+        "Switch to STPA Control Flow to inspect the control-structure workspace."
       ],
       "guidePath": "/docs/tool-flow.html",
       "posterPath": "/docs/screenshots/dark/tool-flow.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
-      "narrationSlug": "flow"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "flow",
+      "runtimeNote": "No Functional Flow or Control Structure container is saved in this FireSat scope. The film shows both modes without creating data."
     },
     {
       "slug": "assets",
@@ -188,16 +182,15 @@
         "Inspect asset parentage and architecture allocation"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Asset Manager",
-        "Create or select the tutorial Detection reports asset",
-        "Record its integrity objective and the mission value it protects",
-        "Inspect the asset hierarchy, regime, and environment relationships"
+        "Review Fire Detection Data, its criticality, assurances, and connected analysis.",
+        "Expand the asset to inspect linked losses, goals, and trace coverage.",
+        "Check asset consistency with the Validation view."
       ],
       "guidePath": "/docs/tool-asset-manager.html",
       "posterPath": "/docs/screenshots/dark/tool-asset-manager.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "assets"
     },
     {
@@ -213,16 +206,15 @@
         "Allocate losses to their asset and environment context"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Context",
-        "Inspect Payload Operating Environment and its applicable states",
-        "Create or select the tutorial hazard associated with detection-report integrity",
-        "Inspect the tutorial loss allocated to its asset and operating environment"
+        "Inspect Payload Operating Environment, its states, and the contested RF hazard.",
+        "Review how Standby and Imaging map to the operating environment.",
+        "Check the environment assigned to each Fire Detection Data loss."
       ],
       "guidePath": "/docs/tool-context.html",
       "posterPath": "/docs/screenshots/dark/tool-context.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "context"
     },
     {
@@ -238,16 +230,15 @@
         "Derive inherited criticality and protection requirements"
       ],
       "exampleSteps": [
-        "Open Trace for Fire Detection Payload and select the tutorial Detection reports asset",
-        "Choose Imaging and locate Format And Queue Detection Reports and Payload Downlink Feed Interface",
-        "Stage the applicable use or transport relationship and inspect the pre-commit summary",
-        "Review the committed trace coverage and resulting protection obligations"
+        "Select Fire Detection Data to inspect its state-scoped trace.",
+        "Validation identifies the three entities without traces for this asset.",
+        "Review how traced assets contribute criticality and assurance to system entities."
       ],
       "guidePath": "/docs/tool-trace.html",
       "posterPath": "/docs/screenshots/dark/tool-trace.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "trace"
     },
     {
@@ -263,16 +254,16 @@
         "Add countermeasures and export residual-vulnerability analysis"
       ],
       "exampleSteps": [
-        "Select the tutorial detection-report integrity loss for Fire Detection Payload",
-        "Inspect Coverage for gaps in current asset traces and attack associations",
-        "Open or build the tutorial tree and follow one path",
-        "Inspect countermeasure context and the residual-vulnerability report"
+        "Trace Coverage connects the selected loss to the asset, environment, and operating states.",
+        "Inspect the existing loss-specific attack tree without rebuilding it.",
+        "Path Analysis separates the blocked injection path from the allowed residual jamming path.",
+        "Inspect metrics alongside the same loss, asset, and environment context."
       ],
       "guidePath": "/docs/tool-loss.html",
       "posterPath": "/docs/screenshots/dark/tool-loss.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "loss"
     },
     {
@@ -288,17 +279,17 @@
         "Arrange, save, and export the assurance argument"
       ],
       "exampleSteps": [
-        "Open Goal Keeper for Fire Detection Payload",
-        "Create or select the tutorial detection-report integrity argument",
-        "Follow a goal through its strategy to an evidence-bearing solution",
-        "Inspect the Evidence and Validation views for the selected structure"
+        "Follow the Fire Detection Data authenticity argument through goals, strategy, and solutions.",
+        "Evidence view reveals solution nodes whose evidence links are still incomplete.",
+        "Review argument validation findings before relying on an assurance claim."
       ],
       "guidePath": "/docs/tool-goal-keeper.html",
       "posterPath": "/docs/screenshots/dark/tool-goal-keeper.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
-      "narrationSlug": "goalkeeper"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "goalkeeper",
+      "runtimeNote": "The existing FireSat example argument contains solution nodes without linked evidence. Validation warnings remain visible."
     },
     {
       "slug": "usecase",
@@ -313,17 +304,17 @@
         "Inspect participant requirements and diagram validation"
       ],
       "exampleSteps": [
-        "Open Use-Case for the payload purpose, Fire Sensing And Reporting",
-        "Create or select the tutorial Deliver detection report use case",
-        "Inspect its actor, Format And Queue Detection Reports function, and Payload Downlink Feed Interface",
-        "Review participant requirements and the saved diagram"
+        "Use-Case opens within FireSat; this payload has no saved use cases yet.",
+        "Validation is scoped to the selected system and available use-case records.",
+        "A new use case begins with a name, statement, and the selected payload purpose."
       ],
       "guidePath": "/docs/",
       "posterPath": "/docs/screenshots/dark/tool-usecase.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
-      "narrationSlug": "usecase"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "usecase",
+      "runtimeNote": "No Use Case is saved in this FireSat scope. The film shows navigation and the unsubmitted creation form."
     },
     {
       "slug": "connection",
@@ -338,17 +329,17 @@
         "Allocate security requirements to a connection"
       ],
       "exampleSteps": [
-        "Select the FireSat Space Segment and open Connection",
-        "Choose Detection Downlink",
-        "Inspect the participating payload and ground-receiver interfaces",
-        "Review communication properties and the connection requirement"
+        "Inspect Sensor Video Link and its current interface and validation findings.",
+        "Filter connections by engineering attributes while retaining the FireSat context.",
+        "Display the selected connection and its participating interface."
       ],
       "guidePath": "/docs/tool-connection.html",
       "posterPath": "/docs/screenshots/dark/tool-connection.png",
       "exampleProject": "FireSat",
-      "exampleSystem": "Space Segment",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
-      "narrationSlug": "connection"
+      "exampleSystem": "Fire Detection Payload",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "connection",
+      "runtimeNote": "The existing Sensor Video Link has one participating interface and validation findings. The film retains these findings."
     },
     {
       "slug": "messagecenter",
@@ -363,17 +354,17 @@
         "Compose internal messages and manage mailbox entries"
       ],
       "exampleSteps": [
-        "Open Message Center from the FireSat workspace",
-        "Inspect the tutorial account inbox and available sorting controls",
-        "Open a prepared example-project notice if one is available",
-        "Switch to Outbox and inspect the compose interface without sending a message"
+        "Message Center separates received messages and notifications in the Inbox.",
+        "Switch to Outbox to review sent correspondence.",
+        "Compose a message with a recipient, subject, and body; this walkthrough leaves it unsent."
       ],
       "guidePath": "/docs/01-gui.html",
       "posterPath": "/docs/screenshots/dark/gui-main.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
-      "narrationSlug": "messagecenter"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "messagecenter",
+      "runtimeNote": "Message Center is a global utility. FireSat remains the current system. No messages were sent or opened; an empty draft was discarded."
     },
     {
       "slug": "admin",
@@ -388,18 +379,17 @@
         "Inspect backend status and product information"
       ],
       "exampleSteps": [
-        "Open Admin with an authorized tutorial account",
-        "Review the available administration modes",
-        "Inspect Ownership Transfer and Sandbox Management without changing data",
-        "Open Backend Status and review the environment information"
+        "Admin provides account, message, ownership, sandbox, and backend functions.",
+        "Inspect the connected backend and its operational status without changing configuration.",
+        "The current build identifies Sandbox Management as under construction."
       ],
       "guidePath": "/docs/01-gui.html",
       "posterPath": "/docs/screenshots/dark/gui-main.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Explore the supplied FireSat architecture and the application’s top-level functions.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "admin",
-      "runtimeNote": "Sandbox Management is present as a view; further management functions are under construction in the current application."
+      "runtimeNote": "Admin is a global utility. FireSat remains the current system. Account details are excluded; Sandbox Management is visibly under construction in this build."
     },
     {
       "slug": "attack",
@@ -414,16 +404,15 @@
         "Record metrics and optional loss scope"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Attack",
-        "Create or select a tutorial attack on detection-report integrity",
-        "Inspect its association with the reporting function or downlink feed interface",
-        "Review the hierarchy, reference provenance, metrics, and loss scope"
+        "Select the payload downlink interface to inspect attacks mapped through EXPLOITS.",
+        "Navigate attack hierarchy independently of a loss-specific attack tree.",
+        "Review the FireSat attack catalog and each attack association."
       ],
       "guidePath": "/docs/tool-attack.html",
       "posterPath": "/docs/screenshots/dark/tool-attack.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
       "narrationSlug": "attack"
     },
     {
@@ -439,17 +428,16 @@
         "Map controls to requirements and countermeasures"
       ],
       "exampleSteps": [
-        "Select Fire Detection Payload and open Controls",
-        "Create or select the tutorial FireSat payload baseline",
-        "Inspect categorization, the selected control, and its tailoring rationale",
-        "Review requirement or countermeasure mapping and the Validation view"
+        "Controls organizes categorization, tailoring, mapping, and validation around a baseline.",
+        "This FireSat payload has no baseline; creation begins with a named baseline."
       ],
       "guidePath": "/docs/tool-controls.html",
       "posterPath": "/docs/screenshots/dark/tool-controls.png",
       "exampleProject": "FireSat",
       "exampleSystem": "Fire Detection Payload",
-      "demoContext": "Tutorial security records extend the supplied FireSat architecture.",
-      "narrationSlug": "controls"
+      "demoContext": "Recorded navigation through the existing FireSat demonstration model.",
+      "narrationSlug": "controls",
+      "runtimeNote": "No Controls Baseline is saved in this FireSat scope. The film shows the baseline entry point without saving."
     }
   ],
   "methodology": {
@@ -757,7 +745,7 @@
       "Ground"
     ],
     "system": "Fire Detection Payload",
-    "scopeNote": "FireSat is an educational architecture, not a validated operational design. Its supplied structure includes systems, states, functions, interfaces, connections, and requirements. Assets, traces, use cases, control structures, losses, countermeasures, and assurance arguments are developed in the tutorials.",
+    "scopeNote": "FireSat is an educational architecture, not a validated operational design. The supplied package defines systems, states, functions, interfaces, connections, and requirements. The recorded workspace also contains prepared security tutorial data. Each film preserves the current records, empty workspaces, and validation findings.",
     "facts": [
       {
         "value": "4",

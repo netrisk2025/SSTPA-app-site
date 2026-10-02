@@ -62,10 +62,18 @@ The supplied FireSat model deliberately omits Assets, trace relationships, Use C
 
 ## Narration delivery
 
-`public/audio/scripts.json` contains 22 source-grounded scripts and identical accessible transcripts: home, tools, methodology, installation-admin, workspace, and all 17 add-ons. Each script has 195–208 words (approximately 90–96 seconds at 130 words per minute), source references, and an estimated duration. Actual audio must be checked after rendering.
+`public/audio/scripts.json` contains 22 source-grounded scripts and identical accessible transcripts: home, tools, methodology, installation-admin, workspace, and all 17 add-ons. Each script has 195–216 words (approximately 90–100 seconds at 130 words per minute), source references, and an estimated duration. Actual audio must be checked after rendering.
 
 The requested production voice is the **Systems** voice in WhiteKnight Studio. Scripts are original adaptations of the user's local source material. Playback is user initiated; video demonstrations remain silent. Script presence is not evidence that an audio render has completed. Register playable audio only after its file and measured duration are verified.
 
 ## Runtime verification note
 
 The recorded current Admin interface marks Sandbox Management as under construction. Admin page copy and its unrendered narration explicitly state that limitation. The installation narration describes the available administrative views without promising completed sandbox operations. Empty Reference, Flow, Use-Case, or Controls views depend on the loaded reference and tutorial data and are not presented as populated shipped records.
+
+## Recorded tutorial reconciliation
+
+The live FireSat workspace contains prepared security records beyond the shipped YAML: Fire Detection Data with availability/authenticity objectives, an authenticity loss, and a partly evidenced GSN argument. `public/media/demos.json` supplies the exact observed navigation, empty scopes, and validation findings for every film. Website example steps now match that manifest. Narrations describe the recorded limits explicitly; Reports and Reference first-draft audio is superseded by revised renders. The Connection walkthrough is Sensor Video Link in Fire Detection Payload, not the cross-segment Detection Downlink.
+
+## White-paper edition labeling
+
+The latest supplied filename is `SSTPA_Methodology_White_Paper_v14.docx`, while the document's internal cover still reads Version 13. The site labels the download **Current edition**, preserving the author's source document unchanged. The hosted download is refreshed from the current source at the existing URL; filename numbering is not presented as verified cover metadata.

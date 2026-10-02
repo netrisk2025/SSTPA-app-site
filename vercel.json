@@ -64,6 +64,15 @@
           "value": "no-cache"
         }
       ]
+    },
+    {
+      "source": "/files/SSTPA-Methodology-White-Paper-v14.docx",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
     }
   ]
 }

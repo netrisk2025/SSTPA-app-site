@@ -1,54 +1,45 @@
 # SSTPA Tools website
 
-A deployable React, TypeScript, and Vite website for SSTPA Tools. The current rebuild presents a cinematic landing page, a searchable collection of the main workspace and 17 add-on tools, and a source-grounded methodology page.
+A React, TypeScript, and Vite site for SSTPA Tools, with an original digital Art Nouveau design, deterministic white-dot systems, FireSat walkthroughs, and opt-in White Knight narration.
 
-## Run locally
+## Development and release checks
 
-```bash
+```sh
 npm install
 npm run dev -- --host 127.0.0.1 --port 5174
-```
-
-## Verify and build
-
-```bash
 npm run typecheck
 npm run build
+npm run verify
 ```
 
-Vercel uses `npm run build` and serves `dist/`. `vercel.json` rewrites `/tools`, `/tools/:slug`, and `/methodology` to the application. Existing `/docs/` and `/files/` URLs remain static assets and keep working.
+`verify` is a release-completeness gate. It requires all 22 distinct 1–2 minute narrations, all 18 silent FireSat walkthroughs, valid captions, working local guide/download targets, and the built production assets. It intentionally fails while a media draft is incomplete. Decode media with ffmpeg/ffprobe when changing recordings, and exercise playback, navigation, search, motion controls, and responsive layouts in a browser.
 
-## Website content
+## Pages and sources
 
-- `src/content.json` contains 18 tool entries and methodology material derived from the current SSTPA Methodology White Paper (v14), the application tool manifest, and the developer wiki.
-- Tool slugs match the application manifest: `navigator`, `requirements`, `reports`, `reference`, `state`, `flow`, `assets`, `context`, `trace`, `loss`, `goalkeeper`, `usecase`, `connection`, `messagecenter`, `admin`, `attack`, and `controls`. The main GUI uses `workspace`.
-- Every tool has a dedicated page at `/tools/{slug}`.
-- Original documentation and images remain in `public/docs/`. Tools without a dedicated legacy guide link to the general guide.
-- The methodology download remains `/files/SSTPA-Methodology-White-Paper-v14.docx`.
-- The website does not promise complete threat coverage, automatic certification, or automatic integration with external engineering products.
+- `/` — general introduction and authored satellite, jetliner, and train studies.
+- `/installation` — installation, startup, backend services/data partitions, and administration.
+- `/tools/workspace` — navigating an established project and System of Interest.
+- `/tools` and `/tools/{slug}` — searchable directory and dedicated pages for the 17 add-ons.
+- `/methodology` — source-grounded introduction and fourteen-step workflow.
+- `/docs/` — retained online guide, with original deep links and screenshots.
+- `/files/SSTPA-Methodology-White-Paper-v14.docx` — retained methodology download.
 
-## Media handoff
+`src/content.json` and `CONTENT_SOURCE.md` document the current application, developer wiki, FireSat example, and methodology white paper. The FireSat architecture ships separately from tutorial analysis. The recorded example contains existing tutorial data; incomplete views and runtime limitations are identified in each walkthrough's notes. No SSTPA Tools application source or model records were changed for this website.
 
-The site reads `/media/manifest.json`. Register only completed, verified media. Entries are keyed by tool slug, with `introduction` reserved for the SSTPA logo film.
+## Original animation
 
-```json
-{
-  "workspace": {
-    "src": "/media/workspace.mp4",
-    "poster": "/media/workspace.jpg",
-    "captions": "/media/workspace.vtt",
-    "transcript": "The spoken narration, in full.",
-    "duration": "00:38"
-  }
-}
-```
+`src/components/ParticleScene.tsx` precomputes authored 3D point geometry and replays deterministic assembly, rotation, and dissolution. It has no runtime AI or third-party generation requests. Pause/resume preserves position; reduced motion presents a static study; offscreen/background animation stops. CSS adapts to the parent scene size. Fonts are bundled locally.
 
-`src` is required; other fields are optional. Videos use native controls and never autoplay with audio. Captions and a transcript toggle appear when supplied. Until a real video entry is registered, the page clearly presents a still preview. Existing screenshots are reference material and should be replaced by demonstration posters as recordings become available.
+## Audio and silent walkthroughs
 
-The landing point cloud is an original canvas animation. It supports pointer movement, a pause control, and reduced-motion preference. Fonts are locally bundled DM Sans and Cormorant Garamond.
+`public/audio/scripts.json` contains the full, source-grounded narration text and source references. `public/audio/manifest.json` registers verified MP3s keyed by page slug. Audio never autoplays; the page player supports play/pause, seek, and full transcripts.
 
-## Drafts and deployment
+Narration uses the original **Systems** narrator in the user's White Knight Studio account. The custom voice is bound to its source project, so website narrations are appended as separate chapters in that project, preserving the original chapter. Export narration with **Include sounds** unchecked. Do not replace this voice without user direction.
 
-Baseline and iteration source snapshots are kept outside this repository at `/home/netrisk/Documents/Codex/2026-10-01/do/work/site-drafts/`. See `FloorPlan.md` for directory roles.
+`public/media/demos.json` registers 18 silent, captioned **screen walkthroughs assembled from genuine sequential application screenshots**, not continuous screen recordings. Each uses the existing FireSat model, H.264 video at 1280×820, no audio stream, an embedded step band, a poster, optional VTT captions, and written steps. The website displays current-build caveats from each `note`.
 
-The user has authorized the rebuild and eventual production deployment. Deploy only after actual media is integrated and the website, routes, and video playback are verified. This repository must not be used to alter the SSTPA application or the source white paper.
+The earlier `public/Audio/Systems(1).wav` and introduction film remain preserved; the new website uses the page narrations and silent walkthroughs instead.
+
+## Deployment
+
+The existing Vercel project builds with `npm run build` and serves `dist`. `vercel.json` preserves `/docs/` and `/files/` while routing the application pages. The GitHub repository is `netrisk2025/SSTPA-app-site`; draft checkpoints are pushed on `codex/sstpa-digital-nouveau` and reviewed in pull request #1. Publish the complete site only after build, release validation, media checks, and browser QA pass.

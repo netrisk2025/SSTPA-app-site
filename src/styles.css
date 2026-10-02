@@ -1927,4 +1927,48 @@ p {
 .demo video {
   aspect-ratio: 1280/820;
 }
-.demo-note{font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding:16px 22px;color:#aab6c5}
+.demo-note {
+  font-size: 12px;
+  line-height: 1.7;
+  border-top: 1px solid var(--line);
+  padding: 16px 22px;
+  color: #aab6c5;
+}
+.audio-seek input {
+  appearance: none;
+  background: transparent;
+  height: 10px;
+  transform: translateY(-4px);
+}
+.audio-seek input:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.audio-seek input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #77859566;
+}
+.audio-seek input::-moz-range-track {
+  height: 2px;
+  background: #77859566;
+}
+.audio-seek input::-webkit-slider-thumb {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: -3px;
+}
+.audio-seek input::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gold);
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .page-audio {
+    max-width: 50vw;
+  }
+}

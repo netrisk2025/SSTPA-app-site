@@ -3,8 +3,8 @@
   "short_name": "SSTPA",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#e8dcc8",
-  "theme_color": "#e8dcc8",
+  "background_color": "#080e17",
+  "theme_color": "#080e17",
   "icons": [
     {
       "src": "/favicon-32.png",

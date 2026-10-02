@@ -210,6 +210,7 @@ function AudioGuide({
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(false);
+  const [ready, setReady] = useState(false);
   async function toggle() {
     if (!audio.current) return;
     if (playing) audio.current.pause();
@@ -268,6 +269,7 @@ function AudioGuide({
             ref={audio}
             src={track.src}
             preload="none"
+            onLoadedMetadata={() => setReady(true)}
             onPlay={() => {
               document.querySelectorAll("audio").forEach((a) => {
                 if (a !== audio.current) a.pause();
@@ -293,6 +295,7 @@ function AudioGuide({
               max="100"
               step="0.1"
               value={progress}
+              disabled={!ready}
               onChange={(e) => {
                 const value = Number(e.target.value);
                 if (audio.current && Number.isFinite(audio.current.duration)) {
@@ -416,7 +419,7 @@ function Home() {
           </p>
           <div className="hero-actions">
             <a className="button primary" href="/tools">
-              Enter the workspace <Arrow />
+              Explore SSTPA Tools <Arrow />
             </a>
             <a className="quiet-link" href="/methodology">
               Discover the method
@@ -572,7 +575,7 @@ function PaperPanel() {
         <small>
           THE METHODOLOGY WHITE PAPER
           <br />
-          VERSION 14
+          CURRENT EDITION
         </small>
       </div>
       <div>
@@ -589,7 +592,9 @@ function PaperPanel() {
         <a className="button primary" href={paper} download>
           Download the white paper <Arrow down />
         </a>
-        <span className="file-note">VERSION 14 · MICROSOFT WORD DOCUMENT</span>
+        <span className="file-note">
+          CURRENT EDITION · MICROSOFT WORD DOCUMENT
+        </span>
         <a className="text-link" href="/docs/">
           Browse the online documentation <Arrow />
         </a>
