@@ -13,4 +13,4 @@
 - `node_modules/` — Installed build dependencies.
 
 Pre-existing draft snapshot: `/home/netrisk/Documents/Codex/2026-10-02/b/work/site-baseline/existing-site.tgz`.
-Current work remains on `codex/sstpa-digital-nouveau`; draft checkpoints are pushed to the GitHub repository.
+The completed release is on `main` and published at `https://www.sstpa.app/`. Draft checkpoints remain on `codex/sstpa-digital-nouveau`; pull request #1 records the redesign.

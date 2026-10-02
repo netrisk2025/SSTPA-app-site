@@ -42,4 +42,4 @@ The earlier `public/Audio/Systems(1).wav` and introduction film remain preserved
 
 ## Deployment
 
-The existing Vercel project builds with `npm run build` and serves `dist`. `vercel.json` preserves `/docs/` and `/files/` while routing the application pages. The GitHub repository is `netrisk2025/SSTPA-app-site`; draft checkpoints are pushed on `codex/sstpa-digital-nouveau` and reviewed in pull request #1. Publish the complete site only after build, release validation, media checks, and browser QA pass.
+The existing Vercel project builds with `npm run build` and serves `dist`. `vercel.json` preserves `/docs/` and `/files/` while routing the application pages. The GitHub repository is `netrisk2025/SSTPA-app-site`; the completed redesign was merged through pull request #1 and is published at https://www.sstpa.app/. Draft checkpoints remain on `codex/sstpa-digital-nouveau`. Future releases must pass build, release validation, media checks, and browser QA before publication.
