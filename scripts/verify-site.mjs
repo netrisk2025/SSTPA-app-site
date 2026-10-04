@@ -16,7 +16,7 @@ const audio = read("public/audio/manifest.json");
 const demos = read("public/media/demos.json");
 const vocabulary = read("public/audio/vocabulary.json");
 const paperPath = "/files/SSTPA-Methodology-White-Paper-v16.docx";
-const preservationBaseline = "874596ebb3eb512852839f7c77ee3f8eadeee75f";
+const preservationBaseline = "45cb8ab75e176606014339815e4d8946363f56a8";
 const pageSlugs = [
   "home",
   "tools",
@@ -63,14 +63,19 @@ assert.equal(
 );
 
 assert.equal(vocabulary.version, 1, "Unsupported vocabulary manifest version");
-assert.equal(vocabulary.terms.length, 39, "All 39 vocabulary terms must be present");
+assert.equal(vocabulary.terms.length, 41, "All 41 vocabulary terms must be present");
 assert.equal(
   new Set(vocabulary.terms.map((term) => term.slug)).size,
-  39,
+  41,
   "Vocabulary term slugs must be unique",
 );
 verifyVocabularyDependencyBehavior();
 verifyVocabularyLearningSequence(vocabulary.terms);
+const priorVocabulary = JSON.parse(execFileSync("git", [
+  "show", `${preservationBaseline}:public/audio/vocabulary.json`,
+], { cwd: root, encoding: "utf8" }));
+assert.deepEqual(vocabulary.terms.filter((term) => !["privacy", "opsec"].includes(term.slug)),
+  priorVocabulary.terms, "The 39 existing vocabulary entries must remain unchanged");
 assert.ok(!/\bcertifiability\b/i.test(JSON.stringify(vocabulary.terms)),
   "Certifiability is outside this vocabulary revision");
 const primarySourceHosts = new Set([
@@ -78,6 +83,7 @@ const primarySourceHosts = new Set([
   "standards.nasa.gov", "www.nasa.gov", "www.faa.gov",
   "psas.scripts.mit.edu", "dspace.mit.edu", "sebokwiki.org",
   "scsc.uk", "www.schneier.com",
+  "www.esd.whs.mil", "www.cdse.edu",
 ]);
 const prohibitedPaperReference = /sstpa[-_\s]*(?:methodology[-_\s]*)?(?:white[-_\s]*paper|srs)|\bSSTPA\b.{0,80}\b(?:white[\s-]*paper|SRS)\b|\b(?:white[\s-]*paper|SRS)\b.{0,80}\bSSTPA\b|\bv(?:ersion\s*)?16\b/i;
 const vocabularyAudio = new Set();
@@ -160,7 +166,7 @@ assert.equal(
   "White paper must be a DOCX archive",
 );
 
-// The vocabulary revision changes its manifest and adds recordings; published assets stay intact.
+// Published assets stay intact. App.tsx permits only the requested hero vocabulary link.
 const baselineTree = execFileSync("git", [
   "ls-tree", "-r", "-z", preservationBaseline, "--", "public",
   "src/content.json", "src/App.tsx", "src/components/ParticleScene.tsx", "vercel.json",
@@ -174,11 +180,23 @@ for (const entry of baselineTree) {
   const original = execFileSync("git", ["cat-file", "blob", blob], {
     cwd: root, maxBuffer: 128 * 1024 * 1024,
   });
-  assert.ok(original.equals(fs.readFileSync(path.join(root, filename))),
-    `Protected baseline file changed: ${filename}`);
+  const current = fs.readFileSync(path.join(root, filename));
+  if (filename === "src/App.tsx") {
+    const existingCta = '            <a className="quiet-link" href="/methodology">\n' +
+      '              Discover the method\n            </a>\n';
+    const vocabularyCta = '            <a className="quiet-link" href="/vocabulary">\n' +
+      '              Speak the vocabulary\n            </a>\n';
+    const baselineApp = original.toString("utf8");
+    assert.equal(baselineApp.split(existingCta).length, 2,
+      "The baseline must contain exactly one expected hero method link");
+    assert.equal(current.toString("utf8"), baselineApp.replace(existingCta, existingCta + vocabularyCta),
+      "App.tsx must differ only by the exact hero vocabulary link after Discover the method");
+  } else {
+    assert.ok(original.equals(current), `Protected baseline file changed: ${filename}`);
+  }
   if (/^public\/audio\/vocabulary-[^/]+\.mp3$/.test(filename)) preservedOriginalClips++;
 }
-assert.equal(preservedOriginalClips, 28, "All 28 original vocabulary recordings must remain byte-for-byte unchanged");
+assert.equal(preservedOriginalClips, 39, "All 39 original vocabulary recordings must remain byte-for-byte unchanged");
 asset("/Audio/Systems(1).wav");
 asset("/files/SSTPA-Tools-White-Paper-v2.docx");
 asset("/media/introduction.mp4");
@@ -222,5 +240,5 @@ for (const directory of ["public", "dist"]) {
   assert.ok(!files.some((file) => /SSTPA[-_]Methodology[-_]White[-_]Paper[-_]v14\.docx$/i.test(file)), `Retired version 14 white paper remains in ${directory}`);
 }
 console.log(
-  "Verified: 22 existing narrations, 39 distinct same-voice vocabulary clips measured at 30–60 seconds, dependency order and filtered prerequisite closure, primary-source references, all 28 original clips and protected baseline files unchanged, 18 silent FireSat walkthroughs, version 16 white paper, vocabulary routing, and production assets.",
+  "Verified: 22 existing narrations, 41 distinct same-voice vocabulary clips measured at 30–60 seconds, dependency order and filtered prerequisite closure, primary-source references, all 39 original clips and protected baseline files unchanged, exact hero vocabulary link addition, 18 silent FireSat walkthroughs, version 16 white paper, vocabulary routing, and production assets.",
 );

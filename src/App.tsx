@@ -435,6 +435,9 @@ function Home() {
             <a className="quiet-link" href="/methodology">
               Discover the method
             </a>
+            <a className="quiet-link" href="/vocabulary">
+              Speak the vocabulary
+            </a>
           </div>
         </div>
         <div className="hero-scene">

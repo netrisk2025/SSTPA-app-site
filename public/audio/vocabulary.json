@@ -531,6 +531,70 @@
       }
     },
     {
+      "slug": "privacy",
+      "term": "Privacy",
+      "category": "Protection objectives",
+      "prerequisites": [
+        "environment",
+        "regime",
+        "confidentiality"
+      ],
+      "definition": "Privacy addresses effects of information processing on individuals; SSTPA extends this Assurance to protecting sensitive system characteristics and activities through OPSEC.",
+      "script": "Privacy concerns how information processing affects individuals. NIST explains that privacy risks extend beyond confidentiality: even authorized collection or use can harm people. This matters because securing information does not by itself make its use appropriate. In SSTPA, Privacy is an Assurance with a defined asset, protection objective, environment, and violation criterion. SSTPA extends the concept from individuals to systems through operations security, or OPSEC: protecting sensitive system characteristics and activities against adversarial disclosure or inference. This is an explicit SSTPA extension, not NIST's definition of individual privacy. The analysis connects exposure, controls, requirements, and evidence, while retaining applicable individual privacy rights and obligations.",
+      "sourceLabel": "Individual-privacy basis: NISTIR 8062, §§2.1–2.2, especially pp. 7–9, and the NIST Privacy Framework. Applying Privacy to a system's sensitive characteristics and activities through OPSEC is an explicit SSTPA extension, not an official redefinition of individual privacy.",
+      "sources": [
+        {
+          "label": "NISTIR 8062 — An Introduction to Privacy Engineering and Risk Management in Federal Systems (2017), §§2.1–2.2",
+          "url": "https://doi.org/10.6028/NIST.IR.8062"
+        },
+        {
+          "label": "NIST Privacy Framework — protecting individuals’ privacy through enterprise risk management",
+          "url": "https://www.nist.gov/privacy-framework"
+        },
+        {
+          "label": "DoDD 5205.02E — DoD Operations Security (OPSEC) Program; Change 2, 20 August 2020",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/520502e.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-privacy.mp3",
+        "duration": "0:55",
+        "durationSeconds": 55.2,
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "opsec",
+      "term": "OPSEC",
+      "category": "Protection objectives",
+      "prerequisites": [
+        "privacy"
+      ],
+      "definition": "Operations security protects critical information and observable indicators of capabilities, intentions, and activities from adversarial exploitation; it supports SSTPA’s extension of Privacy to systems.",
+      "script": "Operations security, or OPSEC, protects critical information about capabilities, intentions, and activities from adversarial exploitation. It is important to U.S. national security because observations that appear harmless separately can reveal information that endangers personnel or missions. U.S. Department of Defense policy requires an OPSEC program across its missions, functions, programs, and activities. OPSEC addresses observable indicators and potentially revealing combinations of information, including unclassified information. In SSTPA, this discipline supports the extension of Privacy to systems. Analysts identify the asset, applicable regime, operating context, and what disclosure or inference would violate its Privacy Assurance. The model connects those objectives to protection requirements and evidence; the OPSEC label alone does not establish protection.",
+      "sourceLabel": "OPSEC policy and information-protection basis: DoDD 5205.02E §4, DoDM 5205.02, and DoD Center for Development of Security Excellence guidance. The relationship to a system-level Privacy Assurance is SSTPA's modeling extension.",
+      "sources": [
+        {
+          "label": "DoDD 5205.02E — DoD Operations Security (OPSEC) Program, §4; issued 20 June 2012, Change 2, 20 August 2020",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/520502e.pdf"
+        },
+        {
+          "label": "DoDM 5205.02 — DoD Operations Security (OPSEC) Program Manual; Change 2, 29 October 2020",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520502m.pdf"
+        },
+        {
+          "label": "DoD CDSE — OPSEC Fundamentals for OPSEC Practitioners, Student Guide",
+          "url": "https://www.cdse.edu/Portals/124/Documents/student-guides/OP110-guide.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-opsec.mp3",
+        "duration": "0:56",
+        "durationSeconds": 55.6,
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
       "slug": "sstpa-loss",
       "term": "Loss in SSTPA",
       "category": "Attack and Loss analysis",

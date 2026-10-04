@@ -295,8 +295,12 @@ p {
 }
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
   align-items: center;
+}
+.hero-actions > a {
+  flex-shrink: 0;
 }
 .hero-scene {
   position: absolute;

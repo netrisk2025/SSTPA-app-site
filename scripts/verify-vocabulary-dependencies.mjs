@@ -85,7 +85,7 @@ export function verifyVocabularyLearningSequence(terms) {
   ];
   const assuranceBlock = [
     "assurance-confidence", "confidentiality", "integrity", "availability",
-    "authenticity", "non-repudiation", "trustworthy", "sstpa-loss",
+    "authenticity", "non-repudiation", "trustworthy", "privacy", "opsec", "sstpa-loss",
   ];
   for (const block of [criticalityBlock, assuranceBlock]) {
     const start = slugs.indexOf(block[0]);
@@ -119,10 +119,18 @@ export function verifyVocabularyLearningSequence(terms) {
   checkSelection(() => true, "All terms");
   for (const category of new Set(terms.map((term) => term.category)))
     checkSelection((term) => term.category === category, `Category ${category}`);
-  for (const query of ["authenticity", "loss", "firmware", "critical", "non-repudiation"])
+  for (const query of ["authenticity", "loss", "firmware", "critical", "non-repudiation", "privacy", "opsec"])
     checkSelection((term) =>
       `${term.term} ${term.definition} ${term.script}`.toLowerCase().includes(query),
     `Search ${query}`);
+  for (const slug of ["privacy", "opsec"]) {
+    // An individually selected new concept must bring its complete prerequisite chain.
+    checkSelection((term) => term.slug === slug, `Selected term ${slug}`);
+    const selected = selectVocabularyTerms(terms, (term) => term.slug === slug);
+    assert.deepEqual(selected.matchedSlugs, new Set([slug]));
+    assert.ok(selected.prerequisiteSlugs.size > 0, `${slug} must connect to preceding concepts`);
+    assert.equal(selected.terms.at(-1).slug, slug, `${slug} must follow its prerequisite chain`);
+  }
   checkSelection((term) =>
     `${term.term} ${term.definition} ${term.script}`.includes("no-such-vocabulary-result"),
   "Unmatched search", false);
