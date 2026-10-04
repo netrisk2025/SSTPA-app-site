@@ -74,7 +74,7 @@ The recorded current Admin interface marks Sandbox Management as under construct
 
 The live FireSat workspace contains prepared security records beyond the shipped YAML: Fire Detection Data with availability/authenticity objectives, an authenticity loss, and a partly evidenced GSN argument. `public/media/demos.json` supplies the exact observed navigation, empty scopes, and validation findings for every film. Website example steps now match that manifest. Narrations describe the recorded limits explicitly; Reports and Reference first-draft audio is superseded by revised renders. The Connection walkthrough is Sensor Video Link in Fire Detection Payload, not the cross-segment Detection Downlink.
 
-## White-paper edition labeling
+## Earlier white-paper edition labeling (superseded by Version 16 below)
 
 The latest supplied filename is `SSTPA_Methodology_White_Paper_v14.docx`, while the document's internal cover still reads Version 13. The site labels the download **Current edition**, preserving the author's source document unchanged. The hosted download is refreshed from the current source at the existing URL; filename numbering is not presented as verified cover metadata.
 
@@ -83,3 +83,11 @@ The latest supplied filename is `SSTPA_Methodology_White_Paper_v14.docx`, while 
 All 22 narrations were rendered in WhiteKnight Studio on 2026-10-02 using the existing **Systems** project's exact narrator. Website chapters were appended; final backup comparison confirms the original Chapter 1 and the entire cast remain unchanged. The two superseded Reports/Reference drafts remain recoverable; the website uses their revised, video-aligned renders.
 
 Each export used **One scene** with **Include sounds** off. Published MP3s are 79–97 seconds long, contain one audio stream each, and have distinct hashes. The 22 final Studio chapter texts match the public transcripts exactly. `public/audio/manifest.json` contains only verified completed audio. Source WAVs, before/after Studio backups, and chapter-level rendering provenance are retained outside the repository in the task's `work/audio-sources/` directory.
+
+## Version 16 vocabulary update — 4 October 2026
+
+The approved `SSTPA_Methodology_White_Paper_v16.docx` supersedes the v14 download. Its cover, running headers, and core metadata identify Version 16. The public file is an unchanged copy of that approved document. Sections 3.2, 3.6, and 6 ground the new vocabulary page and its short narration scripts. Earlier application pages, recordings, walkthroughs, guides, and other downloads remain preserved.
+
+The vocabulary distinguishes capitalized **Assurance**, the SSTPA protected-property label, from conventional assurance as justified confidence. **Loss in SSTPA** is attacker effort to violate one Assurance on one asset in one environment, modeled as an attack tree. Greater comparable effort means greater resistance; this differs from STPA loss as stakeholder harm. Controls enforce constraints through parent MUST statements and implementing SHALL requirements, explicitly an SSTPA convention. Each vocabulary transcript identifies the relevant lineage, and each card links its source documents.
+
+All 28 vocabulary clips were generated in White Knight Studio's existing **Systems** project using its bound narrator. They are narration-only takes, with measured durations of 41.36–50.56 seconds. Every published MP3 has a distinct hash and decodes cleanly. All 28 saved Studio manuscripts match the published scripts; the original 25 chapter titles and texts remain present. The public manifest records durations, transcripts, and references, while source take URLs and verification records are retained in the task's `work/website/` directory. Browser checks covered desktop/mobile layouts, category filters, search, transcript expansion, and single-clip playback.

@@ -6,6 +6,9 @@ type Motif =
   | "satellite"
   | "airliner"
   | "train"
+  | "nuclear"
+  | "ship"
+  | "enterprise"
   | "architecture"
   | "orbit"
   | "shield"
@@ -23,6 +26,14 @@ type Mesh = {
 };
 const TAU = Math.PI * 2;
 const PERIOD = 17;
+const HOME_MOTIFS: Motif[] = [
+  "satellite",
+  "airliner",
+  "train",
+  "nuclear",
+  "ship",
+  "enterprise",
+];
 const smooth = (a: number, b: number, value: number) => {
   const t = Math.max(0, Math.min(1, (value - a) / (b - a)));
   return t * t * (3 - 2 * t);
@@ -315,6 +326,127 @@ function authorMesh(motif: Motif, count: number): Mesh {
     m.line([0.1, 0.28, 0], [0.3, 0.61, 0]);
     m.line([0.3, 0.61, 0], [0.52, 0.28, 0]);
     m.line([0.12, 0.61, 0], [0.48, 0.61, 0]);
+  } else if (motif === "nuclear") {
+    label = "NUCLEAR POWER SYSTEM";
+    detail = "Nuclear power plant · energy, control, protection";
+    rotation = [0.22, -0.36, -0.025];
+    // Two hyperboloid cooling towers give the plant its familiar silhouette.
+    for (const x of [-0.85, 0.28]) {
+      for (let row = 0; row <= 33; row++) {
+        const t = row / 33;
+        const radius = 0.245 + 0.265 * Math.pow((t - 0.67) / 0.67, 2);
+        const y = -0.53 + t * 1.48;
+        for (let col = 0; col < 58; col++) {
+          const a = (col / 58) * TAU;
+          m.point(x + Math.cos(a) * radius, y, 0.08 + Math.sin(a) * radius);
+        }
+      }
+      for (const y of [-0.53, 0.95]) {
+        const t = (y + 0.53) / 1.48;
+        const radius = 0.245 + 0.265 * Math.pow((t - 0.67) / 0.67, 2);
+        m.ring(x, y, 0.08, radius, radius, Math.PI / 2, 120);
+      }
+      for (let leg = 0; leg < 12; leg++) {
+        const a = (leg / 12) * TAU;
+        m.line(
+          [x + Math.cos(a) * 0.51, -0.53, 0.08 + Math.sin(a) * 0.51],
+          [x + Math.cos(a) * 0.55, -0.7, 0.08 + Math.sin(a) * 0.55],
+          0.025,
+        );
+      }
+    }
+    // A domed containment building and a low turbine hall complete the campus.
+    for (let row = 0; row <= 19; row++) {
+      const y = -0.66 + (row / 19) * 0.55;
+      for (let col = 0; col < 36; col++) {
+        const a = (col / 36) * TAU;
+        m.point(1.1 + Math.cos(a) * 0.29, y, Math.sin(a) * 0.29);
+      }
+    }
+    for (let row = 0; row <= 14; row++) {
+      const a = (row / 14) * Math.PI * 0.5;
+      for (let col = 0; col < 36; col++) {
+        const b = (col / 36) * TAU;
+        m.point(1.1 + Math.cos(a) * Math.cos(b) * 0.29,
+          -0.11 + Math.sin(a) * 0.29, Math.cos(a) * Math.sin(b) * 0.29);
+      }
+    }
+    m.box(0.3, -0.48, -0.69, 1.38, 0.36, 0.43, 11);
+    m.line([-1.57, -0.72, -1.03], [1.58, -0.72, -1.03], 0.032);
+    m.line([-1.57, -0.72, 0.7], [1.58, -0.72, 0.7], 0.032);
+    m.line([-1.57, -0.72, -1.03], [-1.57, -0.72, 0.7], 0.032);
+    m.line([1.58, -0.72, -1.03], [1.58, -0.72, 0.7], 0.032);
+  } else if (motif === "ship") {
+    label = "MARITIME SYSTEM";
+    detail = "Ship · navigation, propulsion, coordinated operation";
+    rotation = [0.35, -0.28, -0.035];
+    // Swept bow, broad stern, and a narrowing keel form a three-dimensional hull.
+    for (let station = 0; station <= 66; station++) {
+      const t = station / 66;
+      const x = -1.65 + t * 3.25;
+      const beam = 0.44 * Math.min(1, Math.pow(t / 0.22, 0.65))
+        * (1 - 0.16 * Math.pow(t, 5));
+      for (let row = 0; row <= 14; row++) {
+        const r = row / 14;
+        for (const side of [-1, 1]) {
+          m.point(x, -0.55 + r * 0.57,
+            side * beam * (0.36 + 0.64 * Math.sin(r * Math.PI / 2)));
+        }
+      }
+      m.line([x, 0.025, -beam], [x, 0.025, beam], 0.052);
+      // Closely sampled deck edges and a fine rail sit above the hull.
+      for (const side of [-1, 1]) {
+        m.point(x, 0.045, side * beam);
+        m.point(x, 0.13, side * beam);
+        if (station % 4 === 0)
+          m.line([x, 0.045, side * beam], [x, 0.13, side * beam], 0.025);
+      }
+    }
+    m.box(0.71, 0.19, 0, 0.86, 0.33, 0.61, 10);
+    m.box(0.91, 0.47, 0, 0.58, 0.23, 0.54, 9);
+    m.box(0.87, 0.65, 0, 0.67, 0.12, 0.62, 8);
+    for (const side of [-1, 1])
+      m.line([0.58, 0.52, side * 0.28], [1.16, 0.52, side * 0.28], 0.017);
+    m.box(0.26, 0.43, 0, 0.22, 0.42, 0.26, 7);
+    m.line([0.82, 0.71, 0], [0.82, 1.08, 0], 0.018);
+    m.line([0.58, 0.92, 0], [1.06, 0.92, 0], 0.018);
+    m.line([-0.88, 0.04, 0], [-0.88, 0.63, 0], 0.018);
+    m.line([-1.24, 0.08, 0], [-0.88, 0.57, 0], 0.024);
+    m.line([-0.88, 0.57, 0], [-0.49, 0.08, 0], 0.024);
+    for (const x of [-0.45, -0.06]) m.box(x, 0.12, 0, 0.29, 0.17, 0.43, 6);
+  } else if (motif === "enterprise") {
+    label = "ENTERPRISE SYSTEM";
+    detail = "Large enterprise · people, services, distributed infrastructure";
+    rotation = [0.32, -0.36, -0.03];
+    // A central office campus and two data-service clusters share a network spine.
+    m.box(0, 0.12, 0, 0.59, 1.47, 0.53, 15);
+    m.box(-0.45, -0.19, 0.03, 0.32, 0.85, 0.45, 10);
+    m.box(0.45, -0.3, 0.03, 0.3, 0.63, 0.45, 9);
+    for (let floor = 0; floor < 9; floor++) {
+      const y = -0.51 + floor * 0.145;
+      for (const z of [-0.28, 0.28])
+        m.line([-0.27, y, z], [0.27, y, z], 0.024);
+    }
+    for (const side of [-1, 1]) {
+      const x = side * 1.18;
+      // Paired rack-like service buildings communicate their role without labels.
+      for (const z of [-0.21, 0.31]) {
+        m.box(x, -0.3, z, 0.44, 0.64, 0.34, 9);
+        for (let unit = 0; unit < 5; unit++)
+          m.line([x - 0.18, -0.53 + unit * 0.115, z + 0.18],
+            [x + 0.18, -0.53 + unit * 0.115, z + 0.18], 0.02);
+      }
+      m.line([0, -0.68, -0.7], [x, -0.68, -0.7], 0.018);
+      m.line([x, -0.68, -0.7], [x, -0.68, 0.56], 0.018);
+      for (const z of [-0.21, 0.31])
+        m.line([x, -0.68, z], [x, -0.62, z], 0.016);
+      // Branch offices extend the enterprise beyond a single facility.
+      m.box(side * 0.76, -0.43, -0.93, 0.39, 0.36, 0.36, 7);
+      m.line([side * 0.76, -0.68, -0.7],
+        [side * 0.76, -0.68, -0.93], 0.017);
+    }
+    m.line([0, -0.62, 0], [0, -0.68, -0.7], 0.018);
+    m.ring(0, -0.69, 0, 1.67, 1.31, Math.PI / 2, 190);
   } else if (motif === "architecture") {
     label = "SYSTEM ARCHITECTURE";
     detail = "Structure · relationships · shared context";
@@ -462,6 +594,9 @@ const TOOL_MOTIFS: Record<string, Motif> = {
   satellite: "satellite",
   airliner: "airliner",
   train: "train",
+  nuclear: "nuclear",
+  ship: "ship",
+  enterprise: "enterprise",
   workspace: "architecture",
   admin: "architecture",
   installation: "architecture",
@@ -508,7 +643,7 @@ export default function ParticleScene({
     if (!canvas || !ctx) return;
     const count = compact ? 1900 : 3300;
     const motifs: Motif[] = home
-      ? ["satellite", "airliner", "train"]
+      ? HOME_MOTIFS
       : [TOOL_MOTIFS[kind] || "orbit"];
     const meshes = motifs.map((motif) => authorMesh(motif, count));
     const positions = new Float32Array(count * 2);
@@ -717,7 +852,7 @@ export default function ParticleScene({
       <div className="particle-scene__caption" aria-hidden="true">
         <span className="particle-scene__index">
           {String(sceneNumber).padStart(2, "0")}
-          <span> / {home ? "03" : "01"}</span>
+          <span> / {home ? String(HOME_MOTIFS.length).padStart(2, "0") : "01"}</span>
         </span>
         <span>{sceneLabel}</span>
       </div>

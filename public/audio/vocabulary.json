@@ -1,0 +1,689 @@
+{
+  "version": 1,
+  "terms": [
+    {
+      "slug": "sstpa",
+      "term": "SSTPA",
+      "category": "Methods",
+      "definition": "System Security-Theoretic Process Analysis is an asset-centered systems security engineering methodology connecting system behavior, protection requirements, attack effort, and assurance evidence.",
+      "script": "SSTPA stands for System Security-Theoretic Process Analysis. It matters because protecting separate components does not necessarily protect the system they form. SSTPA is a human- and asset-centered engineering methodology that connects system behavior, security properties, requirements, attack analysis, and evidence. It examines how assets are held, transported, and used across operating states and environments. Unlike STPA's use of loss for stakeholder harm, SSTPA defines Loss as attacker effort against one asset, one Assurance, and one environment. SSTPA builds on systems-theoretic reasoning and established engineering practices; its particular integration and Loss definition belong to this methodology.",
+      "sourceLabel": "SSTPA-specific methodology; builds on STPA and systems security engineering. See v16 §§1–3.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        },
+        {
+          "label": "NIST SP 800-160, Volume 1, Revision 1",
+          "url": "https://doi.org/10.6028/NIST.SP.800-160v1r1"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-sstpa.mp3",
+        "durationSeconds": 48.48,
+        "duration": "0:48",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "stpa",
+      "term": "STPA",
+      "category": "Methods",
+      "definition": "System-Theoretic Process Analysis identifies hazardous conditions, unsafe control actions, and causal scenarios that can produce unacceptable stakeholder losses.",
+      "script": "STPA means System-Theoretic Process Analysis. It matters when harmful behavior can arise from interactions, even though individual components have not failed. Developed by Nancy Leveson and John Thomas, STPA identifies unacceptable stakeholder losses, hazardous system conditions, constraints, control structures, unsafe control actions, and causal scenarios. Its foundation is STAMP, a systems-theoretic causality model emphasizing inadequate enforcement of constraints. STPA can address security as well as safety and other concerns. SSTPA uses this reasoning within an asset-centered workflow, adding its own scoped attacker-effort Loss model and connecting the analysis to requirements, exposure traces, and assurance evidence.",
+      "sourceLabel": "STPA Handbook; SSTPA relationship described in v16 §§3.1–3.2.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-stpa.mp3",
+        "durationSeconds": 48.32,
+        "duration": "0:48",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "stpa-sec",
+      "term": "STPA-Sec",
+      "category": "Methods",
+      "definition": "STPA-Sec applies systems-theoretic control analysis to security, including vulnerable system conditions and adversarial influences.",
+      "script": "STPA-Sec is the security application or adaptation of STPA. It matters because an attack succeeds through conditions in the system, not simply because a threatening actor exists. Work by William Young and Nancy Leveson emphasizes vulnerable system states and control relationships that allow threats to produce unacceptable outcomes. The analysis considers security requirements and architectural conditions, including adversarial interference with control or feedback. SSTPA shares this systems-theoretic perspective but organizes its workflow around assets, Assurances, environments, and exposure. SSTPA also uses its own attacker-effort meaning of Loss, which should not be attributed to STPA-Sec.",
+      "sourceLabel": "Young and Leveson; SSTPA distinctions in v16 §3.2.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Young and Leveson, Systems Thinking for Safety and Security (2013)",
+          "url": "https://dspace.mit.edu/entities/publication/c43a36bd-46c9-4a85-8ffb-35d8764b57a3"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-stpa-sec.mp3",
+        "durationSeconds": 47.12,
+        "duration": "0:47",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "system-of-interest",
+      "term": "System of interest",
+      "category": "System model",
+      "definition": "The system of interest is the interacting system selected for analysis at a particular level, with an explicit purpose and boundary.",
+      "script": "A system of interest is the system selected for analysis at a particular level. This conventional systems engineering term matters because security conclusions need a clear boundary. The analyst identifies the system's purpose, interacting elements, external actors, and interfaces. Hardware, software, people, and procedures can all be relevant elements. Being outside the boundary does not make an external dependency irrelevant. SSTPA relates assets, behavior, protection obligations, and evidence to this defined scope. When greater detail is needed, a constituent element can become a new system of interest, and the applicable analysis is repeated at that level.",
+      "sourceLabel": "Conventional systems engineering terminology from SEBoK; v16 §§3.6 and 6.2.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: Engineered System Context",
+          "url": "https://sebokwiki.org/wiki/Engineered_System_Context"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-system-of-interest.mp3",
+        "durationSeconds": 41.36,
+        "duration": "0:41",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "asset",
+      "term": "Asset",
+      "category": "Protection objectives",
+      "definition": "An asset is an item of value for which stakeholders establish protection needs and the consequences of compromise.",
+      "script": "An asset is an item of value that stakeholders need to protect. It matters because security engineering must connect protective work to something worth protecting. Assets can include information, software, firmware, hardware, credentials, intellectual property, or a service. In SSTPA, the asset is distinguished from the components that hold, transport, or use it. Asset identification and valuation occur outside the methodology; SSTPA receives those approved decisions. The analysis then follows each asset through the system and evaluates its required Assurances. This asset-protection perspective aligns with NIST systems security engineering, while SSTPA supplies the specific analysis workflow.",
+      "sourceLabel": "Asset-protection perspective aligned with NIST; SSTPA scope in v16 §§2 and 6.1.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "NIST SP 800-160, Volume 1, Revision 1",
+          "url": "https://doi.org/10.6028/NIST.SP.800-160v1r1"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-asset.mp3",
+        "durationSeconds": 44.8,
+        "duration": "0:45",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "assurance-property",
+      "term": "Assurance — protected property",
+      "category": "Protection objectives",
+      "definition": "Capitalized Assurance is SSTPA’s term for a required security property or protection objective on an asset.",
+      "script": "In SSTPA, Assurance with a capital A names a required security property or protection objective on an asset. Examples include confidentiality, integrity, availability, and authenticity. This term matters because an attack objective must identify exactly what protection would be violated. Each selected Assurance needs a violation criterion and operating context; simply labeling an asset confidential or available is insufficient. For availability, the analysis might specify an authorized service and an acceptable interruption interval. This capitalized model term is specific to SSTPA. It differs from conventional assurance, which means justified confidence in claims, supported by argument and evidence.",
+      "sourceLabel": "SSTPA-specific model term; distinction from conventional assurance in v16 §§2 and 3.6.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Assurance",
+          "url": "https://sebokwiki.org/wiki/System_Assurance_(glossary)"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-assurance-property.mp3",
+        "durationSeconds": 48.16,
+        "duration": "0:48",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "assurance-confidence",
+      "term": "Assurance — justified confidence",
+      "category": "Evidence and acceptance",
+      "definition": "Conventional assurance is justified confidence that identified claims are satisfied, supported by argument and evidence.",
+      "script": "In conventional systems engineering, assurance concerns justified confidence that identified claims are satisfied. It matters because a design statement or a completed checklist is not sufficient evidence of protection. An assurance argument explains why applicable evidence supports a claim, under stated assumptions and conditions. Evidence might include analysis, inspections, demonstrations, or test results for the relevant configuration. SSTPA uses this conventional meaning when discussing assurance cases. Keep it distinct from capitalized Assurance, SSTPA's label for an asset's protected property. Integrity can be the Assurance being protected; the reasoned confidence that integrity is protected is assurance.",
+      "sourceLabel": "Conventional assurance meaning from SEBoK; distinction explained in v16 §3.6.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Assurance",
+          "url": "https://sebokwiki.org/wiki/System_Assurance_(glossary)"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-assurance-confidence.mp3",
+        "durationSeconds": 44.56,
+        "duration": "0:45",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "sstpa-loss",
+      "term": "Loss in SSTPA",
+      "category": "Attack and Loss analysis",
+      "definition": "SSTPA Loss is the effort an attacker needs to expend to violate one Assurance on one asset in one environment, modeled as an attack tree.",
+      "script": "SSTPA Loss is the effort an attacker needs to expend to violate one Assurance on one asset in one environment, modeled as an attack tree. This definition matters because it expresses resistance to compromise, rather than the severity of harm. Under comparable measures and assumptions, greater Loss means the attacker faces greater effort. The analogy is cryptographic security strength: how much work is needed to break protection. System effort can involve time, cost, expertise, or access, so unlike quantities must not be combined arbitrarily. This is SSTPA's own definition. STPA instead uses loss for an unacceptable stakeholder outcome.",
+      "sourceLabel": "SSTPA-specific definition in v16 §§3.6 and 6.11; security-strength analogy from NIST.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "NIST SP 800-57, Part 1, Revision 5, Section 5.6",
+          "url": "https://doi.org/10.6028/NIST.SP.800-57pt1r5"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-sstpa-loss.mp3",
+        "durationSeconds": 45.6,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "stpa-loss",
+      "term": "Loss in STPA",
+      "category": "Methods",
+      "definition": "In STPA, loss is an unacceptable outcome affecting something stakeholders value.",
+      "script": "In STPA, a loss is an unacceptable outcome affecting something stakeholders value. Examples include injury, mission failure, property damage, or disclosure of sensitive information. This definition matters because it establishes what the analysis is intended to prevent. Hazards and control constraints are developed in relation to those outcomes. SSTPA retains stakeholder consequences for priorities and acceptance decisions, but gives capitalized Loss a different meaning: attacker effort against one asset, one Assurance, and one environment. Greater stakeholder loss means a worse outcome; greater SSTPA Loss effort means stronger resistance under the stated assumptions. The two meanings are not interchangeable.",
+      "sourceLabel": "STPA Handbook, pp. 16–17; explicit contrast in v16 §3.6.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-stpa-loss.mp3",
+        "durationSeconds": 47.36,
+        "duration": "0:47",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "environment",
+      "term": "Environment",
+      "category": "System model",
+      "definition": "The environment comprises relevant external entities and conditions that affect or are affected by the system of interest.",
+      "script": "The environment comprises relevant entities and conditions outside the system boundary that affect, or are affected by, the system. This systems engineering term matters because protection can change when conditions change. Operation, maintenance, recovery, and disposal can expose different interfaces, authorities, and adversarial opportunities. SSTPA records physical conditions, connectivity, external services, and attacker assumptions relevant to its analysis. Every Loss has one focal environment, while still recording prerequisites from earlier stages or other environments. For example, a credential compromised during maintenance can affect operation. An attacker is part of the relevant context, not the whole environment.",
+      "sourceLabel": "Environment terminology from SEBoK; SSTPA application in v16 §§3.6 and 6.6.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: Engineered System Context",
+          "url": "https://sebokwiki.org/wiki/Engineered_System_Context"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-environment.mp3",
+        "durationSeconds": 45.28,
+        "duration": "0:45",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "security-state",
+      "term": "Security state",
+      "category": "System model",
+      "definition": "A security state groups system conditions relevant to asset exposure, authority, and protection; transitions describe how those conditions change.",
+      "script": "A security state groups system conditions relevant to asset exposure, authority, and protection. It matters because an asset's protection can change during startup, maintenance, recovery, or a transition between modes. SSTPA records relevant variables, triggering events, guard conditions, actions, and timing. A secure condition at both endpoints does not prove that the transition is protected. For example, verifying a boot image is insufficient if the verified image can change before execution. State and transition are conventional behavioral modeling concepts described by SEBoK. SSTPA applies them specifically to the changing circumstances in which its asset Assurances must hold.",
+      "sourceLabel": "Behavioral terminology from SEBoK; SSTPA security-state application in v16 §§3.6 and 6.5.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: Logical Architecture",
+          "url": "https://sebokwiki.org/wiki/Logical_Architecture"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-security-state.mp3",
+        "durationSeconds": 46.16,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "functional-flow",
+      "term": "Functional flow",
+      "category": "Behavior and control",
+      "definition": "A functional flow describes transformations, sequencing, inputs, outputs, and dependencies among functions.",
+      "script": "A functional flow describes the activities and transformations that realize a scenario, including inputs, outputs, sequencing, and dependencies. It matters because an asset can be exposed as information, material, or energy moves through the system. A linear flow shows input passing through successive functions to output. It does not necessarily show decisions, feedback, or a controller's understanding of conditions. SSTPA uses this conventional functional analysis and adds STPA control reasoning where security or critical behavior needs controlled decisions. Not every local flow contains feedback; the analyst identifies its enclosing control loop, or records and justifies the absence of one.",
+      "sourceLabel": "Functional architecture from SEBoK; STPA control analysis applied in v16 §6.4.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: Functional Architecture",
+          "url": "https://sebokwiki.org/wiki/Functional_Architecture"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-functional-flow.mp3",
+        "durationSeconds": 46.48,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "control-structure",
+      "term": "Control structure",
+      "category": "Behavior and control",
+      "definition": "A control structure represents control responsibilities, controllers, controlled processes, control actions, and feedback relationships.",
+      "script": "A control structure represents who or what controls a process, the actions available, and the feedback used to guide decisions. This STPA concept matters because protection depends on coordinated behavior, not just component properties. A controller uses a decision procedure and a process model, issues control actions, and receives feedback about relevant conditions. In SSTPA, the analyst explicitly identifies command and feedback messages, authority, timing, freshness, and failure behavior. Human and organizational controllers belong in the analysis when relevant. A loop's existence does not prove security; the analysis asks how missing, incorrect, mistimed, or conflicting actions could defeat constraints.",
+      "sourceLabel": "Control-structure concept from the STPA Handbook; SSTPA application in v16 §6.4.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-control-structure.mp3",
+        "durationSeconds": 47.2,
+        "duration": "0:47",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "process-model",
+      "term": "Process model",
+      "category": "Behavior and control",
+      "definition": "A process model is the controller’s representation of relevant process conditions and context, which may differ from reality.",
+      "script": "A process model is a controller's representation of the process and relevant conditions it is controlling. This STPA term matters because a controller can make a hazardous decision while following its decision rules correctly, if its understanding is wrong. Feedback updates that understanding, and the model informs subsequent control actions. A stale ready signal, for example, can suggest that a system is safe to operate when current protections are absent. SSTPA examines how feedback and model errors affect asset Assurances. The controller's process model is distinct from the analyst's overall system model, and updating it does not necessarily mean automatic controller adaptation.",
+      "sourceLabel": "Process-model concept from the STPA Handbook; distinction in v16 §§3.6 and 6.4.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-process-model.mp3",
+        "durationSeconds": 41.76,
+        "duration": "0:42",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "hazard",
+      "term": "Hazard",
+      "category": "Constraints and requirements",
+      "definition": "A hazard is a system state or set of conditions that leads to stakeholder loss under a particular worst-case environment.",
+      "script": "A hazard is a system state or set of conditions that leads to stakeholder loss under a particular worst-case environment. This definition comes from STPA. It matters because describing the hazardous condition helps identify what the system must prevent, without prematurely choosing a particular exploit or failed component. SSTPA retains this system-condition meaning for conditions associated with Assurance violations. Permitting commands based on expired authority is a hazardous condition; replaying an old authorization can be an attack that creates or exploits it. Keeping hazards distinct from threats and attacks helps analysts derive constraints that address the underlying protection need.",
+      "sourceLabel": "Hazard definition from the STPA Handbook, pp. 17–20; SSTPA application in v16 §6.7.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-hazard.mp3",
+        "durationSeconds": 42.4,
+        "duration": "0:42",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "security-constraint",
+      "term": "Security constraint",
+      "category": "Constraints and requirements",
+      "definition": "A security constraint specifies a condition or restriction on system behavior needed to prevent a hazardous condition or limit its consequences.",
+      "script": "A security constraint states a condition or restriction needed to prevent a hazardous system condition or limit its consequences. Constraints matter because they connect the purpose of protection to acceptable behavior. Drawing on STPA's constraint-based reasoning, SSTPA derives them from hazards, asset Assurances, and stakeholder consequences. A constraint can address prevention, detection, containment, or recovery. The analyst identifies who enforces it and what information is needed to determine whether it holds. Controls and implementing requirements must then realize that condition across relevant states and environments. Selecting a familiar security mechanism is insufficient unless its behavior actually enforces the constraint.",
+      "sourceLabel": "Constraint-based reasoning from STPA; SSTPA application in v16 §§6.7–6.8.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Leveson and Thomas, STPA Handbook (2018)",
+          "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-security-constraint.mp3",
+        "durationSeconds": 45.84,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "security-control",
+      "term": "Security control",
+      "category": "Constraints and requirements",
+      "definition": "A security control is a selected and tailored protective obligation or measure whose implementation must enforce an identified system constraint.",
+      "script": "A security control expresses a selected protection obligation or measure that must enforce a system constraint. It matters because a catalog entry alone does not establish effective protection. SSTPA records why a control applies, the constraint it enforces, and the responsibility assigned. It promotes the word MUST for the binding parent control statement, with specific implementing requirements using SHALL. Several coordinated requirements may be needed to satisfy one control. This wording distinction is an SSTPA convention, not a universal systems engineering rule, and both words express mandatory obligations. Evidence must establish that the combined implementation enforces the intended condition.",
+      "sourceLabel": "SSTPA control and MUST/SHALL convention in v16 §6.8; requirements alignment with SEBoK.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Requirements Definition",
+          "url": "https://sebokwiki.org/wiki/System_Requirements_Definition"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-security-control.mp3",
+        "durationSeconds": 45.92,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "requirement",
+      "term": "Requirement",
+      "category": "Constraints and requirements",
+      "definition": "A requirement states an agreed obligation on a system or element under specified conditions, with criteria that permit evaluation.",
+      "script": "A requirement states an agreed obligation for a system or element to perform a function or possess a quality under specified conditions. It matters because protection needs must become responsibilities that engineers can implement and verify. SSTPA follows conventional systems engineering practice by identifying the responsible subject, required behavior, relevant conditions, and objective verification criteria. Its authoring convention uses SHALL for concrete mandatory requirements derived from a parent MUST control statement. Each requirement retains its source, rationale, allocation, and verification plan. Individually passing requirements do not automatically demonstrate that their combined behavior satisfies the parent control or stakeholder need.",
+      "sourceLabel": "Conventional requirements practice from SEBoK; SSTPA wording convention in v16 §6.8.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Requirements Definition",
+          "url": "https://sebokwiki.org/wiki/System_Requirements_Definition"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-requirement.mp3",
+        "durationSeconds": 48.8,
+        "duration": "0:49",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "attack",
+      "term": "Attack",
+      "category": "Attack and Loss analysis",
+      "definition": "An attack is an intentional action or strategy directed toward violating an asset’s Assurance.",
+      "script": "An attack is an intentional action or strategy directed toward violating an asset's Assurance. It matters because evaluating protection requires challenging how it could be defeated under realistic system conditions. SSTPA describes prerequisites, access, resources, actions, affected architecture, and the resulting violation. Threat catalogs can suggest candidates, but actual feasibility depends on the environment, system state, exposure, and countermeasures. An attacker might bypass strong cryptography by compromising the process that handles its keys. This is security analysis informed by systems-theoretic context, not a new definition attributed to STPA. Attack results are checked against asset traces before they support Loss analysis.",
+      "sourceLabel": "SSTPA attack-analysis usage in v16 §§3.6 and 6.9; systems security engineering context.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "NIST SP 800-160, Volume 1, Revision 1",
+          "url": "https://doi.org/10.6028/NIST.SP.800-160v1r1"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-attack.mp3",
+        "durationSeconds": 49.52,
+        "duration": "0:50",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "asset-trace",
+      "term": "Asset trace",
+      "category": "Attack and Loss analysis",
+      "definition": "An asset trace records where an asset is held, transported, or used across architecture, behavior, states, and transitions.",
+      "script": "An asset trace follows where an asset is held, transported, or used across system elements, functions, interfaces, states, and transitions. It matters because protection can be bypassed through an overlooked copy, temporary store, or trust-boundary crossing. SSTPA records applicable obligations, enforcement responsibility, countermeasures, and supporting requirements at each relevant exposure. Traces and attack scenarios challenge each other: an alleged route may be impossible in one state, while an unexamined log reveals another. This is SSTPA's asset-exposure analysis within its connected model. It informs Loss trees and change impact without assuming every related component inherits identical protection requirements.",
+      "sourceLabel": "SSTPA asset-exposure analysis described in v16 §6.10.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-asset-trace.mp3",
+        "durationSeconds": 47.28,
+        "duration": "0:47",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "attack-tree",
+      "term": "Attack tree",
+      "category": "Attack and Loss analysis",
+      "definition": "An attack tree decomposes a violation objective into alternative or jointly required attack subgoals and prerequisites.",
+      "script": "An attack tree decomposes an attack objective into the strategies and prerequisites needed to achieve it. It matters because security strength depends on feasible alternatives, including cheaper bypasses. The established technique uses OR relationships for alternatives and AND relationships for conditions that must be achieved together. SSTPA uses a tree to model each Loss: one asset, one Assurance, and one environment. Effort estimates retain their units, assumptions, and evidence. An OR alternative may expose the least demanding strategy; AND effort needs care when work is shared or parallel. A single root-to-leaf path is not necessarily a complete attack.",
+      "sourceLabel": "Established attack-tree technique described by Schneier; SSTPA Loss application in v16 §6.11.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "Bruce Schneier: Attack Trees",
+          "url": "https://www.schneier.com/academic/archives/1999/12/attack_trees.html"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-attack-tree.mp3",
+        "durationSeconds": 42.88,
+        "duration": "0:43",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "residual-vulnerability",
+      "term": "Residual vulnerability",
+      "category": "Evidence and acceptance",
+      "definition": "A residual vulnerability is a weakness or enabling condition remaining after the selected protections have been considered.",
+      "script": "A residual vulnerability is a weakness or enabling condition that remains after the selected protections are considered. It matters because completing implementation does not mean every route to compromise has disappeared. SSTPA records the attack strategy that can exploit the condition, the associated effort, and the relevant assumptions. Findings receive explicit dispositions, such as eliminated, blocked under stated conditions, accepted, deferred, or unresolved. An unresolved finding cannot support an unconditional claim of closure. This use belongs to SSTPA's analysis and acceptance workflow. The responsible authority evaluates the associated risk; an analyst's effort estimate alone cannot make that acceptance decision.",
+      "sourceLabel": "SSTPA disposition workflow in v16 §§3.6 and 6.11; risk-decision context from NIST.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "NIST SP 800-37, Revision 2",
+          "url": "https://doi.org/10.6028/NIST.SP.800-37r2"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-residual-vulnerability.mp3",
+        "durationSeconds": 48.96,
+        "duration": "0:49",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "allowed-residual-vulnerability",
+      "term": "Allowed Residual Vulnerability",
+      "category": "Evidence and acceptance",
+      "definition": "Allowed Residual Vulnerability, or ARV, is SSTPA’s disposition for a residual vulnerability whose associated risk an authorized decision maker has accepted under documented conditions.",
+      "script": "Allowed Residual Vulnerability, or ARV, is SSTPA's disposition for a residual vulnerability whose associated risk has been accepted by the responsible authority under documented conditions. It matters because an accepted weakness must remain visible and accountable. The record identifies the vulnerability, affected configuration, consequences, assumptions, conditions of use, and reassessment triggers. ARV does not mean the weakness has been eliminated, and it does not turn missing evidence into proof. This label is specific to SSTPA; not every governing regime uses it. An assurance case can support the decision, but acceptance still belongs to the authorized decision maker.",
+      "sourceLabel": "SSTPA-specific disposition in v16 §§3.6, 6.11, and 6.13; risk authority context from NIST.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "NIST SP 800-37, Revision 2",
+          "url": "https://doi.org/10.6028/NIST.SP.800-37r2"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-allowed-residual-vulnerability.mp3",
+        "durationSeconds": 46.16,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "verification",
+      "term": "Verification",
+      "category": "Evidence and acceptance",
+      "definition": "Verification establishes whether specified requirements are satisfied for the relevant system configuration.",
+      "script": "Verification establishes whether specified requirements are satisfied. It matters because the claimed implementation of a control needs objective support. Following conventional systems engineering practice, SSTPA plans the configuration, criteria, method, responsible party, and expected evidence for each protection obligation. Appropriate methods include inspection, analysis, demonstration, and testing. The work examines interfaces, negative behavior, degraded conditions, and state-transition constraints where relevant. A planned test is evidence of a plan, not evidence that the system passed. Verification results support requirements and assurance claims, but do not by themselves establish that the complete security solution meets stakeholder needs in its intended use.",
+      "sourceLabel": "Conventional verification definition from SEBoK; SSTPA application in v16 §6.12.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Verification",
+          "url": "https://sebokwiki.org/wiki/System_Verification"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-verification.mp3",
+        "durationSeconds": 50.56,
+        "duration": "0:51",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "validation",
+      "term": "Validation",
+      "category": "Evidence and acceptance",
+      "definition": "Validation establishes whether the system fulfills intended use and stakeholder needs in its intended context.",
+      "script": "Validation establishes whether the system fulfills its intended use and stakeholder needs in the intended context. It matters because a system can meet individually specified requirements and still provide an unsuitable security solution. SSTPA follows conventional systems engineering usage by evaluating the composed behavior, including operator actions, recovery, mission effects, and security-function usability. Validation scenarios challenge assumptions that isolated requirement checks may miss. Evidence can combine analysis, inspection, demonstration, and testing appropriate to the claim. Verification asks whether requirements are satisfied; validation addresses whether the resulting system meets the actual protection need under the conditions in which it will be used.",
+      "sourceLabel": "Conventional validation definition from SEBoK; SSTPA application in v16 §6.12.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Validation",
+          "url": "https://sebokwiki.org/wiki/System_Validation"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-validation.mp3",
+        "durationSeconds": 49.12,
+        "duration": "0:49",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "assurance-case",
+      "term": "Assurance case",
+      "category": "Evidence and acceptance",
+      "definition": "An assurance case is a reasoned argument, supported by evidence and explicit context, that identified claims are justified.",
+      "script": "An assurance case is a reasoned argument, supported by evidence and stated context, that identified claims are justified. It matters because reviewers need to understand why the available results support a protection decision. SSTPA bounds its claims by configuration, assets, Assurances, environments, attacker assumptions, and governing obligations. The argument connects model adequacy, constraints, requirements, Loss assessments, and verification and validation results. This is the conventional assurance-case concept, which SSTPA expresses using Goal Structuring Notation. Contrary evidence and unsupported assumptions remain visible. Creating the diagram does not establish that the argument is sound, and the case supports rather than replaces authorized acceptance.",
+      "sourceLabel": "Conventional assurance-case concept; GSN standard and SSTPA application in v16 §6.13.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "SEBoK: System Assurance",
+          "url": "https://sebokwiki.org/wiki/System_Assurance_(glossary)"
+        },
+        {
+          "label": "GSN Community Standard, Version 3",
+          "url": "https://scsc.uk/scsc-141c"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-assurance-case.mp3",
+        "durationSeconds": 50.24,
+        "duration": "0:50",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "goal-structuring-notation",
+      "term": "Goal Structuring Notation",
+      "category": "Evidence and acceptance",
+      "definition": "Goal Structuring Notation, or GSN, is a graphical notation for expressing assurance claims, reasoning, context, assumptions, and evidence references.",
+      "script": "Goal Structuring Notation, or GSN, is a graphical notation for expressing an assurance argument. It matters because the reasoning between a protection claim and its supporting evidence should be inspectable. Under the GSN Community Standard, goals express claims, strategies explain the argument approach, and solutions refer to evidence. Context and assumptions clarify how to interpret the claims. A solution is an evidence reference, not a security countermeasure. SSTPA uses GSN to organize claims about asset protection and support acceptance decisions. Correct symbols and connected nodes do not prove the case; the reasoning, evidence quality, and applicable configuration still require review.",
+      "sourceLabel": "GSN Community Standard, Version 3; SSTPA application in v16 §6.13.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        },
+        {
+          "label": "GSN Community Standard, Version 3",
+          "url": "https://scsc.uk/scsc-141c"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-goal-structuring-notation.mp3",
+        "durationSeconds": 46.96,
+        "duration": "0:47",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    },
+    {
+      "slug": "regime",
+      "term": "Regime",
+      "category": "Protection objectives",
+      "definition": "An SSTPA regime is the framework of authorities, obligations, criteria, and practices governing protection and acceptance.",
+      "script": "In SSTPA, a regime is the applicable framework of authorities, obligations, criteria, and practices governing protection and acceptance. It matters because security decisions are made for a particular mission and set of responsibilities, not in isolation. A regime can establish which protection obligations apply, what evidence is expected, and who can accept residual risk. SSTPA connects these obligations to assets, Assurances, controls, and the assurance case. The analyst records tailoring and exceptions rather than assuming every control applies identically. This is SSTPA's model usage of regime, not a claim that every systems engineering or authorization framework adopts that term.",
+      "sourceLabel": "SSTPA model term defined in v16 §3.6 and applied throughout the acceptance workflow.",
+      "sources": [
+        {
+          "label": "SSTPA Methodology White Paper, version 16",
+          "url": "/files/SSTPA-Methodology-White-Paper-v16.docx"
+        }
+      ],
+      "audio": {
+        "src": "/audio/vocabulary-regime.mp3",
+        "durationSeconds": 45.92,
+        "duration": "0:46",
+        "voice": "Systems · WhiteKnight Studio"
+      }
+    }
+  ]
+}

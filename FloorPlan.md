@@ -1,7 +1,7 @@
 # Website directory guide
 
 - `src/` — React/TypeScript pages, source-grounded FireSat/tool/methodology content, and responsive digital Art Nouveau styling.
-- `src/components/` — Original deterministic white-dot 3D studies, including satellite, jetliner, train, and add-on motifs, with accessible motion controls.
+- `src/components/` — Original deterministic white-dot 3D studies, including satellite, jetliner, train, nuclear power plant, ship, enterprise, and add-on motifs, with accessible motion controls; vocabulary cards, search, transcripts, and audio controls.
 - `public/` — Official SSTPA logo assets, favicons, retained documentation, white-paper downloads, and website media. Preserve the existing `Audio/` assets.
 - `public/docs/` — Existing static user guide and screenshots; original URLs remain available.
 - `public/files/` — Downloadable methodology and earlier tools papers.

@@ -18,6 +18,10 @@
     {
       "source": "/installation",
       "destination": "/index.html"
+    },
+    {
+      "source": "/vocabulary",
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -66,7 +70,7 @@
       ]
     },
     {
-      "source": "/files/SSTPA-Methodology-White-Paper-v14.docx",
+      "source": "/files/SSTPA-Methodology-White-Paper-v16.docx",
       "headers": [
         {
           "key": "Content-Type",

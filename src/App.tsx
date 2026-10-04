@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import source from "./content.json";
 import ParticleScene from "./components/ParticleScene";
+import Vocabulary from "./components/Vocabulary";
 
 type Tool = {
   slug: string;
@@ -33,7 +34,7 @@ type Script = {
 };
 type AudioEntry = { src: string; duration?: string; voice?: string };
 const tools = source.tools as Tool[];
-const paper = "/files/SSTPA-Methodology-White-Paper-v14.docx";
+const paper = "/files/SSTPA-Methodology-White-Paper-v16.docx";
 const count = (n: number) => String(n).padStart(2, "0");
 const Arrow = ({ down = false }: { down?: boolean }) => (
   <span aria-hidden="true">{down ? "↓" : "↗"}</span>
@@ -145,6 +146,12 @@ function Header({ path }: { path: string }) {
         >
           The methodology
         </a>
+        <a
+          href="/vocabulary"
+          aria-current={path === "/vocabulary" ? "page" : undefined}
+        >
+          Vocabulary
+        </a>
         <a href="/docs/">
           Documentation <Arrow />
         </a>
@@ -176,6 +183,7 @@ function Footer() {
           <a href="/installation">Installation & administration</a>
           <a href="/tools/workspace">The workspace</a>
           <a href="/docs/">Online documentation</a>
+          <a href="/vocabulary">SSTPA vocabulary</a>
           <a href={paper} download>
             Methodology white paper ↓
           </a>
@@ -187,6 +195,9 @@ function Footer() {
           © {new Date().getFullYear()} Nicholas Triska. All rights reserved.
         </span>
       </div>
+      <p className="voice-credit">
+        Voice tracks were created using <a href="https://whiteknight.sh/">White Knight</a>.
+      </p>
     </footer>
   );
 }
@@ -555,6 +566,20 @@ function Home() {
           </a>
         </div>
       </section>
+      <section className="vocabulary-invitation shell">
+        <div>
+          <p className="eyebrow">THE LANGUAGE BEHIND THE METHOD</p>
+          <h2>Listen. Learn. <em>Connect.</em></h2>
+          <p>
+            What does Loss mean in SSTPA? How does the method relate to STPA?
+            Explore the vocabulary through short audio explanations, transcripts,
+            and links to the ideas behind each term.
+          </p>
+        </div>
+        <a className="button outline" href="/vocabulary">
+          Explore the vocabulary <Arrow />
+        </a>
+      </section>
       <PaperPanel />
     </>
   );
@@ -575,7 +600,7 @@ function PaperPanel() {
         <small>
           THE METHODOLOGY WHITE PAPER
           <br />
-          CURRENT EDITION
+          VERSION 16
         </small>
       </div>
       <div>
@@ -593,7 +618,7 @@ function PaperPanel() {
           Download the white paper <Arrow down />
         </a>
         <span className="file-note">
-          CURRENT EDITION · MICROSOFT WORD DOCUMENT
+          VERSION 16 · CURRENT EDITION · MICROSOFT WORD DOCUMENT
         </span>
         <a className="text-link" href="/docs/">
           Browse the online documentation <Arrow />
@@ -1080,14 +1105,18 @@ export default function App() {
             ? "Installation & administration"
             : path === "/methodology"
               ? "The methodology"
-              : "Page not found");
+              : path === "/vocabulary"
+                ? "SSTPA vocabulary"
+                : "Page not found");
     document.title = `${name} — SSTPA Tools`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
         "content",
         tool?.overview ||
-          "Explore SSTPA Tools: connected systems security engineering, from system architecture and loss analysis to requirements and assurance.",
+          (path === "/vocabulary"
+            ? "Listen to concise SSTPA vocabulary guides, explore definitions and sources, and understand how SSTPA differs from STPA and STPA-Sec."
+            : "Explore SSTPA Tools: connected systems security engineering, from system architecture and loss analysis to requirements and assurance."),
       );
   }, [path, tool]);
   return (
@@ -1105,6 +1134,8 @@ export default function App() {
           <Installation />
         ) : path === "/methodology" ? (
           <Methodology />
+        ) : path === "/vocabulary" ? (
+          <Vocabulary />
         ) : tool ? (
           <ToolPage tool={tool} />
         ) : (
