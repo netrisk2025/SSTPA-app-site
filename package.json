@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc -b --pretty false",
-    "verify": "node scripts/verify-site.mjs"
+    "verify": "node scripts/verify-site.mjs && node scripts/verify-tutorials.mjs",
+    "verify:tutorials": "node scripts/verify-tutorials.mjs"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

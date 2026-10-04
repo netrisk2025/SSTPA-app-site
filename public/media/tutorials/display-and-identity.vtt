@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.520 line:92% position:50% size:94% align:center
+A readable view helps us inspect
+the model without confusing
+
+2
+00:00:03.520 --> 00:00:05.220 line:92% position:50% size:94% align:center
+presentation with analysis.
+
+3
+00:00:05.671 --> 00:00:09.440 line:92% position:50% size:94% align:center
+Start with the FireSat tutorial
+tree in the light Parchment view.
+
+4
+00:00:09.680 --> 00:00:15.060 line:92% position:50% size:94% align:center
+Use Find node or HID to locate
+a card, Focus to center it,
+
+5
+00:00:15.060 --> 00:00:17.720 line:92% position:50% size:94% align:center
+and Fit tree to recover
+the overall structure.
+
+6
+00:00:17.892 --> 00:00:19.080 line:92% position:50% size:94% align:center
+Open Properties.
+
+7
+00:00:19.540 --> 00:00:22.560 line:92% position:50% size:94% align:center
+Node properties and Attack
+metrics are separate groups.
+
+8
+00:00:22.840 --> 00:00:26.800 line:92% position:50% size:94% align:center
+Show Node ID, Authoritative
+UUID, and Provenance,
+
+9
+00:00:26.860 --> 00:00:29.700 line:92% position:50% size:94% align:center
+then select only the metrics
+needed for this review.
+
+10
+00:00:29.876 --> 00:00:34.780 line:92% position:50% size:94% align:center
+The title, type, and HID remain
+recognizable even when optional rows are
+
+11
+00:00:34.780 --> 00:00:35.940 line:92% position:50% size:94% align:center
+hidden from the cards.
+
+12
+00:00:36.260 --> 00:00:39.280 line:92% position:50% size:94% align:center
+Node ID identifies an
+element within this tree.
+
+13
+00:00:39.540 --> 00:00:42.400 line:92% position:50% size:94% align:center
+The HID is its readable Core identifier;
+
+14
+00:00:42.880 --> 00:00:46.820 line:92% position:50% size:94% align:center
+Authoritative UUID identifies
+its authoritative record.
+
+15
+00:00:47.180 --> 00:00:51.180 line:92% position:50% size:94% align:center
+A newly staged attack shows not yet
+committed until a successful Core
+
+16
+00:00:51.180 --> 00:00:53.040 line:92% position:50% size:94% align:center
+transaction assigns its identity.
+
+17
+00:00:53.380 --> 00:00:58.020 line:92% position:50% size:94% align:center
+A shared node keeps one identity even
+when several relationships lead to it.
+
+18
+00:00:58.100 --> 00:01:00.540 line:92% position:50% size:94% align:center
+Close the dialog and use Auto-arrange.
+
+19
+00:01:00.940 --> 00:01:04.100 line:92% position:50% size:94% align:center
+Try the Direction choices
+Top down and Left to right.
+
+20
+00:01:04.280 --> 00:01:07.620 line:92% position:50% size:94% align:center
+These choices and manual card
+movement change the presentation.
+
+21
+00:01:07.980 --> 00:01:11.640 line:92% position:50% size:94% align:center
+They do not change gates,
+sequence positions, raw inputs,
+
+22
+00:01:11.900 --> 00:01:14.140 line:92% position:50% size:94% align:center
+or the calculated meaning of the analysis.
+
+23
+00:01:14.620 --> 00:01:18.700 line:92% position:50% size:94% align:center
+Roll up a branch, inspect its folded
+marker, and roll it down again.
+
+24
+00:01:18.960 --> 00:01:22.940 line:92% position:50% size:94% align:center
+Hidden descendants still participate
+in calculations and capacity limits.
+
+25
+00:01:23.360 --> 00:01:27.140 line:92% position:50% size:94% align:center
+Tailored out is different: it excludes
+a relationship from analytical
+
+26
+00:01:27.140 --> 00:01:29.360 line:92% position:50% size:94% align:center
+traversal and requires a reason.
+
+27
+00:01:29.527 --> 00:01:33.640 line:92% position:50% size:94% align:center
+Use folding to manage clutter, not to
+claim that an attack has disappeared.
+
+28
+00:01:34.060 --> 00:01:37.800 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+29
+00:01:38.060 --> 00:01:39.380 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+30
+00:01:39.720 --> 00:01:41.580 line:92% position:50% size:94% align:center
+This changes presentation only.

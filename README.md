@@ -10,6 +10,7 @@ npm run dev -- --host 127.0.0.1 --port 5174
 npm run typecheck
 npm run build
 npm run verify
+npm run verify:tutorials -- --decode
 ```
 
 `verify` is a release-completeness gate. It requires all 22 distinct 1–2 minute narrations, 41 distinct 30–60 second vocabulary clips, all 18 silent FireSat walkthroughs, valid captions, working local guide/download targets, and the built production assets. It intentionally fails while a media draft is incomplete. Decode media with ffmpeg/ffprobe when changing recordings, and exercise playback, navigation, search, motion controls, and responsive layouts in a browser.
@@ -22,14 +23,21 @@ npm run verify
 - `/tools` and `/tools/{slug}` — searchable directory and dedicated pages for the 17 add-ons.
 - `/methodology` — source-grounded introduction and fourteen-step workflow.
 - `/vocabulary` — 41 short, individually narrated definitions with transcripts and source references.
+- `/tutorials` — Loss Tool: Attack Trees, a sequence of narrated FireSat screen walkthroughs with captions, transcripts, and user-initiated video playback.
 - `/docs/` — retained online guide, with original deep links and screenshots.
-- `/files/SSTPA-Methodology-White-Paper-v16.docx` — Version 16 methodology download.
+- `/files/SSTPA-Methodology-White-Paper-v17.docx` — Version 17 methodology download.
 
 `src/content.json` and `CONTENT_SOURCE.md` document the current application, developer wiki, FireSat example, and methodology white paper. The FireSat architecture ships separately from tutorial analysis. The recorded example contains existing tutorial data; incomplete views and runtime limitations are identified in each walkthrough's notes. No SSTPA Tools application source or model records were changed for this website.
 
 ## Original animation
 
 `src/components/ParticleScene.tsx` precomputes authored 3D point geometry and replays deterministic assembly, rotation, and dissolution. It has no runtime AI or third-party generation requests. Pause/resume preserves position; reduced motion presents a static study; offscreen/background animation stops. CSS adapts to the parent scene size. Fonts are bundled locally.
+
+## Narrated tutorials and Version 17
+
+`/tutorials` presents the **Loss Tool: Attack Trees** course. `public/media/tutorials.json` supplies the ordered lesson titles, descriptions, actual runtimes, media paths, and transcripts. Each native video player includes English captions and full-screen controls. Lesson selection and navigation never start playback automatically; a shared playback listener pauses other audio and video when a recording starts. The classroom dot scene uses the same pause and reduced-motion behavior as the existing illustrations.
+
+The approved Version 17 methodology white paper is linked throughout the site. Existing page narration, vocabulary, documentation, and silent walkthrough assets remain preserved. `scripts/preservation-baseline.json` stores the pre-tutorial file hashes; release validation permits the explicitly requested page, routing, illustration, and document changes while checking the retained files byte for byte. `scripts/verify-tutorials.mjs` checks the eight lessons against the reviewed text in `scripts/tutorial-content-baseline.json`, measures each video’s duration and streams, compares captions with its transcript, and verifies posters and production copies. `--decode` also decodes every video and audio stream; `--public-only` checks source assets before a production build.
 
 ## Audio and silent walkthroughs
 

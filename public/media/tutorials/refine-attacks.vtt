@@ -1,0 +1,154 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.880 line:92% position:50% size:94% align:center
+We now refine the FireSat tutorial tree.
+
+2
+00:00:03.080 --> 00:00:07.100 line:92% position:50% size:94% align:center
+An attack describes a way to compromise
+the asset’s required protection.
+
+3
+00:00:07.460 --> 00:00:10.160 line:92% position:50% size:94% align:center
+A countermeasure describes
+a defensive response,
+
+4
+00:00:10.240 --> 00:00:14.340 line:92% position:50% size:94% align:center
+and a defeating attack examines how
+that response could itself be overcome.
+
+5
+00:00:14.780 --> 00:00:17.560 line:92% position:50% size:94% align:center
+These hypotheses require
+supporting evidence.
+
+6
+00:00:18.020 --> 00:00:22.120 line:92% position:50% size:94% align:center
+Select Payload Downlink Feed
+Interface and choose Add child.
+
+7
+00:00:22.520 --> 00:00:28.140 line:92% position:50% size:94% align:center
+Select Attack, name it Replay a detection
+report, and choose Stage new node.
+
+8
+00:00:28.400 --> 00:00:29.980 line:92% position:50% size:94% align:center
+The new card is part of the draft.
+
+9
+00:00:29.980 --> 00:00:33.640 line:92% position:50% size:94% align:center
+Its not yet committed marker
+means that Core has not assigned
+
+10
+00:00:33.640 --> 00:00:35.320 line:92% position:50% size:94% align:center
+its authoritative identity.
+
+11
+00:00:35.410 --> 00:00:38.580 line:92% position:50% size:94% align:center
+Select the replay attack and
+add a Countermeasure named
+
+12
+00:00:38.720 --> 00:00:40.200 line:92% position:50% size:94% align:center
+Enforce freshness window.
+
+13
+00:00:40.420 --> 00:00:43.400 line:92% position:50% size:94% align:center
+Then select that countermeasure
+and add an Attack named
+
+14
+00:00:43.400 --> 00:00:45.140 line:92% position:50% size:94% align:center
+Abuse counter rollover.
+
+15
+00:00:45.300 --> 00:00:48.540 line:92% position:50% size:94% align:center
+We have made the protection claim
+explicit and retained a plausible
+
+16
+00:00:48.540 --> 00:00:51.660 line:92% position:50% size:94% align:center
+challenge to it, rather than
+stopping the analysis at the
+
+17
+00:00:51.660 --> 00:00:52.860 line:92% position:50% size:94% align:center
+first defensive measure.
+
+18
+00:00:53.200 --> 00:00:56.020 line:92% position:50% size:94% align:center
+Select a connection to open
+the Relationship Inspector.
+
+19
+00:00:56.380 --> 00:00:59.960 line:92% position:50% size:94% align:center
+Review Sibling operator and
+choose the appropriate AND, OR,
+
+20
+00:00:59.960 --> 00:01:02.720 line:92% position:50% size:94% align:center
+or SAND relationship for the child group.
+
+21
+00:01:02.940 --> 00:01:05.520 line:92% position:50% size:94% align:center
+Use Stage relationship
+to apply the decision.
+
+22
+00:01:05.960 --> 00:01:08.940 line:92% position:50% size:94% align:center
+A SAND sequence uses
+explicit sequence positions;
+
+23
+00:01:09.260 --> 00:01:12.240 line:92% position:50% size:94% align:center
+moving cards across the screen
+does not change that order.
+
+24
+00:01:12.560 --> 00:01:15.580 line:92% position:50% size:94% align:center
+Use Link existing when a
+suitable Core attack or
+
+25
+00:01:15.580 --> 00:01:17.260 line:92% position:50% size:94% align:center
+countermeasure already exists.
+
+26
+00:01:17.600 --> 00:01:20.620 line:92% position:50% size:94% align:center
+A shared node keeps its
+identity and inputs across
+
+27
+00:01:20.620 --> 00:01:22.140 line:92% position:50% size:94% align:center
+its incoming relationships.
+
+28
+00:01:22.520 --> 00:01:25.680 line:92% position:50% size:94% align:center
+Review the resulting branch and
+its assumptions before committing;
+
+29
+00:01:26.140 --> 00:01:29.620 line:92% position:50% size:94% align:center
+these edits create analytical and
+supporting Core relationships,
+
+30
+00:01:29.620 --> 00:01:31.620 line:92% position:50% size:94% align:center
+not merely lines in a drawing.
+
+31
+00:01:31.980 --> 00:01:35.720 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+32
+00:01:36.000 --> 00:01:37.400 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+33
+00:01:37.660 --> 00:01:39.620 line:92% position:50% size:94% align:center
+This changes presentation only.

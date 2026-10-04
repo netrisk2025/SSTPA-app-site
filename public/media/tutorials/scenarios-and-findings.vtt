@@ -1,0 +1,155 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.160 line:92% position:50% size:94% align:center
+Before interpreting the root’s numbers,
+
+2
+00:00:02.360 --> 00:00:04.960 line:92% position:50% size:94% align:center
+check which calculation mode produced them.
+
+3
+00:00:05.420 --> 00:00:08.660 line:92% position:50% size:94% align:center
+Independent scalar bounds
+summarize each property separately.
+
+4
+00:00:09.040 --> 00:00:13.140 line:92% position:50% size:94% align:center
+Coherent scenario analysis keeps the
+values belonging to one achievable
+
+5
+00:00:13.140 --> 00:00:14.900 line:92% position:50% size:94% align:center
+attack alternative together.
+
+6
+00:00:15.180 --> 00:00:18.160 line:92% position:50% size:94% align:center
+Those interpretations answer
+different questions about the
+
+7
+00:00:18.160 --> 00:00:19.480 line:92% position:50% size:94% align:center
+same FireSat tree.
+
+8
+00:00:19.720 --> 00:00:23.920 line:92% position:50% size:94% align:center
+For example, one alternative may be
+cheap but produce little attacker
+
+9
+00:00:23.920 --> 00:00:27.760 line:92% position:50% size:94% align:center
+benefit, while another costs
+more and offers a greater reward.
+
+10
+00:00:28.060 --> 00:00:32.140 line:92% position:50% size:94% align:center
+Selecting the cheapest cost and
+largest benefit independently does not
+
+11
+00:00:32.140 --> 00:00:34.160 line:92% position:50% size:94% align:center
+create a real combined alternative.
+
+12
+00:00:34.680 --> 00:00:38.840 line:92% position:50% size:94% align:center
+Read scalar bounds as bounds,
+not as one complete attack story.
+
+13
+00:00:39.020 --> 00:00:42.280 line:92% position:50% size:94% align:center
+Open Metric rules and expand Actor, victim,
+
+14
+00:00:42.660 --> 00:00:44.660 line:92% position:50% size:94% align:center
+utilities and opportunity configuration.
+
+15
+00:00:45.120 --> 00:00:50.260 line:92% position:50% size:94% align:center
+The Analysis profile JSON records the
+mode, scenario budget, utility curves,
+
+16
+00:00:50.260 --> 00:00:51.720 line:92% position:50% size:94% align:center
+and opportunity assumptions.
+
+17
+00:00:52.120 --> 00:00:56.660 line:92% position:50% size:94% align:center
+Here we use a prepared training profile;
+review its units and assumptions,
+
+18
+00:00:56.940 --> 00:00:59.000 line:92% position:50% size:94% align:center
+then choose Stage rules if you change it.
+
+19
+00:00:59.000 --> 00:01:02.380 line:92% position:50% size:94% align:center
+Inspect the root and its
+selected scenario identifier.
+
+20
+00:01:02.740 --> 00:01:07.680 line:92% position:50% size:94% align:center
+Scenario mode preserves whole OR
+alternatives and combines the required AND
+
+21
+00:01:07.680 --> 00:01:09.340 line:92% position:50% size:94% align:center
+or ordered SAND actions.
+
+22
+00:01:09.640 --> 00:01:14.300 line:92% position:50% size:94% align:center
+Derived feasibility, propensity, and
+risk depend on the configured actor,
+
+23
+00:01:14.460 --> 00:01:18.420 line:92% position:50% size:94% align:center
+victim, and opportunity model; they
+are not interchangeable with the
+
+24
+00:01:18.420 --> 00:01:20.040 line:92% position:50% size:94% align:center
+underlying raw effort inputs.
+
+25
+00:01:20.480 --> 00:01:22.860 line:92% position:50% size:94% align:center
+Open Validation and examine the findings.
+
+26
+00:01:23.380 --> 00:01:26.440 line:92% position:50% size:94% align:center
+Unknown inputs, unsupported
+shared-event correlations,
+
+27
+00:01:26.920 --> 00:01:30.320 line:92% position:50% size:94% align:center
+and exhausted scenario budgets
+can make analysis incomplete.
+
+28
+00:01:30.820 --> 00:01:33.080 line:92% position:50% size:94% align:center
+A failed threshold is a different finding.
+
+29
+00:01:33.560 --> 00:01:37.160 line:92% position:50% size:94% align:center
+Never present a partial maximum
+as the established worst case,
+
+30
+00:01:37.380 --> 00:01:39.780 line:92% position:50% size:94% align:center
+or mistake the number of
+displayed routes for the number
+
+31
+00:01:39.780 --> 00:01:41.080 line:92% position:50% size:94% align:center
+of complete scenarios.
+
+32
+00:01:41.500 --> 00:01:45.440 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+33
+00:01:45.780 --> 00:01:47.140 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+34
+00:01:47.520 --> 00:01:49.440 line:92% position:50% size:94% align:center
+This changes presentation only.

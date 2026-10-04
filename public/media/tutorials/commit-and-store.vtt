@@ -1,0 +1,163 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.040 line:92% position:50% size:94% align:center
+We have expanded the FireSat tutorial
+by repeating the same branch-building
+
+2
+00:00:04.040 --> 00:00:08.900 line:92% position:50% size:94% align:center
+steps across firmware, sensor
+input, classification, and downlink.
+
+3
+00:00:09.200 --> 00:00:12.780 line:92% position:50% size:94% align:center
+The result follows the complete
+twenty-five-node prototype overview.
+
+4
+00:00:13.300 --> 00:00:18.620 line:92% position:50% size:94% align:center
+Before saving, review the asset,
+Assurance, environment, metric assumptions,
+
+5
+00:00:18.740 --> 00:00:21.180 line:92% position:50% size:94% align:center
+and residual-vulnerability decisions.
+
+6
+00:00:21.620 --> 00:00:24.240 line:92% position:50% size:94% align:center
+Canvas changes remain staged until Commit.
+
+7
+00:00:24.635 --> 00:00:28.500 line:92% position:50% size:94% align:center
+Revert restores the committed
+graph, presentation, rules,
+
+8
+00:00:28.500 --> 00:00:32.940 line:92% position:50% size:94% align:center
+and profile together, so use it only
+when you intend to discard the draft.
+
+9
+00:00:33.260 --> 00:00:35.880 line:92% position:50% size:94% align:center
+Auto-build and Rebuild
+are different operations:
+
+10
+00:00:36.120 --> 00:00:38.060 line:92% position:50% size:94% align:center
+they build and save immediately.
+
+11
+00:00:38.580 --> 00:00:41.940 line:92% position:50% size:94% align:center
+Choose Commit and wait for the
+Core database success message.
+
+12
+00:00:42.280 --> 00:00:45.540 line:92% position:50% size:94% align:center
+The application checks the loaded
+version, saves the proposal,
+
+13
+00:00:45.720 --> 00:00:47.880 line:92% position:50% size:94% align:center
+and reloads authoritative results.
+
+14
+00:00:48.180 --> 00:00:52.160 line:92% position:50% size:94% align:center
+Newly created nodes receive their Core
+identifiers while their local tree
+
+15
+00:00:52.160 --> 00:00:53.800 line:92% position:50% size:94% align:center
+identities remain stable.
+
+16
+00:00:54.028 --> 00:00:56.660 line:92% position:50% size:94% align:center
+If the commit succeeded but refresh failed,
+
+17
+00:00:56.860 --> 00:01:00.560 line:92% position:50% size:94% align:center
+follow the recovery instructions instead
+of submitting the creation again.
+
+18
+00:01:00.700 --> 00:01:04.460 line:92% position:50% size:94% align:center
+The semantic nodes and
+relationships are stored in Neo4j.
+
+19
+00:01:04.760 --> 00:01:07.560 line:92% position:50% size:94% align:center
+Loss-scoped attack-tree edges
+preserve their operators
+
+20
+00:01:07.560 --> 00:01:09.120 line:92% position:50% size:94% align:center
+and documented decisions.
+
+21
+00:01:09.520 --> 00:01:13.540 line:92% position:50% size:94% align:center
+The Loss root also retains its view
+configuration: card coordinates,
+
+22
+00:01:13.820 --> 00:01:18.680 line:92% position:50% size:94% align:center
+viewport, direction, folded branches,
+selected properties, and colors.
+
+23
+00:01:19.100 --> 00:01:23.220 line:92% position:50% size:94% align:center
+Reopening the saved tree restores
+that presentation without changing the
+
+24
+00:01:23.220 --> 00:01:24.500 line:92% position:50% size:94% align:center
+model’s analytical meaning.
+
+25
+00:01:24.840 --> 00:01:28.300 line:92% position:50% size:94% align:center
+MetricDefinitionsJSON stores
+the root’s metric definitions
+
+26
+00:01:28.300 --> 00:01:30.100 line:92% position:50% size:94% align:center
+and aggregation rules.
+
+27
+00:01:30.700 --> 00:01:33.960 line:92% position:50% size:94% align:center
+AnalysisProfileJSON stores
+scenario mode, utilities,
+
+28
+00:01:34.140 --> 00:01:38.400 line:92% position:50% size:94% align:center
+and other analysis assumptions;
+leaf inputs remain with their nodes.
+
+29
+00:01:38.940 --> 00:01:42.000 line:92% position:50% size:94% align:center
+Export can produce a portable
+copy or review evidence,
+
+30
+00:01:42.060 --> 00:01:44.260 line:92% position:50% size:94% align:center
+but it may include staged changes.
+
+31
+00:01:44.680 --> 00:01:46.880 line:92% position:50% size:94% align:center
+Retain the revision, display scope,
+
+32
+00:01:46.880 --> 00:01:49.960 line:92% position:50% size:94% align:center
+and unresolved findings
+with every exported result.
+
+33
+00:01:50.260 --> 00:01:53.620 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+34
+00:01:53.620 --> 00:01:55.640 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+35
+00:01:55.940 --> 00:01:57.760 line:92% position:50% size:94% align:center
+This changes presentation only.

@@ -1,0 +1,164 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.240 line:92% position:50% size:94% align:center
+Attack path analysis follows
+individual routes through the
+
+2
+00:00:03.240 --> 00:00:04.980 line:92% position:50% size:94% align:center
+FireSat tutorial tree.
+
+3
+00:00:05.160 --> 00:00:09.240 line:92% position:50% size:94% align:center
+A route ending in an unblocked terminal
+Attack is an unresolved residual
+
+4
+00:00:09.240 --> 00:00:12.500 line:92% position:50% size:94% align:center
+vulnerability unless its
+incoming relationship records
+
+5
+00:00:12.500 --> 00:00:13.800 line:92% position:50% size:94% align:center
+an allowed disposition.
+
+6
+00:00:14.400 --> 00:00:18.360 line:92% position:50% size:94% align:center
+This view identifies what remains
+possible and its recorded disposition.
+
+7
+00:00:18.738 --> 00:00:22.460 line:92% position:50% size:94% align:center
+Choose Attack path
+analysis, set Status to RV,
+
+8
+00:00:22.560 --> 00:00:25.280 line:92% position:50% size:94% align:center
+and select the Abuse counter rollover route.
+
+9
+00:00:25.620 --> 00:00:28.380 line:92% position:50% size:94% align:center
+Follow the highlighted cards
+and the Full path list.
+
+10
+00:00:28.720 --> 00:00:31.560 line:92% position:50% size:94% align:center
+The displayed sort metric
+comes from the terminal leaf.
+
+11
+00:00:32.000 --> 00:00:36.200 line:92% position:50% size:94% align:center
+A single route is not the complete
+combination required by an AND scenario.
+
+12
+00:00:36.700 --> 00:00:39.060 line:92% position:50% size:94% align:center
+Open the terminal attack’s
+incoming relationship.
+
+13
+00:00:39.600 --> 00:00:41.720 line:92% position:50% size:94% align:center
+Select Allowed residual vulnerability,
+
+14
+00:00:42.160 --> 00:00:45.420 line:92% position:50% size:94% align:center
+enter a specific review rationale
+of at least twenty characters,
+
+15
+00:00:45.660 --> 00:00:47.620 line:92% position:50% size:94% align:center
+and choose Stage relationship.
+
+16
+00:00:48.035 --> 00:00:51.960 line:92% position:50% size:94% align:center
+In this training example, record the
+bounded exposure and the further review
+
+17
+00:00:51.960 --> 00:00:56.540 line:92% position:50% size:94% align:center
+required; do not imply that writing a
+reason establishes external approval.
+
+18
+00:00:56.860 --> 00:00:58.860 line:92% position:50% size:94% align:center
+Change the filter to ALLOWED.
+
+19
+00:00:59.220 --> 00:01:03.840 line:92% position:50% size:94% align:center
+In SSTPA, an Allowed Residual
+Vulnerability, or ARV,
+
+20
+00:01:03.840 --> 00:01:06.300 line:92% position:50% size:94% align:center
+carries its associated risk, conditions,
+
+21
+00:01:06.480 --> 00:01:08.380 line:92% position:50% size:94% align:center
+and responsible authority’s decision.
+
+22
+00:01:08.800 --> 00:01:13.020 line:92% position:50% size:94% align:center
+Here the tool records an analyst
+disposition on a Loss-scoped relationship.
+
+23
+00:01:13.560 --> 00:01:15.120 line:92% position:50% size:94% align:center
+Another incoming route can differ.
+
+24
+00:01:15.580 --> 00:01:17.600 line:92% position:50% size:94% align:center
+The attack remains technically possible,
+
+25
+00:01:17.679 --> 00:01:20.000 line:92% position:50% size:94% align:center
+and its intrinsic metrics are unchanged.
+
+26
+00:01:20.263 --> 00:01:24.100 line:92% position:50% size:94% align:center
+Contrast Complete block on an
+Attack-to-Countermeasure relationship.
+
+27
+00:01:24.680 --> 00:01:27.860 line:92% position:50% size:94% align:center
+That flag asserts that the modeled
+route cannot succeed under stated
+
+28
+00:01:27.860 --> 00:01:30.080 line:92% position:50% size:94% align:center
+conditions and needs supporting evidence.
+
+29
+00:01:30.480 --> 00:01:33.560 line:92% position:50% size:94% align:center
+An allowed residual
+vulnerability instead supports a
+
+30
+00:01:33.560 --> 00:01:35.280 line:92% position:50% size:94% align:center
+documented acceptance process.
+
+31
+00:01:35.600 --> 00:01:37.820 line:92% position:50% size:94% align:center
+The tool records the analyst’s disposition;
+
+32
+00:01:38.260 --> 00:01:41.460 line:92% position:50% size:94% align:center
+the responsible authority’s
+decision and conditions still need
+
+33
+00:01:41.460 --> 00:01:42.380 line:92% position:50% size:94% align:center
+to be established.
+
+34
+00:01:42.540 --> 00:01:46.460 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+35
+00:01:46.615 --> 00:01:48.240 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+36
+00:01:48.620 --> 00:01:50.500 line:92% position:50% size:94% align:center
+This changes presentation only.

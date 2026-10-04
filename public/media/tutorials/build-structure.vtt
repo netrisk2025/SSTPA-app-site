@@ -1,0 +1,147 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.200 line:92% position:50% size:94% align:center
+This Loss concerns FireSat
+tutorial reports in the
+
+2
+00:00:03.200 --> 00:00:04.740 line:92% position:50% size:94% align:center
+Payload Operating Environment.
+
+3
+00:00:05.060 --> 00:00:08.920 line:92% position:50% size:94% align:center
+Before building its tree, we
+identify where that asset is held or
+
+4
+00:00:08.920 --> 00:00:11.120 line:92% position:50% size:94% align:center
+transported in each relevant state.
+
+5
+00:00:11.240 --> 00:00:14.420 line:92% position:50% size:94% align:center
+These relationships determine
+which system elements appear in
+
+6
+00:00:14.420 --> 00:00:15.500 line:92% position:50% size:94% align:center
+the initial structure.
+
+7
+00:00:15.674 --> 00:00:19.060 line:92% position:50% size:94% align:center
+In Asset Manager, expand
+the tutorial asset row.
+
+8
+00:00:19.140 --> 00:00:24.060 line:92% position:50% size:94% align:center
+Set Trace relationship type to HOLDS,
+choose Standby as the State context,
+
+9
+00:00:24.220 --> 00:00:27.420 line:92% position:50% size:94% align:center
+and select Payload Processor
+in Multi-select entities.
+
+10
+00:00:27.720 --> 00:00:31.880 line:92% position:50% size:94% align:center
+Review that pairing and choose
+Allocate, showing one selected entity.
+
+11
+00:00:32.120 --> 00:00:34.380 line:92% position:50% size:94% align:center
+This action saves the trace immediately.
+
+12
+00:00:34.740 --> 00:00:38.520 line:92% position:50% size:94% align:center
+For the second assignment, choose
+TRANSPORTS and the Imaging state,
+
+13
+00:00:38.600 --> 00:00:41.280 line:92% position:50% size:94% align:center
+then select Payload Downlink Feed Interface.
+
+14
+00:00:41.640 --> 00:00:42.940 line:92% position:50% size:94% align:center
+Choose Allocate again.
+
+15
+00:00:43.180 --> 00:00:45.900 line:92% position:50% size:94% align:center
+We have described two different
+asset relationships in
+
+16
+00:00:45.900 --> 00:00:47.440 line:92% position:50% size:94% align:center
+their operational contexts.
+
+17
+00:00:47.800 --> 00:00:51.980 line:92% position:50% size:94% align:center
+A trace in one state does not
+automatically apply in every other state.
+
+18
+00:00:52.080 --> 00:00:56.460 line:92% position:50% size:94% align:center
+Return to the Loss Tool and use
+Reload slash reconcile to refresh its
+
+19
+00:00:56.460 --> 00:00:58.140 line:92% position:50% size:94% align:center
+previously loaded Core view.
+
+20
+00:00:58.400 --> 00:01:02.120 line:92% position:50% size:94% align:center
+Open Trace coverage and confirm two
+of two environment states are covered,
+
+21
+00:01:02.120 --> 00:01:03.820 line:92% position:50% size:94% align:center
+with the intended entities.
+
+22
+00:01:03.962 --> 00:01:06.180 line:92% position:50% size:94% align:center
+Coverage establishes model participation;
+
+23
+00:01:06.620 --> 00:01:09.380 line:92% position:50% size:94% align:center
+it does not establish that
+either state is secure.
+
+24
+00:01:09.580 --> 00:01:12.960 line:92% position:50% size:94% align:center
+Select Auto-build and wait for
+the built-and-committed message.
+
+25
+00:01:13.180 --> 00:01:16.240 line:92% position:50% size:94% align:center
+This operation writes immediately,
+without waiting for the
+
+26
+00:01:16.240 --> 00:01:17.320 line:92% position:50% size:94% align:center
+canvas Commit button.
+
+27
+00:01:17.580 --> 00:01:21.240 line:92% position:50% size:94% align:center
+Use Fit tree to inspect the
+environment, states, entities,
+
+28
+00:01:21.540 --> 00:01:23.800 line:92% position:50% size:94% align:center
+and any existing canonical attack branches.
+
+29
+00:01:24.220 --> 00:01:27.860 line:92% position:50% size:94% align:center
+The generated structure is a starting
+point for analysis and refinement.
+
+30
+00:01:28.260 --> 00:01:31.860 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+31
+00:01:32.120 --> 00:01:33.440 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+32
+00:01:33.720 --> 00:01:35.600 line:92% position:50% size:94% align:center
+This changes presentation only.

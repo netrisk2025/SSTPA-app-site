@@ -9,6 +9,7 @@ type Motif =
   | "nuclear"
   | "ship"
   | "enterprise"
+  | "classroom"
   | "architecture"
   | "orbit"
   | "shield"
@@ -23,6 +24,7 @@ type Mesh = {
   rotation: Vec3;
   label: string;
   detail: string;
+  gesture?: { from: number; pivot: Vec3 };
 };
 const TAU = Math.PI * 2;
 const PERIOD = 17;
@@ -161,6 +163,8 @@ class PointModel {
 
 function authorMesh(motif: Motif, count: number): Mesh {
   const m = new PointModel();
+  let gestureModel: PointModel | undefined;
+  let gesturePivot: Vec3 = [0, 0, 0];
   let rotation: Vec3 = [0.2, -0.25, -0.08],
     label = "CONNECTED SYSTEM",
     detail = "An authored point-cloud study";
@@ -447,6 +451,125 @@ function authorMesh(motif: Motif, count: number): Mesh {
     }
     m.line([0, -0.62, 0], [0, -0.68, -0.7], 0.018);
     m.ring(0, -0.69, 0, 1.67, 1.31, Math.PI / 2, 190);
+  } else if (motif === "classroom") {
+    label = "THE CLASSROOM";
+    detail = "Classroom circa 1900 · a teacher points to a chalkboard beside a student at a wooden desk";
+    rotation = [0.09, -0.16, 0];
+
+    // A framed slate board stays open inside, so the lesson and pointing hand read clearly.
+    for (const z of [-0.37, -0.31]) {
+      for (const y of [0.28, 1.23])
+        m.line([-0.37, y, z], [1.62, y, z], 0.017);
+      for (const x of [-0.37, 1.62])
+        m.line([x, 0.28, z], [x, 1.23, z], 0.017);
+    }
+    for (const y of [0.32, 1.19])
+      m.line([-0.33, y, -0.30], [1.58, y, -0.30], 0.022);
+    m.box(0.625, 0.245, -0.27, 2.08, 0.045, 0.17, 5);
+    // The chalk lesson is deliberately graphical, not simulated lettering.
+    const chalkZ = -0.29;
+    m.line([-0.11, 0.55, chalkZ], [0.21, 1.0, chalkZ], 0.016);
+    m.line([0.21, 1.0, chalkZ], [0.49, 0.55, chalkZ], 0.016);
+    m.line([0.49, 0.55, chalkZ], [-0.11, 0.55, chalkZ], 0.016);
+    m.line([0.63, 0.75, chalkZ], [0.83, 0.75, chalkZ], 0.016);
+    m.line([0.77, 0.80, chalkZ], [0.83, 0.75, chalkZ], 0.016);
+    m.line([0.77, 0.70, chalkZ], [0.83, 0.75, chalkZ], 0.016);
+    m.ring(1.13, 0.75, chalkZ, 0.22, 0.22, 0, 80);
+    m.line([0.85, 0.40, chalkZ], [1.39, 0.40, chalkZ], 0.024);
+    // Slim timber supports, floorboards, and an old-fashioned wall clock.
+    for (const x of [-0.24, 1.49])
+      m.line([x, 0.24, -0.35], [x, -1.12, -0.35], 0.033);
+    for (const z of [-0.39, 0.2, 0.84])
+      m.line([-1.72, -1.13, z], [1.72, -1.13, z], 0.065);
+    m.ring(-1.20, 1.10, -0.34, 0.175, 0.175, 0, 75);
+    m.ring(-1.20, 1.10, -0.34, 0.145, 0.145, 0, 60);
+    m.line([-1.20, 1.10, -0.32], [-1.20, 1.21, -0.32], 0.013);
+    m.line([-1.20, 1.10, -0.32], [-1.12, 1.06, -0.32], 0.013);
+
+    // A fitted jacket, high collar, long skirt, and bun suggest the teacher's period.
+    m.ellipsoid(-1.08, 0.62, 0.06, 0.15, 0.20, 0.13, 15, 20);
+    m.ellipsoid(-1.22, 0.71, 0.055, 0.095, 0.085, 0.105, 8, 14);
+    m.ellipsoid(-0.934, 0.62, 0.045, 0.036, 0.032, 0.05, 6, 10);
+    m.box(-1.08, 0.397, 0.04, 0.12, 0.075, 0.11, 4);
+    m.ellipsoid(-1.085, 0.09, 0.04, 0.20, 0.32, 0.145, 15, 20);
+    for (let row = 0; row <= 20; row++) {
+      const t = row / 20;
+      const radius = 0.16 + t * 0.17;
+      for (let col = 0; col < 28; col++) {
+        const a = col / 28 * TAU;
+        m.point(-1.085 + Math.cos(a) * radius,
+          -0.14 - t * 0.85, 0.04 + Math.sin(a) * radius * 0.56);
+      }
+    }
+    m.ring(-1.085, -0.99, 0.04, 0.33, 0.185, Math.PI / 2, 90);
+    for (const x of [-1.20, -0.95])
+      m.ellipsoid(x, -1.055, 0.08, 0.145, 0.055, 0.09, 6, 14);
+    for (const z of [0.015, 0.085]) {
+      m.line([-1.27, 0.27, z], [-1.39, -0.04, z], 0.024);
+      m.line([-1.39, -0.04, z], [-1.31, -0.27, z], 0.024);
+    }
+    m.ellipsoid(-1.31, -0.275, 0.06, 0.05, 0.06, 0.045, 6, 10);
+    m.box(-1.33, -0.31, 0.11, 0.24, 0.27, 0.05, 6);
+    m.line([-1.29, 0.31, 0.12], [-1.08, 0.02, 0.185], 0.019);
+    m.line([-0.90, 0.31, 0.12], [-1.08, 0.02, 0.185], 0.019);
+    for (const y of [0.0, -0.07, -0.14]) m.point(-1.08, y, 0.19);
+
+    // Only this articulated arm and pointer move; furniture and the pupil stay still.
+    gestureModel = new PointModel();
+    gesturePivot = [-0.92, 0.28, 0.065];
+    for (const dz of [-0.045, 0, 0.045]) {
+      gestureModel.line([-0.92, 0.28, 0.065 + dz],
+        [-0.66, 0.36, 0.04 + dz], 0.014);
+      gestureModel.line([-0.66, 0.36, 0.04 + dz],
+        [-0.43, 0.48, -0.025 + dz], 0.014);
+    }
+    gestureModel.ellipsoid(-0.43, 0.48, -0.025,
+      0.062, 0.045, 0.05, 7, 12);
+    gestureModel.line([-0.46, 0.42, -0.04], [0.13, 0.98, -0.28], 0.009);
+
+    // Sloped wooden writing desk, inkwell, open exercise book, and spindle-backed chair.
+    m.plane([0.16, -0.46, 0.32], [1.19, -0.46, 0.32],
+      [0.16, -0.54, 0.88], 27, 12);
+    m.line([0.16, -0.54, 0.88], [1.19, -0.54, 0.88], 0.017);
+    m.line([0.16, -0.46, 0.32], [1.19, -0.46, 0.32], 0.017);
+    for (const x of [0.24, 1.11]) {
+      for (const z of [0.40, 0.80])
+        m.line([x, -0.55, z], [x, -1.11, z], 0.018);
+      m.line([x, -0.92, 0.40], [x, -0.92, 0.80], 0.02);
+    }
+    m.line([0.24, -0.90, 0.60], [1.11, -0.90, 0.60], 0.024);
+    m.plane([0.43, -0.446, 0.47], [0.65, -0.45, 0.47],
+      [0.43, -0.486, 0.76], 7, 8);
+    m.plane([0.65, -0.45, 0.47], [0.88, -0.446, 0.47],
+      [0.65, -0.49, 0.76], 7, 8);
+    m.ellipsoid(0.29, -0.425, 0.39, 0.043, 0.055, 0.043, 7, 12);
+    m.line([0.29, -0.38, 0.39], [0.31, -0.23, 0.38], 0.016);
+    m.box(0.93, -0.77, 0.10, 0.43, 0.045, 0.36, 5);
+    for (const x of [0.75, 1.11]) {
+      for (const z of [-0.05, 0.25])
+        m.line([x, -0.79, z], [x, -1.12, z], 0.022);
+      m.line([x, -0.77, -0.06], [x, -0.34, -0.06], 0.02);
+    }
+    m.line([0.75, -0.34, -0.06], [1.11, -0.34, -0.06], 0.015);
+    for (const x of [0.84, 0.93, 1.02])
+      m.line([x, -0.71, -0.06], [x, -0.34, -0.06], 0.028);
+    // A seated pupil leans toward the book, with bent arms and knees below the desk.
+    m.ellipsoid(0.93, -0.15, 0.19, 0.145, 0.175, 0.13, 14, 20);
+    m.ellipsoid(0.805, -0.15, 0.22, 0.035, 0.031, 0.045, 6, 10);
+    m.ellipsoid(0.94, -0.03, 0.17, 0.15, 0.075, 0.13, 8, 18);
+    m.ellipsoid(0.95, -0.48, 0.17, 0.17, 0.22, 0.13, 13, 18);
+    for (const [x, z] of [[0.80, 0.22], [1.10, 0.23]]) {
+      for (const dz of [-0.03, 0.03]) {
+        m.line([x, -0.34, z + dz], [x - 0.06, -0.44, 0.43 + dz], 0.016);
+        m.line([x - 0.06, -0.44, 0.43 + dz], [x - 0.17, -0.46, 0.61 + dz], 0.016);
+      }
+      m.ellipsoid(x - 0.17, -0.46, 0.61, 0.047, 0.033, 0.055, 6, 10);
+    }
+    for (const x of [0.83, 1.055]) {
+      m.line([x, -0.70, 0.18], [x, -0.79, 0.48], 0.018);
+      m.line([x, -0.79, 0.48], [x, -1.025, 0.47], 0.018);
+      m.ellipsoid(x - 0.035, -1.06, 0.50, 0.10, 0.045, 0.12, 7, 12);
+    }
   } else if (motif === "architecture") {
     label = "SYSTEM ARCHITECTURE";
     detail = "Structure · relationships · shared context";
@@ -587,6 +710,14 @@ function authorMesh(motif: Motif, count: number): Mesh {
       );
     }
   }
+  if (gestureModel) {
+    const movingCount = Math.round(count * 0.085);
+    const from = count - movingCount;
+    const points = new Float32Array(count * 3);
+    points.set(m.finish(from));
+    points.set(gestureModel.finish(movingCount), from * 3);
+    return { points, rotation, label, detail, gesture: { from, pivot: gesturePivot } };
+  }
   return { points: m.finish(count), rotation, label, detail };
 }
 
@@ -597,6 +728,7 @@ const TOOL_MOTIFS: Record<string, Motif> = {
   nuclear: "nuclear",
   ship: "ship",
   enterprise: "enterprise",
+  classroom: "classroom",
   workspace: "architecture",
   admin: "architecture",
   installation: "architecture",
@@ -641,7 +773,7 @@ export default function ParticleScene({
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d", { alpha: true });
     if (!canvas || !ctx) return;
-    const count = compact ? 1900 : 3300;
+    const count = kind === "classroom" ? (compact ? 2700 : 4200) : (compact ? 1900 : 3300);
     const motifs: Motif[] = home
       ? HOME_MOTIFS
       : [TOOL_MOTIFS[kind] || "orbit"];
@@ -719,14 +851,25 @@ export default function ParticleScene({
         ctx.fill();
       }
       heads.fill(-1);
+      const gestureAngle = Math.sin(time * 0.72) * 0.045;
+      const gestureSin = Math.sin(gestureAngle);
+      const gestureCos = Math.cos(gestureAngle);
       for (let i = 0; i < count; i++) {
         const p = i * 3;
         const a = phases[i] + time * 0.17 + spread * (2.6 + (i % 7) * 0.16);
         const orbitX = Math.cos(a) * radii[i];
         const orbitY = Math.sin(a) * radii[i] * 0.63;
         const orbitZ = Math.sin(phases[i] * 0.71 + time * 0.11) * 0.64;
-        let x = mesh.points[p] * assembly + orbitX * spread;
-        let y = mesh.points[p + 1] * assembly + orbitY * spread;
+        let modelX = mesh.points[p];
+        let modelY = mesh.points[p + 1];
+        if (mesh.gesture && i >= mesh.gesture.from) {
+          const dx = modelX - mesh.gesture.pivot[0];
+          const dy = modelY - mesh.gesture.pivot[1];
+          modelX = mesh.gesture.pivot[0] + dx * gestureCos - dy * gestureSin;
+          modelY = mesh.gesture.pivot[1] + dx * gestureSin + dy * gestureCos;
+        }
+        let x = modelX * assembly + orbitX * spread;
+        let y = modelY * assembly + orbitY * spread;
         let z = mesh.points[p + 2] * assembly + orbitZ * spread;
         const x1 = x * cosy + z * sy,
           z1 = -x * sy + z * cosy;

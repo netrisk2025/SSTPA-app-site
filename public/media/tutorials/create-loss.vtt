@@ -1,0 +1,142 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.120 line:92% position:50% size:94% align:center
+We begin in the existing
+FireSat system model.
+
+2
+00:00:03.243 --> 00:00:06.480 line:92% position:50% size:94% align:center
+Asset identification is an input to SSTPA:
+
+3
+00:00:06.860 --> 00:00:10.380 line:92% position:50% size:94% align:center
+the team has already decided that
+authentic fire reports matter
+
+4
+00:00:10.380 --> 00:00:11.180 line:92% position:50% size:94% align:center
+to the mission.
+
+5
+00:00:11.540 --> 00:00:15.300 line:92% position:50% size:94% align:center
+Here we record that protection
+decision in a separate tutorial asset,
+
+6
+00:00:15.300 --> 00:00:17.940 line:92% position:50% size:94% align:center
+without changing the original example asset.
+
+7
+00:00:18.100 --> 00:00:23.040 line:92% position:50% size:94% align:center
+In Asset Manager, choose New Asset
+and enter FireSat tutorial reports.
+
+8
+00:00:23.300 --> 00:00:26.580 line:92% position:50% size:94% align:center
+Keep the asset type Organic,
+select Mission Critical,
+
+9
+00:00:26.720 --> 00:00:28.260 line:92% position:50% size:94% align:center
+and select Authenticity.
+
+10
+00:00:28.609 --> 00:00:32.220 line:92% position:50% size:94% align:center
+These choices state why the reports
+matter and which property this
+
+11
+00:00:32.220 --> 00:00:33.420 line:92% position:50% size:94% align:center
+analysis will protect.
+
+12
+00:00:33.700 --> 00:00:36.340 line:92% position:50% size:94% align:center
+They do not establish that
+protection has succeeded.
+
+13
+00:00:36.720 --> 00:00:39.880 line:92% position:50% size:94% align:center
+For Environment, choose
+Payload Operating Environment.
+
+14
+00:00:40.033 --> 00:00:43.780 line:92% position:50% size:94% align:center
+Select Create, with Losses and
+Goals automatically generated.
+
+15
+00:00:44.060 --> 00:00:47.580 line:92% position:50% size:94% align:center
+This saves the new asset and
+its associated analysis records.
+
+16
+00:00:47.780 --> 00:00:51.240 line:92% position:50% size:94% align:center
+Selecting the environment here completes
+the context that would otherwise
+
+17
+00:00:51.240 --> 00:00:53.300 line:92% position:50% size:94% align:center
+need assignment through the Context Tool.
+
+18
+00:00:53.500 --> 00:00:57.880 line:92% position:50% size:94% align:center
+Find the generated entry under Loss
+nodes and choose Open in Loss Tool.
+
+19
+00:00:58.022 --> 00:01:01.580 line:92% position:50% size:94% align:center
+Use Selected Loss to choose
+the tutorial record explicitly;
+
+20
+00:01:02.060 --> 00:01:05.620 line:92% position:50% size:94% align:center
+opening the tool does not guarantee
+that it selected the intended Loss.
+
+21
+00:01:05.751 --> 00:01:09.140 line:92% position:50% size:94% align:center
+Check the Asset, Environment,
+and Criticality and Assurance
+
+22
+00:01:09.140 --> 00:01:10.560 line:92% position:50% size:94% align:center
+fields before continuing.
+
+23
+00:01:10.920 --> 00:01:13.680 line:92% position:50% size:94% align:center
+The root expresses the
+compromise we will investigate:
+
+24
+00:01:14.200 --> 00:01:17.160 line:92% position:50% size:94% align:center
+fire reports whose claimed
+origin cannot be trusted.
+
+25
+00:01:17.520 --> 00:01:21.960 line:92% position:50% size:94% align:center
+In SSTPA, Loss measures the effort an
+attacker needs to expend to violate
+
+26
+00:01:21.960 --> 00:01:25.140 line:92% position:50% size:94% align:center
+one Assurance on one
+asset in one environment.
+
+27
+00:01:25.460 --> 00:01:27.860 line:92% position:50% size:94% align:center
+Building the supporting
+attack structure comes next.
+
+28
+00:01:28.062 --> 00:01:31.840 line:92% position:50% size:94% align:center
+At the upper right of the canvas,
+select Nocturne for dark mode,
+
+29
+00:01:32.120 --> 00:01:33.420 line:92% position:50% size:94% align:center
+then Parchment to return.
+
+30
+00:01:33.660 --> 00:01:35.480 line:92% position:50% size:94% align:center
+This changes presentation only.

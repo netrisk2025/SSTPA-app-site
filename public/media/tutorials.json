@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "course": {
+    "slug": "loss-tool-attack-trees",
+    "title": "Loss Tool: Attack Trees",
+    "description": "Follow a FireSat training example from a scoped Loss to a reviewed attack tree, with rules, leaf values, residual vulnerabilities, and a saved Core baseline.",
+    "project": "FireSat",
+    "voice": "Systems · WhiteKnight Studio",
+    "note": "These narrated walkthroughs use captured screens from a disposable FireSat training model. Values, assumptions, and dispositions are illustrative.",
+    "lessons": [
+      {
+        "slug": "create-loss",
+        "title": "Create and scope a FireSat Loss",
+        "description": "Create a tutorial asset record, generate its Loss, and bind the analysis to one Assurance and environment.",
+        "durationSeconds": 95.6,
+        "transcript": "We begin in the existing FireSat system model. Asset identification is an input to SSTPA: the team has already decided that authentic fire reports matter to the mission. Here we record that protection decision in a separate tutorial asset, without changing the original example asset.\n\nIn Asset Manager, choose New Asset and enter FireSat tutorial reports. Keep the asset type Organic, select Mission Critical, and select Authenticity. These choices state why the reports matter and which property this analysis will protect. They do not establish that protection has succeeded.\n\nFor Environment, choose Payload Operating Environment. Select Create, with Losses and Goals automatically generated. This saves the new asset and its associated analysis records. Selecting the environment here completes the context that would otherwise need assignment through the Context Tool.\n\nFind the generated entry under Loss nodes and choose Open in Loss Tool. Use Selected Loss to choose the tutorial record explicitly; opening the tool does not guarantee that it selected the intended Loss. Check the Asset, Environment, and Criticality and Assurance fields before continuing.\n\nThe root expresses the compromise we will investigate: fire reports whose claimed origin cannot be trusted. In SSTPA, Loss measures the effort an attacker needs to expend to violate one Assurance on one asset in one environment. Building the supporting attack structure comes next.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/create-loss.mp4",
+        "poster": "/media/tutorials/create-loss.jpg",
+        "captions": "/media/tutorials/create-loss.vtt"
+      },
+      {
+        "slug": "build-structure",
+        "title": "Build the state and asset structure",
+        "description": "Use state-scoped asset traces to build the initial Loss tree from the Core model.",
+        "durationSeconds": 95.76,
+        "transcript": "This Loss concerns FireSat tutorial reports in the Payload Operating Environment. Before building its tree, we identify where that asset is held or transported in each relevant state. These relationships determine which system elements appear in the initial structure.\n\nIn Asset Manager, expand the tutorial asset row. Set Trace relationship type to HOLDS, choose Standby as the State context, and select Payload Processor in Multi-select entities. Review that pairing and choose Allocate, showing one selected entity. This action saves the trace immediately.\n\nFor the second assignment, choose TRANSPORTS and the Imaging state, then select Payload Downlink Feed Interface. Choose Allocate again. We have described two different asset relationships in their operational contexts. A trace in one state does not automatically apply in every other state.\n\nReturn to the Loss Tool and use Reload slash reconcile to refresh its previously loaded Core view. Open Trace coverage and confirm two of two environment states are covered, with the intended entities. Coverage establishes model participation; it does not establish that either state is secure.\n\nSelect Auto-build and wait for the built-and-committed message. This operation writes immediately, without waiting for the canvas Commit button. Use Fit tree to inspect the environment, states, entities, and any existing canonical attack branches. The generated structure is a starting point for analysis and refinement.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/build-structure.mp4",
+        "poster": "/media/tutorials/build-structure.jpg",
+        "captions": "/media/tutorials/build-structure.vtt"
+      },
+      {
+        "slug": "refine-attacks",
+        "title": "Add an attack and its countermeasure",
+        "description": "Stage an attack, a defensive measure, and an attack that could defeat that measure.",
+        "durationSeconds": 99.76,
+        "transcript": "We now refine the FireSat tutorial tree. An attack describes a way to compromise the asset’s required protection. A countermeasure describes a defensive response, and a defeating attack examines how that response could itself be overcome. These hypotheses require supporting evidence.\n\nSelect Payload Downlink Feed Interface and choose Add child. Select Attack, name it Replay a detection report, and choose Stage new node. The new card is part of the draft. Its not yet committed marker means that Core has not assigned its authoritative identity.\n\nSelect the replay attack and add a Countermeasure named Enforce freshness window. Then select that countermeasure and add an Attack named Abuse counter rollover. We have made the protection claim explicit and retained a plausible challenge to it, rather than stopping the analysis at the first defensive measure.\n\nSelect a connection to open the Relationship Inspector. Review Sibling operator and choose the appropriate AND, OR, or SAND relationship for the child group. Use Stage relationship to apply the decision. A SAND sequence uses explicit sequence positions; moving cards across the screen does not change that order.\n\nUse Link existing when a suitable Core attack or countermeasure already exists. A shared node keeps its identity and inputs across its incoming relationships. Review the resulting branch and its assumptions before committing; these edits create analytical and supporting Core relationships, not merely lines in a drawing.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/refine-attacks.mp4",
+        "poster": "/media/tutorials/refine-attacks.jpg",
+        "captions": "/media/tutorials/refine-attacks.vtt"
+      },
+      {
+        "slug": "rules-and-values",
+        "title": "Set rules and enter leaf values",
+        "description": "Add a preparation-effort metric, enter two leaf values, and interpret a strict attack-cost threshold.",
+        "durationSeconds": 103.68,
+        "transcript": "Metric rules describe how raw leaf inputs become calculated results. We will add a separate preparation-effort measure to this FireSat example. These values are illustrations for learning the tool; an operational assessment needs estimates supported by evidence and explicit assumptions.\n\nOpen Metric rules and choose Add metric. Set the identifier to PreparationHours, the label to Preparation effort, and the unit to hours. Set AND to SUM, OR to MIN, and SAND to SUM. These rules combine required preparation and select the least preparation among alternatives.\n\nLeave the default blank, so an unassessed leaf remains unknown, and choose Stage rules. Preparation effort is its own quantity. We are not automatically adding it to AttackTime or claiming that it equals total elapsed attack duration. Its scope must stay consistent wherever we enter it.\n\nSelect Abuse counter rollover and enter four for the new leaf metric, then choose Stage leaf values. Select the existing Steal the report signing key attack, enter two, and stage that value. Parent and root results are recalculated; we do not type independent totals into their cards.\n\nNow review the AttackCost threshold, set to ABOVE five thousand. A calculated cost of exactly five thousand fails this strict test; equality is not above. Read the result with its units and analysis status. Higher required attacker effort indicates stronger resistance, while unknown values remain unresolved inputs rather than assumed protection.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/rules-and-values.mp4",
+        "poster": "/media/tutorials/rules-and-values.jpg",
+        "captions": "/media/tutorials/rules-and-values.vtt"
+      },
+      {
+        "slug": "display-and-identity",
+        "title": "Control the view and read identities",
+        "description": "Configure card content and navigate the graph without changing analytical meaning.",
+        "durationSeconds": 101.68,
+        "transcript": "A readable view helps us inspect the model without confusing presentation with analysis. Start with the FireSat tutorial tree in the light Parchment view. Use Find node or HID to locate a card, Focus to center it, and Fit tree to recover the overall structure.\n\nOpen Properties. Node properties and Attack metrics are separate groups. Show Node ID, Authoritative UUID, and Provenance, then select only the metrics needed for this review. The title, type, and HID remain recognizable even when optional rows are hidden from the cards.\n\nNode ID identifies an element within this tree. The HID is its readable Core identifier; Authoritative UUID identifies its authoritative record. A newly staged attack shows not yet committed until a successful Core transaction assigns its identity. A shared node keeps one identity even when several relationships lead to it.\n\nClose the dialog and use Auto-arrange. Try the Direction choices Top down and Left to right. These choices and manual card movement change the presentation. They do not change gates, sequence positions, raw inputs, or the calculated meaning of the analysis.\n\nRoll up a branch, inspect its folded marker, and roll it down again. Hidden descendants still participate in calculations and capacity limits. Tailored out is different: it excludes a relationship from analytical traversal and requires a reason. Use folding to manage clutter, not to claim that an attack has disappeared.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/display-and-identity.mp4",
+        "poster": "/media/tutorials/display-and-identity.jpg",
+        "captions": "/media/tutorials/display-and-identity.vtt"
+      },
+      {
+        "slug": "paths-and-rvs",
+        "title": "Review paths and residual vulnerabilities",
+        "description": "Inspect a terminal attack route and record a reasoned residual-vulnerability disposition.",
+        "durationSeconds": 110.64,
+        "transcript": "Attack path analysis follows individual routes through the FireSat tutorial tree. A route ending in an unblocked terminal Attack is an unresolved residual vulnerability unless its incoming relationship records an allowed disposition. This view identifies what remains possible and its recorded disposition.\n\nChoose Attack path analysis, set Status to RV, and select the Abuse counter rollover route. Follow the highlighted cards and the Full path list. The displayed sort metric comes from the terminal leaf. A single route is not the complete combination required by an AND scenario.\n\nOpen the terminal attack’s incoming relationship. Select Allowed residual vulnerability, enter a specific review rationale of at least twenty characters, and choose Stage relationship. In this training example, record the bounded exposure and the further review required; do not imply that writing a reason establishes external approval.\n\nChange the filter to ALLOWED. In SSTPA, an Allowed Residual Vulnerability, or ARV, carries its associated risk, conditions, and responsible authority’s decision. Here the tool records an analyst disposition on a Loss-scoped relationship. Another incoming route can differ. The attack remains technically possible, and its intrinsic metrics are unchanged.\n\nContrast Complete block on an Attack-to-Countermeasure relationship. That flag asserts that the modeled route cannot succeed under stated conditions and needs supporting evidence. An allowed residual vulnerability instead supports a documented acceptance process. The tool records the analyst’s disposition; the responsible authority’s decision and conditions still need to be established.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/paths-and-rvs.mp4",
+        "poster": "/media/tutorials/paths-and-rvs.jpg",
+        "captions": "/media/tutorials/paths-and-rvs.vtt"
+      },
+      {
+        "slug": "scenarios-and-findings",
+        "title": "Interpret scenarios and findings",
+        "description": "Distinguish independent scalar bounds from coherent alternatives and identify incomplete analysis.",
+        "durationSeconds": 109.6,
+        "transcript": "Before interpreting the root’s numbers, check which calculation mode produced them. Independent scalar bounds summarize each property separately. Coherent scenario analysis keeps the values belonging to one achievable attack alternative together. Those interpretations answer different questions about the same FireSat tree.\n\nFor example, one alternative may be cheap but produce little attacker benefit, while another costs more and offers a greater reward. Selecting the cheapest cost and largest benefit independently does not create a real combined alternative. Read scalar bounds as bounds, not as one complete attack story.\n\nOpen Metric rules and expand Actor, victim, utilities and opportunity configuration. The Analysis profile JSON records the mode, scenario budget, utility curves, and opportunity assumptions. Here we use a prepared training profile; review its units and assumptions, then choose Stage rules if you change it.\n\nInspect the root and its selected scenario identifier. Scenario mode preserves whole OR alternatives and combines the required AND or ordered SAND actions. Derived feasibility, propensity, and risk depend on the configured actor, victim, and opportunity model; they are not interchangeable with the underlying raw effort inputs.\n\nOpen Validation and examine the findings. Unknown inputs, unsupported shared-event correlations, and exhausted scenario budgets can make analysis incomplete. A failed threshold is a different finding. Never present a partial maximum as the established worst case, or mistake the number of displayed routes for the number of complete scenarios.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/scenarios-and-findings.mp4",
+        "poster": "/media/tutorials/scenarios-and-findings.jpg",
+        "captions": "/media/tutorials/scenarios-and-findings.vtt"
+      },
+      {
+        "slug": "commit-and-store",
+        "title": "Commit and retain the reviewed tree",
+        "description": "Finish the complete FireSat overview, commit its Core baseline, and retain its semantic model, metrics, and presentation.",
+        "durationSeconds": 117.92,
+        "transcript": "We have expanded the FireSat tutorial by repeating the same branch-building steps across firmware, sensor input, classification, and downlink. The result follows the complete twenty-five-node prototype overview. Before saving, review the asset, Assurance, environment, metric assumptions, and residual-vulnerability decisions.\n\nCanvas changes remain staged until Commit. Revert restores the committed graph, presentation, rules, and profile together, so use it only when you intend to discard the draft. Auto-build and Rebuild are different operations: they build and save immediately.\n\nChoose Commit and wait for the Core database success message. The application checks the loaded version, saves the proposal, and reloads authoritative results. Newly created nodes receive their Core identifiers while their local tree identities remain stable. If the commit succeeded but refresh failed, follow the recovery instructions instead of submitting the creation again.\n\nThe semantic nodes and relationships are stored in Neo4j. Loss-scoped attack-tree edges preserve their operators and documented decisions. The Loss root also retains its view configuration: card coordinates, viewport, direction, folded branches, selected properties, and colors. Reopening the saved tree restores that presentation without changing the model’s analytical meaning.\n\nMetricDefinitionsJSON stores the root’s metric definitions and aggregation rules. AnalysisProfileJSON stores scenario mode, utilities, and other analysis assumptions; leaf inputs remain with their nodes. Export can produce a portable copy or review evidence, but it may include staged changes. Retain the revision, display scope, and unresolved findings with every exported result.\n\nAt the upper right of the canvas, select Nocturne for dark mode, then Parchment to return. This changes presentation only.",
+        "src": "/media/tutorials/commit-and-store.mp4",
+        "poster": "/media/tutorials/commit-and-store.jpg",
+        "captions": "/media/tutorials/commit-and-store.vtt"
+      }
+    ]
+  }
+}

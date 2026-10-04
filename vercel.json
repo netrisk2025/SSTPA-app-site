@@ -22,6 +22,14 @@
     {
       "source": "/vocabulary",
       "destination": "/index.html"
+    },
+    {
+      "source": "/tutorials",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tutorials/",
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -70,7 +78,16 @@
       ]
     },
     {
-      "source": "/files/SSTPA-Methodology-White-Paper-v16.docx",
+      "source": "/media/tutorials.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
+      "source": "/files/SSTPA-Methodology-White-Paper-v17.docx",
       "headers": [
         {
           "key": "Content-Type",

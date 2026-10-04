@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import source from "./content.json";
 import ParticleScene from "./components/ParticleScene";
 import Vocabulary from "./components/Vocabulary";
+import Tutorials from "./components/Tutorials";
 
 type Tool = {
   slug: string;
@@ -34,7 +35,7 @@ type Script = {
 };
 type AudioEntry = { src: string; duration?: string; voice?: string };
 const tools = source.tools as Tool[];
-const paper = "/files/SSTPA-Methodology-White-Paper-v16.docx";
+const paper = "/files/SSTPA-Methodology-White-Paper-v17.docx";
 const count = (n: number) => String(n).padStart(2, "0");
 const Arrow = ({ down = false }: { down?: boolean }) => (
   <span aria-hidden="true">{down ? "↓" : "↗"}</span>
@@ -155,6 +156,12 @@ function Header({ path }: { path: string }) {
         <a href="/docs/">
           Documentation <Arrow />
         </a>
+        <a
+          href="/tutorials"
+          aria-current={path === "/tutorials" ? "page" : undefined}
+        >
+          Tutorials
+        </a>
       </nav>
       <a className="header-paper" href={paper} download>
         White paper <Arrow down />
@@ -184,6 +191,7 @@ function Footer() {
           <a href="/tools/workspace">The workspace</a>
           <a href="/docs/">Online documentation</a>
           <a href="/vocabulary">SSTPA vocabulary</a>
+          <a href="/tutorials">Video tutorials</a>
           <a href={paper} download>
             Methodology white paper ↓
           </a>
@@ -438,6 +446,9 @@ function Home() {
             <a className="quiet-link" href="/vocabulary">
               Speak the vocabulary
             </a>
+            <a className="quiet-link" href="/tutorials">
+              Experience a Tutorial
+            </a>
           </div>
         </div>
         <div className="hero-scene">
@@ -603,7 +614,7 @@ function PaperPanel() {
         <small>
           THE METHODOLOGY WHITE PAPER
           <br />
-          VERSION 16
+          VERSION 17
         </small>
       </div>
       <div>
@@ -621,7 +632,7 @@ function PaperPanel() {
           Download the white paper <Arrow down />
         </a>
         <span className="file-note">
-          VERSION 16 · CURRENT EDITION · MICROSOFT WORD DOCUMENT
+          VERSION 17 · CURRENT EDITION · MICROSOFT WORD DOCUMENT
         </span>
         <a className="text-link" href="/docs/">
           Browse the online documentation <Arrow />
@@ -1098,6 +1109,17 @@ export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const tool = tools.find((t) => path === `/tools/${t.slug}`);
   useEffect(() => {
+    const preventOverlap = (event: Event) => {
+      if (!(event.target instanceof HTMLMediaElement)) return;
+      const active = event.target;
+      document.querySelectorAll<HTMLMediaElement>("audio, video").forEach((media) => {
+        if (media !== active) media.pause();
+      });
+    };
+    document.addEventListener("play", preventOverlap, true);
+    return () => document.removeEventListener("play", preventOverlap, true);
+  }, []);
+  useEffect(() => {
     const name =
       tool?.name ||
       (path === "/"
@@ -1110,6 +1132,8 @@ export default function App() {
               ? "The methodology"
               : path === "/vocabulary"
                 ? "SSTPA vocabulary"
+                : path === "/tutorials"
+                  ? "Tutorials: Loss Tool Attack Trees"
                 : "Page not found");
     document.title = `${name} — SSTPA Tools`;
     const meta = document.querySelector('meta[name="description"]');
@@ -1119,6 +1143,8 @@ export default function App() {
         tool?.overview ||
           (path === "/vocabulary"
             ? "Listen to concise SSTPA vocabulary guides, explore definitions and sources, and understand how SSTPA differs from STPA and STPA-Sec."
+            : path === "/tutorials"
+              ? "Learn the SSTPA Loss Tool through short, narrated FireSat attack-tree screen walkthroughs with captions and transcripts."
             : "Explore SSTPA Tools: connected systems security engineering, from system architecture and loss analysis to requirements and assurance."),
       );
   }, [path, tool]);
@@ -1139,6 +1165,8 @@ export default function App() {
           <Methodology />
         ) : path === "/vocabulary" ? (
           <Vocabulary />
+        ) : path === "/tutorials" ? (
+          <Tutorials />
         ) : tool ? (
           <ToolPage tool={tool} />
         ) : (

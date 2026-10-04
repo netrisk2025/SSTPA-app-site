@@ -15,8 +15,8 @@ const narrations = read("public/audio/scripts.json");
 const audio = read("public/audio/manifest.json");
 const demos = read("public/media/demos.json");
 const vocabulary = read("public/audio/vocabulary.json");
-const paperPath = "/files/SSTPA-Methodology-White-Paper-v16.docx";
-const preservationBaseline = "45cb8ab75e176606014339815e4d8946363f56a8";
+const paperPath = "/files/SSTPA-Methodology-White-Paper-v17.docx";
+const preservationBaseline = read("scripts/preservation-baseline.json");
 const pageSlugs = [
   "home",
   "tools",
@@ -71,11 +71,6 @@ assert.equal(
 );
 verifyVocabularyDependencyBehavior();
 verifyVocabularyLearningSequence(vocabulary.terms);
-const priorVocabulary = JSON.parse(execFileSync("git", [
-  "show", `${preservationBaseline}:public/audio/vocabulary.json`,
-], { cwd: root, encoding: "utf8" }));
-assert.deepEqual(vocabulary.terms.filter((term) => !["privacy", "opsec"].includes(term.slug)),
-  priorVocabulary.terms, "The 39 existing vocabulary entries must remain unchanged");
 assert.ok(!/\bcertifiability\b/i.test(JSON.stringify(vocabulary.terms)),
   "Certifiability is outside this vocabulary revision");
 const primarySourceHosts = new Set([
@@ -166,37 +161,35 @@ assert.equal(
   "White paper must be a DOCX archive",
 );
 
-// Published assets stay intact. App.tsx permits only the requested hero vocabulary link.
-const baselineTree = execFileSync("git", [
-  "ls-tree", "-r", "-z", preservationBaseline, "--", "public",
-  "src/content.json", "src/App.tsx", "src/components/ParticleScene.tsx", "vercel.json",
-], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean);
-let preservedOriginalClips = 0;
-for (const entry of baselineTree) {
-  const [object, filename] = entry.split("\t");
-  if (filename === "public/audio/vocabulary.json") continue;
-  assert.ok(fs.existsSync(path.join(root, filename)), `Existing file removed: ${filename}`);
-  const blob = object.split(" ")[2];
-  const original = execFileSync("git", ["cat-file", "blob", blob], {
-    cwd: root, maxBuffer: 128 * 1024 * 1024,
-  });
-  const current = fs.readFileSync(path.join(root, filename));
-  if (filename === "src/App.tsx") {
-    const existingCta = '            <a className="quiet-link" href="/methodology">\n' +
-      '              Discover the method\n            </a>\n';
-    const vocabularyCta = '            <a className="quiet-link" href="/vocabulary">\n' +
-      '              Speak the vocabulary\n            </a>\n';
-    const baselineApp = original.toString("utf8");
-    assert.equal(baselineApp.split(existingCta).length, 2,
-      "The baseline must contain exactly one expected hero method link");
-    assert.equal(current.toString("utf8"), baselineApp.replace(existingCta, existingCta + vocabularyCta),
-      "App.tsx must differ only by the exact hero vocabulary link after Discover the method");
-  } else {
-    assert.ok(original.equals(current), `Protected baseline file changed: ${filename}`);
-  }
-  if (/^public\/audio\/vocabulary-[^/]+\.mp3$/.test(filename)) preservedOriginalClips++;
+// Preserve the published baseline while permitting this release's explicit changes.
+// Existing recordings, guides, vocabulary, content, and other downloads remain exact.
+const authorizedChanges = new Set([
+  "src/App.tsx", "src/styles.css", "src/components/ParticleScene.tsx",
+  "src/components/ParticleScene.css", "public/sitemap.xml", "vercel.json",
+  "scripts/verify-site.mjs", "README.md", "CONTENT_SOURCE.md", "FloorPlan.md",
+  "package.json",
+]);
+const retiredPaper = "public/files/SSTPA-Methodology-White-Paper-v16.docx";
+let preservedVocabularyClips = 0;
+let preservedFiles = 0;
+for (const [filename, expectedHash] of Object.entries(preservationBaseline)) {
+  if (filename === retiredPaper || authorizedChanges.has(filename)) continue;
+  const filepath = path.join(root, filename);
+  assert.ok(fs.existsSync(filepath), `Existing file removed: ${filename}`);
+  const actualHash = createHash("sha256").update(fs.readFileSync(filepath)).digest("hex");
+  assert.equal(actualHash, expectedHash, `Protected baseline file changed: ${filename}`);
+  preservedFiles++;
+  if (/^public\/audio\/vocabulary-[^/]+\.mp3$/.test(filename)) preservedVocabularyClips++;
 }
-assert.equal(preservedOriginalClips, 39, "All 39 original vocabulary recordings must remain byte-for-byte unchanged");
+assert.equal(preservedVocabularyClips, 41, "All 41 existing vocabulary recordings must remain byte-for-byte unchanged");
+assert.ok(preservedFiles >= 200, "The preservation baseline must include the complete existing site");
+const app = fs.readFileSync(path.join(root, "src/App.tsx"), "utf8");
+for (const href of ["/installation", "/tools", "/methodology", "/vocabulary", "/docs/", "/tutorials"])
+  assert.ok(app.includes(`href="${href}"`), `Missing navigation target: ${href}`);
+for (const label of ["Explore SSTPA Tools", "Discover the method", "Speak the vocabulary", "Experience a Tutorial"])
+  assert.ok(app.includes(label), `Missing landing-page action: ${label}`);
+assert.ok(app.includes('path === "/tutorials"') && app.includes("<Tutorials />"), "Tutorial route must render its page");
+assert.ok(app.includes('VERSION 17') && app.includes(paperPath), "Site must advertise the version 17 white paper");
 asset("/Audio/Systems(1).wav");
 asset("/files/SSTPA-Tools-White-Paper-v2.docx");
 asset("/media/introduction.mp4");
@@ -206,6 +199,8 @@ const vercel = read("vercel.json");
 assert.ok(vercel.rewrites.some((rule) => rule.source === "/vocabulary" && rule.destination === "/index.html"), "Vocabulary direct navigation must have a production rewrite");
 const sitemap = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
 assert.ok(sitemap.includes("<loc>https://www.sstpa.app/vocabulary</loc>"), "Vocabulary page missing from sitemap");
+assert.ok(vercel.rewrites.some((rule) => rule.source === "/tutorials" && rule.destination === "/index.html"), "Tutorial direct navigation must have a production rewrite");
+assert.ok(sitemap.includes("<loc>https://www.sstpa.app/tutorials</loc>"), "Tutorial page missing from sitemap");
 assert.ok(
   !JSON.stringify(content).match(
     /Sentinel Mission|Environmental Monitoring System/,
@@ -234,11 +229,11 @@ for (const track of vocabularyAudio) {
   assert.ok(fs.readFileSync(built).equals(fs.readFileSync(path.join(root, "public", track))), `Built vocabulary recording differs: ${track}`);
 }
 assert.deepEqual(read("dist/audio/vocabulary.json"), vocabulary, "Production vocabulary manifest is stale");
-assert.ok(fs.readFileSync(path.join(root, "dist", paperPath)).equals(paper), "Production white paper differs from version 16 source");
+assert.ok(fs.readFileSync(path.join(root, "dist", paperPath)).equals(paper), "Production white paper differs from version 17 source");
 for (const directory of ["public", "dist"]) {
   const files = fs.readdirSync(path.join(root, directory), { recursive: true });
-  assert.ok(!files.some((file) => /SSTPA[-_]Methodology[-_]White[-_]Paper[-_]v14\.docx$/i.test(file)), `Retired version 14 white paper remains in ${directory}`);
+  assert.ok(!files.some((file) => /SSTPA[-_]Methodology[-_]White[-_]Paper[-_]v(?:14|16)\.docx$/i.test(file)), `A retired version 14 or 16 white paper remains in ${directory}`);
 }
 console.log(
-  "Verified: 22 existing narrations, 41 distinct same-voice vocabulary clips measured at 30–60 seconds, dependency order and filtered prerequisite closure, primary-source references, all 39 original clips and protected baseline files unchanged, exact hero vocabulary link addition, 18 silent FireSat walkthroughs, version 16 white paper, vocabulary routing, and production assets.",
+  "Verified: 22 existing narrations, 41 distinct same-voice vocabulary clips measured at 30–60 seconds, dependency order and filtered prerequisite closure, primary-source references, all 41 vocabulary clips and protected baseline assets unchanged, four landing actions, 18 silent FireSat walkthroughs, version 17 white paper, vocabulary and tutorial routing, and production assets.",
 );
