@@ -2,6 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import {
+  verifyVocabularyDependencyBehavior,
+  verifyVocabularyLearningSequence,
+} from "./verify-vocabulary-dependencies.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
@@ -11,7 +16,7 @@ const audio = read("public/audio/manifest.json");
 const demos = read("public/media/demos.json");
 const vocabulary = read("public/audio/vocabulary.json");
 const paperPath = "/files/SSTPA-Methodology-White-Paper-v16.docx";
-const retiredPaper = "public/files/SSTPA-Methodology-White-Paper-v14.docx";
+const preservationBaseline = "874596ebb3eb512852839f7c77ee3f8eadeee75f";
 const pageSlugs = [
   "home",
   "tools",
@@ -58,13 +63,25 @@ assert.equal(
 );
 
 assert.equal(vocabulary.version, 1, "Unsupported vocabulary manifest version");
-assert.equal(vocabulary.terms.length, 28, "All 28 vocabulary terms must be present");
+assert.equal(vocabulary.terms.length, 39, "All 39 vocabulary terms must be present");
 assert.equal(
   new Set(vocabulary.terms.map((term) => term.slug)).size,
-  28,
+  39,
   "Vocabulary term slugs must be unique",
 );
+verifyVocabularyDependencyBehavior();
+verifyVocabularyLearningSequence(vocabulary.terms);
+assert.ok(!/\bcertifiability\b/i.test(JSON.stringify(vocabulary.terms)),
+  "Certifiability is outside this vocabulary revision");
+const primarySourceHosts = new Set([
+  "doi.org", "csrc.nist.gov", "nvlpubs.nist.gov", "www.nist.gov",
+  "standards.nasa.gov", "www.nasa.gov", "www.faa.gov",
+  "psas.scripts.mit.edu", "dspace.mit.edu", "sebokwiki.org",
+  "scsc.uk", "www.schneier.com",
+]);
+const prohibitedPaperReference = /sstpa[-_\s]*(?:methodology[-_\s]*)?(?:white[-_\s]*paper|srs)|\bSSTPA\b.{0,80}\b(?:white[\s-]*paper|SRS)\b|\b(?:white[\s-]*paper|SRS)\b.{0,80}\bSSTPA\b|\bv(?:ersion\s*)?16\b/i;
 const vocabularyAudio = new Set();
+const vocabularyAudioHashes = new Set();
 const existingAudio = new Set(Object.values(audio).map((track) => track.src));
 for (const term of vocabulary.terms) {
   assert.match(term.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Invalid vocabulary slug");
@@ -74,12 +91,15 @@ for (const term of vocabulary.terms) {
       `Missing vocabulary ${field}: ${term.slug}`,
     );
   assert.ok(term.sources?.length > 0, `Missing vocabulary references: ${term.slug}`);
+  assert.ok(!prohibitedPaperReference.test(term.sourceLabel),
+    `SSTPA white-paper or SRS attribution on vocabulary card: ${term.slug}`);
   for (const source of term.sources) {
     assert.ok(source.label?.trim(), `Unlabeled vocabulary reference: ${term.slug}`);
-    assert.ok(
-      source.url === paperPath || /^https:\/\//.test(source.url),
-      `Invalid vocabulary reference: ${term.slug}`,
-    );
+    const url = new URL(source.url);
+    assert.equal(url.protocol, "https:", `Vocabulary reference must use HTTPS: ${term.slug}`);
+    assert.ok(primarySourceHosts.has(url.hostname), `Unreviewed primary-source host: ${source.url}`);
+    assert.ok(!prohibitedPaperReference.test(`${source.label} ${decodeURIComponent(source.url)}`),
+      `SSTPA white-paper or SRS reference on vocabulary card: ${term.slug}`);
   }
   const track = term.audio;
   assert.ok(track?.src, `Missing vocabulary audio: ${term.slug}`);
@@ -93,6 +113,9 @@ for (const term of vocabulary.terms) {
     `Vocabulary duration metadata outside 30–60 seconds: ${term.slug}`,
   );
   const filename = asset(track.src);
+  const audioHash = createHash("sha256").update(fs.readFileSync(filename)).digest("hex");
+  assert.ok(!vocabularyAudioHashes.has(audioHash), `Vocabulary recordings have duplicate audio bytes: ${term.slug}`);
+  vocabularyAudioHashes.add(audioHash);
   const probe = JSON.parse(execFileSync(process.env.FFPROBE || "ffprobe", [
     "-v", "error", "-show_entries", "format=duration:stream=codec_type",
     "-of", "json", filename,
@@ -137,14 +160,25 @@ assert.equal(
   "White paper must be a DOCX archive",
 );
 
-// This release adds content. The superseded v14 download is its only removal.
-const preservedFiles = execFileSync("git", [
-  "ls-tree", "-r", "--name-only", "-z", "HEAD", "--", "public",
+// The vocabulary revision changes its manifest and adds recordings; published assets stay intact.
+const baselineTree = execFileSync("git", [
+  "ls-tree", "-r", "-z", preservationBaseline, "--", "public",
+  "src/content.json", "src/App.tsx", "src/components/ParticleScene.tsx", "vercel.json",
 ], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean);
-for (const filename of preservedFiles) {
-  if (filename !== retiredPaper)
-    assert.ok(fs.existsSync(path.join(root, filename)), `Existing public asset removed: ${filename}`);
+let preservedOriginalClips = 0;
+for (const entry of baselineTree) {
+  const [object, filename] = entry.split("\t");
+  if (filename === "public/audio/vocabulary.json") continue;
+  assert.ok(fs.existsSync(path.join(root, filename)), `Existing file removed: ${filename}`);
+  const blob = object.split(" ")[2];
+  const original = execFileSync("git", ["cat-file", "blob", blob], {
+    cwd: root, maxBuffer: 128 * 1024 * 1024,
+  });
+  assert.ok(original.equals(fs.readFileSync(path.join(root, filename))),
+    `Protected baseline file changed: ${filename}`);
+  if (/^public\/audio\/vocabulary-[^/]+\.mp3$/.test(filename)) preservedOriginalClips++;
 }
+assert.equal(preservedOriginalClips, 28, "All 28 original vocabulary recordings must remain byte-for-byte unchanged");
 asset("/Audio/Systems(1).wav");
 asset("/files/SSTPA-Tools-White-Paper-v2.docx");
 asset("/media/introduction.mp4");
@@ -179,7 +213,7 @@ for (const file of [
 for (const track of vocabularyAudio) {
   const built = path.join(root, "dist", track);
   assert.ok(fs.existsSync(built), `Build omitted vocabulary recording: ${track}`);
-  assert.equal(fs.statSync(built).size, fs.statSync(path.join(root, "public", track)).size, `Built vocabulary recording differs: ${track}`);
+  assert.ok(fs.readFileSync(built).equals(fs.readFileSync(path.join(root, "public", track))), `Built vocabulary recording differs: ${track}`);
 }
 assert.deepEqual(read("dist/audio/vocabulary.json"), vocabulary, "Production vocabulary manifest is stale");
 assert.ok(fs.readFileSync(path.join(root, "dist", paperPath)).equals(paper), "Production white paper differs from version 16 source");
@@ -188,5 +222,5 @@ for (const directory of ["public", "dist"]) {
   assert.ok(!files.some((file) => /SSTPA[-_]Methodology[-_]White[-_]Paper[-_]v14\.docx$/i.test(file)), `Retired version 14 white paper remains in ${directory}`);
 }
 console.log(
-  "Verified: 22 existing narrations, 28 distinct same-voice vocabulary clips measured at 30–60 seconds, 18 silent FireSat walkthroughs, captions, preserved public assets, version 16 white paper, vocabulary routing, and production assets.",
+  "Verified: 22 existing narrations, 39 distinct same-voice vocabulary clips measured at 30–60 seconds, dependency order and filtered prerequisite closure, primary-source references, all 28 original clips and protected baseline files unchanged, 18 silent FireSat walkthroughs, version 16 white paper, vocabulary routing, and production assets.",
 );

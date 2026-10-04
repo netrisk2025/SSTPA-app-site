@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
+import {
+  selectVocabularyTerms,
+  validateVocabularyDependencies,
+  VocabularyDependencyError,
+} from "./vocabularyDependencies";
 import "./Vocabulary.css";
 
 type VocabularyTerm = {
   slug: string;
   term: string;
   category: string;
+  prerequisites: string[];
   definition: string;
   script: string;
   sourceLabel: string;
@@ -18,7 +24,15 @@ type VocabularyTerm = {
 };
 type VocabularyManifest = { version: number; terms: VocabularyTerm[] };
 
-function TermCard({ term, index }: { term: VocabularyTerm; index: number }) {
+function TermCard({
+  term,
+  index,
+  selection,
+}: {
+  term: VocabularyTerm;
+  index: number;
+  selection?: "Prerequisite" | "Search match" | "Selected term";
+}) {
   const [audioFailed, setAudioFailed] = useState(false);
   return (
     <article className="vocabulary-card" id={term.slug} aria-labelledby={`${term.slug}-title`}>
@@ -26,7 +40,8 @@ function TermCard({ term, index }: { term: VocabularyTerm; index: number }) {
         <span className="eyebrow">{term.category}</span>
         <span className="vocabulary-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
       </div>
-      <h2 id={`${term.slug}-title`}>{term.term}</h2>
+      {selection && <p className={`vocabulary-selection${selection === "Prerequisite" ? " is-prerequisite" : ""}`}>{selection}</p>}
+      <h3 id={`${term.slug}-title`}>{term.term}</h3>
       <p className="vocabulary-definition">{term.definition}</p>
       <div className="vocabulary-listen">
         <div className="vocabulary-listen-label">
@@ -59,16 +74,20 @@ function TermCard({ term, index }: { term: VocabularyTerm; index: number }) {
         <summary>Read transcript <span aria-hidden="true">+</span></summary>
         <p>{term.script}</p>
       </details>
-      <div className="vocabulary-sources">
-        <p>{term.sourceLabel}</p>
-        <ul aria-label={`References for ${term.term}`}>
-          {term.sources.map((source) => (
-            <li key={source.url}>
-              <a href={source.url}>{source.label} <span aria-hidden="true">↗</span></a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {(term.sourceLabel || term.sources.length > 0) && (
+        <div className="vocabulary-sources">
+          {term.sourceLabel && <p>{term.sourceLabel}</p>}
+          {term.sources.length > 0 && (
+            <ul aria-label={`References for ${term.term}`}>
+              {term.sources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url}>{source.label} <span aria-hidden="true">↗</span></a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </article>
   );
 }
@@ -79,34 +98,41 @@ export default function Vocabulary() {
   const [attempt, setAttempt] = useState(0);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All terms");
+  const [sequenceError, setSequenceError] = useState(false);
 
   useEffect(() => {
     const abort = new AbortController();
     setStatus("loading");
+    setSequenceError(false);
     fetch("/audio/vocabulary.json", { signal: abort.signal })
       .then((response) => {
         if (!response.ok) throw new Error("Vocabulary unavailable");
         return response.json() as Promise<VocabularyManifest>;
       })
       .then((manifest) => {
-        if (!Array.isArray(manifest.terms) || !manifest.terms.length) {
-          throw new Error("Vocabulary unavailable");
-        }
+        validateVocabularyDependencies(manifest.terms);
         setTerms(manifest.terms);
         setStatus("ready");
       })
-      .catch(() => {
-        if (!abort.signal.aborted) setStatus("error");
+      .catch((error: unknown) => {
+        if (!abort.signal.aborted) {
+          setSequenceError(error instanceof VocabularyDependencyError);
+          setStatus("error");
+        }
       });
     return () => abort.abort();
   }, [attempt]);
 
   const categories = ["All terms", ...new Set(terms.map((term) => term.category))];
   const search = query.trim().toLowerCase();
-  const shown = terms.filter((term) =>
-    (category === "All terms" || category === term.category) &&
-    `${term.term} ${term.definition} ${term.script}`.toLowerCase().includes(search),
-  );
+  const filtering = category !== "All terms" || search.length > 0;
+  const selected = terms.length > 0
+    ? selectVocabularyTerms(terms, (term) =>
+        (category === "All terms" || category === term.category) &&
+        `${term.term} ${term.definition} ${term.script}`.toLowerCase().includes(search),
+      )
+    : { terms: [], matchedSlugs: new Set<string>(), prerequisiteSlugs: new Set<string>() };
+  const shown = selected.terms;
 
   return (
     <>
@@ -121,17 +147,11 @@ export default function Vocabulary() {
           <a className="text-link" href="#vocabulary-terms">Explore the vocabulary <span aria-hidden="true">↓</span></a>
         </div>
         <div className="vocabulary-intro-note">
-          <div className="vocabulary-sound-mark" aria-hidden="true">
-            {[14, 24, 44, 30, 58, 40, 70, 48, 58, 30, 44, 24, 14].map((height, index) => (
-              <i key={index} style={{ height }} />
-            ))}
-          </div>
-          <p className="eyebrow">A MINUTE TO MAKE A CONNECTION</p>
-          <p>Listen to a single idea. Read its transcript. Follow the source when you want to go deeper.</p>
-          <div className="vocabulary-intro-meta">
-            <span><strong>30–60</strong> seconds per track</span>
-            <span><strong>v16</strong> white paper vocabulary</span>
-          </div>
+          <p>
+            These audio summaries explain the system security terminology used in SSTPA.
+            Terms follow concept dependency order: later explanations build on earlier
+            concepts, and filtered results include their prerequisites.
+          </p>
         </div>
       </section>
       <section className="vocabulary-library shell" id="vocabulary-terms" aria-label="SSTPA vocabulary terms">
@@ -139,19 +159,21 @@ export default function Vocabulary() {
           <span>FROM SYSTEMS THINKING TO ASSURANCE</span>
           <span>LISTEN / READ / EXPLORE</span>
         </div>
+        <h2 className="vocabulary-library-title">Audio vocabulary</h2>
         <div className="vocabulary-context">
           <p>
             Some words carry a specific meaning here. SSTPA’s <strong>Loss</strong> describes attacker effort for
             one asset, one Assurance, and one environment. In STPA, a loss is an unacceptable outcome for stakeholders.
             The entries below make these distinctions explicit.
           </p>
-          <a href="/files/SSTPA-Methodology-White-Paper-v16.docx" download>Read the white paper <span aria-hidden="true">↓</span></a>
         </div>
         {status === "loading" && <p className="vocabulary-status" role="status">Loading the vocabulary…</p>}
         {status === "error" && (
           <div className="vocabulary-status" role="status">
-            <h2>The vocabulary could not load.</h2>
-            <p>Please try again. The white paper is also available above.</p>
+            <h3>The vocabulary could not load.</h3>
+            <p>{sequenceError
+              ? "The learning sequence is unavailable, so complete results cannot be shown. Please try again."
+              : "Please try again to load the vocabulary and its audio summaries."}</p>
             <button className="button outline" onClick={() => setAttempt((value) => value + 1)}>Try again <span aria-hidden="true">↻</span></button>
           </div>
         )}
@@ -169,13 +191,27 @@ export default function Vocabulary() {
                 <span aria-hidden="true">⌕</span>
               </label>
             </div>
-            <p className="directory-count vocabulary-count" aria-live="polite">{shown.length} OF {terms.length} TERMS</p>
+            <p className="vocabulary-filter-note">Categories and search include prerequisite terms automatically, in learning order.</p>
+            <p className="directory-count vocabulary-count" aria-live="polite">
+              {filtering
+                ? `${selected.matchedSlugs.size} ${search ? "MATCHING" : "SELECTED"} ${selected.matchedSlugs.size === 1 ? "TERM" : "TERMS"} · ${selected.prerequisiteSlugs.size} ${selected.prerequisiteSlugs.size === 1 ? "PREREQUISITE" : "PREREQUISITES"} · ${shown.length} OF ${terms.length} TERMS`
+                : `${shown.length} TERMS IN LEARNING ORDER`}
+            </p>
             <div className="vocabulary-grid">
-              {shown.map((term) => <TermCard key={term.slug} term={term} index={terms.indexOf(term)} />)}
+              {shown.map((term) => (
+                <TermCard
+                  key={term.slug}
+                  term={term}
+                  index={terms.indexOf(term)}
+                  selection={filtering
+                    ? selected.prerequisiteSlugs.has(term.slug) ? "Prerequisite" : search ? "Search match" : "Selected term"
+                    : undefined}
+                />
+              ))}
             </div>
             {!shown.length && (
               <div className="empty">
-                <h2>No matching terms.</h2>
+                <h3>No matching terms.</h3>
                 <p>Try a different word or return to the complete vocabulary.</p>
                 <button className="button outline" onClick={() => { setQuery(""); setCategory("All terms"); }}>Show all terms <span aria-hidden="true">↗</span></button>
               </div>

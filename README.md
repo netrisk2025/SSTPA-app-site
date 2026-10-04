@@ -12,7 +12,7 @@ npm run build
 npm run verify
 ```
 
-`verify` is a release-completeness gate. It requires all 22 distinct 1–2 minute narrations, 28 distinct 30–60 second vocabulary clips, all 18 silent FireSat walkthroughs, valid captions, working local guide/download targets, and the built production assets. It intentionally fails while a media draft is incomplete. Decode media with ffmpeg/ffprobe when changing recordings, and exercise playback, navigation, search, motion controls, and responsive layouts in a browser.
+`verify` is a release-completeness gate. It requires all 22 distinct 1–2 minute narrations, 39 distinct 30–60 second vocabulary clips, all 18 silent FireSat walkthroughs, valid captions, working local guide/download targets, and the built production assets. It intentionally fails while a media draft is incomplete. Decode media with ffmpeg/ffprobe when changing recordings, and exercise playback, navigation, search, motion controls, and responsive layouts in a browser.
 
 ## Pages and sources
 
@@ -21,7 +21,7 @@ npm run verify
 - `/tools/workspace` — navigating an established project and System of Interest.
 - `/tools` and `/tools/{slug}` — searchable directory and dedicated pages for the 17 add-ons.
 - `/methodology` — source-grounded introduction and fourteen-step workflow.
-- `/vocabulary` — 28 short, individually narrated definitions with transcripts and source references.
+- `/vocabulary` — 39 short, individually narrated definitions with transcripts and source references.
 - `/docs/` — retained online guide, with original deep links and screenshots.
 - `/files/SSTPA-Methodology-White-Paper-v16.docx` — Version 16 methodology download.
 
@@ -48,3 +48,7 @@ The existing Vercel project builds with `npm run build` and serves `dist`. `verc
 ## October 2026 vocabulary update
 
 `public/audio/vocabulary.json` records the Version 16 vocabulary definitions, full spoken scripts, source references, and verified audio metadata. Vocabulary narration uses the same Systems narrator and never autoplays. The vocabulary page supports search, category filters, native playback controls, and readable transcripts. The landing sequence retains its original three studies and adds nuclear power, maritime, and enterprise systems. The former v14 download is replaced by the approved v16 document.
+
+## Vocabulary dependency and criticality revision
+
+The vocabulary now includes five system-criticality entries and six asset-Assurance entries. Environment and Regime precede the criticality block. Each term declares its direct `prerequisites`; category and search selections include their complete transitive closure in the manifest’s learning order. `scripts/verify-site.mjs` validates the real dependency graph, the requested insertion blocks, source references, and all 39 audio clips. Term references use external authorities; SSTPA-specific conventions are clearly identified. The original 28 recordings and all other website assets remain unchanged.
